@@ -1,6 +1,6 @@
 # InApp
 
-[![CI Status](http://img.shields.io/travis/Guy Rozen/InApp.svg?style=flat)](https://travis-ci.org/profile/yuval-netanel/inapp-ios)
+[![CI Status](https://api.travis-ci.org/yuval-netanel/inapp-ios.svg?style=flat)](https://api.travis-ci.org/yuval-netanel/inapp-ios.svg)
 [![Version](https://img.shields.io/cocoapods/v/InApp.svg?style=flat)](http://cocoadocs.org/docsets/InApp)
 [![License](https://img.shields.io/cocoapods/l/InApp.svg?style=flat)](http://cocoadocs.org/docsets/InApp)
 [![Platform](https://img.shields.io/cocoapods/p/InApp.svg?style=flat)](http://cocoadocs.org/docsets/InApp)
