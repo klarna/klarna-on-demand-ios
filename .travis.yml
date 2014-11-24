@@ -4,3 +4,7 @@ language: objective-c
 # before_install: cd Example && pod install && cd -
 script:
 - xctool test -workspace Example/InApp.xcworkspace -scheme InApp -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+
+notifications:
+  email:
+    - index.e@klarna.com
