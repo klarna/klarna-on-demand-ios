@@ -1,0 +1,391 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C90D1C641A24CBD100016FE4 /* Inapp.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C90D1C631A24CBD100016FE4 /* Inapp.h */; };
+		C90D1C661A24CBD100016FE4 /* Inapp.m in Sources */ = {isa = PBXBuildFile; fileRef = C90D1C651A24CBD100016FE4 /* Inapp.m */; };
+		C90D1C6C1A24CBD100016FE4 /* libInapp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C90D1C601A24CBD100016FE4 /* libInapp.a */; };
+		C90D1C891A24CD2800016FE4 /* KIAContext.m in Sources */ = {isa = PBXBuildFile; fileRef = C90D1C841A24CD2800016FE4 /* KIAContext.m */; };
+		C90D1C8A1A24CD2800016FE4 /* KIARegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C90D1C861A24CD2800016FE4 /* KIARegistrationViewController.m */; };
+		C90D1C8B1A24CD2800016FE4 /* KIAUrl.m in Sources */ = {isa = PBXBuildFile; fileRef = C90D1C881A24CD2800016FE4 /* KIAUrl.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C90D1C6D1A24CBD100016FE4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C90D1C581A24CBD100016FE4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C90D1C5F1A24CBD100016FE4;
+			remoteInfo = Inapp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C90D1C5E1A24CBD100016FE4 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				C90D1C641A24CBD100016FE4 /* Inapp.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		C90D1C601A24CBD100016FE4 /* libInapp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libInapp.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C90D1C631A24CBD100016FE4 /* Inapp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Inapp.h; sourceTree = "<group>"; };
+		C90D1C651A24CBD100016FE4 /* Inapp.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Inapp.m; sourceTree = "<group>"; };
+		C90D1C6B1A24CBD100016FE4 /* InappTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InappTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C90D1C711A24CBD100016FE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C90D1C831A24CD2800016FE4 /* KIAContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KIAContext.h; sourceTree = "<group>"; };
+		C90D1C841A24CD2800016FE4 /* KIAContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KIAContext.m; sourceTree = "<group>"; };
+		C90D1C851A24CD2800016FE4 /* KIARegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KIARegistrationViewController.h; sourceTree = "<group>"; };
+		C90D1C861A24CD2800016FE4 /* KIARegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KIARegistrationViewController.m; sourceTree = "<group>"; };
+		C90D1C871A24CD2800016FE4 /* KIAUrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KIAUrl.h; sourceTree = "<group>"; };
+		C90D1C881A24CD2800016FE4 /* KIAUrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KIAUrl.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C90D1C5D1A24CBD100016FE4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C90D1C681A24CBD100016FE4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C90D1C6C1A24CBD100016FE4 /* libInapp.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C90D1C571A24CBD100016FE4 = {
+			isa = PBXGroup;
+			children = (
+				C90D1C621A24CBD100016FE4 /* Inapp */,
+				C90D1C6F1A24CBD100016FE4 /* InappTests */,
+				C90D1C611A24CBD100016FE4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C90D1C611A24CBD100016FE4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C90D1C601A24CBD100016FE4 /* libInapp.a */,
+				C90D1C6B1A24CBD100016FE4 /* InappTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C90D1C621A24CBD100016FE4 /* Inapp */ = {
+			isa = PBXGroup;
+			children = (
+				C90D1C831A24CD2800016FE4 /* KIAContext.h */,
+				C90D1C841A24CD2800016FE4 /* KIAContext.m */,
+				C90D1C851A24CD2800016FE4 /* KIARegistrationViewController.h */,
+				C90D1C861A24CD2800016FE4 /* KIARegistrationViewController.m */,
+				C90D1C871A24CD2800016FE4 /* KIAUrl.h */,
+				C90D1C881A24CD2800016FE4 /* KIAUrl.m */,
+				C90D1C631A24CBD100016FE4 /* Inapp.h */,
+				C90D1C651A24CBD100016FE4 /* Inapp.m */,
+			);
+			path = Inapp;
+			sourceTree = "<group>";
+		};
+		C90D1C6F1A24CBD100016FE4 /* InappTests */ = {
+			isa = PBXGroup;
+			children = (
+				C90D1C701A24CBD100016FE4 /* Supporting Files */,
+			);
+			path = InappTests;
+			sourceTree = "<group>";
+		};
+		C90D1C701A24CBD100016FE4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C90D1C711A24CBD100016FE4 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C90D1C5F1A24CBD100016FE4 /* Inapp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C90D1C741A24CBD100016FE4 /* Build configuration list for PBXNativeTarget "Inapp" */;
+			buildPhases = (
+				C90D1C5C1A24CBD100016FE4 /* Sources */,
+				C90D1C5D1A24CBD100016FE4 /* Frameworks */,
+				C90D1C5E1A24CBD100016FE4 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Inapp;
+			productName = Inapp;
+			productReference = C90D1C601A24CBD100016FE4 /* libInapp.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		C90D1C6A1A24CBD100016FE4 /* InappTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C90D1C771A24CBD100016FE4 /* Build configuration list for PBXNativeTarget "InappTests" */;
+			buildPhases = (
+				C90D1C671A24CBD100016FE4 /* Sources */,
+				C90D1C681A24CBD100016FE4 /* Frameworks */,
+				C90D1C691A24CBD100016FE4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C90D1C6E1A24CBD100016FE4 /* PBXTargetDependency */,
+			);
+			name = InappTests;
+			productName = InappTests;
+			productReference = C90D1C6B1A24CBD100016FE4 /* InappTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C90D1C581A24CBD100016FE4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Yuval Netanel";
+				TargetAttributes = {
+					C90D1C5F1A24CBD100016FE4 = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					C90D1C6A1A24CBD100016FE4 = {
+						CreatedOnToolsVersion = 6.1;
+					};
+				};
+			};
+			buildConfigurationList = C90D1C5B1A24CBD100016FE4 /* Build configuration list for PBXProject "Inapp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = C90D1C571A24CBD100016FE4;
+			productRefGroup = C90D1C611A24CBD100016FE4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C90D1C5F1A24CBD100016FE4 /* Inapp */,
+				C90D1C6A1A24CBD100016FE4 /* InappTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C90D1C691A24CBD100016FE4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C90D1C5C1A24CBD100016FE4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C90D1C8A1A24CD2800016FE4 /* KIARegistrationViewController.m in Sources */,
+				C90D1C661A24CBD100016FE4 /* Inapp.m in Sources */,
+				C90D1C891A24CD2800016FE4 /* KIAContext.m in Sources */,
+				C90D1C8B1A24CD2800016FE4 /* KIAUrl.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C90D1C671A24CBD100016FE4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C90D1C6E1A24CBD100016FE4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C90D1C5F1A24CBD100016FE4 /* Inapp */;
+			targetProxy = C90D1C6D1A24CBD100016FE4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		C90D1C721A24CBD100016FE4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		C90D1C731A24CBD100016FE4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C90D1C751A24CBD100016FE4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		C90D1C761A24CBD100016FE4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		C90D1C781A24CBD100016FE4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = InappTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		C90D1C791A24CBD100016FE4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = InappTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C90D1C5B1A24CBD100016FE4 /* Build configuration list for PBXProject "Inapp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C90D1C721A24CBD100016FE4 /* Debug */,
+				C90D1C731A24CBD100016FE4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C90D1C741A24CBD100016FE4 /* Build configuration list for PBXNativeTarget "Inapp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C90D1C751A24CBD100016FE4 /* Debug */,
+				C90D1C761A24CBD100016FE4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C90D1C771A24CBD100016FE4 /* Build configuration list for PBXNativeTarget "InappTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C90D1C781A24CBD100016FE4 /* Debug */,
+				C90D1C791A24CBD100016FE4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C90D1C581A24CBD100016FE4 /* Project object */;
+}
