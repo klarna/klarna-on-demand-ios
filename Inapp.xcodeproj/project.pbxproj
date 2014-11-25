@@ -13,6 +13,7 @@
 		C90D1C891A24CD2800016FE4 /* KIAContext.m in Sources */ = {isa = PBXBuildFile; fileRef = C90D1C841A24CD2800016FE4 /* KIAContext.m */; };
 		C90D1C8A1A24CD2800016FE4 /* KIARegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C90D1C861A24CD2800016FE4 /* KIARegistrationViewController.m */; };
 		C90D1C8B1A24CD2800016FE4 /* KIAUrl.m in Sources */ = {isa = PBXBuildFile; fileRef = C90D1C881A24CD2800016FE4 /* KIAUrl.m */; };
+		C90D1C9A1A24DB4500016FE4 /* Test.m in Sources */ = {isa = PBXBuildFile; fileRef = C90D1C991A24DB4500016FE4 /* Test.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		C90D1C861A24CD2800016FE4 /* KIARegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KIARegistrationViewController.m; sourceTree = "<group>"; };
 		C90D1C871A24CD2800016FE4 /* KIAUrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KIAUrl.h; sourceTree = "<group>"; };
 		C90D1C881A24CD2800016FE4 /* KIAUrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KIAUrl.m; sourceTree = "<group>"; };
+		C90D1C991A24DB4500016FE4 /* Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Test.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				C90D1C701A24CBD100016FE4 /* Supporting Files */,
+				C90D1C991A24DB4500016FE4 /* Test.m */,
 			);
 			path = InappTests;
 			sourceTree = "<group>";
@@ -219,6 +222,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C90D1C9A1A24DB4500016FE4 /* Test.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

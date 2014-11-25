@@ -3,7 +3,7 @@
 language: objective-c
 # before_install: cd Example && pod install && cd -
 script:
-- xctool test -workspace Example/InApp.xcworkspace -scheme InApp -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+- (xcodebuild test -workspace Inapp.xcworkspace -scheme Inapp -sdk iphonesimulator && xcodebuild  test -workspace Inapp.xcworkspace -scheme InappExample -sdk iphonesimulator) | xcpretty -c
 
 notifications:
   email:
