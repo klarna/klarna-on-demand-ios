@@ -19,16 +19,18 @@ id<KIARegistrationViewControllerDelegate> delegate;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    UIWebView *webview = [[UIWebView alloc]initWithFrame:self.view.frame];
+    UIWebView *webview = [[UIWebView alloc] initWithFrame:self.view.frame];
+    webview.delegate = self;
     NSURLRequest *nsrequest = [NSURLRequest requestWithURL:[KIAUrl registrationUrl]];
     [webview loadRequest:nsrequest];
     [self.view addSubview:webview];
 }
 
-
-
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
-         
+    if ([error code] != NSURLErrorCancelled && [delegate respondsToSelector:@selector(klarnaRegistrationFailed:)])
+    {
+        [delegate klarnaRegistrationFailed:self];
+    }
 }
 
 @end

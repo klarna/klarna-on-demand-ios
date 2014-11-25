@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C90D1C951A24CE2500016FE4 /* Inapp.m in Sources */ = {isa = PBXBuildFile; fileRef = C90D1C8E1A24CE2500016FE4 /* Inapp.m */; };
 		C90D1C961A24CE2500016FE4 /* KIAContext.m in Sources */ = {isa = PBXBuildFile; fileRef = C90D1C901A24CE2500016FE4 /* KIAContext.m */; };
 		C90D1C971A24CE2500016FE4 /* KIARegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C90D1C921A24CE2500016FE4 /* KIARegistrationViewController.m */; };
 		C90D1C981A24CE2500016FE4 /* KIAUrl.m in Sources */ = {isa = PBXBuildFile; fileRef = C90D1C941A24CE2500016FE4 /* KIAUrl.m */; };
@@ -31,8 +30,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		C90D1C8D1A24CE2500016FE4 /* Inapp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Inapp.h; sourceTree = "<group>"; };
-		C90D1C8E1A24CE2500016FE4 /* Inapp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Inapp.m; sourceTree = "<group>"; };
 		C90D1C8F1A24CE2500016FE4 /* KIAContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KIAContext.h; sourceTree = "<group>"; };
 		C90D1C901A24CE2500016FE4 /* KIAContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KIAContext.m; sourceTree = "<group>"; };
 		C90D1C911A24CE2500016FE4 /* KIARegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KIARegistrationViewController.h; sourceTree = "<group>"; };
@@ -75,8 +72,6 @@
 		C90D1C8C1A24CE2500016FE4 /* Inapp */ = {
 			isa = PBXGroup;
 			children = (
-				C90D1C8D1A24CE2500016FE4 /* Inapp.h */,
-				C90D1C8E1A24CE2500016FE4 /* Inapp.m */,
 				C90D1C8F1A24CE2500016FE4 /* KIAContext.h */,
 				C90D1C901A24CE2500016FE4 /* KIAContext.m */,
 				C90D1C911A24CE2500016FE4 /* KIARegistrationViewController.h */,
@@ -251,7 +246,6 @@
 				C946A3D21A24C21D00A12CC6 /* ViewController.m in Sources */,
 				C90D1C981A24CE2500016FE4 /* KIAUrl.m in Sources */,
 				C946A3CF1A24C21D00A12CC6 /* AppDelegate.m in Sources */,
-				C90D1C951A24CE2500016FE4 /* Inapp.m in Sources */,
 				C90D1C971A24CE2500016FE4 /* KIARegistrationViewController.m in Sources */,
 				C90D1C961A24CE2500016FE4 /* KIAContext.m in Sources */,
 				C946A3CC1A24C21D00A12CC6 /* main.m in Sources */,
