@@ -5,7 +5,7 @@
 //  Created by Guy Rozen on 11/17/2014.
 //  Copyright (c) 2014 Guy Rozen. All rights reserved.
 //
-
+#import <Foundation/Foundation.h>
 #import "KIAContext.h"
 #import "KIAUrl.h"
 
