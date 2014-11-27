@@ -30,4 +30,11 @@
  */
 -(void) klarnaRegistrationFailed:(KIARegistrationViewController *) controller;
 
+/**
+ *  Handler for Klarna registration cancelled event.
+ *
+ *  @param controller Controller that initiated the event.
+ */
+-(void) klarnaRegistrationCancelled:(KIARegistrationViewController *)controller;
+
 @end

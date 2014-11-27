@@ -22,6 +22,8 @@ id<KIARegistrationViewControllerDelegate> delegate;
 - (void)viewDidLoad {
   [super viewDidLoad];
   
+  self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStylePlain target:self action:@selector(cancelButtonPressed)];
+  
   UIWebView *webview = [[UIWebView alloc] initWithFrame:self.view.frame];
   webview.delegate = self;
   NSURLRequest *request = [NSURLRequest requestWithURL:[KIAUrl registrationUrl] cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:60.0f];
@@ -39,6 +41,13 @@ id<KIARegistrationViewControllerDelegate> delegate;
   if ([error code] != NSURLErrorCancelled && [delegate respondsToSelector:@selector(klarnaRegistrationFailed:)])
   {
     [delegate klarnaRegistrationFailed:self];
+  }
+}
+
+- (void)cancelButtonPressed {
+  if ([delegate respondsToSelector:@selector(klarnaRegistrationCancelled:)])
+  {
+    [delegate klarnaRegistrationCancelled:self];
   }
 }
 
