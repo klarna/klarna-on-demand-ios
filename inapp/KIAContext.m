@@ -1,11 +1,5 @@
 #import "KIAContext.h"
 
-@interface KIAContext()
-
-+ (NSString *)getApiKey;
-
-@end
-
 @implementation KIAContext
 
 static NSString *apiKey;
@@ -15,7 +9,12 @@ static NSString *apiKey;
 }
 
 + (NSString *)getApiKey {
+    [self validateApiKeySet];
     return apiKey;
+}
+
++ (void)validateApiKeySet {
+    NSCAssert(apiKey != nil && ![apiKey isEqualToString:@""], @"You must set the API key first!");
 }
 
 @end

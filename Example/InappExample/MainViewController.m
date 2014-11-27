@@ -19,7 +19,7 @@
 
 
 -(void)klarnaRegistrationFailed:(KIARegistrationViewController *)controller{
-  
+  // You may also want to convey this failure to your user.
   // Dismiss Klarna registration view-controller.
   [self dismissViewControllerAnimated:YES completion:nil];
 }
