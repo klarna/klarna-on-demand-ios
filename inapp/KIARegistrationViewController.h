@@ -2,20 +2,32 @@
 
 @protocol KIARegistrationViewControllerDelegate;
 
-
+/**
+ *  Responsible for registering a new user with a Klarna payment method.
+ */
 @interface KIARegistrationViewController : UIViewController <UIWebViewDelegate>
 
+/**
+ *  Initialize Klarna registration view-controller.
+ *
+ *  @param delegate Delegate for handling registration events.
+ *
+ *  @return Initialized object.
+ */
 - (id)initWithDelegate:(id<KIARegistrationViewControllerDelegate>)delegate;
-
 
 @end
 
-
-
+/**
+ *  Defines the protocol for RegistrationViewController events.
+ */
 @protocol KIARegistrationViewControllerDelegate <NSObject>
 
-typedef enum KIARegistrationError : NSInteger KIARegistrationError;
-
+/**
+ *  Handler for Klarna registration failed event.
+ *
+ *  @param controller Controller that initiated the event.
+ */
 -(void) klarnaRegistrationFailed:(KIARegistrationViewController *) controller;
 
 @end

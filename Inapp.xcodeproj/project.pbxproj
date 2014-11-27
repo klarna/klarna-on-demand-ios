@@ -46,7 +46,6 @@
 		C903A2E01A2523B6009AE44D /* KIAUrl_Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KIAUrl_Test.m; sourceTree = "<group>"; };
 		C90D1C601A24CBD100016FE4 /* libInapp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libInapp.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C90D1C6B1A24CBD100016FE4 /* InappTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InappTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C90D1C711A24CBD100016FE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C90D1C831A24CD2800016FE4 /* KIAContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KIAContext.h; sourceTree = "<group>"; };
 		C90D1C841A24CD2800016FE4 /* KIAContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KIAContext.m; sourceTree = "<group>"; };
 		C90D1C851A24CD2800016FE4 /* KIARegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KIARegistrationViewController.h; sourceTree = "<group>"; };
@@ -140,7 +139,6 @@
 			children = (
 				C903A2DD1A2523A8009AE44D /* InappTests.pch */,
 				C903A2DE1A2523A8009AE44D /* InappTests.plist */,
-				C90D1C711A24CBD100016FE4 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";

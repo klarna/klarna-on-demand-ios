@@ -1,5 +1,11 @@
 #import "KIAContext.h"
 
+@interface KIAContext()
+
++ (NSString *)getApiKey;
+
+@end
+
 @implementation KIAContext
 
 static NSString *apiKey;

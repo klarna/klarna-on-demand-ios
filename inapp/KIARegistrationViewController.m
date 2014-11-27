@@ -3,7 +3,7 @@
 
 @implementation KIARegistrationViewController
 
-UIView *_loadingView;
+UIView *_spinnerView;
 
 id<KIARegistrationViewControllerDelegate> delegate;
 
@@ -14,53 +14,61 @@ id<KIARegistrationViewControllerDelegate> delegate;
   return self;
 }
 
+- (NSString *)title {
+  return @"Payment Details";
+}
+
+
 - (void)viewDidLoad {
   [super viewDidLoad];
   
   UIWebView *webview = [[UIWebView alloc] initWithFrame:self.view.frame];
   webview.delegate = self;
-  NSURLRequest *nsrequest = [NSURLRequest requestWithURL:[KIAUrl registrationUrl]];
-  [webview loadRequest:nsrequest];
+  NSURLRequest *request = [NSURLRequest requestWithURL:[KIAUrl registrationUrl] cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:60.0f];
+  [webview loadRequest:request];
   [self.view addSubview:webview];
   
-  [self InitializeSpinner];
+  [self AddSpinner];
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
-  [_loadingView removeFromSuperview];
+  [self RemoveSpinnerIfExists];
+  
+  NSLog(@"Klarna registration web view did fail with error: %@", [error description]);
+  
   if ([error code] != NSURLErrorCancelled && [delegate respondsToSelector:@selector(klarnaRegistrationFailed:)])
   {
     [delegate klarnaRegistrationFailed:self];
   }
 }
 
-- (NSString *)title {
-  return @"Payment Details";
-}
-
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
-  [_loadingView removeFromSuperview];
+  [self RemoveSpinnerIfExists];
 }
 
-- (void) InitializeSpinner {
-  _loadingView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 80, 80)];
-  _loadingView.center = self.view.center;
-  _loadingView.backgroundColor = [UIColor colorWithWhite:0. alpha:0.6];
-  _loadingView.layer.cornerRadius = 5;
+- (void) AddSpinner {
+  _spinnerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 80, 80)];
+  _spinnerView.center = self.view.center;
+  _spinnerView.backgroundColor = [UIColor colorWithWhite:0. alpha:0.6];
+  _spinnerView.layer.cornerRadius = 5;
   
   UIActivityIndicatorView *activityView= [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-  activityView.center = CGPointMake(_loadingView.frame.size.width / 2.0, 35);
+  activityView.center = CGPointMake(_spinnerView.frame.size.width / 2.0, 35);
   [activityView startAnimating];
-  [_loadingView addSubview:activityView];
+  [_spinnerView addSubview:activityView];
   
   UILabel* lblLoading = [[UILabel alloc]initWithFrame:CGRectMake(0, 48, 80, 30)];
   lblLoading.text = @"Loading...";
   lblLoading.textColor = [UIColor whiteColor];
   lblLoading.font = [UIFont fontWithName:lblLoading.font.fontName size:15];
   lblLoading.textAlignment = NSTextAlignmentCenter;
-  [_loadingView addSubview:lblLoading];
+  [_spinnerView addSubview:lblLoading];
   
-  [self.view addSubview:_loadingView];
+  [self.view addSubview:_spinnerView];
+}
+
+- (void) RemoveSpinnerIfExists {
+  [_spinnerView removeFromSuperview];
 }
 
 
