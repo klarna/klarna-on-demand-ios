@@ -8,11 +8,6 @@
   // Create a new Klarna registration view-controller, initialized with MainViewController as event-handler.
   KIARegistrationViewController *registrationViewController = [[KIARegistrationViewController alloc] initWithDelegate:self];
   
-  // Create 'Cancel' button
-  registrationViewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
-                                                                                                              target:self
-                                                                                                              action:@selector(userDidCancelRegistration)];
-  
   // Create navigation controller with Klarna registration view-controller as the root view controller.
   UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:registrationViewController];
   
@@ -29,7 +24,7 @@
   [self dismissViewControllerAnimated:YES completion:nil];
 }
 
--(void)userDidCancelRegistration {
+-(void)klarnaRegistrationCancelled:(KIARegistrationViewController *)controller {
   
   // Dismiss Klarna registration view-controller.
   [self dismissViewControllerAnimated:YES completion:nil];
