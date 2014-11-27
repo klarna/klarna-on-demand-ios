@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		94089DAB3DF698D7BB0ACB25 /* libPods-InappTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D1FE0E1CBCA1595B5EFACB69 /* libPods-InappTests.a */; };
 		C903A2DF1A2523A8009AE44D /* InappTests.plist in Resources */ = {isa = PBXBuildFile; fileRef = C903A2DE1A2523A8009AE44D /* InappTests.plist */; };
-		C903A2E11A2523B6009AE44D /* KIAUrl.m in Sources */ = {isa = PBXBuildFile; fileRef = C903A2E01A2523B6009AE44D /* KIAUrl.m */; };
+		C903A2E11A2523B6009AE44D /* KIAUrl_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = C903A2E01A2523B6009AE44D /* KIAUrl_Test.m */; };
 		C90D1C6C1A24CBD100016FE4 /* libInapp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C90D1C601A24CBD100016FE4 /* libInapp.a */; };
 		C90D1C891A24CD2800016FE4 /* KIAContext.m in Sources */ = {isa = PBXBuildFile; fileRef = C90D1C841A24CD2800016FE4 /* KIAContext.m */; };
 		C90D1C8A1A24CD2800016FE4 /* KIARegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C90D1C861A24CD2800016FE4 /* KIARegistrationViewController.m */; };
@@ -43,7 +43,7 @@
 		8A6713AF3B794D95017D61E6 /* Pods-InappTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InappTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-InappTests/Pods-InappTests.release.xcconfig"; sourceTree = "<group>"; };
 		C903A2DD1A2523A8009AE44D /* InappTests.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InappTests.pch; sourceTree = "<group>"; };
 		C903A2DE1A2523A8009AE44D /* InappTests.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = InappTests.plist; sourceTree = "<group>"; };
-		C903A2E01A2523B6009AE44D /* KIAUrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KIAUrl.m; sourceTree = "<group>"; };
+		C903A2E01A2523B6009AE44D /* KIAUrl_Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KIAUrl_Test.m; sourceTree = "<group>"; };
 		C90D1C601A24CBD100016FE4 /* libInapp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libInapp.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C90D1C6B1A24CBD100016FE4 /* InappTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InappTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C90D1C711A24CBD100016FE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -129,7 +129,7 @@
 		C90D1C6F1A24CBD100016FE4 /* InappTests */ = {
 			isa = PBXGroup;
 			children = (
-				C903A2E01A2523B6009AE44D /* KIAUrl.m */,
+				C903A2E01A2523B6009AE44D /* KIAUrl_Test.m */,
 				C90D1C701A24CBD100016FE4 /* Supporting Files */,
 			);
 			path = InappTests;
@@ -279,7 +279,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C903A2E11A2523B6009AE44D /* KIAUrl.m in Sources */,
+				C903A2E11A2523B6009AE44D /* KIAUrl_Test.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

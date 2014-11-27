@@ -1,10 +1,9 @@
-source 'https://github.com/CocoaPods/Specs.git'
+target 'InappTests' do
 
-target 'InappTests', :exclusive => true do
+  pod 'Expecta'
+  pod 'OCMock'
+  pod 'Specta'
 
-#pod 'Kiwi'
-pod 'Specta'
- pod 'Expecta'
- pod 'OCMock'
- 
+
 end
+
