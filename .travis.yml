@@ -4,7 +4,7 @@ language: objective-c
 # before_install: cd Example && pod install && cd -
 
 script:
-- xcodebuild test -workspace Inapp.xcworkspace -scheme Inapp -sdk iphonesimulator && xcodebuild test -workspace Inapp.xcworkspace -scheme InappExample -sdk iphonesimulator
+- (xcodebuild test -workspace Inapp.xcworkspace -scheme Inapp -sdk iphonesimulator && xcodebuild test -workspace Inapp.xcworkspace -scheme InappExample -sdk iphonesimulator)
 
 notifications:
   email:
