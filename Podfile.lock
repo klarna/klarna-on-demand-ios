@@ -1,16 +1,10 @@
 PODS:
-  - Expecta (0.3.1)
-  - OCMock (3.1.1)
-  - Specta (0.2.1)
+  - Kiwi (2.3.1)
 
 DEPENDENCIES:
-  - Expecta
-  - OCMock
-  - Specta
+  - Kiwi
 
 SPEC CHECKSUMS:
-  Expecta: 03aabd0a89d8dea843baecb19a7fd7466a69a31d
-  OCMock: f6cb8c162ab9d5620dddf411282c7b2c0ee78854
-  Specta: 9141310f46b1f68b676650ff2854e1ed0b74163a
+  Kiwi: 73e1400209055ee9c8ba78c6012b6b642d0fb9f7
 
 COCOAPODS: 0.35.0

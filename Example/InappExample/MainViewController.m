@@ -1,27 +1,17 @@
-//
-//  ViewController.m
-//  InappExample
-//
-//  Created by Yuval Netanel on 11/25/14.
-//  Copyright (c) 2014 Yuval Netanel. All rights reserved.
-//
-
 #import "MainViewController.h"
 #import "KIARegistrationViewController.h"
 
 @implementation MainViewController
 
 - (IBAction)onRegisterPressed:(id)sender {
+  
+  // Create a new Klarna registration view-controller, initialized with MainViewController as event-handler.
   KIARegistrationViewController *registrationViewController = [[KIARegistrationViewController alloc] initWithDelegate:self];
   
-  registrationViewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
-                                                                                                              target:self
-                                                                                                              action:@selector(userDidCancelRegistration)];
-  
+  // Create navigation controller with Klarna registration view-controller as the root view controller.
   UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:registrationViewController];
   
-  navigationController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-  
+  // Show navigation controller (in a modal presentation).
   [self presentViewController:navigationController
                      animated:YES
                    completion:nil];
@@ -29,12 +19,14 @@
 
 
 -(void)klarnaRegistrationFailed:(KIARegistrationViewController *)controller{
-  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Web view failed to load" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
-  [alert show];
+  // You may also want to convey this failure to your user.
+  // Dismiss Klarna registration view-controller.
   [self dismissViewControllerAnimated:YES completion:nil];
 }
 
--(void)userDidCancelRegistration {
+-(void)klarnaRegistrationCancelled:(KIARegistrationViewController *)controller {
+  
+  // Dismiss Klarna registration view-controller.
   [self dismissViewControllerAnimated:YES completion:nil];
 }
 

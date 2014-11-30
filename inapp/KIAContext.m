@@ -9,7 +9,12 @@ static NSString *apiKey;
 }
 
 + (NSString *)getApiKey {
+    [self validateApiKeySet];
     return apiKey;
+}
+
++ (void)validateApiKeySet {
+    NSCAssert(apiKey != nil && ![apiKey isEqualToString:@""], @"You must set the API key first.");
 }
 
 @end

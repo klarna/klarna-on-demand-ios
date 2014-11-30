@@ -16,7 +16,6 @@
 		C946A3D51A24C21D00A12CC6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C946A3D31A24C21D00A12CC6 /* Main.storyboard */; };
 		C946A3D71A24C21D00A12CC6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C946A3D61A24C21D00A12CC6 /* Images.xcassets */; };
 		C946A3DA1A24C21D00A12CC6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C946A3D81A24C21D00A12CC6 /* LaunchScreen.xib */; };
-		C946A3E61A24C21D00A12CC6 /* InappExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C946A3E51A24C21D00A12CC6 /* InappExampleTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +47,6 @@
 		C946A3D91A24C21D00A12CC6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		C946A3DF1A24C21D00A12CC6 /* InappExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InappExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C946A3E41A24C21D00A12CC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C946A3E51A24C21D00A12CC6 /* InappExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InappExampleTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,7 +127,6 @@
 		C946A3E21A24C21D00A12CC6 /* InappExampleTests */ = {
 			isa = PBXGroup;
 			children = (
-				C946A3E51A24C21D00A12CC6 /* InappExampleTests.m */,
 				C946A3E31A24C21D00A12CC6 /* Supporting Files */,
 			);
 			path = InappExampleTests;
@@ -256,7 +253,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C946A3E61A24C21D00A12CC6 /* InappExampleTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
