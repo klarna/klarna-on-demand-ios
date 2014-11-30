@@ -1,9 +1,6 @@
 target 'InappTests' do
 
-  pod 'Expecta'
-  pod 'OCMock'
-  pod 'Specta'
-
+  pod 'Kiwi'
 
 end
 

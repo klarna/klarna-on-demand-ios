@@ -1,45 +1,28 @@
 #import "KIAContext.h"
 #import "KIAUrl.h"
 
-SpecBegin(KIAUrl_Test)
+SPEC_BEGIN(KIAUrl_Test)
 
 describe(@".registrationUrl", ^{
   
-  context(@"when token is on playground", ^{
-    beforeEach(^{
-      id kiaContextMock = OCMClassMock([KIAContext class]);
-      OCMStub([kiaContextMock getApiKey]).andReturn(@"test_skadoo");
-    });
+  it(@"should return a playground registration url when token is for playground", ^{
+    [[KIAContext class] stub:@selector(getApiKey) andReturn:@"test_skadoo"];
     
-    it(@"should return a playground registration url", ^{
-      expect([KIAUrl registrationUrl].absoluteString).to.equal(@"https://inapp.playground.klarna.com/registration/new?api_key=test_skadoo&locale=en");
-    });
+    [[[KIAUrl registrationUrl].absoluteString should] equal:@"https://inapp.playground.klarna.com/registration/new?api_key=test_skadoo&locale=en"];
   });
   
-  context(@"when token is on production", ^{
-    beforeEach(^{
-      id kiaContextMock = OCMClassMock([KIAContext class]);
-      OCMStub([kiaContextMock getApiKey]).andReturn(@"skadoo");
-    });
+  it(@"should return a production registration url when token is for production", ^{
+    [[KIAContext class] stub:@selector(getApiKey) andReturn:@"skadoo"];
     
-    it(@"should return a production registration url", ^{
-      expect([KIAUrl registrationUrl].absoluteString).to.equal(@"https://inapp.klarna.com/registration/new?api_key=skadoo&locale=en");
-    });
+    [[[KIAUrl registrationUrl].absoluteString should] equal:@"https://inapp.klarna.com/registration/new?api_key=skadoo&locale=en"];
   });
   
-  context(@"When locale is Swedish", ^{
-    beforeEach(^{
-      id kiaContextMock = OCMClassMock([KIAContext class]);
-      OCMStub([kiaContextMock getApiKey]).andReturn(@"skadoo");
-      
-      id mainBundleMock = OCMPartialMock([NSBundle mainBundle]);
-      OCMStub([mainBundleMock preferredLocalizations]).andReturn(@[@"sv"]);
-    });
+  it(@"should return a url with Swedish locale when locale is Swedish", ^{
+    [[KIAContext class] stub:@selector(getApiKey) andReturn:@"skadoo"];
+    [[NSBundle mainBundle] stub:@selector(preferredLocalizations) andReturn:@[@"sv"]];
     
-    it(@"should return a url with Swedish locale", ^{
-      expect([KIAUrl registrationUrl].absoluteString).to.contain(@"locale=sv");
-    });
+    [[[KIAUrl registrationUrl].absoluteString should] containString:@"locale=sv"];
   });
 });
 
-SpecEnd
+SPEC_END

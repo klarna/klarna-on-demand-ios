@@ -22,6 +22,7 @@ id<KIARegistrationViewControllerDelegate> delegate;
 - (void)viewDidLoad {
   [super viewDidLoad];
   
+  
   self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStylePlain target:self action:@selector(cancelButtonPressed)];
   
   UIWebView *webview = [[UIWebView alloc] initWithFrame:self.view.frame];
@@ -29,7 +30,8 @@ id<KIARegistrationViewControllerDelegate> delegate;
   NSURLRequest *request = [NSURLRequest requestWithURL:[KIAUrl registrationUrl] cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:60.0f];
   [webview loadRequest:request];
   [self.view addSubview:webview];
-  
+  webview.backgroundColor = [UIColor whiteColor];
+
   [self AddSpinner];
 }
 

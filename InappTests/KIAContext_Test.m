@@ -1,21 +1,18 @@
 #import "KIAContext.h"
 
-
-SpecBegin(KIAContext_Test)
+SPEC_BEGIN(KIAContext_Test)
 
 describe(@".getApiKey", ^{
     
-    it(@"should throws exception when API key is not set", ^{
-        [KIAContext setApiKey:nil];
-        
-        expect(^{[KIAContext getApiKey];}).to.raise(@"NSInternalInconsistencyException");
+    it(@"should throw exception when API key is not set", ^{
+      [[theBlock(^{[KIAContext getApiKey];}) should] raiseWithName:@"NSInternalInconsistencyException" reason:@"You must set the API key first!"];
     });
     
-    it(@"should return the setted API key", ^{
-        [KIAContext setApiKey:@"my_key"];
+    it(@"should return the API key when API key is set", ^{
+      [KIAContext setApiKey:@"my_key"];
         
-        expect([KIAContext getApiKey]).to.equal(@"my_key");
+      [[[KIAContext getApiKey] should] equal:@"my_key"];
     });
 });
 
-SpecEnd
+SPEC_END
