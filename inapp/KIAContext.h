@@ -1,6 +1,8 @@
 #import <Foundation/Foundation.h>
 
-
+/**
+ * Klarna Inapp context
+ */
 @interface KIAContext : NSObject
 
 /**
@@ -11,7 +13,7 @@
 + (void)setApiKey:(NSString *)apiKey;
 
 /**
- *  Returns the API key set using setApiKey.
+ *  Returns the API key set using setApiKey:.
  *
  *  @return Merchant's public API key for this application.
  */
