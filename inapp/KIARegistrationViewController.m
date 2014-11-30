@@ -22,11 +22,11 @@ id<KIARegistrationViewControllerDelegate> delegate;
 - (void)viewDidLoad {
   [super viewDidLoad];
   
-  if(self.navigationController)
+  if(self.navigationController) {
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStylePlain target:self action:@selector(cancelButtonPressed)];
+  }
   
   [self AddWebView];
-
   [self AddSpinner];
 }
 

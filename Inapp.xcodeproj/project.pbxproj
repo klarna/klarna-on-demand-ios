@@ -132,10 +132,10 @@
 		C90D1C6F1A24CBD100016FE4 /* InappTests */ = {
 			isa = PBXGroup;
 			children = (
-				C903A2E01A2523B6009AE44D /* KIAUrlSpec.m */,
-				C90D1C701A24CBD100016FE4 /* Supporting Files */,
 				C9FC95401A278AAD00485500 /* KIAContextSpec.m */,
 				46872D181A2B240000707282 /* KIARegistrationViewControllerSpec.m */,
+				C903A2E01A2523B6009AE44D /* KIAUrlSpec.m */,
+				C90D1C701A24CBD100016FE4 /* Supporting Files */,
 			);
 			path = InappTests;
 			sourceTree = "<group>";

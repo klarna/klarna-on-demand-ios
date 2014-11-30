@@ -18,7 +18,6 @@ describe(@".registrationUrl", ^{
   });
   
   it(@"should return a url with Swedish locale when locale is Swedish", ^{
-    [[KIAContext class] stub:@selector(getApiKey) andReturn:@"skadoo"];
     [[NSBundle mainBundle] stub:@selector(preferredLocalizations) andReturn:@[@"sv"]];
     
     [[[KIAUrl registrationUrl].absoluteString should] containString:@"locale=sv"];
