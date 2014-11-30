@@ -1,5 +1,6 @@
 #import "KIARegistrationViewController.h"
 #import "KIAUrl.h"
+#import "Jockey.h"
 
 @implementation KIARegistrationViewController
 
@@ -63,6 +64,12 @@ id<KIARegistrationViewControllerDelegate> delegate;
   [_spinnerView removeFromSuperview];
 }
 
+-(BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
+{
+  [self registerJockeyEvents];
+  
+  return [Jockey webView:webView withUrl:[request URL]];
+}
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
   [self RemoveSpinnerIfExists];
@@ -85,5 +92,34 @@ id<KIARegistrationViewControllerDelegate> delegate;
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
   [self RemoveSpinnerIfExists];
 }
+
+- (void)registerJockeyEvents {
+  [Jockey on:@"userCreated" perform:^(NSDictionary *payload) {
+    NSString *token = payload[@"userToken"];
+    if (token) {
+      [self saveToken:token];
+    }
+    NSLog(@"userCreated! userToken is:[%@]", payload[@"userToken"]);
+		}];
+		
+		[Jockey on:@"userReady" perform:^(NSDictionary *payload) {
+      [self dismissViewControllerAnimated:YES completion:nil];
+    }];
+}
+
+- (void)saveToken:(NSString*)userToken {
+  [[NSUserDefaults standardUserDefaults] setObject:userToken forKey:@"userToken"];
+  [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+  [self unregisterJockeyCallbacks];
+}
+
+- (void)unregisterJockeyCallbacks{
+  [Jockey off:@"userCreated"];
+  [Jockey off:@"userReady"];
+}
+
 
 @end
