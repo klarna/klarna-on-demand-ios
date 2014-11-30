@@ -14,7 +14,7 @@ static NSString *apiKey;
 }
 
 + (void)validateApiKeySet {
-    NSCAssert(apiKey != nil && ![apiKey isEqualToString:@""], @"You must set the API key first!");
+    NSCAssert(apiKey != nil && ![apiKey isEqualToString:@""], @"You must set the API key first");
 }
 
 @end
