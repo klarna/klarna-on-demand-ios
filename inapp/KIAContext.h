@@ -8,7 +8,7 @@
 /**
  *  Sets the API key to use in following calls.
  *
- *  @param apiKey Merchant's public api key for this application.
+ *  @param apiKey Merchant's public API key for this application.
  */
 + (void)setApiKey:(NSString *)apiKey;
 

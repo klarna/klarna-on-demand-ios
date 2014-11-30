@@ -67,7 +67,7 @@ id<KIARegistrationViewControllerDelegate> delegate;
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
   [self RemoveSpinnerIfExists];
   
-  NSLog(@"Klarna registration web view did fail with error: %@", [error description]);
+  NSLog(@"Klarna registration web view failed with the following error: %@", [error description]);
   
   if ([error code] != NSURLErrorCancelled && [delegate respondsToSelector:@selector(klarnaRegistrationFailed:)])
   {
