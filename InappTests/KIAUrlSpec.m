@@ -1,7 +1,7 @@
 #import "KIAContext.h"
 #import "KIAUrl.h"
 
-SPEC_BEGIN(KIAUrl_Test)
+SPEC_BEGIN(KIAUrlSpec)
 
 describe(@".registrationUrl", ^{
   

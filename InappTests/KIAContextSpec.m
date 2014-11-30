@@ -1,6 +1,6 @@
 #import "KIAContext.h"
 
-SPEC_BEGIN(KIAContext_Test)
+SPEC_BEGIN(KIAContextSpec)
 
 describe(@".getApiKey", ^{
     
