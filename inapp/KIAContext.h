@@ -19,4 +19,6 @@
  */
 + (NSString *)getApiKey;
 
++ (bool)userFinishedRegistration;
+
 @end

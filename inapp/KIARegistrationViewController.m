@@ -1,6 +1,11 @@
 #import "KIARegistrationViewController.h"
 #import "KIAUrl.h"
 #import "Jockey.h"
+#import "KIAContext.h"
+#import "KIAUtils.h"
+
+#define JOCKEY_USER_READY @"userReady"
+#define JOCKEY_USER_ERROR @"userError"
 
 @implementation KIARegistrationViewController
 
@@ -18,7 +23,6 @@ id<KIARegistrationViewControllerDelegate> delegate;
 - (NSString *)title {
   return @"Payment Details";
 }
-
 
 - (void)viewDidLoad {
   [super viewDidLoad];
@@ -94,22 +98,20 @@ id<KIARegistrationViewControllerDelegate> delegate;
 }
 
 - (void)registerJockeyEvents {
-  [Jockey on:@"userCreated" perform:^(NSDictionary *payload) {
-    NSString *token = payload[@"userToken"];
-    if (token) {
-      [self saveToken:token];
+  [Jockey on:JOCKEY_USER_READY perform:^(NSDictionary *payload) {
+    [KIAUtils saveUserToken:payload[@"userToken"]];
+    if ([delegate respondsToSelector:@selector(klarnaRegistrationController:didFinishWithUserToken:)])
+    {
+      [delegate klarnaRegistrationController:self didFinishWithUserToken:[[KIAToken alloc] initWithToken: payload[USER_TOKEN_KEY]]];
     }
-    NSLog(@"userCreated! userToken is:[%@]", payload[@"userToken"]);
-		}];
-		
-		[Jockey on:@"userReady" perform:^(NSDictionary *payload) {
-      [self dismissViewControllerAnimated:YES completion:nil];
-    }];
-}
-
-- (void)saveToken:(NSString*)userToken {
-  [[NSUserDefaults standardUserDefaults] setObject:userToken forKey:@"userToken"];
-  [[NSUserDefaults standardUserDefaults] synchronize];
+  }];
+  
+  [Jockey on:JOCKEY_USER_ERROR perform:^(NSDictionary *payload) {
+    if ([delegate respondsToSelector:@selector(klarnaRegistrationFailed:)])
+    {
+      [delegate klarnaRegistrationFailed:self];
+    }
+  }];
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
@@ -117,9 +119,8 @@ id<KIARegistrationViewControllerDelegate> delegate;
 }
 
 - (void)unregisterJockeyCallbacks{
-  [Jockey off:@"userCreated"];
-  [Jockey off:@"userReady"];
+  [Jockey off:JOCKEY_USER_READY];
+  [Jockey off:JOCKEY_USER_ERROR];
 }
-
 
 @end
