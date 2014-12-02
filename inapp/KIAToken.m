@@ -9,5 +9,13 @@
   return self;
 }
 
+- (BOOL)isEqual:(id)object{
+  if([object isKindOfClass:[KIAToken class]]) {
+    KIAToken *objectAsKiaToken = (KIAToken *) object;
+    return [objectAsKiaToken.token isEqualToString:_token];
+  }
+  return NO;
+}
+
 @end
 

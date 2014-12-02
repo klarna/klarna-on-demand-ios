@@ -5,6 +5,8 @@
 
 @interface KIARegistrationViewController (Test)
 - (void)cancelButtonPressed;
+- (void) handleUserReadyEventWithToken: (NSString *)token;
+- (void) handleUserErrorEvent;
 @end
 
 SPEC_BEGIN(KIARegistrationViewControllerSpec)
@@ -14,7 +16,7 @@ describe(@"KIARegistrationViewControllerSpec", ^{
   __block KIARegistrationViewController *kiaRegistrationController;
   
   beforeEach(^{
-    kiaRegistrationDelegate = [KWMock mockForProtocol:@protocol(KIARegistrationViewControllerDelegate)];
+    kiaRegistrationDelegate = [KWMock nullMockForProtocol:@protocol(KIARegistrationViewControllerDelegate)];
     kiaRegistrationController = [[KIARegistrationViewController alloc] initWithDelegate:kiaRegistrationDelegate];
   });
   
@@ -44,17 +46,27 @@ describe(@"KIARegistrationViewControllerSpec", ^{
     [KIAContext setApiKey:@"test_skadoo"];
     [[Jockey shouldEventually] receive:@selector(on:perform:) withArguments:@"userReady", any() ];
     [[Jockey shouldEventually] receive:@selector(on:perform:) withArguments:@"userError", any()];
-    kiaRegistrationController.view;
+    
+    [kiaRegistrationController view];
   });
   
-  context(@"Jockey .userReady", ^{
-          afterEach(^{
-            kiaRegistrationController.view;
-            [Jockey send:@"userReady" withPayload:@{@"userToken":@"my_token"} toWebView:[kiaRegistrationController.view.subviews objectAtIndex:0]];
-          });
-    it(@"should...", ^ {
-      [[KIAUtils shouldEventually] receive:@selector(saveUserToken:)];
-    });
+  it(@"should deregister for Jockey events on disappear", ^{
+    [KIAContext setApiKey:@"test_skadoo"];
+    [[Jockey shouldEventually] receive:@selector(off:) withArguments:@"userReady"];
+    [[Jockey shouldEventually] receive:@selector(off:) withArguments:@"userError"];
+    
+    [kiaRegistrationController viewDidDisappear:NO];
+  });
+  
+  it(@"should save token and call delegate on .handleUserReadyEvent", ^ {
+    [[KIAUtils should] receive:@selector(saveUserToken:) withArguments:@"my_token"];
+    [[kiaRegistrationDelegate should] receive:@selector(klarnaRegistrationController:didFinishWithUserToken:) withArguments:kiaRegistrationController, [[KIAToken alloc] initWithToken:@"my_token"]];
+    [kiaRegistrationController handleUserReadyEventWithToken:@"my_token"];
+  });
+  
+  it(@"should save token and call delegate on .handleUserErrorEvent", ^ {
+    [[kiaRegistrationDelegate should] receive:@selector(klarnaRegistrationFailed:) withArguments:kiaRegistrationController];
+    [kiaRegistrationController handleUserErrorEvent];
   });
   
 });

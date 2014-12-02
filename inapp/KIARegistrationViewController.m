@@ -99,19 +99,28 @@ id<KIARegistrationViewControllerDelegate> delegate;
 
 - (void)registerJockeyEvents {
   [Jockey on:JOCKEY_USER_READY perform:^(NSDictionary *payload) {
-    [KIAUtils saveUserToken:payload[@"userToken"]];
-    if ([delegate respondsToSelector:@selector(klarnaRegistrationController:didFinishWithUserToken:)])
-    {
-      [delegate klarnaRegistrationController:self didFinishWithUserToken:[[KIAToken alloc] initWithToken: payload[USER_TOKEN_KEY]]];
-    }
+    [self handleUserReadyEventWithToken: payload[@"userToken"]];
   }];
   
   [Jockey on:JOCKEY_USER_ERROR perform:^(NSDictionary *payload) {
-    if ([delegate respondsToSelector:@selector(klarnaRegistrationFailed:)])
-    {
-      [delegate klarnaRegistrationFailed:self];
-    }
+    [self handleUserErrorEvent];
   }];
+}
+
+- (void) handleUserReadyEventWithToken: (NSString *)token {
+  if(token)
+    [KIAUtils saveUserToken:token];
+  if ([delegate respondsToSelector:@selector(klarnaRegistrationController:didFinishWithUserToken:)])
+  {
+    [delegate klarnaRegistrationController:self didFinishWithUserToken:[[KIAToken alloc] initWithToken: token]];
+  }
+}
+
+- (void) handleUserErrorEvent {
+  if ([delegate respondsToSelector:@selector(klarnaRegistrationFailed:)])
+  {
+    [delegate klarnaRegistrationFailed:self];
+  }
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
