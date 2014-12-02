@@ -1,4 +1,7 @@
 #import "KIARegistrationViewController.h"
+#import "Jockey.h"
+#import "KIAContext.h"
+#import "KIAUtils.h"
 
 @interface KIARegistrationViewController (Test)
 - (void)cancelButtonPressed;
@@ -20,21 +23,38 @@ describe(@"KIARegistrationViewControllerSpec", ^{
   });
   
   it(@"should call .klarnaRegistrationCancelled when cancel button was pressed",^{
-    [[[kiaRegistrationDelegate shouldEventually] receive] klarnaRegistrationCancelled:kiaRegistrationController];
+    [[[kiaRegistrationDelegate should] receive] klarnaRegistrationCancelled:kiaRegistrationController];
     
     [kiaRegistrationController cancelButtonPressed];
   });
   
   it(@"should call .klarnaRegistrationFailed when web view failed to load",^{
-    [[[kiaRegistrationDelegate shouldEventually] receive] klarnaRegistrationFailed:kiaRegistrationController];
+    [[[kiaRegistrationDelegate should] receive] klarnaRegistrationFailed:kiaRegistrationController];
     
     [kiaRegistrationController webView:nil didFailLoadWithError:[NSError errorWithDomain:@"Domain" code:1234 userInfo:nil]];
   });
   
   it(@"should not call .klarnaRegistrationFailed when web view failed on NSURLErrorCancelled",^{
-    [[[kiaRegistrationDelegate shouldNotEventually] receive] klarnaRegistrationFailed:kiaRegistrationController];
+    [[[kiaRegistrationDelegate shouldNot] receive] klarnaRegistrationFailed:kiaRegistrationController];
     
     [kiaRegistrationController webView:nil didFailLoadWithError:[NSError errorWithDomain:@"Domain" code:NSURLErrorCancelled userInfo:nil]];
+  });
+  
+  it(@"should register for Jockey events on load", ^{
+    [KIAContext setApiKey:@"test_skadoo"];
+    [[Jockey shouldEventually] receive:@selector(on:perform:) withArguments:@"userReady", any() ];
+    [[Jockey shouldEventually] receive:@selector(on:perform:) withArguments:@"userError", any()];
+    kiaRegistrationController.view;
+  });
+  
+  context(@"Jockey .userReady", ^{
+          afterEach(^{
+            kiaRegistrationController.view;
+            [Jockey send:@"userReady" withPayload:@{@"userToken":@"my_token"} toWebView:[kiaRegistrationController.view.subviews objectAtIndex:0]];
+          });
+    it(@"should...", ^ {
+      [[KIAUtils shouldEventually] receive:@selector(saveUserToken:)];
+    });
   });
   
 });

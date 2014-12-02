@@ -32,7 +32,7 @@
 
 -(void)klarnaRegistrationController:(KIARegistrationViewController *)controller didFinishWithUserToken:(KIAToken *)token {
   
-  [self dismissViewControllerAnimated:YES completion:nil]
+  [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

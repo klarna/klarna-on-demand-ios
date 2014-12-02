@@ -27,12 +27,14 @@ id<KIARegistrationViewControllerDelegate> delegate;
 - (void)viewDidLoad {
   [super viewDidLoad];
   
-  if(self.navigationController) {
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStylePlain target:self action:@selector(cancelButtonPressed)];
-  }
+  self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStylePlain target:self action:@selector(cancelButtonPressed)];
   
   [self AddWebView];
+  
+  [self registerJockeyEvents];
+  
   [self AddSpinner];
+  
 }
 
 - (void)AddWebView {
@@ -70,8 +72,6 @@ id<KIARegistrationViewControllerDelegate> delegate;
 
 -(BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
 {
-  [self registerJockeyEvents];
-  
   return [Jockey webView:webView withUrl:[request URL]];
 }
 
