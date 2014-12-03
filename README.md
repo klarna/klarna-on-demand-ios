@@ -33,7 +33,7 @@ You'll need to install [CocoaPods](http://cocoapods.org) in order to properly wo
 3. Open Inapp.xcworkspace and code away
 
 ### Tests
-A pull requests must include tests for the proposed fixes/functionality. We use [Kiwi](https://github.com/kiwi-bdd/Kiwi) to write our tests and you can find the tests themselves under the *Inapp* project in the *InappTets* folder.
+A pull request must include tests for the proposed fixes/functionality. We use [Kiwi](https://github.com/kiwi-bdd/Kiwi) to write our tests and you can find the tests themselves under the *Inapp* project in the *InappTets* folder.
 
 
 ## Author
@@ -42,4 +42,4 @@ Klarna
 
 ## License
 
-InApp is available under the MIT license. See the LICENSE file for more info.
+InApp is available under the Apache 2.0 license. See the LICENSE file for more info.
