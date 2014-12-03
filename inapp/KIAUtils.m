@@ -2,7 +2,6 @@
 
 @implementation KIAUtils
 
-
 + (NSString *)getUserToken {
   return [[NSUserDefaults standardUserDefaults] objectForKey:USER_TOKEN_KEY];
 }
