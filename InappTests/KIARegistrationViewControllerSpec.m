@@ -5,7 +5,7 @@
 
 @interface KIARegistrationViewController (Test)
 - (void)cancelButtonPressed;
-- (void) handleUserReadyEventWithToken: (NSString *)token;
+- (void) handleUserReadyEventWithPayload: (NSDictionary *)payload;
 - (void) handleUserErrorEvent;
 @end
 
@@ -58,10 +58,16 @@ describe(@"KIARegistrationViewControllerSpec", ^{
     [kiaRegistrationController viewDidDisappear:NO];
   });
   
-  it(@"should save token and call delegate on .handleUserReadyEvent", ^ {
+  it(@"should save token and call delegate on .handleUserReadyEvent when there is a token in payload", ^ {
     [[KIAUtils should] receive:@selector(saveUserToken:) withArguments:@"my_token"];
     [[kiaRegistrationDelegate should] receive:@selector(klarnaRegistrationController:didFinishWithUserToken:) withArguments:kiaRegistrationController, [[KIAToken alloc] initWithToken:@"my_token"]];
-    [kiaRegistrationController handleUserReadyEventWithToken:@"my_token"];
+    [kiaRegistrationController handleUserReadyEventWithPayload:@{@"userToken":@"my_token"}];
+  });
+  
+  it(@"should save token and call delegate on .handleUserReadyEvent when there is no token in payload", ^ {
+    [[KIAUtils shouldNot] receive:@selector(saveUserToken:)];
+    [[kiaRegistrationDelegate should] receive:@selector(klarnaRegistrationController:didFinishWithUserToken:) withArguments:kiaRegistrationController,any()];
+    [kiaRegistrationController handleUserReadyEventWithPayload:@{}];
   });
   
   it(@"should save token and call delegate on .handleUserErrorEvent", ^ {

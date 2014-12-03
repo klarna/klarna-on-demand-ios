@@ -99,7 +99,7 @@ id<KIARegistrationViewControllerDelegate> delegate;
 
 - (void)registerJockeyEvents {
   [Jockey on:JOCKEY_USER_READY perform:^(NSDictionary *payload) {
-    [self handleUserReadyEventWithToken: payload[@"userToken"]];
+    [self handleUserReadyEventWithPayload: payload];
   }];
   
   [Jockey on:JOCKEY_USER_ERROR perform:^(NSDictionary *payload) {
@@ -107,7 +107,8 @@ id<KIARegistrationViewControllerDelegate> delegate;
   }];
 }
 
-- (void) handleUserReadyEventWithToken: (NSString *)token {
+- (void) handleUserReadyEventWithPayload: (NSDictionary *)payload {
+  NSString *token = payload[@"userToken"];
   if(token)
     [KIAUtils saveUserToken:token];
   if ([delegate respondsToSelector:@selector(klarnaRegistrationController:didFinishWithUserToken:)])
