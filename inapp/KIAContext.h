@@ -19,11 +19,4 @@
  */
 + (NSString *)getApiKey;
 
-/**
- *  Whether user finished the registration process or not.
- *
- *  @return True if user finished the registration process, false if not.
- */
-+ (bool)userFinishedRegistration;
-
 @end

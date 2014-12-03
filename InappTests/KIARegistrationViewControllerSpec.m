@@ -1,10 +1,9 @@
 #import "KIARegistrationViewController.h"
 #import "Jockey.h"
 #import "KIAContext.h"
-#import "KIAUtils.h"
 
 @interface KIARegistrationViewController (Test)
-- (void)cancelButtonPressed;
+- (void) cancelButtonPressed;
 - (void) handleUserReadyEventWithPayload: (NSDictionary *)payload;
 - (void) handleUserErrorEvent;
 @end
@@ -44,7 +43,7 @@ describe(@"KIARegistrationViewControllerSpec", ^{
   
   it(@"should register for Jockey events on load", ^{
     [KIAContext setApiKey:@"test_skadoo"];
-    [[Jockey shouldEventually] receive:@selector(on:perform:) withArguments:@"userReady", any() ];
+    [[Jockey shouldEventually] receive:@selector(on:perform:) withArguments:@"userReady", any()];
     [[Jockey shouldEventually] receive:@selector(on:perform:) withArguments:@"userError", any()];
     
     [kiaRegistrationController view];
@@ -59,15 +58,8 @@ describe(@"KIARegistrationViewControllerSpec", ^{
   });
   
   it(@"should save token and call delegate on .handleUserReadyEvent when there is a token in payload", ^ {
-    [[KIAUtils should] receive:@selector(saveUserToken:) withArguments:@"my_token"];
     [[kiaRegistrationDelegate should] receive:@selector(klarnaRegistrationController:didFinishWithUserToken:) withArguments:kiaRegistrationController, [[KIAToken alloc] initWithToken:@"my_token"]];
     [kiaRegistrationController handleUserReadyEventWithPayload:@{@"userToken":@"my_token"}];
-  });
-  
-  it(@"should save token and call delegate on .handleUserReadyEvent when there is no token in payload", ^ {
-    [[KIAUtils shouldNot] receive:@selector(saveUserToken:)];
-    [[kiaRegistrationDelegate should] receive:@selector(klarnaRegistrationController:didFinishWithUserToken:) withArguments:kiaRegistrationController,any()];
-    [kiaRegistrationController handleUserReadyEventWithPayload:@{}];
   });
   
   it(@"should save token and call delegate on .handleUserErrorEvent", ^ {

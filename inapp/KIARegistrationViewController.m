@@ -2,7 +2,6 @@
 #import "KIAUrl.h"
 #import "Jockey.h"
 #import "KIAContext.h"
-#import "KIAUtils.h"
 
 #define JOCKEY_USER_READY @"userReady"
 #define JOCKEY_USER_ERROR @"userError"
@@ -108,12 +107,9 @@ id<KIARegistrationViewControllerDelegate> delegate;
 }
 
 - (void) handleUserReadyEventWithPayload: (NSDictionary *)payload {
-  NSString *token = payload[@"userToken"];
-  if(token)
-    [KIAUtils saveUserToken:token];
   if ([delegate respondsToSelector:@selector(klarnaRegistrationController:didFinishWithUserToken:)])
   {
-    [delegate klarnaRegistrationController:self didFinishWithUserToken:[[KIAToken alloc] initWithToken: token]];
+    [delegate klarnaRegistrationController:self didFinishWithUserToken:[[KIAToken alloc] initWithToken: payload[@"userToken"]]];
   }
 }
 

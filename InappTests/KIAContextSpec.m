@@ -1,5 +1,5 @@
 #import "KIAContext.h"
-#import "KIAUtils.h"
+
 SPEC_BEGIN(KIAContextSpec)
 
 describe(@".getApiKey", ^{
@@ -12,19 +12,6 @@ describe(@".getApiKey", ^{
     [KIAContext setApiKey:@"my_key"];
     
     [[[KIAContext getApiKey] should] equal:@"my_key"];
-  });
-});
-
-describe(@".userFinishedRegistration", ^{
-  
-  it(@"should return false when token is not set", ^{
-    [[theValue([KIAContext userFinishedRegistration]) should] equal:theValue(NO)];
-  });
-  
-  it(@"should return true when token exists", ^{
-    [KIAUtils stub:@selector(getUserToken) andReturn:@"my_token"];
-    
-    [[theValue([KIAContext userFinishedRegistration]) should] equal:theValue(YES)];
   });
 });
 

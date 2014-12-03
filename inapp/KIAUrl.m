@@ -1,6 +1,9 @@
 #import "KIAUrl.h"
 #import "KIAContext.h"
 
+#define KLARNA_PLAYGROUND_URL @"https://inapp.playground.klarna.com"
+#define KLARNA_PRODUCTION_URL @"https://inapp.klarna.com"
+
 @interface KIAUrl()
 + (NSString *)baseUrl;
 + (NSString *)locale;
@@ -16,9 +19,9 @@
 
 + (NSString *)baseUrl {
   if ([[KIAContext getApiKey] hasPrefix:@"test_"]) {
-    return @"https://inapp.playground.klarna.com";
+    return KLARNA_PLAYGROUND_URL;
   }
-  return @"https://inapp.klarna.com";
+  return KLARNA_PRODUCTION_URL;
 }
 
 + (NSString *)locale {

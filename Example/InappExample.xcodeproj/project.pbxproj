@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		467F0ED21A2B72F600A76845 /* Jockey.m in Sources */ = {isa = PBXBuildFile; fileRef = 467F0ED11A2B72F600A76845 /* Jockey.m */; };
 		467F0EDE1A2C6BAC00A76845 /* KIAToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 467F0EDD1A2C6BAC00A76845 /* KIAToken.m */; };
-		467F0EE11A2DE34400A76845 /* KIAUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 467F0EE01A2DE34400A76845 /* KIAUtils.m */; };
 		C90D1C961A24CE2500016FE4 /* KIAContext.m in Sources */ = {isa = PBXBuildFile; fileRef = C90D1C901A24CE2500016FE4 /* KIAContext.m */; };
 		C90D1C971A24CE2500016FE4 /* KIARegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C90D1C921A24CE2500016FE4 /* KIARegistrationViewController.m */; };
 		C90D1C981A24CE2500016FE4 /* KIAUrl.m in Sources */ = {isa = PBXBuildFile; fileRef = C90D1C941A24CE2500016FE4 /* KIAUrl.m */; };
@@ -36,8 +35,6 @@
 		467F0ED11A2B72F600A76845 /* Jockey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Jockey.m; sourceTree = "<group>"; };
 		467F0EDC1A2C6BAC00A76845 /* KIAToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KIAToken.h; path = ../inapp/KIAToken.h; sourceTree = "<group>"; };
 		467F0EDD1A2C6BAC00A76845 /* KIAToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KIAToken.m; path = ../inapp/KIAToken.m; sourceTree = "<group>"; };
-		467F0EDF1A2DE34400A76845 /* KIAUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KIAUtils.h; path = ../inapp/KIAUtils.h; sourceTree = "<group>"; };
-		467F0EE01A2DE34400A76845 /* KIAUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KIAUtils.m; path = ../inapp/KIAUtils.m; sourceTree = "<group>"; };
 		C90D1C8F1A24CE2500016FE4 /* KIAContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KIAContext.h; sourceTree = "<group>"; };
 		C90D1C901A24CE2500016FE4 /* KIAContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KIAContext.m; sourceTree = "<group>"; };
 		C90D1C911A24CE2500016FE4 /* KIARegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KIARegistrationViewController.h; sourceTree = "<group>"; };
@@ -105,8 +102,6 @@
 				C90D1C921A24CE2500016FE4 /* KIARegistrationViewController.m */,
 				C90D1C931A24CE2500016FE4 /* KIAUrl.h */,
 				C90D1C941A24CE2500016FE4 /* KIAUrl.m */,
-				467F0EDF1A2DE34400A76845 /* KIAUtils.h */,
-				467F0EE01A2DE34400A76845 /* KIAUtils.m */,
 			);
 			name = Inapp;
 			path = ../Inapp;
@@ -276,7 +271,6 @@
 				C90D1C981A24CE2500016FE4 /* KIAUrl.m in Sources */,
 				C946A3CF1A24C21D00A12CC6 /* AppDelegate.m in Sources */,
 				467F0EDE1A2C6BAC00A76845 /* KIAToken.m in Sources */,
-				467F0EE11A2DE34400A76845 /* KIAUtils.m in Sources */,
 				C90D1C971A24CE2500016FE4 /* KIARegistrationViewController.m in Sources */,
 				C90D1C961A24CE2500016FE4 /* KIAContext.m in Sources */,
 				467F0ED21A2B72F600A76845 /* Jockey.m in Sources */,
@@ -355,7 +349,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -390,7 +384,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -402,6 +396,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = InappExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -412,6 +407,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = InappExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

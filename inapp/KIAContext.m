@@ -1,5 +1,4 @@
 #import "KIAContext.h"
-#import "KIAUtils.h"
 
 @implementation KIAContext
 
@@ -7,10 +6,6 @@ static NSString *apiKey;
 
 + (void)setApiKey:(NSString *)aApiKey {
     apiKey = aApiKey;
-}
-
-+ (bool)userFinishedRegistration {
-  return [KIAUtils getUserToken] != nil;
 }
 
 + (NSString *)getApiKey {
