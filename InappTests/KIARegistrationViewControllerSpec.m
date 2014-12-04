@@ -60,7 +60,7 @@ describe(@"KIARegistrationViewControllerSpec", ^{
   });
   
   describe(@".handleUserReadyEventWithPayload", ^{
-    it(@"should save token and call delegate on .handleUserReadyEvent when there is a token in payload", ^ {
+    it(@"call delegate on .handleUserReadyEvent when there is a token in payload", ^ {
       [[kiaRegistrationDelegate should] receive:@selector(klarnaRegistrationController:didFinishWithUserToken:) withArguments:kiaRegistrationController, [[KIAToken alloc] initWithToken:@"my_token"]];
       [kiaRegistrationController handleUserReadyEventWithPayload:@{@"userToken":@"my_token"}];
     });
