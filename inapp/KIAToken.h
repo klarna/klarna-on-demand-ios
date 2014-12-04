@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
 
 /**
- *  Holds the user Klarna token, which is used for making orders.
+ *  Holds the user's Klarna token, which is used for making orders.
  */
 @interface KIAToken : NSObject
 
