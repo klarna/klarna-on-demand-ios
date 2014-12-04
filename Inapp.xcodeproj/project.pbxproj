@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		467F0EC21A2B6DE900A76845 /* Jockey.m in Sources */ = {isa = PBXBuildFile; fileRef = 467F0EC11A2B6DE900A76845 /* Jockey.m */; };
+		467F0EDB1A2C6AC900A76845 /* KIAToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 467F0ED91A2C696100A76845 /* KIAToken.m */; };
 		46872D191A2B240000707282 /* KIARegistrationViewControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 46872D181A2B240000707282 /* KIARegistrationViewControllerSpec.m */; };
 		94089DAB3DF698D7BB0ACB25 /* libPods-InappTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D1FE0E1CBCA1595B5EFACB69 /* libPods-InappTests.a */; };
-		C903A2DF1A2523A8009AE44D /* InappTests.plist in Resources */ = {isa = PBXBuildFile; fileRef = C903A2DE1A2523A8009AE44D /* InappTests.plist */; };
 		C903A2E11A2523B6009AE44D /* KIAUrlSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C903A2E01A2523B6009AE44D /* KIAUrlSpec.m */; };
 		C90D1C6C1A24CBD100016FE4 /* libInapp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C90D1C601A24CBD100016FE4 /* libInapp.a */; };
 		C90D1C891A24CD2800016FE4 /* KIAContext.m in Sources */ = {isa = PBXBuildFile; fileRef = C90D1C841A24CD2800016FE4 /* KIAContext.m */; };
@@ -41,6 +42,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		467F0EC01A2B6DE900A76845 /* Jockey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Jockey.h; path = 3rdParty/JockeyJS/Jockey.h; sourceTree = "<group>"; };
+		467F0EC11A2B6DE900A76845 /* Jockey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Jockey.m; path = 3rdParty/JockeyJS/Jockey.m; sourceTree = "<group>"; };
+		467F0ED81A2C696100A76845 /* KIAToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KIAToken.h; path = inapp/KIAToken.h; sourceTree = SOURCE_ROOT; };
+		467F0ED91A2C696100A76845 /* KIAToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KIAToken.m; path = inapp/KIAToken.m; sourceTree = SOURCE_ROOT; };
 		46872D181A2B240000707282 /* KIARegistrationViewControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KIARegistrationViewControllerSpec.m; sourceTree = "<group>"; };
 		787D5A12488247D4C7B5FC9E /* Pods-InappTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InappTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InappTests/Pods-InappTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8A6713AF3B794D95017D61E6 /* Pods-InappTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InappTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-InappTests/Pods-InappTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -79,6 +84,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		46872DF11A2B6C0900707282 /* 3rdParty */ = {
+			isa = PBXGroup;
+			children = (
+				46872DF21A2B6C1200707282 /* JockeyJS */,
+			);
+			name = 3rdParty;
+			sourceTree = "<group>";
+		};
+		46872DF21A2B6C1200707282 /* JockeyJS */ = {
+			isa = PBXGroup;
+			children = (
+				467F0EC01A2B6DE900A76845 /* Jockey.h */,
+				467F0EC11A2B6DE900A76845 /* Jockey.m */,
+			);
+			name = JockeyJS;
+			sourceTree = "<group>";
+		};
 		6F923A30568F1C8DCBD1121A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +121,7 @@
 		C90D1C571A24CBD100016FE4 = {
 			isa = PBXGroup;
 			children = (
+				46872DF11A2B6C0900707282 /* 3rdParty */,
 				C90D1C621A24CBD100016FE4 /* Inapp */,
 				C90D1C6F1A24CBD100016FE4 /* InappTests */,
 				C90D1C611A24CBD100016FE4 /* Products */,
@@ -125,6 +148,8 @@
 				C90D1C861A24CD2800016FE4 /* KIARegistrationViewController.m */,
 				C90D1C871A24CD2800016FE4 /* KIAUrl.h */,
 				C90D1C881A24CD2800016FE4 /* KIAUrl.m */,
+				467F0ED81A2C696100A76845 /* KIAToken.h */,
+				467F0ED91A2C696100A76845 /* KIAToken.m */,
 			);
 			path = Inapp;
 			sourceTree = "<group>";
@@ -229,7 +254,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C903A2DF1A2523A8009AE44D /* InappTests.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,6 +297,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				467F0EDB1A2C6AC900A76845 /* KIAToken.m in Sources */,
+				467F0EC21A2B6DE900A76845 /* Jockey.m in Sources */,
 				C90D1C8A1A24CD2800016FE4 /* KIARegistrationViewController.m in Sources */,
 				C90D1C891A24CD2800016FE4 /* KIAContext.m in Sources */,
 				C90D1C8B1A24CD2800016FE4 /* KIAUrl.m in Sources */,
@@ -333,7 +359,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -367,7 +393,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;

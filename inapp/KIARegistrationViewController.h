@@ -1,4 +1,5 @@
 #import <UIKit/UIKit.h>
+#import "KIAToken.h"
 
 @protocol KIARegistrationViewControllerDelegate;
 
@@ -36,5 +37,13 @@
  *  @param controller Controller that initiated the event.
  */
 -(void) klarnaRegistrationCancelled:(KIARegistrationViewController *)controller;
+
+/**
+ *  Handler for Klarna registration finished event.
+ *
+ *  @param controller Controller that initiated the event.
+ *  @param token      user-token for making orders.
+ */
+-(void) klarnaRegistrationController: (KIARegistrationViewController *) controller didFinishWithUserToken:(KIAToken *) token;
 
 @end

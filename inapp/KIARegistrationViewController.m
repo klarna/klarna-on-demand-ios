@@ -1,5 +1,10 @@
 #import "KIARegistrationViewController.h"
 #import "KIAUrl.h"
+#import "Jockey.h"
+#import "KIAContext.h"
+
+#define JOCKEY_USER_READY @"userReady"
+#define JOCKEY_USER_ERROR @"userError"
 
 @implementation KIARegistrationViewController
 
@@ -18,16 +23,17 @@ id<KIARegistrationViewControllerDelegate> delegate;
   return @"Payment Details";
 }
 
-
 - (void)viewDidLoad {
   [super viewDidLoad];
   
-  if(self.navigationController) {
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStylePlain target:self action:@selector(cancelButtonPressed)];
-  }
+  self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStylePlain target:self action:@selector(cancelButtonPressed)];
   
   [self AddWebView];
+  
+  [self registerJockeyEvents];
+  
   [self AddSpinner];
+  
 }
 
 - (void)AddWebView {
@@ -63,6 +69,10 @@ id<KIARegistrationViewControllerDelegate> delegate;
   [_spinnerView removeFromSuperview];
 }
 
+-(BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
+{
+  return [Jockey webView:webView withUrl:[request URL]];
+}
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
   [self RemoveSpinnerIfExists];
@@ -84,6 +94,39 @@ id<KIARegistrationViewControllerDelegate> delegate;
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
   [self RemoveSpinnerIfExists];
+}
+
+- (void)registerJockeyEvents {
+  [Jockey on:JOCKEY_USER_READY perform:^(NSDictionary *payload) {
+    [self handleUserReadyEventWithPayload: payload];
+  }];
+  
+  [Jockey on:JOCKEY_USER_ERROR perform:^(NSDictionary *payload) {
+    [self handleUserErrorEvent];
+  }];
+}
+
+- (void) handleUserReadyEventWithPayload: (NSDictionary *)payload {
+  if ([delegate respondsToSelector:@selector(klarnaRegistrationController:didFinishWithUserToken:)])
+  {
+    [delegate klarnaRegistrationController:self didFinishWithUserToken:[[KIAToken alloc] initWithToken: payload[@"userToken"]]];
+  }
+}
+
+- (void) handleUserErrorEvent {
+  if ([delegate respondsToSelector:@selector(klarnaRegistrationFailed:)])
+  {
+    [delegate klarnaRegistrationFailed:self];
+  }
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+  [self unregisterJockeyCallbacks];
+}
+
+- (void)unregisterJockeyCallbacks{
+  [Jockey off:JOCKEY_USER_READY];
+  [Jockey off:JOCKEY_USER_ERROR];
 }
 
 @end

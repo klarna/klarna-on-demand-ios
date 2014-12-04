@@ -3,5 +3,8 @@
 
 @interface MainViewController : UIViewController<KIARegistrationViewControllerDelegate>
 
+@property (weak, nonatomic) IBOutlet UIButton *registerButton;
+
+@property (weak, nonatomic) IBOutlet UIButton *buyButton;
 @end
 
