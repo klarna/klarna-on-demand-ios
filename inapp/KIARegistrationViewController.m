@@ -6,17 +6,27 @@
 #define JOCKEY_USER_READY @"userReady"
 #define JOCKEY_USER_ERROR @"userError"
 
+@interface KIARegistrationViewController ()
+
+// TODO: check if it should be weak or assign.
+@property (nonatomic, weak) id<KIARegistrationViewControllerDelegate> delegate;
+@property (strong, nonatomic) UIView *spinnerView;
+
+@end
+
 @implementation KIARegistrationViewController
 
-UIView *_spinnerView;
-
-id<KIARegistrationViewControllerDelegate> delegate;
-
-- (id)initWithDelegate:(id<KIARegistrationViewControllerDelegate>)aDelegate {
-  if (self = [super init]) {
-    delegate = aDelegate;
+- (id)initWithDelegate:(id<KIARegistrationViewControllerDelegate>)delegate {
+  self = [super init];
+  if (self) {
+    _delegate = delegate;
   }
   return self;
+}
+
+-(id) init {
+  NSAssert(NO, @"Initialize with -initWithDelegate");
+  return nil;
 }
 
 - (NSString *)title {
@@ -47,7 +57,7 @@ id<KIARegistrationViewControllerDelegate> delegate;
 - (void)AddSpinner {
   _spinnerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 80, 80)];
   _spinnerView.center = self.view.center;
-  _spinnerView.backgroundColor = [UIColor colorWithWhite:0. alpha:0.6];
+  _spinnerView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.6];
   _spinnerView.layer.cornerRadius = 5;
   
   UIActivityIndicatorView *activityView= [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
@@ -79,16 +89,16 @@ id<KIARegistrationViewControllerDelegate> delegate;
   
   NSLog(@"Klarna registration web view failed with the following error: %@", [error description]);
   
-  if ([error code] != NSURLErrorCancelled && [delegate respondsToSelector:@selector(klarnaRegistrationFailed:)])
+  if ([error code] != NSURLErrorCancelled && [_delegate respondsToSelector:@selector(klarnaRegistrationFailed:)])
   {
-    [delegate klarnaRegistrationFailed:self];
+    [_delegate klarnaRegistrationFailed:self];
   }
 }
 
 - (void)cancelButtonPressed {
-  if ([delegate respondsToSelector:@selector(klarnaRegistrationCancelled:)])
+  if ([_delegate respondsToSelector:@selector(klarnaRegistrationCancelled:)])
   {
-    [delegate klarnaRegistrationCancelled:self];
+    [_delegate klarnaRegistrationCancelled:self];
   }
 }
 
@@ -107,16 +117,16 @@ id<KIARegistrationViewControllerDelegate> delegate;
 }
 
 - (void) handleUserReadyEventWithPayload: (NSDictionary *)payload {
-  if ([delegate respondsToSelector:@selector(klarnaRegistrationController:didFinishWithUserToken:)])
+  if ([_delegate respondsToSelector:@selector(klarnaRegistrationController:didFinishWithUserToken:)])
   {
-    [delegate klarnaRegistrationController:self didFinishWithUserToken:[[KIAToken alloc] initWithToken: payload[@"userToken"]]];
+    [_delegate klarnaRegistrationController:self didFinishWithUserToken:[[KIAToken alloc] initWithToken: payload[@"userToken"]]];
   }
 }
 
 - (void) handleUserErrorEvent {
-  if ([delegate respondsToSelector:@selector(klarnaRegistrationFailed:)])
+  if ([_delegate respondsToSelector:@selector(klarnaRegistrationFailed:)])
   {
-    [delegate klarnaRegistrationFailed:self];
+    [_delegate klarnaRegistrationFailed:self];
   }
 }
 

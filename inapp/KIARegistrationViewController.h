@@ -1,29 +1,14 @@
 #import <UIKit/UIKit.h>
 #import "KIAToken.h"
 
-@protocol KIARegistrationViewControllerDelegate;
+@class KIARegistrationViewController;
 
-/**
- *  Responsible for registering a new user and setting his Klarna payment method.
- */
-@interface KIARegistrationViewController : UIViewController <UIWebViewDelegate>
-
-/**
- *  Initialize the Klarna registration view-controller.
- *
- *  @param delegate Delegate which implement KIARegistrationViewControllerDelegate protocol for handling registration events.
- *
- *  @return Initialized object.
- */
-- (id)initWithDelegate:(id<KIARegistrationViewControllerDelegate>)delegate;
-
-@end
 
 /**
  *  Defines the protocol for RegistrationViewController events.
  */
 @protocol KIARegistrationViewControllerDelegate <NSObject>
-
+//TODO: @required
 /**
  *  Handler for registration failure events.
  *
@@ -45,5 +30,21 @@
  *  @param token      user-token for making orders.
  */
 -(void) klarnaRegistrationController: (KIARegistrationViewController *) controller didFinishWithUserToken:(KIAToken *) token;
+
+@end
+
+/**
+ *  Responsible for registering a new user and setting his Klarna payment method.
+ */
+@interface KIARegistrationViewController : UIViewController <UIWebViewDelegate>
+
+/**
+ *  Initialize the Klarna registration view-controller.
+ *
+ *  @param delegate Delegate which implement KIARegistrationViewControllerDelegate protocol for handling registration events.
+ *
+ *  @return Initialized object.
+ */
+- (id)initWithDelegate:(id<KIARegistrationViewControllerDelegate>)delegate;
 
 @end
