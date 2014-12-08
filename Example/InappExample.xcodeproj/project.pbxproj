@@ -8,20 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		467F0ED21A2B72F600A76845 /* Jockey.m in Sources */ = {isa = PBXBuildFile; fileRef = 467F0ED11A2B72F600A76845 /* Jockey.m */; };
-		467F0EDE1A2C6BAC00A76845 /* KIAToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 467F0EDD1A2C6BAC00A76845 /* KIAToken.m */; };
-		C90D1C961A24CE2500016FE4 /* KIAContext.m in Sources */ = {isa = PBXBuildFile; fileRef = C90D1C901A24CE2500016FE4 /* KIAContext.m */; };
-		C90D1C971A24CE2500016FE4 /* KIARegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C90D1C921A24CE2500016FE4 /* KIARegistrationViewController.m */; };
-		C90D1C981A24CE2500016FE4 /* KIAUrl.m in Sources */ = {isa = PBXBuildFile; fileRef = C90D1C941A24CE2500016FE4 /* KIAUrl.m */; };
 		C946A3CC1A24C21D00A12CC6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C946A3CB1A24C21D00A12CC6 /* main.m */; };
 		C946A3CF1A24C21D00A12CC6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C946A3CE1A24C21D00A12CC6 /* AppDelegate.m */; };
 		C946A3D21A24C21D00A12CC6 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C946A3D11A24C21D00A12CC6 /* MainViewController.m */; };
 		C946A3D51A24C21D00A12CC6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C946A3D31A24C21D00A12CC6 /* Main.storyboard */; };
 		C946A3D71A24C21D00A12CC6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C946A3D61A24C21D00A12CC6 /* Images.xcassets */; };
 		C946A3DA1A24C21D00A12CC6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C946A3D81A24C21D00A12CC6 /* LaunchScreen.xib */; };
-		C954ABD71A34AEFC00574C11 /* KIALocalization.m in Sources */ = {isa = PBXBuildFile; fileRef = C954ABD11A34AEFC00574C11 /* KIALocalization.m */; };
-		C954ABD81A34AEFC00574C11 /* KIA.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C954ABD21A34AEFC00574C11 /* KIA.bundle */; };
-		C954ABDA1A34AEFC00574C11 /* localization.strings in Resources */ = {isa = PBXBuildFile; fileRef = C954ABD41A34AEFC00574C11 /* localization.strings */; };
-		C954ABDC1A34AEFC00574C11 /* localization.strings in Resources */ = {isa = PBXBuildFile; fileRef = C954ABD61A34AEFC00574C11 /* localization.strings */; };
+		C9C631D01A35B7B400A9A151 /* libInapp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9C631CF1A35B7B400A9A151 /* libInapp.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,14 +30,6 @@
 /* Begin PBXFileReference section */
 		467F0ED01A2B72F600A76845 /* Jockey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Jockey.h; sourceTree = "<group>"; };
 		467F0ED11A2B72F600A76845 /* Jockey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Jockey.m; sourceTree = "<group>"; };
-		467F0EDC1A2C6BAC00A76845 /* KIAToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KIAToken.h; path = ../inapp/KIAToken.h; sourceTree = "<group>"; };
-		467F0EDD1A2C6BAC00A76845 /* KIAToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KIAToken.m; path = ../inapp/KIAToken.m; sourceTree = "<group>"; };
-		C90D1C8F1A24CE2500016FE4 /* KIAContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KIAContext.h; sourceTree = "<group>"; };
-		C90D1C901A24CE2500016FE4 /* KIAContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KIAContext.m; sourceTree = "<group>"; };
-		C90D1C911A24CE2500016FE4 /* KIARegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KIARegistrationViewController.h; sourceTree = "<group>"; };
-		C90D1C921A24CE2500016FE4 /* KIARegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KIARegistrationViewController.m; sourceTree = "<group>"; };
-		C90D1C931A24CE2500016FE4 /* KIAUrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KIAUrl.h; sourceTree = "<group>"; };
-		C90D1C941A24CE2500016FE4 /* KIAUrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KIAUrl.m; sourceTree = "<group>"; };
 		C946A3C61A24C21D00A12CC6 /* InappExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InappExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C946A3CA1A24C21D00A12CC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C946A3CB1A24C21D00A12CC6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -57,13 +42,9 @@
 		C946A3D91A24C21D00A12CC6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		C946A3DF1A24C21D00A12CC6 /* InappExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InappExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C946A3E41A24C21D00A12CC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C954ABD01A34AEFC00574C11 /* KIALocalization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KIALocalization.h; path = ../inapp/KIALocalization.h; sourceTree = "<group>"; };
-		C954ABD11A34AEFC00574C11 /* KIALocalization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KIALocalization.m; path = ../inapp/KIALocalization.m; sourceTree = "<group>"; };
-		C954ABD21A34AEFC00574C11 /* KIA.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = KIA.bundle; path = ../inapp/KIA.bundle; sourceTree = "<group>"; };
-		C954ABD41A34AEFC00574C11 /* localization.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = localization.strings; path = ../inapp/KIA.bundle/en.lproj/localization.strings; sourceTree = "<group>"; };
-		C954ABD61A34AEFC00574C11 /* localization.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = localization.strings; path = ../inapp/KIA.bundle/sv.lproj/localization.strings; sourceTree = "<group>"; };
 		C954ABDD1A34BD8A00574C11 /* sv-SE */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "sv-SE"; path = "sv-SE.lproj/Main.strings"; sourceTree = "<group>"; };
 		C954ABDE1A34BD8A00574C11 /* sv-SE */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "sv-SE"; path = "sv-SE.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		C9C631CF1A35B7B400A9A151 /* libInapp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libInapp.a; path = "../build/Debug-iphoneos/libInapp.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9C631D01A35B7B400A9A151 /* libInapp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,32 +84,11 @@
 			path = JockeyJS;
 			sourceTree = "<group>";
 		};
-		C90D1C8C1A24CE2500016FE4 /* Inapp */ = {
-			isa = PBXGroup;
-			children = (
-				C954ABD21A34AEFC00574C11 /* KIA.bundle */,
-				C90D1C8F1A24CE2500016FE4 /* KIAContext.h */,
-				C90D1C901A24CE2500016FE4 /* KIAContext.m */,
-				C954ABD01A34AEFC00574C11 /* KIALocalization.h */,
-				C954ABD11A34AEFC00574C11 /* KIALocalization.m */,
-				C90D1C911A24CE2500016FE4 /* KIARegistrationViewController.h */,
-				C90D1C921A24CE2500016FE4 /* KIARegistrationViewController.m */,
-				467F0EDC1A2C6BAC00A76845 /* KIAToken.h */,
-				467F0EDD1A2C6BAC00A76845 /* KIAToken.m */,
-				C90D1C931A24CE2500016FE4 /* KIAUrl.h */,
-				C90D1C941A24CE2500016FE4 /* KIAUrl.m */,
-				C954ABD41A34AEFC00574C11 /* localization.strings */,
-				C954ABD61A34AEFC00574C11 /* localization.strings */,
-			);
-			name = Inapp;
-			path = ../Inapp;
-			sourceTree = "<group>";
-		};
 		C946A3BD1A24C21D00A12CC6 = {
 			isa = PBXGroup;
 			children = (
+				C9C631CF1A35B7B400A9A151 /* libInapp.a */,
 				467F0ECE1A2B72F600A76845 /* 3rdParty */,
-				C90D1C8C1A24CE2500016FE4 /* Inapp */,
 				C946A3C81A24C21D00A12CC6 /* InappExample */,
 				C946A3E21A24C21D00A12CC6 /* InappExampleTests */,
 				C946A3C71A24C21D00A12CC6 /* Products */,
@@ -264,11 +225,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C946A3D51A24C21D00A12CC6 /* Main.storyboard in Resources */,
-				C954ABDA1A34AEFC00574C11 /* localization.strings in Resources */,
 				C946A3DA1A24C21D00A12CC6 /* LaunchScreen.xib in Resources */,
 				C946A3D71A24C21D00A12CC6 /* Images.xcassets in Resources */,
-				C954ABDC1A34AEFC00574C11 /* localization.strings in Resources */,
-				C954ABD81A34AEFC00574C11 /* KIA.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,13 +244,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C954ABD71A34AEFC00574C11 /* KIALocalization.m in Sources */,
 				C946A3D21A24C21D00A12CC6 /* MainViewController.m in Sources */,
-				C90D1C981A24CE2500016FE4 /* KIAUrl.m in Sources */,
 				C946A3CF1A24C21D00A12CC6 /* AppDelegate.m in Sources */,
-				467F0EDE1A2C6BAC00A76845 /* KIAToken.m in Sources */,
-				C90D1C971A24CE2500016FE4 /* KIARegistrationViewController.m in Sources */,
-				C90D1C961A24CE2500016FE4 /* KIAContext.m in Sources */,
 				467F0ED21A2B72F600A76845 /* Jockey.m in Sources */,
 				C946A3CC1A24C21D00A12CC6 /* main.m in Sources */,
 			);
@@ -420,6 +373,10 @@
 				INFOPLIST_FILE = InappExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/yuvalnetanel/projects/inapp-ios/build/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -431,6 +388,10 @@
 				INFOPLIST_FILE = InappExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/yuvalnetanel/projects/inapp-ios/build/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

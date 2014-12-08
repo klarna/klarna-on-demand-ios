@@ -4,12 +4,6 @@
 #define KLARNA_PLAYGROUND_URL @"https://inapp.playground.klarna.com"
 #define KLARNA_PRODUCTION_URL @"https://inapp.klarna.com"
 
-@interface KIAUrl()
-+ (NSString *)baseUrl;
-+ (NSString *)locale;
-
-@end
-
 @implementation KIAUrl
 
 + (NSURL *)registrationUrl {

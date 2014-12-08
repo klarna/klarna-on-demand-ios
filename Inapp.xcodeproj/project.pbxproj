@@ -17,6 +17,7 @@
 		C90D1C8A1A24CD2800016FE4 /* KIARegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C90D1C861A24CD2800016FE4 /* KIARegistrationViewController.m */; };
 		C90D1C8B1A24CD2800016FE4 /* KIAUrl.m in Sources */ = {isa = PBXBuildFile; fileRef = C90D1C881A24CD2800016FE4 /* KIAUrl.m */; };
 		C954ABA71A345B5E00574C11 /* KIALocalization.m in Sources */ = {isa = PBXBuildFile; fileRef = C954ABA61A345B5E00574C11 /* KIALocalization.m */; };
+		C954ABE11A35AB6300574C11 /* KIA.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C954ABCD1A34950300574C11 /* KIA.bundle */; };
 		C9FC95411A278AAD00485500 /* KIAContextSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FC95401A278AAD00485500 /* KIAContextSpec.m */; };
 /* End PBXBuildFile section */
 
@@ -261,6 +262,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C954ABE11A35AB6300574C11 /* KIA.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
