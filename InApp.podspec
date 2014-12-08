@@ -29,7 +29,7 @@ Pod::Spec.new do |s|
 
   s.source_files = 'inapp'
   s.resource_bundle = {
-    'KIA' => 'inapp/KIA-Localization/*.lproj'
+    'KIA' => 'inapp/KIA.bundle/*.lproj'
   }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
