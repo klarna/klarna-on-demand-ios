@@ -1,17 +1,14 @@
 #import <Foundation/Foundation.h>
 
 /**
- *  Handles localization language.
- *  Currently support English and Swedish.
- *  The translation reside in KIA bundle localization table.
- *  KIALocalization doesn't support code defualts, so please add new key to all locales.
+ *  Handles localization.
  */
 @interface KIALocalization : NSObject
 
 /**
- *  Return Localized string for key.
+ *  Returns a localized string for a specified key.
  *
- *  @param key in the localization table.
+ *  @param localization key.
  *
  *  @return Localized string.
  */
