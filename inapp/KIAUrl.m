@@ -19,7 +19,7 @@
 }
 
 + (NSString *)locale {
-  return [[[NSBundle mainBundle] preferredLocalizations] objectAtIndex:0];
+  return [[NSBundle mainBundle] preferredLocalizations].firstObject;
 }
 
 @end

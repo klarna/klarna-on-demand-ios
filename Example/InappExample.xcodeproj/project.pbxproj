@@ -14,7 +14,12 @@
 		C946A3D51A24C21D00A12CC6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C946A3D31A24C21D00A12CC6 /* Main.storyboard */; };
 		C946A3D71A24C21D00A12CC6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C946A3D61A24C21D00A12CC6 /* Images.xcassets */; };
 		C946A3DA1A24C21D00A12CC6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C946A3D81A24C21D00A12CC6 /* LaunchScreen.xib */; };
-		C9C631D01A35B7B400A9A151 /* libInapp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9C631CF1A35B7B400A9A151 /* libInapp.a */; };
+		C9E178CC1A35D85A00F41811 /* KIA.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C9E178C01A35D85A00F41811 /* KIA.bundle */; };
+		C9E178CD1A35D85A00F41811 /* KIAContext.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E178C21A35D85A00F41811 /* KIAContext.m */; };
+		C9E178CE1A35D85A00F41811 /* KIALocalization.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E178C41A35D85A00F41811 /* KIALocalization.m */; };
+		C9E178CF1A35D85A00F41811 /* KIARegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E178C61A35D85A00F41811 /* KIARegistrationViewController.m */; };
+		C9E178D01A35D85A00F41811 /* KIAToken.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E178C81A35D85A00F41811 /* KIAToken.m */; };
+		C9E178D11A35D85A00F41811 /* KIAUrl.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E178CA1A35D85A00F41811 /* KIAUrl.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +49,17 @@
 		C946A3E41A24C21D00A12CC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C954ABDD1A34BD8A00574C11 /* sv-SE */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "sv-SE"; path = "sv-SE.lproj/Main.strings"; sourceTree = "<group>"; };
 		C954ABDE1A34BD8A00574C11 /* sv-SE */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "sv-SE"; path = "sv-SE.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
-		C9C631CF1A35B7B400A9A151 /* libInapp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libInapp.a; path = "../build/Debug-iphoneos/libInapp.a"; sourceTree = "<group>"; };
+		C9E178C01A35D85A00F41811 /* KIA.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = KIA.bundle; path = ../inapp/KIA.bundle; sourceTree = "<group>"; };
+		C9E178C11A35D85A00F41811 /* KIAContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KIAContext.h; sourceTree = "<group>"; };
+		C9E178C21A35D85A00F41811 /* KIAContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KIAContext.m; sourceTree = "<group>"; };
+		C9E178C31A35D85A00F41811 /* KIALocalization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KIALocalization.h; path = ../inapp/KIALocalization.h; sourceTree = "<group>"; };
+		C9E178C41A35D85A00F41811 /* KIALocalization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KIALocalization.m; path = ../inapp/KIALocalization.m; sourceTree = "<group>"; };
+		C9E178C51A35D85A00F41811 /* KIARegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KIARegistrationViewController.h; sourceTree = "<group>"; };
+		C9E178C61A35D85A00F41811 /* KIARegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KIARegistrationViewController.m; sourceTree = "<group>"; };
+		C9E178C71A35D85A00F41811 /* KIAToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KIAToken.h; path = ../inapp/KIAToken.h; sourceTree = "<group>"; };
+		C9E178C81A35D85A00F41811 /* KIAToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KIAToken.m; path = ../inapp/KIAToken.m; sourceTree = "<group>"; };
+		C9E178C91A35D85A00F41811 /* KIAUrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KIAUrl.h; sourceTree = "<group>"; };
+		C9E178CA1A35D85A00F41811 /* KIAUrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KIAUrl.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +67,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9C631D01A35B7B400A9A151 /* libInapp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,7 +101,7 @@
 		C946A3BD1A24C21D00A12CC6 = {
 			isa = PBXGroup;
 			children = (
-				C9C631CF1A35B7B400A9A151 /* libInapp.a */,
+				C9E178CB1A35D85A00F41811 /* Inapp */,
 				467F0ECE1A2B72F600A76845 /* 3rdParty */,
 				C946A3C81A24C21D00A12CC6 /* InappExample */,
 				C946A3E21A24C21D00A12CC6 /* InappExampleTests */,
@@ -142,6 +156,25 @@
 				C946A3E41A24C21D00A12CC6 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C9E178CB1A35D85A00F41811 /* Inapp */ = {
+			isa = PBXGroup;
+			children = (
+				C9E178C01A35D85A00F41811 /* KIA.bundle */,
+				C9E178C11A35D85A00F41811 /* KIAContext.h */,
+				C9E178C21A35D85A00F41811 /* KIAContext.m */,
+				C9E178C31A35D85A00F41811 /* KIALocalization.h */,
+				C9E178C41A35D85A00F41811 /* KIALocalization.m */,
+				C9E178C51A35D85A00F41811 /* KIARegistrationViewController.h */,
+				C9E178C61A35D85A00F41811 /* KIARegistrationViewController.m */,
+				C9E178C71A35D85A00F41811 /* KIAToken.h */,
+				C9E178C81A35D85A00F41811 /* KIAToken.m */,
+				C9E178C91A35D85A00F41811 /* KIAUrl.h */,
+				C9E178CA1A35D85A00F41811 /* KIAUrl.m */,
+			);
+			name = Inapp;
+			path = ../Inapp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -227,6 +260,7 @@
 				C946A3D51A24C21D00A12CC6 /* Main.storyboard in Resources */,
 				C946A3DA1A24C21D00A12CC6 /* LaunchScreen.xib in Resources */,
 				C946A3D71A24C21D00A12CC6 /* Images.xcassets in Resources */,
+				C9E178CC1A35D85A00F41811 /* KIA.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,10 +278,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9E178CE1A35D85A00F41811 /* KIALocalization.m in Sources */,
 				C946A3D21A24C21D00A12CC6 /* MainViewController.m in Sources */,
+				C9E178D11A35D85A00F41811 /* KIAUrl.m in Sources */,
 				C946A3CF1A24C21D00A12CC6 /* AppDelegate.m in Sources */,
+				C9E178D01A35D85A00F41811 /* KIAToken.m in Sources */,
 				467F0ED21A2B72F600A76845 /* Jockey.m in Sources */,
+				C9E178CD1A35D85A00F41811 /* KIAContext.m in Sources */,
 				C946A3CC1A24C21D00A12CC6 /* main.m in Sources */,
+				C9E178CF1A35D85A00F41811 /* KIARegistrationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
