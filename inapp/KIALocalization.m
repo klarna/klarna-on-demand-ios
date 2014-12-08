@@ -3,11 +3,16 @@
 @implementation KIALocalization
 
 + (NSBundle*)KIABundle {
-  NSString *bundlePath = [NSBundle.mainBundle pathForResource:@"KIA" ofType:@"bundle"];
-  if (!bundlePath) {
-    bundlePath = [[NSBundle bundleForClass:[self class]] pathForResource:@"KIA" ofType:@"bundle"];
+  static NSBundle *bundle = nil;
+  
+  if (!bundle) {
+    NSString *bundlePath = [NSBundle.mainBundle pathForResource:@"KIA" ofType:@"bundle"];
+    if (!bundlePath) {
+      bundlePath = [[NSBundle bundleForClass:[self class]] pathForResource:@"KIA" ofType:@"bundle"];
+    }
+    bundle = [NSBundle bundleWithPath:bundlePath];
   }
-  return [NSBundle bundleWithPath:bundlePath];
+  return bundle;
 }
 
 + (NSString *)localizedStringForKey:(NSString *)key {
