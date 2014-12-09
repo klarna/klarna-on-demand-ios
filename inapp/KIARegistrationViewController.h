@@ -9,23 +9,24 @@
  */
 @protocol KIARegistrationViewControllerDelegate <NSObject>
 
-@required
 
 /**
- *  Handler for Klarna registration finished event.
+ *  Handler for registration finished event. 
+ *  The event is fired when the user has finished registration and a token has been created.
+ *  The token is required for making orders on behalf of the user.
  *
  *  @param controller Controller that initiated the event.
- *  @param token      user-token for making orders.
+ *  @param token      Token that uniquely identifies the user for this merchant's store.
  */
+@required
 -(void) klarnaRegistrationController: (KIARegistrationViewController *) controller didFinishWithUserToken:(KIAToken *) token;
-
-@optional
 
 /**
  *  Handler for registration failure events.
  *
  *  @param controller Controller that initiated the event.
  */
+@optional
 -(void) klarnaRegistrationFailed:(KIARegistrationViewController *) controller;
 
 /**
@@ -33,6 +34,7 @@
  *
  *  @param controller Controller that initiated the event.
  */
+@optional
 -(void) klarnaRegistrationCancelled:(KIARegistrationViewController *)controller;
 
 @end
@@ -46,9 +48,9 @@
 /**
  *  Initialize the Klarna registration view-controller.
  *
- *  @param delegate Delegate which implement KIARegistrationViewControllerDelegate protocol for handling registration events.
+ *  @param delegate Delegate which implements the KIARegistrationViewControllerDelegate protocol for handling registration events.
  *
- *  @return Initialized object.
+ *  @return An initialized registration view-controller, ready to be displayed.
  */
 - (id)initWithDelegate:(id<KIARegistrationViewControllerDelegate>)delegate;
 

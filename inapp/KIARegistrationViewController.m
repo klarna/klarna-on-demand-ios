@@ -9,7 +9,7 @@
 
 @interface KIARegistrationViewController ()
 
-@property (nonatomic, weak) id<KIARegistrationViewControllerDelegate> delegate;
+@property (weak, nonatomic) id<KIARegistrationViewControllerDelegate> delegate;
 @property (strong, nonatomic) UIView *HUDView;
 
 @end
@@ -24,7 +24,7 @@
   return self;
 }
 
--(id) init {
+-(id)init {
   NSAssert(NO, @"Initialize with -initWithDelegate");
   return nil;
 }
@@ -121,14 +121,14 @@
   }];
 }
 
-- (void) handleUserReadyEventWithPayload: (NSDictionary *)payload {
+- (void)handleUserReadyEventWithPayload: (NSDictionary *)payload {
   if ([_delegate respondsToSelector:@selector(klarnaRegistrationController:didFinishWithUserToken:)])
   {
     [_delegate klarnaRegistrationController:self didFinishWithUserToken:[[KIAToken alloc] initWithToken: payload[@"userToken"]]];
   }
 }
 
-- (void) handleUserErrorEvent {
+- (void)handleUserErrorEvent {
   if ([_delegate respondsToSelector:@selector(klarnaRegistrationFailed:)])
   {
     [_delegate klarnaRegistrationFailed:self];
