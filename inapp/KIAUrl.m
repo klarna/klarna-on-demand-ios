@@ -4,12 +4,6 @@
 #define KLARNA_PLAYGROUND_URL @"https://inapp.playground.klarna.com"
 #define KLARNA_PRODUCTION_URL @"https://inapp.klarna.com"
 
-@interface KIAUrl()
-+ (NSString *)baseUrl;
-+ (NSString *)locale;
-
-@end
-
 @implementation KIAUrl
 
 + (NSURL *)registrationUrl {
@@ -30,7 +24,7 @@
 }
 
 + (NSString *)locale {
-  return [[[NSBundle mainBundle] preferredLocalizations] objectAtIndex:0];
+  return [[NSBundle mainBundle] preferredLocalizations].firstObject;
 }
 
 @end
