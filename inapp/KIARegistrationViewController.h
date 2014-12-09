@@ -16,7 +16,7 @@
  *  The token is required for making orders on behalf of the user.
  *
  *  @param controller Controller that initiated the event.
- *  @param token      Token that uniquely identifies the user for this merchant's store.
+ *  @param token      Token that uniquely identifies the user.
  */
 @required
 -(void) klarnaRegistrationController: (KIARegistrationViewController *) controller didFinishWithUserToken:(KIAToken *) token;
