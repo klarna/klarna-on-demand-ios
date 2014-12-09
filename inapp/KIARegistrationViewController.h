@@ -16,7 +16,7 @@
  *  The token is required for making orders on behalf of the user.
  *
  *  @param controller Controller that initiated the event.
- *  @param token      Token that uniquely identifies the user for this merchant's store.
+ *  @param token      Token that uniquely identifies the user.
  */
 @required
 -(void) klarnaRegistrationController: (KIARegistrationViewController *) controller didFinishWithUserToken:(KIAToken *) token;
@@ -30,7 +30,8 @@
 -(void) klarnaRegistrationFailed:(KIARegistrationViewController *) controller;
 
 /**
- *  Handler for Klarna registration cancelled event.
+ *  Handler for Klarna registration cancelled event. 
+ *  The event is raised when the user presses the 'Cancel' button on the upper-left corner of the view.
  *
  *  @param controller Controller that initiated the event.
  */
