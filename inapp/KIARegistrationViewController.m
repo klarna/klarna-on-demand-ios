@@ -2,7 +2,6 @@
 #import "KIAUrl.h"
 #import "Jockey.h"
 #import "KIAContext.h"
-#import <SVProgressHUD.h>
 
 #define JOCKEY_USER_READY @"userReady"
 #define JOCKEY_USER_ERROR @"userError"
@@ -56,8 +55,6 @@
 }
 
 - (void)AddSpinner {
-  [SVProgressHUD show];
-  /*
   _spinnerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 80, 80)];
   _spinnerView.center = self.view.center;
   _spinnerView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.6];
@@ -75,7 +72,7 @@
   lblLoading.textAlignment = NSTextAlignmentCenter;
   [_spinnerView addSubview:lblLoading];
   
-  [self.view addSubview:_spinnerView];*/
+  [self.view addSubview:_spinnerView];
 }
 
 - (void)RemoveSpinnerIfExists {
