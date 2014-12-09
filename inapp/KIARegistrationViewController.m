@@ -8,7 +8,6 @@
 
 @interface KIARegistrationViewController ()
 
-// TODO: check if it should be weak or assign.
 @property (nonatomic, weak) id<KIARegistrationViewControllerDelegate> delegate;
 @property (strong, nonatomic) UIView *HUDView;
 

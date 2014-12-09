@@ -8,7 +8,19 @@
  *  Defines the protocol for RegistrationViewController events.
  */
 @protocol KIARegistrationViewControllerDelegate <NSObject>
-//TODO: @required
+
+@required
+
+/**
+ *  Handler for Klarna registration finished event.
+ *
+ *  @param controller Controller that initiated the event.
+ *  @param token      user-token for making orders.
+ */
+-(void) klarnaRegistrationController: (KIARegistrationViewController *) controller didFinishWithUserToken:(KIAToken *) token;
+
+@optional
+
 /**
  *  Handler for registration failure events.
  *
@@ -23,15 +35,8 @@
  */
 -(void) klarnaRegistrationCancelled:(KIARegistrationViewController *)controller;
 
-/**
- *  Handler for Klarna registration finished event.
- *
- *  @param controller Controller that initiated the event.
- *  @param token      user-token for making orders.
- */
--(void) klarnaRegistrationController: (KIARegistrationViewController *) controller didFinishWithUserToken:(KIAToken *) token;
-
 @end
+
 
 /**
  *  Responsible for registering a new user and setting his Klarna payment method.
