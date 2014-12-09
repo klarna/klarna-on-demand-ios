@@ -4,4 +4,6 @@
 
 + (NSURL *)registrationUrl;
 
++ (NSURL *)preferencesUrl;
+
 @end

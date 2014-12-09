@@ -17,6 +17,11 @@
   return [NSURL URLWithString:url];
 }
 
++ (NSURL *)preferencesUrl {
+  NSString *url = [NSString stringWithFormat:@"%@/preferences/new?api_key=%@&locale=%@", [self baseUrl], [KIAContext getApiKey], [self locale]];
+  return [NSURL URLWithString:url];
+}
+
 + (NSString *)baseUrl {
   if ([[KIAContext getApiKey] hasPrefix:@"test_"]) {
     return KLARNA_PLAYGROUND_URL;
