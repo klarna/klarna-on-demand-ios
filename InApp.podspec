@@ -28,8 +28,8 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.source_files = 'inapp'
-  s.resource_bundles = {
-    'InApp' => ['Pod/Assets/*.png']
+  s.resource_bundle = {
+    'KIA' => 'inapp/KIA.bundle/*.lproj'
   }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
