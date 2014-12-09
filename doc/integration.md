@@ -22,6 +22,24 @@ First off, import the registration view's header file into your view controller:
 #import "KIARegistrationViewController.h"
 ```
 
+Then, assuming the button's touch down handler is called `onRegisterPressed`, set it up thusly:
+
+```objective-c
+- (IBAction)onRegisterPressed:(id)sender {
+
+  // Create a new Klarna registration view-controller, initialized with the containing controller as event-handler.
+  KIARegistrationViewController *registrationViewController = [[KIARegistrationViewController alloc] initWithDelegate:self];
+
+  // Create navigation controller with Klarna registration view-controller as the root view controller.
+  UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:registrationViewController];
+
+  // Show navigation controller (as a modal).
+  [self presentViewController:navigationController
+                     animated:YES
+                   completion:nil];
+}
+```
+
 
 <a name="how_to_show_registration"></a>
 ###How will I know if the user is registered with Klarna?
