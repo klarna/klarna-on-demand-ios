@@ -11,8 +11,8 @@
   return [NSURL URLWithString:url];
 }
 
-+ (NSURL *)preferencesUrl {
-  NSString *url = [NSString stringWithFormat:@"%@/preferences/new?api_key=%@&locale=%@", [self baseUrl], [KIAContext getApiKey], [self locale]];
++ (NSURL *)preferencesUrlWithToken: (NSString *) token {
+  NSString *url = [NSString stringWithFormat:@"%@/users/%@/preferences?api_key=%@&locale=%@", [self baseUrl], token, [KIAContext getApiKey], [self locale]];
   return [NSURL URLWithString:url];
 }
 

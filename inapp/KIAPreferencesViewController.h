@@ -1,5 +1,8 @@
 #import <UIKit/UIKit.h>
+#import "KIAWebViewController.h"
 
-@interface KIAPreferencesViewController : UIViewController
+@interface KIAPreferencesViewController : KIAWebViewController
+
+- (id)initWithToken: (NSString *) token;
 
 @end

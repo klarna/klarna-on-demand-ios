@@ -1,5 +1,6 @@
 #import "MainViewController.h"
 #import "KIARegistrationViewController.h"
+#import "KIAPreferencesViewController.h"
 #import "KIAContext.h"
 
 #define ALERT(str) [[[UIAlertView alloc] initWithTitle:@"Alert" message:str delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil] show]
@@ -26,6 +27,17 @@
                    completion:nil];
 }
 
+- (IBAction)onPreferencesPressed:(id)sender {
+  
+  KIAPreferencesViewController *preferencesViewController = [[KIAPreferencesViewController alloc] initWithToken:[self getUserToken]];
+  
+  UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:preferencesViewController];
+  
+  // Show navigation controller (in a modal presentation).
+  [self presentViewController:navigationController
+                     animated:YES
+                   completion:nil];
+}
 
 -(void)klarnaRegistrationFailed:(KIARegistrationViewController *)controller{
   // You may also want to convey this failure to your user.
@@ -57,6 +69,7 @@
   
   _registerButton.hidden = [self hasUserToken];
   _buyButton.hidden = ![self hasUserToken];
+  _preferencesButton.hidden = ![self hasUserToken];
 }
 
 - (void) saveUserToken: (NSString *) token {

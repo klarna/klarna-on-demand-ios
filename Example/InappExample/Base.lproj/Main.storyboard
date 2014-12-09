@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZU1-dT-EEK">
-                                <rect key="frame" x="0.0" y="294" width="320" height="274"/>
+                                <rect key="frame" x="0.0" y="201" width="320" height="188"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="44"/>
                                 <state key="normal" title="Buy">
@@ -31,7 +31,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z2b-5w-WaX">
-                                <rect key="frame" x="0.0" y="20" width="320" height="274"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="182"/>
                                 <color key="backgroundColor" red="1" green="0.19477305650000001" blue="0.2039375772" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="44"/>
                                 <state key="normal" title="Register">
@@ -42,20 +42,37 @@
                                     <action selector="onRegisterPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="3qh-lL-nch"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fAt-Vo-tP3">
+                                <rect key="frame" x="0.0" y="388" width="320" height="180"/>
+                                <color key="backgroundColor" red="1" green="0.88866595240000001" blue="0.1519234693" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="44"/>
+                                <state key="normal" title="Preferences">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onBuyPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="j6E-vW-MGY"/>
+                                    <action selector="onPreferencesPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="kS9-7F-yG5"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Z2b-5w-WaX" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="4AX-qb-rc4"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ZU1-dT-EEK" secondAttribute="trailing" constant="-16" id="CEC-2A-NqN"/>
-                            <constraint firstItem="ZU1-dT-EEK" firstAttribute="top" secondItem="Z2b-5w-WaX" secondAttribute="bottom" id="Sq0-Sf-hGq"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fAt-Vo-tP3" secondAttribute="trailing" constant="-16" id="Nsj-OP-NEE"/>
+                            <constraint firstItem="ZU1-dT-EEK" firstAttribute="top" secondItem="Z2b-5w-WaX" secondAttribute="bottom" constant="-1" id="Sq0-Sf-hGq"/>
                             <constraint firstItem="Z2b-5w-WaX" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="UeZ-9v-hLt"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="fAt-Vo-tP3" secondAttribute="bottom" id="XPn-6B-BEd"/>
+                            <constraint firstItem="fAt-Vo-tP3" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="cMX-qQ-pWu"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Z2b-5w-WaX" secondAttribute="trailing" constant="-16" id="oax-A7-KmO"/>
                             <constraint firstItem="ZU1-dT-EEK" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="qLi-4W-D7b"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="ZU1-dT-EEK" secondAttribute="bottom" id="u4f-FQ-iaB"/>
+                            <constraint firstItem="fAt-Vo-tP3" firstAttribute="top" secondItem="ZU1-dT-EEK" secondAttribute="bottom" constant="-1" id="qbO-DF-6J2"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="buyButton" destination="ZU1-dT-EEK" id="Kfv-te-jlS"/>
+                        <outlet property="preferencesButton" destination="fAt-Vo-tP3" id="E52-0H-aMV"/>
                         <outlet property="registerButton" destination="Z2b-5w-WaX" id="cMY-K8-NTu"/>
                     </connections>
                 </viewController>
