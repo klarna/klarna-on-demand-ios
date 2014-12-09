@@ -2,6 +2,7 @@
 #import "KIAUrl.h"
 #import "Jockey.h"
 #import "KIAContext.h"
+#import "KIALocalization.h"
 
 #define JOCKEY_USER_READY @"userReady"
 #define JOCKEY_USER_ERROR @"userError"
@@ -20,13 +21,16 @@ id<KIARegistrationViewControllerDelegate> delegate;
 }
 
 - (NSString *)title {
-  return @"Payment Details";
+  return [KIALocalization localizedStringForKey:@"REGISTRATION_TITLE"];
 }
 
 - (void)viewDidLoad {
   [super viewDidLoad];
   
-  self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStylePlain target:self action:@selector(cancelButtonPressed)];
+  self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:[KIALocalization localizedStringForKey:@"REGISTRATION_NAV_BUTTON"]
+                                                                           style:UIBarButtonItemStylePlain
+                                                                          target:self
+                                                                          action:@selector(cancelButtonPressed)];
   
   [self AddWebView];
   
@@ -39,7 +43,9 @@ id<KIARegistrationViewControllerDelegate> delegate;
 - (void)AddWebView {
   UIWebView *webview = [[UIWebView alloc] initWithFrame:self.view.frame];
   webview.delegate = self;
-  NSURLRequest *request = [NSURLRequest requestWithURL:[KIAUrl registrationUrl] cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:60.0f];
+  NSURLRequest *request = [NSURLRequest requestWithURL:[KIAUrl registrationUrl]
+                                           cachePolicy:NSURLRequestReloadIgnoringCacheData
+                                       timeoutInterval:60.0f];
   [webview loadRequest:request];
   [self.view addSubview:webview];
 }
@@ -56,7 +62,7 @@ id<KIARegistrationViewControllerDelegate> delegate;
   [_spinnerView addSubview:activityView];
   
   UILabel* lblLoading = [[UILabel alloc]initWithFrame:CGRectMake(0, 48, 80, 30)];
-  lblLoading.text = @"Loading...";
+  lblLoading.text = [KIALocalization localizedStringForKey:@"LOADING_SPINNER"];
   lblLoading.textColor = [UIColor whiteColor];
   lblLoading.font = [UIFont fontWithName:lblLoading.font.fontName size:15];
   lblLoading.textAlignment = NSTextAlignmentCenter;
