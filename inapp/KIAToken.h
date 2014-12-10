@@ -10,6 +10,6 @@
  */
 @property (weak, nonatomic) NSString *token;
 
-- (id)initWithToken: (NSString *) aToken;
+- (id)initWithToken:(NSString *)aToken;
 
 @end

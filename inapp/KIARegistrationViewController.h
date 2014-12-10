@@ -29,14 +29,14 @@
  *
  *  @param controller Controller that initiated the event.
  */
--(void) klarnaRegistrationFailed:(KIARegistrationViewController *) controller;
+- (void) klarnaRegistrationFailed:(KIARegistrationViewController *)controller;
 
 /**
  *  Handler for Klarna registration cancelled event.
  *
  *  @param controller Controller that initiated the event.
  */
--(void) klarnaRegistrationCancelled:(KIARegistrationViewController *)controller;
+- (void) klarnaRegistrationCancelled:(KIARegistrationViewController *)controller;
 
 /**
  *  Handler for Klarna registration finished event.
@@ -44,6 +44,6 @@
  *  @param controller Controller that initiated the event.
  *  @param token      user-token for making orders.
  */
--(void) klarnaRegistrationController: (KIARegistrationViewController *) controller didFinishWithUserToken:(KIAToken *) token;
+- (void) klarnaRegistrationController:(KIARegistrationViewController *)controller didFinishWithUserToken:(KIAToken *)token;
 
 @end

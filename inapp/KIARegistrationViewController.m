@@ -69,7 +69,7 @@ id<KIARegistrationViewControllerDelegate> delegate;
   [_spinnerView removeFromSuperview];
 }
 
--(BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
 {
   return [Jockey webView:webView withUrl:[request URL]];
 }
@@ -106,14 +106,14 @@ id<KIARegistrationViewControllerDelegate> delegate;
   }];
 }
 
-- (void) handleUserReadyEventWithPayload: (NSDictionary *)payload {
+- (void)handleUserReadyEventWithPayload:(NSDictionary *)payload {
   if ([delegate respondsToSelector:@selector(klarnaRegistrationController:didFinishWithUserToken:)])
   {
     [delegate klarnaRegistrationController:self didFinishWithUserToken:[[KIAToken alloc] initWithToken: payload[@"userToken"]]];
   }
 }
 
-- (void) handleUserErrorEvent {
+- (void)handleUserErrorEvent {
   if ([delegate respondsToSelector:@selector(klarnaRegistrationFailed:)])
   {
     [delegate klarnaRegistrationFailed:self];
@@ -124,7 +124,7 @@ id<KIARegistrationViewControllerDelegate> delegate;
   [self unregisterJockeyCallbacks];
 }
 
-- (void)unregisterJockeyCallbacks{
+- (void)unregisterJockeyCallbacks {
   [Jockey off:JOCKEY_USER_READY];
   [Jockey off:JOCKEY_USER_ERROR];
 }
