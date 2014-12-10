@@ -11,7 +11,7 @@ Open up your Podfile and add the following line:
 Then simply run `pod install` in your project directory and you will be good to go.
 
 ##Supplying your API key
-In order to use the SDK, you will require an API key to identify yourself. Assuming you have your API key in hand, all you need to do is call the following line of code in your application in order to set it up for all future SDK calls:
+In order to use the SDK, you will need an API key to identify yourself. Assuming you have your API key in hand, all you have to do is call the following line of code in your application in order to set it up for all future SDK calls:
 
 ```objective-c
 [KIAContext setApiKey:@"your-magnificent-api-key"];
@@ -20,8 +20,10 @@ In order to use the SDK, you will require an API key to identify yourself. Assum
 ##The registration view
 Users must go through a quick registration process in order to pay using Klarna. To make this process as simple as possible, the SDK provides a registration view that you should present to your users. Once the registration process is complete, you will receive a token that will allow you to receive payments from the user.
 
+**Note:** It is important to point out that the registration view will not function properly without network access.
+
 ###Showing the view
-For the sake of this example, we will assume we have a button that launches the registration view (this is not a very good way to decide when to show the view, but more on that [later](#how_to_show_registration)).
+For the sake of this example, we will assume we have a button that launches the registration view (this is not a very good way to decide when to show the view, but more on that [later](#when_to_show_registration)).
 
 First off, import the registration view's header file into your view controller:
 
@@ -29,18 +31,18 @@ First off, import the registration view's header file into your view controller:
 #import "KIARegistrationViewController.h"
 ```
 
-Then, assuming the button's touch down handler is called `onRegisterPressed`, set it up thusly:
+Then, assuming the button's touch handler is called `onRegisterPressed`, set it up thusly:
 
 ```objective-c
 - (IBAction)onRegisterPressed:(id)sender {
 
-  // Create a new Klarna registration view-controller, initialized with the containing controller as event-handler.
+  // Create a new Klarna registration view controller, initialized with the containing controller as event-handler
   KIARegistrationViewController *registrationViewController = [[KIARegistrationViewController alloc] initWithDelegate:self];
 
-  // Create navigation controller with Klarna registration view-controller as the root view controller.
+  // Create a navigation controller with the registration view controller as its root view controller
   UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:registrationViewController];
 
-  // Show navigation controller (as a modal).
+  // Show navigation controller (as a modal)
   [self presentViewController:navigationController
                      animated:YES
                    completion:nil];
@@ -49,7 +51,7 @@ Then, assuming the button's touch down handler is called `onRegisterPressed`, se
 
 There are a couple of things that are worth pointing out in the code above:
 - To properly initialize the registration view, you need to supply it with a delegate that it will use to notify you of various important events. We will go over these events later when examine the [KIARegistrationViewControllerDelegate](#kia_registration_view_controller_delegate) protocol. We recommend having the view controller that hosts the registration view conform to said protocol.
-- We display the registration view by making it part of a navaigation view controller. This is the recommended way to display the registration view, and will allow the view to present the user with an option to back out of the registration process.
+- We display the registration view by making it part of a navaigation view controller. This is the recommended way to display the registration view, and will give users the option to back out of the registration process.
 
 This is really all there is to displaying the registration view.
 
@@ -64,7 +66,7 @@ The registration view expects its delegate to comform to this protocol, which ex
 2. Registration cancelled - the user chose to back out of the registration process.
 3. Registration failed - an error of some sort has prevented the user from successfully going through the registration process.
 
-Building upon the code sample from the previous section, consider the following methods which allows a view controller to conform to the KIARegistrationViewControllerDelegate protocol. The methods correspond to the types of callbacks we have just listed:
+Building upon the code sample from the previous section, consider the following methods which make a view controller conform to the KIARegistrationViewControllerDelegate protocol. The methods correspond to the types of callbacks we have just listed:
 
 ```objective-c
 - (void)klarnaRegistrationController:(KIARegistrationViewController *)controller didFinishWithUserToken:(KIAToken *)userToken {
@@ -79,15 +81,15 @@ Building upon the code sample from the previous section, consider the following 
 }
 
 - (void)klarnaRegistrationFailed:(KIARegistrationViewController *)controller {
-  // Dismiss Klarna registration view-controller
+  // Dismiss Klarna registration view and notify the user of the error
   [self dismissViewControllerAnimated:YES completion:nil];
   [self notifyRegistrationFailed]; // Again, this is just an illustration
 }
 
 ```
 
-As you can see, your first order of business will usually be to dismiss the registration view upon any of the events occurring. Then, depending on the event, you will want to take further action, such as storing the user token or displaying an error message.
+As you can see, your first order of business will usually be to dismiss the registration view upon any of the events occurring. Then, depending on the event, you will want to take further action such as storing the user token or displaying an error message.
 
-<a name="how_to_show_registration"></a>
-###How will I know if the user is registered with Klarna?
+<a name="when_to_show_registration"></a>
+###When should we show the registration view?
 While we've seen how to utilize the registration view, we never talked about **when** we should display it. While it is ultimately up to you to decide, we have a fairly straightforward recommendation - you should only display the registration view when you do not have a user token stored. Assuming your user has gone through the registration process successfully and received a token there is no need to have the user register again, as tokens do not expire (though they can be revoked).
