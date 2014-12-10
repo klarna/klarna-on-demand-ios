@@ -3,29 +3,29 @@
 #import "KIALocalization.h"
 
 @interface KIAPreferencesViewController ()
+
 @property(strong, nonatomic) NSString *token;
+@property (weak, nonatomic) id<KIAPreferencesViewControllerDelegate> delegate;
+
 @end
 
 @implementation KIAPreferencesViewController
 
-- (id)initWithToken: (NSString *) token {
+- (id)initWithDelegate: (id<KIAPreferencesViewControllerDelegate>)delegate andToken: (NSString *) token {
   self = [super init];
   if (self) {
+    _delegate = delegate;
     _token = token;
   }
   return self;
 }
 
 -(id)init {
-  NSAssert(NO, @"Initialize with -initWithToken");
+  NSAssert(NO, @"Initialize with -initWithDelegate:andToken:");
   return nil;
 }
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-}
-
-- (NSURL *)Url {
+- (NSURL *)url {
   return [KIAUrl preferencesUrlWithToken: _token];
 }
 
@@ -33,25 +33,38 @@
   return [KIALocalization localizedStringForKey:@"PREFERENCES_TITLE"];
 }
 
+- (NSString *)dismissButtonKey {
+  return @"PREFERENCES_DISMISS_BUTTON_TEXT";
+}
+
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
   [super webView:webView didFailLoadWithError:error];
   
-  //TODO: additional handling?
+  if ([error code] != NSURLErrorCancelled && [_delegate respondsToSelector:@selector(klarnaPreferencesFailed:)])
+  {
+    [_delegate klarnaPreferencesFailed:self];
+  }
 }
 
-- (void)cancelButtonPressed {
-  //TODO: handling.
+- (void)dismissButtonPressed {
+  if ([_delegate respondsToSelector:@selector(klarnaPreferencesCancelled:)])
+  {
+    [_delegate klarnaPreferencesCancelled:self];
+  }
 }
 
 - (void)handleUserReadyEventWithPayload: (NSDictionary *)payload {
-  NSURLRequest *request = [NSURLRequest requestWithURL:[self Url]
+  NSURLRequest *request = [NSURLRequest requestWithURL:[self url]
                                            cachePolicy:NSURLRequestReloadIgnoringCacheData
                                        timeoutInterval:60.0f];
   [self.webView loadRequest:request];
 }
 
 - (void)handleUserErrorEvent {
-  //TODO: handling.
+  if ([_delegate respondsToSelector:@selector(klarnaPreferencesFailed:)])
+  {
+    [_delegate klarnaPreferencesFailed:self];
+  }
 }
 
 

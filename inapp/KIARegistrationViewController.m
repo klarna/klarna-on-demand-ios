@@ -21,7 +21,7 @@
 }
 
 -(id)init {
-  NSAssert(NO, @"Initialize with -initWithDelegate");
+  NSAssert(NO, @"Initialize with -initWithDelegate:");
   return nil;
 }
 
@@ -29,7 +29,11 @@
   return [KIALocalization localizedStringForKey:@"REGISTRATION_TITLE"];
 }
 
-- (NSURL *)Url {
+- (NSString *)dismissButtonKey {
+  return @"REGISTRATION_DISMISS_BUTTON_TEXT";
+}
+
+- (NSURL *)url {
   return [KIAUrl registrationUrl];
 }
 
@@ -42,7 +46,7 @@
   }
 }
 
-- (void)cancelButtonPressed {
+- (void)dismissButtonPressed {
   if ([_delegate respondsToSelector:@selector(klarnaRegistrationCancelled:)])
   {
     [_delegate klarnaRegistrationCancelled:self];

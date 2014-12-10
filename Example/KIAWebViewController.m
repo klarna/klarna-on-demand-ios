@@ -10,10 +10,11 @@
 @interface KIAWebViewController ()
 
 @property(strong, nonatomic) UIView *HUDView;
-- (NSURL *) Url;
+- (NSURL *) url;
 - (void)handleUserReadyEventWithPayload: (NSDictionary *)payload;
 - (void)handleUserErrorEvent;
-- (void)cancelButtonPressed;
+- (void)dismissButtonPressed;
+- (NSString *)dismissButtonKey;
 
 @end
 
@@ -22,11 +23,14 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   
-  self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:[KIALocalization localizedStringForKey:@"REGISTRATION_NAV_BUTTON"]
+  self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:[KIALocalization localizedStringForKey:[self dismissButtonKey]]
                                                                            style:UIBarButtonItemStylePlain
                                                                           target:self
-                                                                          action:@selector(cancelButtonPressed)];
-  
+                                                                          action:@selector(dismissButtonPressed)];
+}
+
+
+-(void)viewDidAppear:(BOOL)animated {
   [self AddWebView];
   
   [self registerJockeyEvents];
@@ -37,7 +41,7 @@
 - (void)AddWebView {
   _webView = [[UIWebView alloc] initWithFrame:self.view.frame];
   _webView.delegate = self;
-  NSURLRequest *request = [NSURLRequest requestWithURL:[self Url]
+  NSURLRequest *request = [NSURLRequest requestWithURL:[self url]
                                            cachePolicy:NSURLRequestReloadIgnoringCacheData
                                        timeoutInterval:60.0f];
   [_webView loadRequest:request];
@@ -77,7 +81,7 @@
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
   [self RemoveHUDIfExists];
   
-  NSLog(@"Klarna registration web view failed with the following error: %@", [error description]);
+  NSLog(@"Klarna web view failed with the following error: %@", [error description]);
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
