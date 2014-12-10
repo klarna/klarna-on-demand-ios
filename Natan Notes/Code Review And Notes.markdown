@@ -1,9 +1,11 @@
+Note: Please mark completed/checked bullets with Use ~~ ~~tildes around the words~~. ~~ (GitHub MarkDown)
+
 ##SDK
 
 ###`KIAContext`
 
- * `validateApiKey` could assert for APIKey length.
- * I would consider generating a private singleton, so it could handle possible additional properties instead of using static instances.
+ * `validateApiKey` could assert for APIKey length - instead of checking for the current 2 conditions.
+ * I would consider generating a private singleton, so it could handle possible (in the future) additional properties instead of using static instances.
 
 Additional notes:
 Use Apple Doc and generate, making it available via Dash
@@ -42,9 +44,10 @@ KIAToken *token = [KIAToken tokenFromDictionary:payload];
 
 ## General notes:
 
+* Style: I like following the [Style Guide developed by the iOS team at The New York Times](https://github.com/NYTimes/objective-c-style-guide). I can show you guys with more details - the style guide is very long - but the basics that I noticed that don't match are: indentation, private properties as ivars, method signatures and spacing, constants preferred over in-line string literals or numbers or #defines.
 * [NSAssert Vs. NSCAssert](http://nshipster.com/nsassertionhandler/): NSAssert should only be used in an Objective-C context (i.e. method implementations), whereas NSCAssert should only be used in a C context (i.e. functions).
 * Usage of `# Pragma - Mark` is extremely useful
-* Would be better `Jockey` was available through CocoaPods. Check the already open issue here: https://github.com/tcoulter/jockeyjs/issues/8
+* Would be better  if`Jockey` was available through CocoaPods. Check the already open issue here: https://github.com/tcoulter/jockeyjs/issues/8
 * Method names should start with lowercase characters
 * Blank line before return or if statements
 * Classes prefix: KIA Vs. KLA, KLN
