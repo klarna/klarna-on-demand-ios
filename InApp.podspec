@@ -29,7 +29,7 @@ Pod::Spec.new do |s|
 
   s.source_files = 'inapp/**/*.{m,h}', '3rdParty/**/*.{m,h}'
   s.resource_bundles = {
-    'InApp' => ['Pod/Assets/*.png']
+    'KIA' => 'inapp/KIA.bundle/*.lproj'
   }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
