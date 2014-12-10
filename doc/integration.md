@@ -10,6 +10,13 @@ Open up your Podfile and add the following line:
 
 Then simply run `pod install` in your project directory and you will be good to go.
 
+##Supplying your API key
+In order to use the SDK, you will require an API key to identify yourself. Assuming you have your API key in hand, all you need to do is call the following line of code in your application in order to set it up for all future SDK calls:
+
+```objective-c
+[KIAContext setApiKey:@"your-magnificent-api-key"];
+```
+
 ##The registration view
 Users must go through a quick registration process in order to pay using Klarna. To make this process as simple as possible, the SDK provides a registration view that you should present to your users. Once the registration process is complete, you will receive a token that will allow you to receive payments from the user.
 
