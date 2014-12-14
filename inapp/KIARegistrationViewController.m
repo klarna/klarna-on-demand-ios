@@ -20,8 +20,9 @@
   return self;
 }
 
--(id)init {
-  NSAssert(NO, @"Initialize with -initWithDelegate:");
+
+- (id)init {
+  NSAssert(NO, @"Initialize with -initWithDelegate");
   return nil;
 }
 
