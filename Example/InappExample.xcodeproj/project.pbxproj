@@ -7,15 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		467F0ED21A2B72F600A76845 /* Jockey.m in Sources */ = {isa = PBXBuildFile; fileRef = 467F0ED11A2B72F600A76845 /* Jockey.m */; };
-		467F0EDE1A2C6BAC00A76845 /* KIAToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 467F0EDD1A2C6BAC00A76845 /* KIAToken.m */; };
-		46D37AB41A373FFC00E6AC7A /* KIAPreferencesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46D37AB31A373FFC00E6AC7A /* KIAPreferencesViewController.m */; };
-		46D37AB71A3743E300E6AC7A /* KIAWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46D37AB61A3743E300E6AC7A /* KIAWebViewController.m */; };
-		46D37ABF1A374A6D00E6AC7A /* KIA.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 46D37ABE1A374A6D00E6AC7A /* KIA.bundle */; };
-		46D37AC21A374AB200E6AC7A /* KIALocalization.m in Sources */ = {isa = PBXBuildFile; fileRef = 46D37AC11A374AB200E6AC7A /* KIALocalization.m */; };
-		C90D1C961A24CE2500016FE4 /* KIAContext.m in Sources */ = {isa = PBXBuildFile; fileRef = C90D1C901A24CE2500016FE4 /* KIAContext.m */; };
-		C90D1C971A24CE2500016FE4 /* KIARegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C90D1C921A24CE2500016FE4 /* KIARegistrationViewController.m */; };
-		C90D1C981A24CE2500016FE4 /* KIAUrl.m in Sources */ = {isa = PBXBuildFile; fileRef = C90D1C941A24CE2500016FE4 /* KIAUrl.m */; };
+		4651C4471A3DD5EC00800F1A /* libInapp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4651C4461A3DD5EC00800F1A /* libInapp.a */; };
 		C946A3CC1A24C21D00A12CC6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C946A3CB1A24C21D00A12CC6 /* main.m */; };
 		C946A3CF1A24C21D00A12CC6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C946A3CE1A24C21D00A12CC6 /* AppDelegate.m */; };
 		C946A3D21A24C21D00A12CC6 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C946A3D11A24C21D00A12CC6 /* MainViewController.m */; };
@@ -35,24 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4651C4111A38A53E00800F1A /* KIAWebViewController+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "KIAWebViewController+Protected.h"; path = "../inapp/KIAWebViewController+Protected.h"; sourceTree = "<group>"; };
-		467F0ED01A2B72F600A76845 /* Jockey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Jockey.h; sourceTree = "<group>"; };
-		467F0ED11A2B72F600A76845 /* Jockey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Jockey.m; sourceTree = "<group>"; };
-		467F0EDC1A2C6BAC00A76845 /* KIAToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KIAToken.h; path = ../inapp/KIAToken.h; sourceTree = "<group>"; };
-		467F0EDD1A2C6BAC00A76845 /* KIAToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KIAToken.m; path = ../inapp/KIAToken.m; sourceTree = "<group>"; };
-		46D37AB21A373FFC00E6AC7A /* KIAPreferencesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KIAPreferencesViewController.h; path = ../inapp/KIAPreferencesViewController.h; sourceTree = "<group>"; };
-		46D37AB31A373FFC00E6AC7A /* KIAPreferencesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KIAPreferencesViewController.m; path = ../inapp/KIAPreferencesViewController.m; sourceTree = "<group>"; };
-		46D37AB51A3743E300E6AC7A /* KIAWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KIAWebViewController.h; path = ../Example/KIAWebViewController.h; sourceTree = "<group>"; };
-		46D37AB61A3743E300E6AC7A /* KIAWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KIAWebViewController.m; path = ../Example/KIAWebViewController.m; sourceTree = "<group>"; };
-		46D37ABE1A374A6D00E6AC7A /* KIA.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = KIA.bundle; path = ../inapp/KIA.bundle; sourceTree = "<group>"; };
-		46D37AC01A374AB200E6AC7A /* KIALocalization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KIALocalization.h; path = ../inapp/KIALocalization.h; sourceTree = "<group>"; };
-		46D37AC11A374AB200E6AC7A /* KIALocalization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KIALocalization.m; path = ../inapp/KIALocalization.m; sourceTree = "<group>"; };
-		C90D1C8F1A24CE2500016FE4 /* KIAContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KIAContext.h; sourceTree = "<group>"; };
-		C90D1C901A24CE2500016FE4 /* KIAContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KIAContext.m; sourceTree = "<group>"; };
-		C90D1C911A24CE2500016FE4 /* KIARegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KIARegistrationViewController.h; sourceTree = "<group>"; };
-		C90D1C921A24CE2500016FE4 /* KIARegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KIARegistrationViewController.m; sourceTree = "<group>"; };
-		C90D1C931A24CE2500016FE4 /* KIAUrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KIAUrl.h; sourceTree = "<group>"; };
-		C90D1C941A24CE2500016FE4 /* KIAUrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KIAUrl.m; sourceTree = "<group>"; };
+		4651C4461A3DD5EC00800F1A /* libInapp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libInapp.a; path = "../../../Library/Developer/Xcode/DerivedData/Inapp-byplifmbihknkwfgkkvwhjomxrlv/Build/Products/Debug-iphoneos/libInapp.a"; sourceTree = "<group>"; };
 		C946A3C61A24C21D00A12CC6 /* InappExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InappExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C946A3CA1A24C21D00A12CC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C946A3CB1A24C21D00A12CC6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -72,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4651C4471A3DD5EC00800F1A /* libInapp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,53 +61,10 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		467F0ECE1A2B72F600A76845 /* 3rdParty */ = {
-			isa = PBXGroup;
-			children = (
-				467F0ECF1A2B72F600A76845 /* JockeyJS */,
-			);
-			name = 3rdParty;
-			path = ../3rdParty;
-			sourceTree = "<group>";
-		};
-		467F0ECF1A2B72F600A76845 /* JockeyJS */ = {
-			isa = PBXGroup;
-			children = (
-				467F0ED01A2B72F600A76845 /* Jockey.h */,
-				467F0ED11A2B72F600A76845 /* Jockey.m */,
-			);
-			path = JockeyJS;
-			sourceTree = "<group>";
-		};
-		C90D1C8C1A24CE2500016FE4 /* Inapp */ = {
-			isa = PBXGroup;
-			children = (
-				4651C4111A38A53E00800F1A /* KIAWebViewController+Protected.h */,
-				46D37AC01A374AB200E6AC7A /* KIALocalization.h */,
-				46D37AC11A374AB200E6AC7A /* KIALocalization.m */,
-				46D37ABE1A374A6D00E6AC7A /* KIA.bundle */,
-				46D37AB51A3743E300E6AC7A /* KIAWebViewController.h */,
-				46D37AB61A3743E300E6AC7A /* KIAWebViewController.m */,
-				467F0EDC1A2C6BAC00A76845 /* KIAToken.h */,
-				467F0EDD1A2C6BAC00A76845 /* KIAToken.m */,
-				C90D1C8F1A24CE2500016FE4 /* KIAContext.h */,
-				C90D1C901A24CE2500016FE4 /* KIAContext.m */,
-				C90D1C911A24CE2500016FE4 /* KIARegistrationViewController.h */,
-				C90D1C921A24CE2500016FE4 /* KIARegistrationViewController.m */,
-				C90D1C931A24CE2500016FE4 /* KIAUrl.h */,
-				C90D1C941A24CE2500016FE4 /* KIAUrl.m */,
-				46D37AB21A373FFC00E6AC7A /* KIAPreferencesViewController.h */,
-				46D37AB31A373FFC00E6AC7A /* KIAPreferencesViewController.m */,
-			);
-			name = Inapp;
-			path = ../Inapp;
-			sourceTree = "<group>";
-		};
 		C946A3BD1A24C21D00A12CC6 = {
 			isa = PBXGroup;
 			children = (
-				467F0ECE1A2B72F600A76845 /* 3rdParty */,
-				C90D1C8C1A24CE2500016FE4 /* Inapp */,
+				4651C4461A3DD5EC00800F1A /* libInapp.a */,
 				C946A3C81A24C21D00A12CC6 /* InappExample */,
 				C946A3E21A24C21D00A12CC6 /* InappExampleTests */,
 				C946A3C71A24C21D00A12CC6 /* Products */,
@@ -270,7 +203,6 @@
 				C946A3D51A24C21D00A12CC6 /* Main.storyboard in Resources */,
 				C946A3DA1A24C21D00A12CC6 /* LaunchScreen.xib in Resources */,
 				C946A3D71A24C21D00A12CC6 /* Images.xcassets in Resources */,
-				46D37ABF1A374A6D00E6AC7A /* KIA.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,15 +221,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C946A3D21A24C21D00A12CC6 /* MainViewController.m in Sources */,
-				46D37AB71A3743E300E6AC7A /* KIAWebViewController.m in Sources */,
-				C90D1C981A24CE2500016FE4 /* KIAUrl.m in Sources */,
 				C946A3CF1A24C21D00A12CC6 /* AppDelegate.m in Sources */,
-				467F0EDE1A2C6BAC00A76845 /* KIAToken.m in Sources */,
-				C90D1C971A24CE2500016FE4 /* KIARegistrationViewController.m in Sources */,
-				46D37AB41A373FFC00E6AC7A /* KIAPreferencesViewController.m in Sources */,
-				C90D1C961A24CE2500016FE4 /* KIAContext.m in Sources */,
-				467F0ED21A2B72F600A76845 /* Jockey.m in Sources */,
-				46D37AC21A374AB200E6AC7A /* KIALocalization.m in Sources */,
 				C946A3CC1A24C21D00A12CC6 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -377,6 +301,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "../**";
 			};
 			name = Debug;
 		};
@@ -411,6 +336,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "../**";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -422,6 +348,10 @@
 				INFOPLIST_FILE = InappExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Inapp-byplifmbihknkwfgkkvwhjomxrlv/Build/Products/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -433,6 +363,10 @@
 				INFOPLIST_FILE = InappExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Inapp-byplifmbihknkwfgkkvwhjomxrlv/Build/Products/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
