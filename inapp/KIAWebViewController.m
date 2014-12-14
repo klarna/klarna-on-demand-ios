@@ -11,6 +11,8 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   
+  self.view.backgroundColor = [UIColor whiteColor];
+  
   self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:[KIALocalization localizedStringForKey:[self dismissButtonKey]]
                                                                            style:UIBarButtonItemStylePlain
                                                                           target:self
