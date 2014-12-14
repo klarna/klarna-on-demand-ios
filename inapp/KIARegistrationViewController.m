@@ -20,8 +20,9 @@
   return self;
 }
 
--(id)init {
-  NSAssert(NO, @"Initialize with -initWithDelegate:");
+
+- (id)init {
+  NSAssert(NO, @"Initialize with -initWithDelegate");
   return nil;
 }
 
@@ -67,4 +68,16 @@
   }
 }
 
+<<<<<<< HEAD
+=======
+- (void)viewDidDisappear:(BOOL)animated {
+  [self unregisterJockeyCallbacks];
+}
+
+- (void)unregisterJockeyCallbacks {
+  [Jockey off:JOCKEY_USER_READY];
+  [Jockey off:JOCKEY_USER_ERROR];
+}
+
+>>>>>>> master
 @end
