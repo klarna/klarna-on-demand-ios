@@ -1,22 +1,10 @@
-#import "KIAWebViewController.h"
 #import "KIAUrl.h"
 #import "Jockey.h"
 #import "KIAContext.h"
 #import "KIALocalization.h"
-
+#import "KIAWebViewController+Protected.h"
 #define JOCKEY_USER_READY @"userReady"
 #define JOCKEY_USER_ERROR @"userError"
-
-@interface KIAWebViewController ()
-
-@property(strong, nonatomic) UIView *HUDView;
-- (NSURL *) url;
-- (void)handleUserReadyEventWithPayload: (NSDictionary *)payload;
-- (void)handleUserErrorEvent;
-- (void)dismissButtonPressed;
-- (NSString *)dismissButtonKey;
-
-@end
 
 @implementation KIAWebViewController
 
@@ -28,7 +16,6 @@
                                                                           target:self
                                                                           action:@selector(dismissButtonPressed)];
 }
-
 
 -(void)viewDidAppear:(BOOL)animated {
   [self AddWebView];
@@ -69,7 +56,7 @@
   [self.view addSubview:_HUDView];
 }
 
-- (void)RemoveHUDIfExists {
+- (void)removeHUDIfExists {
   [_HUDView removeFromSuperview];
 }
 
@@ -79,13 +66,13 @@
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
-  [self RemoveHUDIfExists];
+  [self removeHUDIfExists];
   
   NSLog(@"Klarna web view failed with the following error: %@", [error description]);
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
-  [self RemoveHUDIfExists];
+  [self removeHUDIfExists];
 }
 
 - (void)registerJockeyEvents {

@@ -35,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4651C4111A38A53E00800F1A /* KIAWebViewController+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "KIAWebViewController+Protected.h"; path = "../inapp/KIAWebViewController+Protected.h"; sourceTree = "<group>"; };
 		467F0ED01A2B72F600A76845 /* Jockey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Jockey.h; sourceTree = "<group>"; };
 		467F0ED11A2B72F600A76845 /* Jockey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Jockey.m; sourceTree = "<group>"; };
 		467F0EDC1A2C6BAC00A76845 /* KIAToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KIAToken.h; path = ../inapp/KIAToken.h; sourceTree = "<group>"; };
@@ -105,6 +106,7 @@
 		C90D1C8C1A24CE2500016FE4 /* Inapp */ = {
 			isa = PBXGroup;
 			children = (
+				4651C4111A38A53E00800F1A /* KIAWebViewController+Protected.h */,
 				46D37AC01A374AB200E6AC7A /* KIALocalization.h */,
 				46D37AC11A374AB200E6AC7A /* KIALocalization.m */,
 				46D37ABE1A374A6D00E6AC7A /* KIA.bundle */,

@@ -1,6 +1,6 @@
 #import <UIKit/UIKit.h>
 #import "KIAToken.h"
-#import "KIAWebViewController.h"
+#import "KIAWebViewController+Protected.h"
 
 @class KIARegistrationViewController;
 
