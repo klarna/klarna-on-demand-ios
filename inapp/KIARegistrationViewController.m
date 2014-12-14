@@ -68,4 +68,16 @@
   }
 }
 
+<<<<<<< HEAD
+=======
+- (void)viewDidDisappear:(BOOL)animated {
+  [self unregisterJockeyCallbacks];
+}
+
+- (void)unregisterJockeyCallbacks {
+  [Jockey off:JOCKEY_USER_READY];
+  [Jockey off:JOCKEY_USER_ERROR];
+}
+
+>>>>>>> master
 @end
