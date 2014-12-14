@@ -24,7 +24,7 @@
   return self;
 }
 
--(id)init {
+- (id)init {
   NSAssert(NO, @"Initialize with -initWithDelegate");
   return nil;
 }
@@ -139,7 +139,7 @@
   [self unregisterJockeyCallbacks];
 }
 
-- (void)unregisterJockeyCallbacks{
+- (void)unregisterJockeyCallbacks {
   [Jockey off:JOCKEY_USER_READY];
   [Jockey off:JOCKEY_USER_ERROR];
 }
