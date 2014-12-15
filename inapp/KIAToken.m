@@ -2,9 +2,9 @@
 
 @implementation KIAToken
 
-- (id)initWithToken:(NSString *)aToken {
+- (id)initWithToken:(NSString *)token {
   if (self = [super init]) {
-    _token = aToken;
+    _token = token;
   }
   return self;
 }

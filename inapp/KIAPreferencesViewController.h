@@ -15,7 +15,7 @@
  *  @param controller Controller that initiated the event.
  */
 @optional
--(void) klarnaPreferencesFailed:(KIAPreferencesViewController *) controller;
+-(void) klarnaPreferencesFailed:(KIAPreferencesViewController *)controller;
 
 /**
  *  Handler for Klarna preferences-page cancelled event.
@@ -24,7 +24,7 @@
  *  @param controller Controller that initiated the event.
  */
 @optional
--(void) klarnaPreferencesCancelled:(KIAPreferencesViewController *)controller;
+-(void) klarnaPreferencesClosed:(KIAPreferencesViewController *)controller;
 
 @end
 
@@ -42,6 +42,6 @@
  *
  *  @return An initialized preferences view-controller, ready to be displayed.
  */
-- (id)initWithDelegate: (id<KIAPreferencesViewControllerDelegate>)delegate andToken: (NSString *) token;
+- (id)initWithDelegate:(id<KIAPreferencesViewControllerDelegate>)delegate andToken:(NSString *)token;
 
 @end

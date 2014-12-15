@@ -29,7 +29,7 @@
   return [KIALocalization localizedStringForKey:@"REGISTRATION_TITLE"];
 }
 
-- (NSString *)dismissButtonKey {
+- (NSString *)dismissButtonLabelKey {
   return @"REGISTRATION_DISMISS_BUTTON_TEXT";
 }
 
@@ -53,7 +53,7 @@
   }
 }
 
-- (void)handleUserReadyEventWithPayload: (NSDictionary *)payload {
+- (void)handleUserReadyEventWithPayload:(NSDictionary *)payload {
   if ([_delegate respondsToSelector:@selector(klarnaRegistrationController:didFinishWithUserToken:)])
   {
     [_delegate klarnaRegistrationController:self didFinishWithUserToken:[[KIAToken alloc] initWithToken: payload[@"userToken"]]];

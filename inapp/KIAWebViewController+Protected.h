@@ -3,9 +3,9 @@
 @interface KIAWebViewController (Protected)
 
 - (NSURL *)url;
-- (void)handleUserReadyEventWithPayload: (NSDictionary *)payload;
+- (void)handleUserReadyEventWithPayload:(NSDictionary *)payload;
 - (void)handleUserErrorEvent;
 - (void)dismissButtonPressed;
-- (NSString *)dismissButtonKey;
+- (NSString *)dismissButtonLabelKey;
 
 @end

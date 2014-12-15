@@ -2,7 +2,7 @@
 #import "KIARegistrationViewController.h"
 #import "KIAPreferencesViewController.h"
 
-@interface MainViewController : UIViewController<KIARegistrationViewControllerDelegate,KIAPreferencesViewControllerDelegate>
+@interface MainViewController : UIViewController<KIARegistrationViewControllerDelegate, KIAPreferencesViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *registerButton;
 

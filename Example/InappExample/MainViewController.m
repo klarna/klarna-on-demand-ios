@@ -9,12 +9,11 @@
 
 @implementation MainViewController
 
--(void)viewDidLoad {
+- (void)viewDidLoad {
   [self updateButtonVisibility];
 }
 
 - (IBAction)onRegisterPressed:(id)sender {
-  
   // Create a new Klarna registration view-controller, initialized with MainViewController as event-handler.
   KIARegistrationViewController *registrationViewController = [[KIARegistrationViewController alloc] initWithDelegate:self];
   
@@ -28,8 +27,7 @@
 }
 
 - (IBAction)onPreferencesPressed:(id)sender {
-  
-  // Create a new Klarna preferences view-controller, initialized with MainViewController as event-handler, and a user token that was saved after user has finished registering.
+  // Create a new Klarna preferences view-controller, initialized with MainViewController as the event-handler, and the user token that was saved when the user completed the registration process.
   KIAPreferencesViewController *preferencesViewController = [[KIAPreferencesViewController alloc] initWithDelegate:self andToken:[self getUserToken]];
   
   // Create navigation controller with Klarna preferences view-controller as the root view controller.
@@ -43,20 +41,17 @@
 
 
 - (void)klarnaRegistrationFailed:(KIARegistrationViewController *)controller {
-
   // You may also want to convey this failure to your user.
   // Dismiss Klarna registration view-controller.
   [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)klarnaRegistrationCancelled:(KIARegistrationViewController *)controller {
-  
   // Dismiss Klarna registration view-controller.
   [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)klarnaRegistrationController:(KIARegistrationViewController *)controller didFinishWithUserToken:(KIAToken *)userToken {
-  
   // Dismiss Klarna registration view-controller.
   [self dismissViewControllerAnimated:YES completion:nil];
   
@@ -66,55 +61,48 @@
   [self updateButtonVisibility];
 }
 
--(void)klarnaPreferencesFailed:(KIAPreferencesViewController *)controller {
-  
+- (void)klarnaPreferencesFailed:(KIAPreferencesViewController *)controller {
   // Dismiss Klarna preferences view-controller.
   [self dismissViewControllerAnimated:YES completion:nil];
 }
 
--(void)klarnaPreferencesCancelled:(KIAPreferencesViewController *)controller {
-  
+- (void)klarnaPreferencesClosed:(KIAPreferencesViewController *)controller {
   // Dismiss Klarna preferences view-controller.
   [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)onBuyPressed:(id)sender {
-  
   NSString *message = [NSString stringWithFormat:@"Order sent to app-server with token: %@", [self getUserToken]];
   ALERT(message);
 }
 
 /**
  *  Save user token locally in device.
- *  You may want to save this token on you backend server.
+ *  You may want to save this token on your backend server.
  *
  *  @param token Token that uniquely identifies the user.
  */
-- (void) saveUserToken: (NSString *) token {
-  
+- (void)saveUserToken:(NSString *)token {
   NSUserDefaults *standardUserDefaults = [NSUserDefaults standardUserDefaults];
   [standardUserDefaults setValue:token forKey:USER_TOKEN_KEY];
   [standardUserDefaults synchronize];
 }
 
 /**
- *  Get token that was saved after registration finished.
+ *  Get the token that was saved after registration finished.
  *
- *  @return Token that uniquely identifies the user. Otherwise, returns nil.
+ *  @return A token that uniquely identifies the user, or nil of no token has been stored.
  
  */
-- (NSString *) getUserToken {
-  
+- (NSString *)getUserToken {
   return [[NSUserDefaults standardUserDefaults] objectForKey:USER_TOKEN_KEY];
 }
 
-- (bool) hasUserToken {
-  
+- (bool)hasUserToken {
   return [self getUserToken] != nil;
 }
 
-- (void) updateButtonVisibility {
-  
+- (void)updateButtonVisibility {
   _registerButton.hidden = [self hasUserToken];
   _buyButton.hidden = ![self hasUserToken];
   _preferencesButton.hidden = ![self hasUserToken];

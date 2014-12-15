@@ -11,7 +11,7 @@
 
 @implementation KIAPreferencesViewController
 
-- (id)initWithDelegate: (id<KIAPreferencesViewControllerDelegate>)delegate andToken: (NSString *) token {
+- (id)initWithDelegate:(id<KIAPreferencesViewControllerDelegate>)delegate andToken:(NSString *)token {
   self = [super init];
   if (self) {
     _delegate = delegate;
@@ -20,7 +20,7 @@
   return self;
 }
 
--(id)init {
+- (id)init {
   NSAssert(NO, @"Initialize with -initWithDelegate:andToken:");
   return nil;
 }
@@ -33,7 +33,7 @@
   return [KIALocalization localizedStringForKey:@"PREFERENCES_TITLE"];
 }
 
-- (NSString *)dismissButtonKey {
+- (NSString *)dismissButtonLabelKey {
   return @"PREFERENCES_DISMISS_BUTTON_TEXT";
 }
 
@@ -47,13 +47,13 @@
 }
 
 - (void)dismissButtonPressed {
-  if ([_delegate respondsToSelector:@selector(klarnaPreferencesCancelled:)])
+  if ([_delegate respondsToSelector:@selector(klarnaPreferencesClosed:)])
   {
-    [_delegate klarnaPreferencesCancelled:self];
+    [_delegate klarnaPreferencesClosed:self];
   }
 }
 
-- (void)handleUserReadyEventWithPayload: (NSDictionary *)payload {
+- (void)handleUserReadyEventWithPayload:(NSDictionary *)payload {
   NSURLRequest *request = [NSURLRequest requestWithURL:[self url]
                                            cachePolicy:NSURLRequestReloadIgnoringCacheData
                                        timeoutInterval:60.0f];

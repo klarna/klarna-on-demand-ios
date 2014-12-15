@@ -13,11 +13,11 @@
   
   self.view.backgroundColor = [UIColor whiteColor];
   
-  [self AddWebView];
+  [self addWebView];
   
   [self registerJockeyEvents];
   
-  [self AddHUD];
+  [self addHUD];
   
   [self addDismissButtonIfNeeded];
 }
@@ -29,23 +29,23 @@
   [_webView loadRequest:request];
 }
 
-- (void) addDismissButtonIfNeeded {
+- (void)addDismissButtonIfNeeded {
   if(self.navigationController.viewControllers.count == 1)
   {
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:[KIALocalization localizedStringForKey:[self dismissButtonKey]]
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:[KIALocalization localizedStringForKey:[self dismissButtonLabelKey]]
                                                                              style:UIBarButtonItemStylePlain
                                                                             target:self
                                                                             action:@selector(dismissButtonPressed)];
   }
 }
 
-- (void)AddWebView {
+- (void)addWebView {
   _webView = [[UIWebView alloc] initWithFrame:self.view.bounds];
   _webView.delegate = self;
   [self.view addSubview:_webView];
 }
 
-- (void)AddHUD {
+- (void)addHUD {
   _HUDView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 80, 80)];
   _HUDView.center = self.view.center;
   _HUDView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.6];
@@ -70,8 +70,7 @@
   [_HUDView removeFromSuperview];
 }
 
--(BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
-{
+-(BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
   return [Jockey webView:webView withUrl:[request URL]];
 }
 
@@ -99,7 +98,7 @@
   [self unregisterJockeyCallbacks];
 }
 
-- (void)unregisterJockeyCallbacks{
+- (void)unregisterJockeyCallbacks {
   [Jockey off:JOCKEY_USER_READY];
   [Jockey off:JOCKEY_USER_ERROR];
 }
