@@ -9,7 +9,7 @@ Klarna In-App allows you to offer Klarna's payment solution in mobile apps that 
 
 This project contains Klarna's In-App purchase SDK for iOS, as well as a sample application utilizing the SDK.
 
-![It's Klarna in your App](https://raw.githubusercontent.com/yuval-netanel/inapp-ios/IACO-527-github-documentation/screenshot.png)
+![It's Klarna in your App](screenshot.png)
 
 While not necessary, the simplest way to get going with both the sample application and the SDK is to use [CocoaPods](http://cocoapods.org) and so all the following instructions will focus on that approach. For an alternative approach, see the [official documentation](http://this_should_be_some_valid_link).
 
