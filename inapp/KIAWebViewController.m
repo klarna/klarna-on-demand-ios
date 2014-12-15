@@ -13,27 +13,35 @@
   
   self.view.backgroundColor = [UIColor whiteColor];
   
-  self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:[KIALocalization localizedStringForKey:[self dismissButtonKey]]
-                                                                           style:UIBarButtonItemStylePlain
-                                                                          target:self
-                                                                          action:@selector(dismissButtonPressed)];
-}
-
--(void)viewDidAppear:(BOOL)animated {
   [self AddWebView];
   
   [self registerJockeyEvents];
   
   [self AddHUD];
+  
+  [self addDismissButtonIfNeeded];
 }
 
-- (void)AddWebView {
-  _webView = [[UIWebView alloc] initWithFrame:self.view.frame];
-  _webView.delegate = self;
+-(void)viewDidAppear:(BOOL)animated {
   NSURLRequest *request = [NSURLRequest requestWithURL:[self url]
                                            cachePolicy:NSURLRequestReloadIgnoringCacheData
                                        timeoutInterval:60.0f];
   [_webView loadRequest:request];
+}
+
+- (void) addDismissButtonIfNeeded {
+  if(self.navigationController.viewControllers.count == 1)
+  {
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:[KIALocalization localizedStringForKey:[self dismissButtonKey]]
+                                                                             style:UIBarButtonItemStylePlain
+                                                                            target:self
+                                                                            action:@selector(dismissButtonPressed)];
+  }
+}
+
+- (void)AddWebView {
+  _webView = [[UIWebView alloc] initWithFrame:self.view.bounds];
+  _webView.delegate = self;
   [self.view addSubview:_webView];
 }
 
