@@ -1,5 +1,6 @@
 #import <UIKit/UIKit.h>
 #import "KIAToken.h"
+#import "KIAWebViewController+Protected.h"
 
 @class KIARegistrationViewController;
 
@@ -44,7 +45,7 @@
 /**
  *  Responsible for registering a new user and setting his Klarna payment method.
  */
-@interface KIARegistrationViewController : UIViewController <UIWebViewDelegate>
+@interface KIARegistrationViewController : KIAWebViewController
 
 /**
  *  Initialize the Klarna registration view-controller.

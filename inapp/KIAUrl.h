@@ -4,4 +4,6 @@
 
 + (NSURL *)registrationUrl;
 
++ (NSURL *)preferencesUrlWithToken:(NSString *)token;
+
 @end

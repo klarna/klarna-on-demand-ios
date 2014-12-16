@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4651C4471A3DD5EC00800F1A /* libInapp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4651C4461A3DD5EC00800F1A /* libInapp.a */; };
+		4651C4501A3DDDCE00800F1A /* KIA.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4651C44F1A3DDDCE00800F1A /* KIA.bundle */; };
 		C946A3CC1A24C21D00A12CC6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C946A3CB1A24C21D00A12CC6 /* main.m */; };
 		C946A3CF1A24C21D00A12CC6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C946A3CE1A24C21D00A12CC6 /* AppDelegate.m */; };
 		C946A3D21A24C21D00A12CC6 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C946A3D11A24C21D00A12CC6 /* MainViewController.m */; };
 		C946A3D51A24C21D00A12CC6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C946A3D31A24C21D00A12CC6 /* Main.storyboard */; };
 		C946A3D71A24C21D00A12CC6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C946A3D61A24C21D00A12CC6 /* Images.xcassets */; };
 		C946A3DA1A24C21D00A12CC6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C946A3D81A24C21D00A12CC6 /* LaunchScreen.xib */; };
-		C9D42DC01A3D7D5C00EA7A36 /* libInapp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9D42DBF1A3D7D5C00EA7A36 /* libInapp.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +28,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4651C4461A3DD5EC00800F1A /* libInapp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libInapp.a; path = "../../../Library/Developer/Xcode/DerivedData/Inapp-byplifmbihknkwfgkkvwhjomxrlv/Build/Products/Debug-iphoneos/libInapp.a"; sourceTree = "<group>"; };
+		4651C44F1A3DDDCE00800F1A /* KIA.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = KIA.bundle; path = ../inapp/KIA.bundle; sourceTree = "<group>"; };
 		C946A3C61A24C21D00A12CC6 /* InappExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InappExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C946A3CA1A24C21D00A12CC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C946A3CB1A24C21D00A12CC6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -39,9 +42,6 @@
 		C946A3D91A24C21D00A12CC6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		C946A3DF1A24C21D00A12CC6 /* InappExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InappExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C946A3E41A24C21D00A12CC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C954ABDD1A34BD8A00574C11 /* sv-SE */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "sv-SE"; path = "sv-SE.lproj/Main.strings"; sourceTree = "<group>"; };
-		C954ABDE1A34BD8A00574C11 /* sv-SE */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "sv-SE"; path = "sv-SE.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
-		C9D42DBF1A3D7D5C00EA7A36 /* libInapp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libInapp.a; path = "../../../Library/Developer/Xcode/DerivedData/Inapp-axiligmkeoxhyzfrhgmrprtcfwvg/Build/Products/Debug-iphoneos/libInapp.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,7 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9D42DC01A3D7D5C00EA7A36 /* libInapp.a in Frameworks */,
+				4651C4471A3DD5EC00800F1A /* libInapp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,7 +66,8 @@
 		C946A3BD1A24C21D00A12CC6 = {
 			isa = PBXGroup;
 			children = (
-				C9D42DBF1A3D7D5C00EA7A36 /* libInapp.a */,
+				4651C44F1A3DDDCE00800F1A /* KIA.bundle */,
+				4651C4461A3DD5EC00800F1A /* libInapp.a */,
 				C946A3C81A24C21D00A12CC6 /* InappExample */,
 				C946A3E21A24C21D00A12CC6 /* InappExampleTests */,
 				C946A3C71A24C21D00A12CC6 /* Products */,
@@ -202,6 +203,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4651C4501A3DDDCE00800F1A /* KIA.bundle in Resources */,
 				C946A3D51A24C21D00A12CC6 /* Main.storyboard in Resources */,
 				C946A3DA1A24C21D00A12CC6 /* LaunchScreen.xib in Resources */,
 				C946A3D71A24C21D00A12CC6 /* Images.xcassets in Resources */,
@@ -250,7 +252,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				C946A3D41A24C21D00A12CC6 /* Base */,
-				C954ABDD1A34BD8A00574C11 /* sv-SE */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -259,7 +260,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				C946A3D91A24C21D00A12CC6 /* Base */,
-				C954ABDE1A34BD8A00574C11 /* sv-SE */,
 			);
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";
@@ -354,8 +354,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/yuvalnetanel/projects/inapp-ios/build/Debug-iphoneos",
-					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Inapp-axiligmkeoxhyzfrhgmrprtcfwvg/Build/Products/Debug-iphoneos",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Inapp-byplifmbihknkwfgkkvwhjomxrlv/Build/Products/Debug-iphoneos",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -370,8 +369,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/yuvalnetanel/projects/inapp-ios/build/Debug-iphoneos",
-					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Inapp-axiligmkeoxhyzfrhgmrprtcfwvg/Build/Products/Debug-iphoneos",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Inapp-byplifmbihknkwfgkkvwhjomxrlv/Build/Products/Debug-iphoneos",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
