@@ -111,7 +111,6 @@
 		C9E7F2061A3F3FEA0005205B /* BDSHA512Cryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSHA512Cryptor.h; sourceTree = "<group>"; };
 		C9E7F2071A3F3FEA0005205B /* BDSHA512Cryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDSHA512Cryptor.m; sourceTree = "<group>"; };
 		C9E7F2081A3F3FEA0005205B /* Crypto-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Crypto-Prefix.pch"; sourceTree = "<group>"; };
-		C9E7F20B1A3F3FEA0005205B /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+Base64.h"; path = "../3rdParty/Crypto/External/Base64/NSData+Base64.h"; sourceTree = "<group>"; };
 		C9E7F20C1A3F3FEA0005205B /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
 		C9E7F20D1A3F3FEA0005205B /* NSString+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Base64.h"; sourceTree = "<group>"; };
 		C9E7F20E1A3F3FEA0005205B /* NSString+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Base64.m"; sourceTree = "<group>"; };
@@ -139,8 +138,8 @@
 		C9E7F2411A3F45170005205B /* KIACrypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KIACrypto.m; path = inapp/KIACrypto.m; sourceTree = SOURCE_ROOT; };
 		C9E7F2431A3F4A410005205B /* KIAOriginProof.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KIAOriginProof.h; path = inapp/KIAOriginProof.h; sourceTree = SOURCE_ROOT; };
 		C9E7F2441A3F4A410005205B /* KIAOriginProof.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KIAOriginProof.m; path = inapp/KIAOriginProof.m; sourceTree = SOURCE_ROOT; };
-		C9E7F2591A403AE30005205B /* NSData+Base64.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "NSData+Base64.m"; path = "../3rdParty/Crypto/External/Base64/NSData+Base64.m"; sourceTree = "<group>"; };
 		C9E7F25A1A405D0E0005205B /* KIAOriginProofSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KIAOriginProofSpec.m; sourceTree = "<group>"; };
+		C9E7F2621A4086980005205B /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
 		C9FC95401A278AAD00485500 /* KIAContextSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KIAContextSpec.m; sourceTree = "<group>"; };
 		D1FE0E1CBCA1595B5EFACB69 /* libPods-InappTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-InappTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -224,8 +223,6 @@
 		C90D1C621A24CBD100016FE4 /* Inapp */ = {
 			isa = PBXGroup;
 			children = (
-				C9E7F20B1A3F3FEA0005205B /* NSData+Base64.h */,
-				C9E7F2591A403AE30005205B /* NSData+Base64.m */,
 				C954ABCD1A34950300574C11 /* KIA.bundle */,
 				C90D1C831A24CD2800016FE4 /* KIAContext.h */,
 				C90D1C841A24CD2800016FE4 /* KIAContext.m */,
@@ -316,6 +313,7 @@
 		C9E7F20A1A3F3FEA0005205B /* Base64 */ = {
 			isa = PBXGroup;
 			children = (
+				C9E7F2621A4086980005205B /* NSData+Base64.h */,
 				C9E7F20C1A3F3FEA0005205B /* NSData+Base64.m */,
 				C9E7F20D1A3F3FEA0005205B /* NSString+Base64.h */,
 				C9E7F20E1A3F3FEA0005205B /* NSString+Base64.m */,
@@ -688,7 +686,7 @@
 		C90D1C751A24CBD100016FE4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -697,7 +695,7 @@
 		C90D1C761A24CBD100016FE4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
