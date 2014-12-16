@@ -4,7 +4,7 @@ Note: Please mark completed/checked bullets with Use ~~ ~~tildes around the word
 
 ###`KIAContext`
 
- * `validateApiKey` could assert for APIKey length - instead of checking for the current 2 conditions. - **Done**.
+ * ~~`validateApiKey` could assert for APIKey length - instead of checking for the current 2 conditions.~~
  * I would consider generating a private singleton, so it could handle possible (in the future) additional properties instead of using static instances.
 
 Additional notes:
