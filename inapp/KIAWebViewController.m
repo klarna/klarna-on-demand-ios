@@ -22,7 +22,7 @@
   [self addDismissButtonIfNeeded];
 }
 
--(void)viewDidAppear:(BOOL)animated {
+- (void)viewDidAppear:(BOOL)animated {
   NSURLRequest *request = [NSURLRequest requestWithURL:[self url]
                                            cachePolicy:NSURLRequestReloadIgnoringCacheData
                                        timeoutInterval:60.0f];
@@ -70,7 +70,7 @@
   [_HUDView removeFromSuperview];
 }
 
--(BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
   return [Jockey webView:webView withUrl:[request URL]];
 }
 

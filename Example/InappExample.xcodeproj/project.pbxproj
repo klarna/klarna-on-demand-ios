@@ -42,6 +42,8 @@
 		C946A3D91A24C21D00A12CC6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		C946A3DF1A24C21D00A12CC6 /* InappExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InappExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C946A3E41A24C21D00A12CC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C9E7F25E1A407D280005205B /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/Main.strings; sourceTree = "<group>"; };
+		C9E7F25F1A407D280005205B /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -252,6 +254,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				C946A3D41A24C21D00A12CC6 /* Base */,
+				C9E7F25E1A407D280005205B /* sv */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				C946A3D91A24C21D00A12CC6 /* Base */,
+				C9E7F25F1A407D280005205B /* sv */,
 			);
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";
