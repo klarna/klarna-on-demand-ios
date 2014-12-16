@@ -22,6 +22,26 @@
 		C90D1C8B1A24CD2800016FE4 /* KIAUrl.m in Sources */ = {isa = PBXBuildFile; fileRef = C90D1C881A24CD2800016FE4 /* KIAUrl.m */; };
 		C954ABA71A345B5E00574C11 /* KIALocalization.m in Sources */ = {isa = PBXBuildFile; fileRef = C954ABA61A345B5E00574C11 /* KIALocalization.m */; };
 		C954ABE11A35AB6300574C11 /* KIA.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C954ABCD1A34950300574C11 /* KIA.bundle */; };
+		C9E7F22E1A3F3FEA0005205B /* BDAESCBC256Cryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F1FB1A3F3FEA0005205B /* BDAESCBC256Cryptor.m */; };
+		C9E7F22F1A3F3FEA0005205B /* BDAESCryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F1FD1A3F3FEA0005205B /* BDAESCryptor.m */; };
+		C9E7F2301A3F3FEA0005205B /* BDCryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F1FF1A3F3FEA0005205B /* BDCryptor.m */; };
+		C9E7F2311A3F3FEA0005205B /* BDCryptorError.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2011A3F3FEA0005205B /* BDCryptorError.m */; };
+		C9E7F2321A3F3FEA0005205B /* BDRSACryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2031A3F3FEA0005205B /* BDRSACryptor.m */; };
+		C9E7F2331A3F3FEA0005205B /* BDRSACryptorKeyPair.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2051A3F3FEA0005205B /* BDRSACryptorKeyPair.m */; };
+		C9E7F2341A3F3FEA0005205B /* BDSHA512Cryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2071A3F3FEA0005205B /* BDSHA512Cryptor.m */; };
+		C9E7F2351A3F3FEA0005205B /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F20C1A3F3FEA0005205B /* NSData+Base64.m */; };
+		C9E7F2361A3F3FEA0005205B /* NSString+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F20E1A3F3FEA0005205B /* NSString+Base64.m */; };
+		C9E7F2371A3F3FEA0005205B /* BDJSONError.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2151A3F3FEA0005205B /* BDJSONError.m */; };
+		C9E7F2381A3F3FEA0005205B /* NSArray+BDJSONSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2171A3F3FEA0005205B /* NSArray+BDJSONSerialization.m */; };
+		C9E7F2391A3F3FEA0005205B /* NSData+BDJSONSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2191A3F3FEA0005205B /* NSData+BDJSONSerialization.m */; };
+		C9E7F23A1A3F3FEA0005205B /* NSDictionary+BDJSONSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F21B1A3F3FEA0005205B /* NSDictionary+BDJSONSerialization.m */; };
+		C9E7F23B1A3F3FEA0005205B /* NSDictionary+BDParseJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F21D1A3F3FEA0005205B /* NSDictionary+BDParseJSON.m */; };
+		C9E7F23C1A3F3FEA0005205B /* NSObject+BDJSONSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F21F1A3F3FEA0005205B /* NSObject+BDJSONSerialization.m */; };
+		C9E7F23D1A3F3FEA0005205B /* NSString+BDJSONSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2211A3F3FEA0005205B /* NSString+BDJSONSerialization.m */; };
+		C9E7F23E1A3F3FEA0005205B /* NSString+BDUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2241A3F3FEA0005205B /* NSString+BDUtilities.m */; };
+		C9E7F23F1A3F3FEA0005205B /* BDError.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2271A3F3FEA0005205B /* BDError.m */; };
+		C9E7F2421A3F45170005205B /* KIACrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2411A3F45170005205B /* KIACrypto.m */; };
+		C9E7F2451A3F4A410005205B /* KIAOriginProof.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2441A3F4A410005205B /* KIAOriginProof.m */; };
 		C9FC95411A278AAD00485500 /* KIAContextSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FC95401A278AAD00485500 /* KIAContextSpec.m */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +95,49 @@
 		C954ABA51A345B5E00574C11 /* KIALocalization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KIALocalization.h; path = inapp/KIALocalization.h; sourceTree = SOURCE_ROOT; };
 		C954ABA61A345B5E00574C11 /* KIALocalization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KIALocalization.m; path = inapp/KIALocalization.m; sourceTree = SOURCE_ROOT; };
 		C954ABCD1A34950300574C11 /* KIA.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = KIA.bundle; path = inapp/KIA.bundle; sourceTree = SOURCE_ROOT; };
+		C9E7F1FA1A3F3FEA0005205B /* BDAESCBC256Cryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDAESCBC256Cryptor.h; sourceTree = "<group>"; };
+		C9E7F1FB1A3F3FEA0005205B /* BDAESCBC256Cryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDAESCBC256Cryptor.m; sourceTree = "<group>"; };
+		C9E7F1FC1A3F3FEA0005205B /* BDAESCryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDAESCryptor.h; sourceTree = "<group>"; };
+		C9E7F1FD1A3F3FEA0005205B /* BDAESCryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDAESCryptor.m; sourceTree = "<group>"; };
+		C9E7F1FE1A3F3FEA0005205B /* BDCryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDCryptor.h; sourceTree = "<group>"; };
+		C9E7F1FF1A3F3FEA0005205B /* BDCryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDCryptor.m; sourceTree = "<group>"; };
+		C9E7F2001A3F3FEA0005205B /* BDCryptorError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDCryptorError.h; sourceTree = "<group>"; };
+		C9E7F2011A3F3FEA0005205B /* BDCryptorError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDCryptorError.m; sourceTree = "<group>"; };
+		C9E7F2021A3F3FEA0005205B /* BDRSACryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDRSACryptor.h; sourceTree = "<group>"; };
+		C9E7F2031A3F3FEA0005205B /* BDRSACryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDRSACryptor.m; sourceTree = "<group>"; };
+		C9E7F2041A3F3FEA0005205B /* BDRSACryptorKeyPair.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDRSACryptorKeyPair.h; sourceTree = "<group>"; };
+		C9E7F2051A3F3FEA0005205B /* BDRSACryptorKeyPair.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDRSACryptorKeyPair.m; sourceTree = "<group>"; };
+		C9E7F2061A3F3FEA0005205B /* BDSHA512Cryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSHA512Cryptor.h; sourceTree = "<group>"; };
+		C9E7F2071A3F3FEA0005205B /* BDSHA512Cryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDSHA512Cryptor.m; sourceTree = "<group>"; };
+		C9E7F2081A3F3FEA0005205B /* Crypto-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Crypto-Prefix.pch"; sourceTree = "<group>"; };
+		C9E7F20B1A3F3FEA0005205B /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
+		C9E7F20C1A3F3FEA0005205B /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
+		C9E7F20D1A3F3FEA0005205B /* NSString+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Base64.h"; sourceTree = "<group>"; };
+		C9E7F20E1A3F3FEA0005205B /* NSString+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Base64.m"; sourceTree = "<group>"; };
+		C9E7F2131A3F3FEA0005205B /* BDJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDJSON.h; sourceTree = "<group>"; };
+		C9E7F2141A3F3FEA0005205B /* BDJSONError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDJSONError.h; sourceTree = "<group>"; };
+		C9E7F2151A3F3FEA0005205B /* BDJSONError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDJSONError.m; sourceTree = "<group>"; };
+		C9E7F2161A3F3FEA0005205B /* NSArray+BDJSONSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+BDJSONSerialization.h"; sourceTree = "<group>"; };
+		C9E7F2171A3F3FEA0005205B /* NSArray+BDJSONSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+BDJSONSerialization.m"; sourceTree = "<group>"; };
+		C9E7F2181A3F3FEA0005205B /* NSData+BDJSONSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+BDJSONSerialization.h"; sourceTree = "<group>"; };
+		C9E7F2191A3F3FEA0005205B /* NSData+BDJSONSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+BDJSONSerialization.m"; sourceTree = "<group>"; };
+		C9E7F21A1A3F3FEA0005205B /* NSDictionary+BDJSONSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+BDJSONSerialization.h"; sourceTree = "<group>"; };
+		C9E7F21B1A3F3FEA0005205B /* NSDictionary+BDJSONSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+BDJSONSerialization.m"; sourceTree = "<group>"; };
+		C9E7F21C1A3F3FEA0005205B /* NSDictionary+BDParseJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+BDParseJSON.h"; sourceTree = "<group>"; };
+		C9E7F21D1A3F3FEA0005205B /* NSDictionary+BDParseJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+BDParseJSON.m"; sourceTree = "<group>"; };
+		C9E7F21E1A3F3FEA0005205B /* NSObject+BDJSONSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+BDJSONSerialization.h"; sourceTree = "<group>"; };
+		C9E7F21F1A3F3FEA0005205B /* NSObject+BDJSONSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+BDJSONSerialization.m"; sourceTree = "<group>"; };
+		C9E7F2201A3F3FEA0005205B /* NSString+BDJSONSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+BDJSONSerialization.h"; sourceTree = "<group>"; };
+		C9E7F2211A3F3FEA0005205B /* NSString+BDJSONSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+BDJSONSerialization.m"; sourceTree = "<group>"; };
+		C9E7F2231A3F3FEA0005205B /* NSString+BDUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+BDUtilities.h"; sourceTree = "<group>"; };
+		C9E7F2241A3F3FEA0005205B /* NSString+BDUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+BDUtilities.m"; sourceTree = "<group>"; };
+		C9E7F2261A3F3FEA0005205B /* BDError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDError.h; sourceTree = "<group>"; };
+		C9E7F2271A3F3FEA0005205B /* BDError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDError.m; sourceTree = "<group>"; };
+		C9E7F22D1A3F3FEA0005205B /* BDLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDLog.h; sourceTree = "<group>"; };
+		C9E7F2401A3F45170005205B /* KIACrypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KIACrypto.h; path = inapp/KIACrypto.h; sourceTree = SOURCE_ROOT; };
+		C9E7F2411A3F45170005205B /* KIACrypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KIACrypto.m; path = inapp/KIACrypto.m; sourceTree = SOURCE_ROOT; };
+		C9E7F2431A3F4A410005205B /* KIAOriginProof.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KIAOriginProof.h; path = inapp/KIAOriginProof.h; sourceTree = SOURCE_ROOT; };
+		C9E7F2441A3F4A410005205B /* KIAOriginProof.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KIAOriginProof.m; path = inapp/KIAOriginProof.m; sourceTree = SOURCE_ROOT; };
 		C9FC95401A278AAD00485500 /* KIAContextSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KIAContextSpec.m; sourceTree = "<group>"; };
 		D1FE0E1CBCA1595B5EFACB69 /* libPods-InappTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-InappTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -102,6 +165,7 @@
 		46872DF11A2B6C0900707282 /* 3rdParty */ = {
 			isa = PBXGroup;
 			children = (
+				C9E7F1F81A3F3FEA0005205B /* Crypto */,
 				46872DF21A2B6C1200707282 /* JockeyJS */,
 			);
 			name = 3rdParty;
@@ -173,6 +237,10 @@
 				4651C4511A3DDE9200800F1A /* KIAWebViewController.h */,
 				4651C4521A3DDE9200800F1A /* KIAWebViewController.m */,
 				4651C40E1A38A4BC00800F1A /* KIAWebViewController+Protected.h */,
+				C9E7F2401A3F45170005205B /* KIACrypto.h */,
+				C9E7F2411A3F45170005205B /* KIACrypto.m */,
+				C9E7F2431A3F4A410005205B /* KIAOriginProof.h */,
+				C9E7F2441A3F4A410005205B /* KIAOriginProof.m */,
 			);
 			path = Inapp;
 			sourceTree = "<group>";
@@ -196,6 +264,165 @@
 				C903A2DE1A2523A8009AE44D /* InappTests.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C9E7F1F81A3F3FEA0005205B /* Crypto */ = {
+			isa = PBXGroup;
+			children = (
+				C9E7F1F91A3F3FEA0005205B /* Crypto */,
+				C9E7F2081A3F3FEA0005205B /* Crypto-Prefix.pch */,
+				C9E7F2091A3F3FEA0005205B /* External */,
+				C9E7F20F1A3F3FEA0005205B /* Utilities */,
+			);
+			name = Crypto;
+			path = 3rdParty/Crypto;
+			sourceTree = "<group>";
+		};
+		C9E7F1F91A3F3FEA0005205B /* Crypto */ = {
+			isa = PBXGroup;
+			children = (
+				C9E7F1FA1A3F3FEA0005205B /* BDAESCBC256Cryptor.h */,
+				C9E7F1FB1A3F3FEA0005205B /* BDAESCBC256Cryptor.m */,
+				C9E7F1FC1A3F3FEA0005205B /* BDAESCryptor.h */,
+				C9E7F1FD1A3F3FEA0005205B /* BDAESCryptor.m */,
+				C9E7F1FE1A3F3FEA0005205B /* BDCryptor.h */,
+				C9E7F1FF1A3F3FEA0005205B /* BDCryptor.m */,
+				C9E7F2001A3F3FEA0005205B /* BDCryptorError.h */,
+				C9E7F2011A3F3FEA0005205B /* BDCryptorError.m */,
+				C9E7F2021A3F3FEA0005205B /* BDRSACryptor.h */,
+				C9E7F2031A3F3FEA0005205B /* BDRSACryptor.m */,
+				C9E7F2041A3F3FEA0005205B /* BDRSACryptorKeyPair.h */,
+				C9E7F2051A3F3FEA0005205B /* BDRSACryptorKeyPair.m */,
+				C9E7F2061A3F3FEA0005205B /* BDSHA512Cryptor.h */,
+				C9E7F2071A3F3FEA0005205B /* BDSHA512Cryptor.m */,
+			);
+			path = Crypto;
+			sourceTree = "<group>";
+		};
+		C9E7F2091A3F3FEA0005205B /* External */ = {
+			isa = PBXGroup;
+			children = (
+				C9E7F20A1A3F3FEA0005205B /* Base64 */,
+			);
+			path = External;
+			sourceTree = "<group>";
+		};
+		C9E7F20A1A3F3FEA0005205B /* Base64 */ = {
+			isa = PBXGroup;
+			children = (
+				C9E7F20B1A3F3FEA0005205B /* NSData+Base64.h */,
+				C9E7F20C1A3F3FEA0005205B /* NSData+Base64.m */,
+				C9E7F20D1A3F3FEA0005205B /* NSString+Base64.h */,
+				C9E7F20E1A3F3FEA0005205B /* NSString+Base64.m */,
+			);
+			path = Base64;
+			sourceTree = "<group>";
+		};
+		C9E7F20F1A3F3FEA0005205B /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				C9E7F2101A3F3FEA0005205B /* General */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		C9E7F2101A3F3FEA0005205B /* General */ = {
+			isa = PBXGroup;
+			children = (
+				C9E7F2111A3F3FEA0005205B /* Categories */,
+				C9E7F2251A3F3FEA0005205B /* Error */,
+				C9E7F2281A3F3FEA0005205B /* HTTP */,
+				C9E7F22B1A3F3FEA0005205B /* Macros */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
+		C9E7F2111A3F3FEA0005205B /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				C9E7F2121A3F3FEA0005205B /* JSON */,
+				C9E7F2221A3F3FEA0005205B /* String */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		C9E7F2121A3F3FEA0005205B /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				C9E7F2131A3F3FEA0005205B /* BDJSON.h */,
+				C9E7F2141A3F3FEA0005205B /* BDJSONError.h */,
+				C9E7F2151A3F3FEA0005205B /* BDJSONError.m */,
+				C9E7F2161A3F3FEA0005205B /* NSArray+BDJSONSerialization.h */,
+				C9E7F2171A3F3FEA0005205B /* NSArray+BDJSONSerialization.m */,
+				C9E7F2181A3F3FEA0005205B /* NSData+BDJSONSerialization.h */,
+				C9E7F2191A3F3FEA0005205B /* NSData+BDJSONSerialization.m */,
+				C9E7F21A1A3F3FEA0005205B /* NSDictionary+BDJSONSerialization.h */,
+				C9E7F21B1A3F3FEA0005205B /* NSDictionary+BDJSONSerialization.m */,
+				C9E7F21C1A3F3FEA0005205B /* NSDictionary+BDParseJSON.h */,
+				C9E7F21D1A3F3FEA0005205B /* NSDictionary+BDParseJSON.m */,
+				C9E7F21E1A3F3FEA0005205B /* NSObject+BDJSONSerialization.h */,
+				C9E7F21F1A3F3FEA0005205B /* NSObject+BDJSONSerialization.m */,
+				C9E7F2201A3F3FEA0005205B /* NSString+BDJSONSerialization.h */,
+				C9E7F2211A3F3FEA0005205B /* NSString+BDJSONSerialization.m */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
+		C9E7F2221A3F3FEA0005205B /* String */ = {
+			isa = PBXGroup;
+			children = (
+				C9E7F2231A3F3FEA0005205B /* NSString+BDUtilities.h */,
+				C9E7F2241A3F3FEA0005205B /* NSString+BDUtilities.m */,
+			);
+			path = String;
+			sourceTree = "<group>";
+		};
+		C9E7F2251A3F3FEA0005205B /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				C9E7F2261A3F3FEA0005205B /* BDError.h */,
+				C9E7F2271A3F3FEA0005205B /* BDError.m */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
+		C9E7F2281A3F3FEA0005205B /* HTTP */ = {
+			isa = PBXGroup;
+			children = (
+				C9E7F2291A3F3FEA0005205B /* HTTPURLResponse */,
+			);
+			path = HTTP;
+			sourceTree = "<group>";
+		};
+		C9E7F2291A3F3FEA0005205B /* HTTPURLResponse */ = {
+			isa = PBXGroup;
+			children = (
+				C9E7F22A1A3F3FEA0005205B /* HTTPURLJSONArrayResponse */,
+			);
+			path = HTTPURLResponse;
+			sourceTree = "<group>";
+		};
+		C9E7F22A1A3F3FEA0005205B /* HTTPURLJSONArrayResponse */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = HTTPURLJSONArrayResponse;
+			sourceTree = "<group>";
+		};
+		C9E7F22B1A3F3FEA0005205B /* Macros */ = {
+			isa = PBXGroup;
+			children = (
+				C9E7F22C1A3F3FEA0005205B /* Log */,
+			);
+			path = Macros;
+			sourceTree = "<group>";
+		};
+		C9E7F22C1A3F3FEA0005205B /* Log */ = {
+			isa = PBXGroup;
+			children = (
+				C9E7F22D1A3F3FEA0005205B /* BDLog.h */,
+			);
+			path = Log;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -322,15 +549,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9E7F2361A3F3FEA0005205B /* NSString+Base64.m in Sources */,
+				C9E7F23B1A3F3FEA0005205B /* NSDictionary+BDParseJSON.m in Sources */,
+				C9E7F2381A3F3FEA0005205B /* NSArray+BDJSONSerialization.m in Sources */,
+				C9E7F2321A3F3FEA0005205B /* BDRSACryptor.m in Sources */,
+				C9E7F23D1A3F3FEA0005205B /* NSString+BDJSONSerialization.m in Sources */,
+				C9E7F22E1A3F3FEA0005205B /* BDAESCBC256Cryptor.m in Sources */,
+				C9E7F2451A3F4A410005205B /* KIAOriginProof.m in Sources */,
+				C9E7F2311A3F3FEA0005205B /* BDCryptorError.m in Sources */,
 				4651C4531A3DDE9200800F1A /* KIAWebViewController.h in Sources */,
+				C9E7F2351A3F3FEA0005205B /* NSData+Base64.m in Sources */,
+				C9E7F23A1A3F3FEA0005205B /* NSDictionary+BDJSONSerialization.m in Sources */,
 				4651C4541A3DDE9200800F1A /* KIAWebViewController.m in Sources */,
+				C9E7F23C1A3F3FEA0005205B /* NSObject+BDJSONSerialization.m in Sources */,
+				C9E7F2421A3F45170005205B /* KIACrypto.m in Sources */,
+				C9E7F2331A3F3FEA0005205B /* BDRSACryptorKeyPair.m in Sources */,
 				C954ABA71A345B5E00574C11 /* KIALocalization.m in Sources */,
+				C9E7F22F1A3F3FEA0005205B /* BDAESCryptor.m in Sources */,
+				C9E7F2391A3F3FEA0005205B /* NSData+BDJSONSerialization.m in Sources */,
 				467F0EDB1A2C6AC900A76845 /* KIAToken.m in Sources */,
+				C9E7F2341A3F3FEA0005205B /* BDSHA512Cryptor.m in Sources */,
+				C9E7F23E1A3F3FEA0005205B /* NSString+BDUtilities.m in Sources */,
 				467F0EC21A2B6DE900A76845 /* Jockey.m in Sources */,
 				C90D1C8A1A24CD2800016FE4 /* KIARegistrationViewController.m in Sources */,
 				C90D1C891A24CD2800016FE4 /* KIAContext.m in Sources */,
+				C9E7F2371A3F3FEA0005205B /* BDJSONError.m in Sources */,
+				C9E7F23F1A3F3FEA0005205B /* BDError.m in Sources */,
 				C90D1C8B1A24CD2800016FE4 /* KIAUrl.m in Sources */,
 				46D37ABD1A374A6500E6AC7A /* KIAPreferencesViewController.m in Sources */,
+				C9E7F2301A3F3FEA0005205B /* BDCryptor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,6 +625,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREFIX_HEADER = "3rdParty/Crypto/Crypto-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -417,6 +665,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREFIX_HEADER = "3rdParty/Crypto/Crypto-Prefix.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
