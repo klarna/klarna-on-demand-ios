@@ -19,7 +19,7 @@
   
   [self addHUD];
   
-  [self addDismissButtonIfNeeded];
+  [self addDismissButton];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -29,14 +29,12 @@
   [_webView loadRequest:request];
 }
 
-- (void)addDismissButtonIfNeeded {
-  if(self.navigationController.viewControllers.count == 1)
-  {
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:[KIALocalization localizedStringForKey:[self dismissButtonLabelKey]]
+- (void)addDismissButton {
+  self.navigationItem.hidesBackButton = YES;
+  self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:[KIALocalization localizedStringForKey:[self dismissButtonLabelKey]]
                                                                              style:UIBarButtonItemStylePlain
                                                                             target:self
                                                                             action:@selector(dismissButtonPressed)];
-  }
 }
 
 - (void)addWebView {
