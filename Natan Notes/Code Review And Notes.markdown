@@ -4,7 +4,7 @@ Note: Please mark completed/checked bullets with Use ~~ ~~tildes around the word
 
 ###`KIAContext`
 
- * `validateApiKey` could assert for APIKey length - instead of checking for the current 2 conditions. - Done.
+ * `validateApiKey` could assert for APIKey length - instead of checking for the current 2 conditions. - **Done**.
  * I would consider generating a private singleton, so it could handle possible (in the future) additional properties instead of using static instances.
 
 Additional notes:
@@ -12,19 +12,19 @@ Use Apple Doc and generate, making it available via Dash
 
 ### `KIARegistrationViewController`
 
- * Is there any special reason the protocol methods is declared after the class? - Done.
+ * ~~Is there any special reason the protocol methods is declared after the class?~~
  * We could add a method that presents the `KIARegistrationViewController` (or KIARegistrationViewController could be/return a `UINavigationController`)
- * Delegate methods are required, right? If so, they should be declared as required. - Done.
- * We should create an assert method to make sure developers don't simply call:
+ * ~~Delegate methods are required, right? If so, they should be declared as required.~~
+ * ~~We should create an assert method to make sure developers don't simply call:
  ```
  KIARegistrationViewController *klarnaViewController = [[KIARegistrationViewController alloc] init];
- ``` - Done.
-* Can we pass an instance of `NSError` in the `klarnaRegistrationFailed` delegate method? - for simplicity, we have decided that we will not report the error cause.
-* Would be better if `id<KIARegistrationViewControllerDelegate>` was declared as a property. - Done.
-* `AddSpinner` method: (1) HardCoded is not ideal; (2) I would call it HUD rather than spinner; (3) SVProgressHUD is an excellent open source component for that purposes, I would consider using it (specially if there would be more use cases for a loader.) - SVProgressHUD will be implemented. what about MBProgressHUD?
-* Line 82: `[error code]` - I prefer (and there is a strong consensus in the community) using the dot notation for properties, and square bracket for method
+ ``` ~~
+* ~~Can we pass an instance of `NSError` in the `klarnaRegistrationFailed` delegate method?~~ - for simplicity, we have decided that we will not report the error cause.
+* ~~Would be better if `id<KIARegistrationViewControllerDelegate>` was declared as a property.~~
+* ~~`AddSpinner` method: (1) HardCoded is not ideal; (2) I would call it HUD rather than spinner; (3) SVProgressHUD is an excellent open source component for that purposes, I would consider using it (specially if there would be more use cases for a loader.)~~ - SVProgressHUD will be implemented. what about MBProgressHUD?
+* ~~Line 82: `[error code]` - I prefer (and there is a strong consensus in the community) using the dot notation for properties, and square bracket for methods.~~
 * Line 112: (1) I would prefer to define the token in a separate line. (2) Is there any validation to make sure that the `NSDictionary` received is not `nil`, and that the parameter `userToken` is not `nil` as well?
-* Line 124: `viewDidDisappear:` is not calling `super...`. Also, it's recommended that view related methods are subclassed together, below `init` methods.
+* ~~Line 124: `viewDidDisappear:` is not calling `super...`. Also, it's recommended that view related methods are subclassed together, below `init` methods.~~
 
 ###`KIAURL`
 * In this case, it's much preferred to use a category instead of a subclass of `NSObject`.
@@ -39,8 +39,8 @@ KIAToken *token = [KIAToken tokenFromDictionary:payload];
 ```
 
 ##App example
-* In the app delegate, I would explain the `[KIAContext setApiKey:]` line
-* The test api key will be available for every developer to test? If not, it should be removed, no?
+* ~~In the app delegate, I would explain the `[KIAContext setApiKey:]` line~~
+* ~~The test api key will be available for every developer to test? If not, it should be removed, no?~~
 
 ## General notes:
 
