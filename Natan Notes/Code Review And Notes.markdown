@@ -15,10 +15,10 @@ Use Apple Doc and generate, making it available via Dash
  * ~~Is there any special reason the protocol methods is declared after the class?~~
  * We could add a method that presents the `KIARegistrationViewController` (or KIARegistrationViewController could be/return a `UINavigationController`)
  * ~~Delegate methods are required, right? If so, they should be declared as required.~~
- * ~~We should create an assert method to make sure developers don't simply call:
+ * ~~We should create an assert method to make sure developers don't simply call:~~
  ```
  KIARegistrationViewController *klarnaViewController = [[KIARegistrationViewController alloc] init];
- ``` ~~
+ ``` 
 * ~~Can we pass an instance of `NSError` in the `klarnaRegistrationFailed` delegate method?~~ - for simplicity, we have decided that we will not report the error cause.
 * ~~Would be better if `id<KIARegistrationViewControllerDelegate>` was declared as a property.~~
 * ~~`AddSpinner` method: (1) HardCoded is not ideal; (2) I would call it HUD rather than spinner; (3) SVProgressHUD is an excellent open source component for that purposes, I would consider using it (specially if there would be more use cases for a loader.)~~ - SVProgressHUD will be implemented. what about MBProgressHUD?
