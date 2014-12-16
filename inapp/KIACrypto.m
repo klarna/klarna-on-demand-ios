@@ -3,6 +3,16 @@
 #import "BDRSACryptorKeyPair.h"
 #import "BDError.h"
 #import "BDLog.h"
+#import <Security/SecBase.h>
+#include <CommonCrypto/CommonDigest.h>
+#import "NSData+Base64.h"
+
+@interface KIACrypto ()
+
+@property (strong, nonatomic) NSString *publicKeyTag;
+@property (strong, nonatomic) NSString *privateKeyTag;
+
+@end
 
 @implementation KIACrypto
 
@@ -23,16 +33,59 @@
     BDError *error = [[BDError alloc] init];
     BDRSACryptor *RSACryptor = [[BDRSACryptor alloc] init];
     
-    BDRSACryptorKeyPair *RSAKeyPair = [RSACryptor generateKeyPairWithKeyIdentifier:KIA_TAG error:error];
+    _publicKeyTag = [RSACryptor publicKeyIdentifierWithTag:KIA_TAG];
+    _privateKeyTag = [RSACryptor publicKeyIdentifierWithTag:KIA_TAG];
     
-    _publicKeyBase64Str = [[RSAKeyPair.publicKey dataUsingEncoding:NSUTF8StringEncoding] base64EncodedStringWithOptions:0];
+    SecKeyRef publicKeyRef = [RSACryptor keyRefWithTag:_publicKeyTag error:error];
+    SecKeyRef privateKeyRef = [RSACryptor keyRefWithTag:_privateKeyTag error:error];
+    
+    if (publicKeyRef && privateKeyRef) {
+      NSString *publicKeyStr = [RSACryptor X509FormattedPublicKey:_publicKeyTag error:error];
+      _publicKeyBase64Str = [[publicKeyStr dataUsingEncoding:NSUTF8StringEncoding] base64EncodedStringWithOptions:0];
+    } else {
+      BDRSACryptorKeyPair *RSAKeyPair = [RSACryptor generateKeyPairWithKeyIdentifier:KIA_TAG error:error];
+      _publicKeyBase64Str = [[RSAKeyPair.publicKey dataUsingEncoding:NSUTF8StringEncoding] base64EncodedStringWithOptions:0];
+    }
   }
   return self;
 }
 
 
 - (NSString *)getSignatureWithText:(NSString *)plainText {
-  return @"dd";
+  NSData *plainData = [plainText dataUsingEncoding:NSUTF8StringEncoding];
+  
+  BDRSACryptor *RSACryptor = [[BDRSACryptor alloc] init];
+  BDError *error = [[BDError alloc] init];
+  
+  SecKeyRef privateKey = [RSACryptor keyRefWithTag:_privateKeyTag error:error];
+
+  
+  size_t signedHashBytesSize = SecKeyGetBlockSize(privateKey);
+  uint8_t* signedHashBytes = malloc(signedHashBytesSize);
+  memset(signedHashBytes, 0x0, signedHashBytesSize);
+  
+  size_t hashBytesSize = CC_SHA256_DIGEST_LENGTH;
+  uint8_t* hashBytes = malloc(hashBytesSize);
+  if (!CC_SHA256([plainData bytes], (CC_LONG)[plainData length], hashBytes)) {
+    return nil;
+  }
+  
+  SecKeyRawSign(privateKey,
+                kSecPaddingPKCS1SHA256,
+                hashBytes,
+                hashBytesSize,
+                signedHashBytes,
+                &signedHashBytesSize);
+  
+  NSData* signedHash = [NSData dataWithBytes:signedHashBytes
+                                      length:(NSUInteger)signedHashBytesSize];
+  
+  if (hashBytes)
+    free(hashBytes);
+  if (signedHashBytes)
+    free(signedHashBytes);
+  
+  return [signedHash base64EncodedStringWithOptions:0];
 }
 
 @end

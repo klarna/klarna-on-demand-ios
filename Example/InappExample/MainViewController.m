@@ -2,7 +2,7 @@
 #import "KIARegistrationViewController.h"
 #import "KIAPreferencesViewController.h"
 #import "KIAContext.h"
-
+#import "KIAOriginProof.h"
 #define ALERT(str) [[[UIAlertView alloc] initWithTitle:@"Alert" message:str delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil] show]
 
 #define USER_TOKEN_KEY @"user_token"
@@ -72,7 +72,9 @@
 }
 
 - (IBAction)onBuyPressed:(id)sender {
-  NSString *message = [NSString stringWithFormat:@"Order sent to app-server with token: %@", [self getUserToken]];
+  NSString *originProof = [KIAOriginProof generateWithAmount:3600 currency:@"SEK" userToken:[self getUserToken]];
+  
+  NSString *message = [NSString stringWithFormat:@"Order sent to app-server with token: %@ and origin-proof: %@", [self getUserToken], originProof];
   ALERT(message);
 }
 

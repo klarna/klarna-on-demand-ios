@@ -89,4 +89,7 @@
 - (BDRSACryptorKeyPair *)generateKeyPairWithKeyIdentifier:(NSString *)keyIdentifier
                                                    error:(BDError *)error;
 
+- (SecKeyRef)keyRefWithTag:(NSString *)tag
+                     error:(BDError *)error;
+
 @end

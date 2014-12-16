@@ -224,7 +224,7 @@ static unsigned char oidSequence [] = { 0x30, 0x0d, 0x06, 0x09, 0x2a, 0x86, 0x48
     
     NSMutableDictionary *keyPairAttributes = [NSMutableDictionary dictionary];
     [keyPairAttributes setObject:(__bridge id)kSecAttrKeyTypeRSA forKey:(__bridge id)kSecAttrKeyType];
-    [keyPairAttributes setObject:[NSNumber numberWithInt:1024] forKey:(__bridge id)kSecAttrKeySizeInBits];
+    [keyPairAttributes setObject:[NSNumber numberWithInt:512] forKey:(__bridge id)kSecAttrKeySizeInBits];
     [keyPairAttributes setObject:privateKeyAttributes forKey:(__bridge id)kSecPrivateKeyAttrs];
     [keyPairAttributes setObject:publicKeyAttributes forKey:(__bridge id)kSecPublicKeyAttrs];
     

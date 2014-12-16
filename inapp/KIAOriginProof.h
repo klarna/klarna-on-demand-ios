@@ -2,6 +2,6 @@
 
 @interface KIAOriginProof : NSObject
 
-- (NSString *)generateWithAmount:(int)amount currency:(NSString *)currency userToken:(NSString *)userToken;
++ (NSString *)generateWithAmount:(int)amount currency:(NSString *)currency userToken:(NSString *)userToken;
 
 @end

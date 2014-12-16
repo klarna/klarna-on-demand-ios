@@ -3,7 +3,8 @@
 
 @implementation KIAOriginProof
 
-- (NSString *)generateWithAmount:(int)amount currency:(NSString *)currency userToken:(NSString *)userToken {
++ (NSString *)generateWithAmount:(int)amount currency:(NSString *)currency userToken:(NSString *)userToken {
+  
   
   return [[KIACrypto sharedKIACrypto] getSignatureWithText:@"blaaa"];
 }
