@@ -34,7 +34,7 @@ You'll need to install [CocoaPods](http://cocoapods.org) in order to properly wo
 3. Open Inapp.xcworkspace and code away
 
 ### Tests
-A pull request must include tests for the proposed fixes/functionality. We use [Kiwi](https://github.com/kiwi-bdd/Kiwi) to write our tests and you can find the tests themselves under the *Inapp* project in the *InappTets* folder.
+Pull requests must include tests for their proposed fixes/functionality. We use [Kiwi](https://github.com/kiwi-bdd/Kiwi) to write our tests and you can find the tests themselves under the *Inapp* project in the *InappTests* folder.
 
 
 ## Author

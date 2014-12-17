@@ -1,5 +1,5 @@
 #Integration Guide
-This guide includes all information necessary to receive payments from a user of your application through Klarna. We will see how to allow the user to register his device with Klarna, change payment preferences and perform purchases.
+This guide includes all information necessary to receive payments from a user of your application through Klarna. In this guide, you will see how to allow the user to register his device with Klarna, change payment preferences and perform purchases.
 
 ##Including the SDK in your project
 This guide assumes you use [CocoaPods](http://cocoapods.org) to manage your project dependencies. If you do not, refer to our [official documentation](http://this_should_be_some_valid_link) for an alternative setup approach.
@@ -36,7 +36,7 @@ Users must go through a quick registration process in order to pay using Klarna.
 **Note:** It is important to point out that the registration view will not function properly without network access.
 
 ###Showing the view
-For the sake of this example, we will assume we have a button that launches the registration view (this is not a very good way to decide when to show the view, but more on that [later](#when_to_show_registration)).
+For the sake of this example, we will assume we have a button that launches the registration view (we will cover a better way to handle this [later](#when_to_show_registration)).
 
 First off, import the registration view's header file into your view controller:
 
@@ -44,7 +44,7 @@ First off, import the registration view's header file into your view controller:
 #import "KIARegistrationViewController.h"
 ```
 
-Then, assuming the button's touch handler is called `onRegisterPressed`, set it up thusly:
+Then, assuming the button's touch handler is called `onRegisterPressed`, set it up like this:
 
 ```objective-c
 - (IBAction)onRegisterPressed:(id)sender {
@@ -63,8 +63,8 @@ Then, assuming the button's touch handler is called `onRegisterPressed`, set it 
 ```
 
 There are a couple of things that are worth pointing out in the code above:
-- To properly initialize the registration view, you need to supply it with a delegate that it will use to notify you of various important events. We will go over these events later when examine the [KIARegistrationViewControllerDelegate](#kia_registration_view_controller_delegate) protocol. We recommend having the view controller that hosts the registration view conform to said protocol.
-- We display the registration view by making it part of a navaigation view controller. This is the recommended way to display the registration view, and will give users the option to back out of the registration process.
+- To properly initialize the registration view, you need to supply it with a delegate that it will use to notify you of various important events. We will go over these events later when we examine the [KIARegistrationViewControllerDelegate](#kia_registration_view_controller_delegate) protocol. We recommend having the view controller that hosts the registration view conform to said protocol.
+- We display the registration view by making it part of a navigation view controller. This is the recommended way to display the registration view, and will give users the option to back out of the registration process.
 
 This is really all there is to displaying the registration view.
 
@@ -104,5 +104,5 @@ Building upon the code sample from the previous section, consider the following 
 As you can see, your first order of business will usually be to dismiss the registration view upon any of the events occurring. Then, depending on the event, you will want to take further action such as storing the user token or displaying an error message.
 
 <a name="when_to_show_registration"></a>
-###When should we show the registration view?
-While we've seen how to utilize the registration view, we never talked about **when** we should display it. While it is ultimately up to you to decide, we have a fairly straightforward recommendation - you should only display the registration view when you do not have a user token stored. Assuming your user has gone through the registration process successfully and received a token there is no need to have the user register again, as tokens do not expire (though they can be revoked).
+###When should you show the registration view?
+While we've seen how to utilize the registration view, we never talked about **when** you should display it. While it is ultimately up to you to decide, we have a fairly straightforward recommendation - you should only display the registration view when you do not have a user token stored. Assuming your user has gone through the registration process successfully and received a token there is no need to have the user register again, as tokens do not expire (though they can be revoked).
