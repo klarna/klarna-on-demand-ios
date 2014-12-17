@@ -36,7 +36,7 @@ Use Apple Doc and generate, making it available via Dash
 ```
 ```
 KIAToken *token = [KIAToken tokenFromDictionary:payload];
-```
+
 
 ##App example
 * ~~In the app delegate, I would explain the `[KIAContext setApiKey:]` line~~
