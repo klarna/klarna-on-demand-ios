@@ -14,8 +14,8 @@ describe(@"KIARegistrationViewControllerSpec", ^{
     [KIAContext stub:@selector(getApiKey) andReturn:@"test_skadoo"];
   });
   
-  it(@"should call delegate's .klarnaRegistrationController:didFinishWithUserToken on .handleUserReadyEvent when a token was received", ^{
-    [[kiaRegistrationDelegate should] receive:@selector(klarnaRegistrationController:didFinishWithUserToken:) withArguments:kiaRegistrationController, [[KIAToken alloc] initWithToken:@"my_token"]];
+  it(@"should call delegate's .klarnaRegistrationController:finishedWithUserToken on .handleUserReadyEvent when a token was received", ^{
+    [[kiaRegistrationDelegate should] receive:@selector(klarnaRegistrationController:finishedWithUserToken:) withArguments:kiaRegistrationController, [[KIAToken alloc] initWithToken:@"my_token"]];
     
     [kiaRegistrationController handleUserReadyEventWithPayload:@{@"userToken":@"my_token"}];
   });

@@ -40,7 +40,7 @@
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
   [super webView:webView didFailLoadWithError:error];
   
-  if ([error code] != NSURLErrorCancelled && [_delegate respondsToSelector:@selector(klarnaRegistrationFailed:)])
+  if (error.code != NSURLErrorCancelled && [_delegate respondsToSelector:@selector(klarnaRegistrationFailed:)])
   {
     [_delegate klarnaRegistrationFailed:self];
   }
@@ -54,9 +54,12 @@
 }
 
 - (void)handleUserReadyEventWithPayload:(NSDictionary *)payload {
-  if ([_delegate respondsToSelector:@selector(klarnaRegistrationController:didFinishWithUserToken:)])
+  NSString *token = payload[@"userToken"];
+  NSAssert(token, @"KIAToken failed to create.");
+  if ([_delegate respondsToSelector:@selector(klarnaRegistrationController:finishedWithUserToken:)])
   {
-    [_delegate klarnaRegistrationController:self didFinishWithUserToken:[[KIAToken alloc] initWithToken: payload[@"userToken"]]];
+    KIAToken *kiaToken = [[KIAToken alloc] initWithToken: token];
+    [_delegate klarnaRegistrationController:self finishedWithUserToken:kiaToken];
   }
 }
 
