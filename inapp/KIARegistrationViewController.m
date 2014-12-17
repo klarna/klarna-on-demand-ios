@@ -40,16 +40,16 @@
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
   [super webView:webView didFailLoadWithError:error];
   
-  if (error.code != NSURLErrorCancelled && [_delegate respondsToSelector:@selector(KlarnaRegistrationFailed:)])
+  if (error.code != NSURLErrorCancelled && [_delegate respondsToSelector:@selector(klarnaRegistrationFailed:)])
   {
-    [_delegate KlarnaRegistrationFailed:self];
+    [_delegate klarnaRegistrationFailed:self];
   }
 }
 
 - (void)dismissButtonPressed {
-  if ([_delegate respondsToSelector:@selector(KlarnaRegistrationCancelled:)])
+  if ([_delegate respondsToSelector:@selector(klarnaRegistrationCancelled:)])
   {
-    [_delegate KlarnaRegistrationCancelled:self];
+    [_delegate klarnaRegistrationCancelled:self];
   }
 }
 
@@ -58,15 +58,15 @@
   NSAssert(token, @"KIAToken failed to create.");
   if ([_delegate respondsToSelector:@selector(klarnaRegistrationController:finishedWithUserToken:)])
   {
-    KIAToken *kiaToken = [[KIAToken alloc] initWithToken: payload[@"userToken"]];
+    KIAToken *kiaToken = [[KIAToken alloc] initWithToken: token];
     [_delegate klarnaRegistrationController:self finishedWithUserToken:kiaToken];
   }
 }
 
 - (void)handleUserErrorEvent {
-  if ([_delegate respondsToSelector:@selector(KlarnaRegistrationFailed:)])
+  if ([_delegate respondsToSelector:@selector(klarnaRegistrationFailed:)])
   {
-    [_delegate KlarnaRegistrationFailed:self];
+    [_delegate klarnaRegistrationFailed:self];
   }
 }
 

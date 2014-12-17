@@ -20,20 +20,20 @@ describe(@"KIARegistrationViewControllerSpec", ^{
     [kiaRegistrationController handleUserReadyEventWithPayload:@{@"userToken":@"my_token"}];
   });
   
-  it(@"should call the delegate's .KlarnaRegistrationFailed method when the web view fails to load", ^{
-    [[[kiaRegistrationDelegate should] receive] KlarnaRegistrationFailed:kiaRegistrationController];
+  it(@"should call the delegate's .klarnaRegistrationFailed method when the web view fails to load", ^{
+    [[[kiaRegistrationDelegate should] receive] klarnaRegistrationFailed:kiaRegistrationController];
 
     [kiaRegistrationController webView:nil didFailLoadWithError:[NSError errorWithDomain:@"Domain" code:1234 userInfo:nil]];
   });
     
-  it(@"does not call the delegate's .KlarnaRegistrationFailed when the web view fails with NSURLErrorCancelled", ^{
-    [[[kiaRegistrationDelegate shouldNot] receive] KlarnaRegistrationFailed:kiaRegistrationController];
+  it(@"does not call the delegate's .klarnaRegistrationFailed when the web view fails with NSURLErrorCancelled", ^{
+    [[[kiaRegistrationDelegate shouldNot] receive] klarnaRegistrationFailed:kiaRegistrationController];
 
     [kiaRegistrationController webView:nil didFailLoadWithError:[NSError errorWithDomain:@"Domain" code:NSURLErrorCancelled userInfo:nil]];
   });
 
-  it(@"should call the delegate's .KlarnaRegistrationCancelled when the dismiss button is pressed", ^{
-      [[[kiaRegistrationDelegate should] receive] KlarnaRegistrationCancelled:kiaRegistrationController];
+  it(@"should call the delegate's .klarnaRegistrationCancelled when the dismiss button is pressed", ^{
+      [[[kiaRegistrationDelegate should] receive] klarnaRegistrationCancelled:kiaRegistrationController];
 
       [kiaRegistrationController dismissButtonPressed];
     });

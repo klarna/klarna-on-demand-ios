@@ -28,8 +28,7 @@
  *  @param controller Controller that initiated the event.
  */
 @optional
-
-- (void)KlarnaRegistrationFailed:(KIARegistrationViewController *)controller;
+- (void)klarnaRegistrationFailed:(KIARegistrationViewController *)controller;
 
 /**
  *  Handler for Klarna registration cancelled event. 
@@ -38,10 +37,9 @@
  *  @param controller Controller that initiated the event.
  */
 @optional
-- (void)KlarnaRegistrationCancelled:(KIARegistrationViewController *)controller;
+- (void)klarnaRegistrationCancelled:(KIARegistrationViewController *)controller;
 
 @end
-
 
 /**
  *  Responsible for registering a new user and setting his Klarna payment method.
