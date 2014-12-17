@@ -15,20 +15,20 @@ describe(@"KIAPreferencesViewControllerSpec", ^{
     [KIAContext stub:@selector(getApiKey) andReturn:@"test_skadoo"];
   });
   
-  it(@"should call the delegate's .klarnaPreferencesFailed method when the web view fails to load", ^{
-    [[[kiaPreferencesDelegate should] receive] klarnaPreferencesFailed:kiaPreferencesController];
+  it(@"should call the delegate's .KlarnaPreferencesFailed method when the web view fails to load", ^{
+    [[[kiaPreferencesDelegate should] receive] KlarnaPreferencesFailed:kiaPreferencesController];
     
     [kiaPreferencesController webView:nil didFailLoadWithError:[NSError errorWithDomain:@"Domain" code:1234 userInfo:nil]];
   });
     
-  it(@"does not call the delegate's .klarnaPreferencesFailed when the web view fails with NSURLErrorCancelled", ^{
-    [[[kiaPreferencesDelegate shouldNot] receive] klarnaPreferencesFailed:kiaPreferencesController];
+  it(@"does not call the delegate's .KlarnaPreferencesFailed when the web view fails with NSURLErrorCancelled", ^{
+    [[[kiaPreferencesDelegate shouldNot] receive] KlarnaPreferencesFailed:kiaPreferencesController];
     
     [kiaPreferencesController webView:nil didFailLoadWithError:[NSError errorWithDomain:@"Domain" code:NSURLErrorCancelled userInfo:nil]];
   });
   
-  it(@"should call the delegate's .klarnaPreferencesClosed when the dismiss button is pressed", ^{
-    [[[kiaPreferencesDelegate should] receive] klarnaPreferencesClosed:kiaPreferencesController];
+  it(@"should call the delegate's .KlarnaPreferencesClosed when the dismiss button is pressed", ^{
+    [[[kiaPreferencesDelegate should] receive] KlarnaPreferencesClosed:kiaPreferencesController];
     
     [kiaPreferencesController dismissButtonPressed];
   });

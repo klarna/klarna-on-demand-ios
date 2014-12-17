@@ -19,24 +19,51 @@
   
   [self addHUD];
   
-  [self addDismissButtonIfNeeded];
+  [self addDismissButton];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
+  [super viewDidAppear:animated];
+  
   NSURLRequest *request = [NSURLRequest requestWithURL:[self url]
                                            cachePolicy:NSURLRequestReloadIgnoringCacheData
                                        timeoutInterval:60.0f];
   [_webView loadRequest:request];
 }
 
-- (void)addDismissButtonIfNeeded {
-  if(self.navigationController.viewControllers.count == 1)
+- (void)viewDidDisappear:(BOOL)animated {
+  [super viewDidDisappear:animated];
+  
+  [self unregisterJockeyCallbacks];
+}
+
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
+  return [Jockey webView:webView withUrl:[request URL]];
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+  [self removeHUDIfExists];
+}
+
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
+  [self removeHUDIfExists];
+  
+  NSLog(@"Klarna web view failed with the following error: %@", [error description]);
+}
+
+- (void)addDismissButton {
+  self.navigationItem.hidesBackButton = YES;
+  
+  NSString *dismissButtonTitle = [KIALocalization localizedStringForKey:[self dismissButtonLabelKey]];
+  if(dismissButtonTitle == nil)
   {
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:[KIALocalization localizedStringForKey:[self dismissButtonLabelKey]]
-                                                                             style:UIBarButtonItemStylePlain
-                                                                            target:self
-                                                                            action:@selector(dismissButtonPressed)];
+    dismissButtonTitle = [KIALocalization localizedStringForKey:@"PREFERENCES_DEFAULT_DISMISS_BUTTON_TEXT"];
   }
+  
+  self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:dismissButtonTitle
+                                                                   style:UIBarButtonItemStylePlain
+                                                                   target:self
+                                                                   action:@selector(dismissButtonPressed)];
 }
 
 - (void)addWebView {
@@ -70,20 +97,6 @@
   [_HUDView removeFromSuperview];
 }
 
-- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
-  return [Jockey webView:webView withUrl:[request URL]];
-}
-
-- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
-  [self removeHUDIfExists];
-  
-  NSLog(@"Klarna web view failed with the following error: %@", [error description]);
-}
-
-- (void)webViewDidFinishLoad:(UIWebView *)webView {
-  [self removeHUDIfExists];
-}
-
 - (void)registerJockeyEvents {
   [Jockey on:JOCKEY_USER_READY perform:^(NSDictionary *payload) {
     [self handleUserReadyEventWithPayload: payload];
@@ -92,10 +105,6 @@
   [Jockey on:JOCKEY_USER_ERROR perform:^(NSDictionary *payload) {
     [self handleUserErrorEvent];
   }];
-}
-
-- (void)viewDidDisappear:(BOOL)animated {
-  [self unregisterJockeyCallbacks];
 }
 
 - (void)unregisterJockeyCallbacks {

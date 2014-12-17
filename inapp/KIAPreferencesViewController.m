@@ -40,16 +40,16 @@
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
   [super webView:webView didFailLoadWithError:error];
   
-  if ([error code] != NSURLErrorCancelled && [_delegate respondsToSelector:@selector(klarnaPreferencesFailed:)])
+  if (error.code != NSURLErrorCancelled && [_delegate respondsToSelector:@selector(KlarnaPreferencesFailed:)])
   {
-    [_delegate klarnaPreferencesFailed:self];
+    [_delegate KlarnaPreferencesFailed:self];
   }
 }
 
 - (void)dismissButtonPressed {
-  if ([_delegate respondsToSelector:@selector(klarnaPreferencesClosed:)])
+  if ([_delegate respondsToSelector:@selector(KlarnaPreferencesClosed:)])
   {
-    [_delegate klarnaPreferencesClosed:self];
+    [_delegate KlarnaPreferencesClosed:self];
   }
 }
 
@@ -61,9 +61,9 @@
 }
 
 - (void)handleUserErrorEvent {
-  if ([_delegate respondsToSelector:@selector(klarnaPreferencesFailed:)])
+  if ([_delegate respondsToSelector:@selector(KlarnaPreferencesFailed:)])
   {
-    [_delegate klarnaPreferencesFailed:self];
+    [_delegate KlarnaPreferencesFailed:self];
   }
 }
 

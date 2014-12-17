@@ -40,18 +40,18 @@
 }
 
 
-- (void)klarnaRegistrationFailed:(KIARegistrationViewController *)controller {
+- (void)KlarnaRegistrationFailed:(KIARegistrationViewController *)controller {
   // You may also want to convey this failure to your user.
   // Dismiss Klarna registration view-controller.
   [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)klarnaRegistrationCancelled:(KIARegistrationViewController *)controller {
+- (void)KlarnaRegistrationCancelled:(KIARegistrationViewController *)controller {
   // Dismiss Klarna registration view-controller.
   [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)klarnaRegistrationController:(KIARegistrationViewController *)controller didFinishWithUserToken:(KIAToken *)userToken {
+- (void)klarnaRegistrationController:(KIARegistrationViewController *)controller finishedWithUserToken:(KIAToken *)userToken {
   // Dismiss Klarna registration view-controller.
   [self dismissViewControllerAnimated:YES completion:nil];
   
@@ -61,12 +61,12 @@
   [self updateButtonVisibility];
 }
 
-- (void)klarnaPreferencesFailed:(KIAPreferencesViewController *)controller {
+- (void)KlarnaPreferencesFailed:(KIAPreferencesViewController *)controller {
   // Dismiss Klarna preferences view-controller.
   [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)klarnaPreferencesClosed:(KIAPreferencesViewController *)controller {
+- (void)KlarnaPreferencesClosed:(KIAPreferencesViewController *)controller {
   // Dismiss Klarna preferences view-controller.
   [self dismissViewControllerAnimated:YES completion:nil];
 }
