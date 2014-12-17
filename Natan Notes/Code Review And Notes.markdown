@@ -33,10 +33,10 @@ Use Apple Doc and generate, making it available via Dash
 ###`KIAToken`
 * Why the property `token` is `weak`?!
 * A class method could be easier for this purpose, right? Moreover, why can't it handle opening the `NSDictionary`? Something like:
-```
+
 ```
 KIAToken *token = [KIAToken tokenFromDictionary:payload];
-
+```
 
 ##App example
 * ~~In the app delegate, I would explain the `[KIAContext setApiKey:]` line~~
