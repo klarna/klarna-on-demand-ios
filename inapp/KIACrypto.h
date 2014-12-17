@@ -6,6 +6,6 @@
 
 + (id)sharedKIACrypto;
 
-- (NSString *)getSignatureWithText:(NSString *)plainText;
+- (NSString *)getSignatureWithText:(NSData *)plainText;
 
 @end

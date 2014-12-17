@@ -51,8 +51,7 @@
 }
 
 
-- (NSString *)getSignatureWithText:(NSString *)plainText {
-  NSData *plainData = [plainText dataUsingEncoding:NSUTF8StringEncoding];
+- (NSString *)getSignatureWithText:(NSData *)plainText {
   
   BDRSACryptor *RSACryptor = [[BDRSACryptor alloc] init];
   BDError *error = [[BDError alloc] init];
@@ -66,7 +65,7 @@
   
   size_t hashBytesSize = CC_SHA256_DIGEST_LENGTH;
   uint8_t* hashBytes = malloc(hashBytesSize);
-  if (!CC_SHA256([plainData bytes], (CC_LONG)[plainData length], hashBytes)) {
+  if (!CC_SHA256([plainText bytes], (CC_LONG)[plainText length], hashBytes)) {
     return nil;
   }
   
