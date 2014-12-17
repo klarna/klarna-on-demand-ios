@@ -61,9 +61,9 @@
   }
   
   self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:dismissButtonTitle
-                                                                   style:UIBarButtonItemStylePlain
-                                                                   target:self
-                                                                   action:@selector(dismissButtonPressed)];
+                                                                             style:UIBarButtonItemStylePlain
+                                                                            target:self
+                                                                            action:@selector(dismissButtonPressed)];
 }
 
 - (void)addWebView {
