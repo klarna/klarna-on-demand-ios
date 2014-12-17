@@ -82,7 +82,7 @@ The registration view expects its delegate to comform to this protocol, which ex
 Building upon the code sample from the previous section, consider the following methods which make a view controller conform to the KIARegistrationViewControllerDelegate protocol. The methods correspond to the types of callbacks we have just listed:
 
 ```objective-c
-- (void)klarnaRegistrationController:(KIARegistrationViewController *)controller didFinishWithUserToken:(KIAToken *)userToken {
+- (void)klarnaRegistrationController:(KIARegistrationViewController *)controller finishedWithUserToken:(KIAToken *)userToken {
   // Dismiss the registration view and store the user's token
   [self dismissViewControllerAnimated:YES completion:nil];
   [self saveUserToken:userToken.token]; // this is for illustrative purposes, we do not supply this method
