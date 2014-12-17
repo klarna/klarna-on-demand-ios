@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		4651C4451A3D93E300800F1A /* KIAPreferencesViewControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 4651C4441A3D93E300800F1A /* KIAPreferencesViewControllerSpec.m */; };
-		4651C4531A3DDE9200800F1A /* KIAWebViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 4651C4511A3DDE9200800F1A /* KIAWebViewController.h */; };
 		4651C4541A3DDE9200800F1A /* KIAWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4651C4521A3DDE9200800F1A /* KIAWebViewController.m */; };
 		467F0EC21A2B6DE900A76845 /* Jockey.m in Sources */ = {isa = PBXBuildFile; fileRef = 467F0EC11A2B6DE900A76845 /* Jockey.m */; };
 		467F0EDB1A2C6AC900A76845 /* KIAToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 467F0ED91A2C696100A76845 /* KIAToken.m */; };
@@ -322,7 +321,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4651C4531A3DDE9200800F1A /* KIAWebViewController.h in Sources */,
 				4651C4541A3DDE9200800F1A /* KIAWebViewController.m in Sources */,
 				C954ABA71A345B5E00574C11 /* KIALocalization.m in Sources */,
 				467F0EDB1A2C6AC900A76845 /* KIAToken.m in Sources */,
