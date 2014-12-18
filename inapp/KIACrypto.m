@@ -6,7 +6,7 @@
 #import <Security/SecBase.h>
 #include <CommonCrypto/CommonDigest.h>
 #import "NSData+Base64.h"
-
+#import "NSString+Base64.h"
 @interface KIACrypto ()
 
 @property (strong, nonatomic) NSString *publicKeyTag;
@@ -17,7 +17,6 @@
 @implementation KIACrypto
 
 #define KIA_TAG @"kia"
-
 
 + (id)sharedKIACrypto {
   static KIACrypto *sharedKIACrypto = nil;
@@ -34,24 +33,24 @@
     BDRSACryptor *RSACryptor = [[BDRSACryptor alloc] init];
     
     _publicKeyTag = [RSACryptor publicKeyIdentifierWithTag:KIA_TAG];
-    _privateKeyTag = [RSACryptor publicKeyIdentifierWithTag:KIA_TAG];
+    _privateKeyTag = [RSACryptor privateKeyIdentifierWithTag:KIA_TAG];
     
     SecKeyRef publicKeyRef = [RSACryptor keyRefWithTag:_publicKeyTag error:error];
     SecKeyRef privateKeyRef = [RSACryptor keyRefWithTag:_privateKeyTag error:error];
     
     if (publicKeyRef && privateKeyRef) {
       NSString *publicKeyStr = [RSACryptor X509FormattedPublicKey:_publicKeyTag error:error];
-      _publicKeyBase64Str = [[publicKeyStr dataUsingEncoding:NSUTF8StringEncoding] base64EncodedStringWithOptions:0];
+      _publicKeyBase64Str = [publicKeyStr base64EncodedString];
     } else {
       BDRSACryptorKeyPair *RSAKeyPair = [RSACryptor generateKeyPairWithKeyIdentifier:KIA_TAG error:error];
-      _publicKeyBase64Str = [[RSAKeyPair.publicKey dataUsingEncoding:NSUTF8StringEncoding] base64EncodedStringWithOptions:0];
+      _publicKeyBase64Str = [RSAKeyPair.publicKey base64EncodedString];
     }
   }
   return self;
 }
 
 
-- (NSString *)getSignatureWithText:(NSData *)plainText {
+- (NSString *)getSignatureWithData:(NSData *)plainData {
   
   BDRSACryptor *RSACryptor = [[BDRSACryptor alloc] init];
   BDError *error = [[BDError alloc] init];
@@ -65,7 +64,7 @@
   
   size_t hashBytesSize = CC_SHA256_DIGEST_LENGTH;
   uint8_t* hashBytes = malloc(hashBytesSize);
-  if (!CC_SHA256([plainText bytes], (CC_LONG)[plainText length], hashBytes)) {
+  if (!CC_SHA256([plainData bytes], (CC_LONG)[plainData length], hashBytes)) {
     return nil;
   }
   
@@ -84,7 +83,7 @@
   if (signedHashBytes)
     free(signedHashBytes);
   
-  return [signedHash base64EncodedStringWithOptions:0];
+  return [signedHash base64EncodedString];
 }
 
 @end

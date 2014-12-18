@@ -6,41 +6,41 @@
 @implementation KIAOriginProof
 
 + (NSString *)generateWithAmount:(int)amount currency:(NSString *)currency userToken:(NSString *)userToken {
-  NSDictionary *proofParams = [NSDictionary dictionaryWithObjectsAndKeys:
-                               [NSNumber numberWithInt:amount] , @"amount",
-                               currency, @"currency",
-                               userToken, @"user_token",
-                               [self timestamp], @"timestamp",
-                               nil];
+  NSData *data = [self jsonDataWithDictionary:@{@"amount": [NSNumber numberWithInt:amount],
+                                            @"currency": currency,
+                                            @"user_token": userToken,
+                                            @"timestamp": [self timestamp]}];
   
-  NSData *data = [self jsonWithDictionary:proofParams];
+  NSString *signature = [[KIACrypto sharedKIACrypto] getSignatureWithData:data];
   
-  NSString *signature = [[KIACrypto sharedKIACrypto] getSignatureWithText:data];
+  NSDictionary *originProof = @{@"data": [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding],
+                                @"signature": signature};
   
-  NSDictionary *originProof = [NSDictionary dictionaryWithObjectsAndKeys:
-                               [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding], @"data",
-                               signature, @"signature",
-                               nil];
-  
-  
-  return [[self jsonWithDictionary:originProof] base64EncodedString];
+  return [[self jsonDataWithDictionary:originProof] base64EncodedString];
 }
 
-+ (NSData *)jsonWithDictionary:(NSDictionary *) dictionary {
-  NSError *error;
++ (NSData *)jsonDataWithDictionary:(NSDictionary *) dictionary {
   return [NSJSONSerialization dataWithJSONObject:dictionary
-                                         options:NSJSONWritingPrettyPrinted
-                                           error:&error];
+                              options:0
+                              error:nil];
 }
 
 + (NSString *)timestamp {
-  NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-  NSLocale *enUSPOSIXLocale = [NSLocale localeWithLocaleIdentifier:@"en_US_POSIX"];
-  [dateFormatter setLocale:enUSPOSIXLocale];
-  [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssZZZZZ"];
-  
   NSDate *now = [NSDate date];
-  return [dateFormatter stringFromDate:now];
+  return [[self iso8601DateFormatter] stringFromDate:now];
+}
+
++ (NSDateFormatter *)iso8601DateFormatter {
+  static NSDateFormatter *iso8601DateFormatter = nil;
+  static dispatch_once_t onceToken;
+  dispatch_once(&onceToken, ^{
+    NSDateFormatter *iso8601DateFormatter = [[NSDateFormatter alloc] init];
+    NSLocale *enUSPOSIXLocale = [NSLocale localeWithLocaleIdentifier:@"en_US_POSIX"];
+    [iso8601DateFormatter setLocale:enUSPOSIXLocale];
+    [iso8601DateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssZZZZZ"];
+  });
+  
+  return iso8601DateFormatter;
 }
 
 @end
