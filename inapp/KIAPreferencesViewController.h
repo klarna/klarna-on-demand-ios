@@ -18,7 +18,7 @@
 -(void) klarnaPreferencesFailed:(KIAPreferencesViewController *)controller;
 
 /**
- *  Handler for Klarna preferences-page cancelled event.
+ *  Handler for Klarna preferences-page close events.
  *  The event is raised when the user presses the 'Close' button on the upper-left corner of the view.
  *
  *  @param controller Controller that initiated the event.
