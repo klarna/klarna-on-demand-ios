@@ -126,7 +126,7 @@ Then, assuming the button's touch handler is called `onPreferencesPressed`, set 
 ```objective-c
 - (IBAction)onPreferencesPressed:(id)sender {
   // Create a new Klarna preferences view controller
-  KIAPreferencesViewController *preferencesViewController = [[KIAPreferencesViewController alloc] initWithDelegate:self andToken:[self getUserToken]];
+  KIAPreferencesViewController *preferencesViewController = [[KIAPreferencesViewController alloc] initWithDelegate:self andToken:userToken];
 
   // Create a navigation controller with the preferences view controller as its root view controller
   UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:preferencesViewController];
@@ -142,7 +142,7 @@ There are a few things that are worth pointing out in the code above:
 
 - To properly initialize the preferences view, you need to supply it with the following:
  - A delegate that it will use to notify you of various important events. We will go over these events later when we examine the [KIAPreferencesViewControllerDelegate](#kia_preferences_view_controller_delegate) protocol. The code describes the recommended approach, where we supply the hosting view controller that should conform to said protocol.
- - The user token obtained during the user's registration. Note that the SDK does not supply the `getUserToken` method used above, and simply assume it returns the stored token.
+ - The user token obtained during the user's registration. Assume this token was stored in `userToken` used above.
 - We display the preferences view by making it part of a navigation view controller. This is the recommended way to display the preferences view, as it allows users to close the preferences view and return to your application.
 
 This is all it takes to display the preferences view.
