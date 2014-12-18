@@ -12,6 +12,7 @@
                                             @"timestamp": [self timestamp]}];
   
   NSString *signature = [[KIACrypto sharedKIACrypto] getSignatureWithData:data];
+  NSAssert(signature.length > 0, @"KIA signature creation failed.");
   
   NSDictionary *originProof = @{@"data": [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding],
                                 @"signature": signature};

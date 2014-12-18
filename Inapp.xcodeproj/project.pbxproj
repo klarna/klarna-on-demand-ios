@@ -253,11 +253,11 @@
 			isa = PBXGroup;
 			children = (
 				C9FC95401A278AAD00485500 /* KIAContextSpec.m */,
+				465CF58F1A42DB9E00EC092D /* KIACryptoSpec.m */,
 				C9E7F25A1A405D0E0005205B /* KIAOriginProofSpec.m */,
 				4651C4441A3D93E300800F1A /* KIAPreferencesViewControllerSpec.m */,
 				46872D181A2B240000707282 /* KIARegistrationViewControllerSpec.m */,
 				C903A2E01A2523B6009AE44D /* KIAUrlSpec.m */,
-				465CF58F1A42DB9E00EC092D /* KIACryptoSpec.m */,
 				C90D1C701A24CBD100016FE4 /* Supporting Files */,
 			);
 			path = InappTests;

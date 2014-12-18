@@ -55,10 +55,11 @@ describe(@".init", ^{
   
   it(@"should create a private key in keychain with the correct tag", ^{
     [KIACrypto resetKeychain];
-    [[KIACrypto alloc] init];
     
     BDRSACryptor *rsaCryptor = [[BDRSACryptor alloc] init];
     BDError *error = [[BDError alloc] init];
+    
+    [[KIACrypto alloc] init];
 
     [rsaCryptor keyRefWithTag:@"bundle_identifier.privateKey.kia" error:error];
     [[theValue(error.errors.count) should] equal:theValue(0)];
@@ -67,7 +68,43 @@ describe(@".init", ^{
     [[theValue(error.errors.count) should] equal:theValue(0)];
   });
   
-  // test two keys creation one after the other.
+  it(@"should return same key on two consecutive calls", ^{
+    [KIACrypto resetKeychain];
+
+    BDRSACryptor *rsaCryptor = [[BDRSACryptor alloc] init];
+    BDError *error = [[BDError alloc] init];
+    
+    [[KIACrypto alloc] init];
+    NSString *firstPrivateKey = [rsaCryptor PEMFormattedPrivateKey:@"bundle_identifier.privateKey.kia" error:error];
+    NSString *firstPublicKey = [rsaCryptor X509FormattedPublicKey:@"bundle_identifier.publicKey.kia" error:error];
+    
+    [[KIACrypto alloc] init];
+    NSString *secondPrivateKey = [rsaCryptor PEMFormattedPrivateKey:@"bundle_identifier.privateKey.kia" error:error];
+    NSString *secondPublicKey = [rsaCryptor X509FormattedPublicKey:@"bundle_identifier.publicKey.kia" error:error];
+    
+    [[firstPrivateKey should] equal:secondPrivateKey];
+    [[firstPublicKey should] equal:secondPublicKey];
+  });
+  
+  it(@"should generate a different key after key-chain reset", ^{
+    [KIACrypto resetKeychain];
+    
+    BDRSACryptor *rsaCryptor = [[BDRSACryptor alloc] init];
+    BDError *error = [[BDError alloc] init];
+    
+    [[KIACrypto alloc] init];
+    NSString *firstPrivateKey = [rsaCryptor PEMFormattedPrivateKey:@"bundle_identifier.privateKey.kia" error:error];
+    NSString *firstPublicKey = [rsaCryptor X509FormattedPublicKey:@"bundle_identifier.publicKey.kia" error:error];
+    
+    [KIACrypto resetKeychain];
+    [[KIACrypto alloc] init];
+    NSString *secondPrivateKey = [rsaCryptor PEMFormattedPrivateKey:@"bundle_identifier.privateKey.kia" error:error];
+    NSString *secondPublicKey = [rsaCryptor X509FormattedPublicKey:@"bundle_identifier.publicKey.kia" error:error];
+    
+    [[firstPrivateKey shouldNot] equal:secondPrivateKey];
+    [[firstPublicKey shouldNot] equal:secondPublicKey];
+  });
+  
 });
 
 SPEC_END
