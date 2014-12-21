@@ -37,12 +37,13 @@
     
     SecKeyRef publicKeyRef = [RSACryptor keyRefWithTag:_publicKeyTag error:error];
     SecKeyRef privateKeyRef = [RSACryptor keyRefWithTag:_privateKeyTag error:error];
-    
     if (publicKeyRef && privateKeyRef) {
       NSString *publicKeyStr = [RSACryptor X509FormattedPublicKey:_publicKeyTag error:error];
       _publicKeyBase64Str = [publicKeyStr base64EncodedString];
     } else {
       BDRSACryptorKeyPair *RSAKeyPair = [RSACryptor generateKeyPairWithKeyIdentifier:KIA_TAG error:error];
+      if(RSAKeyPair == nil)
+        return nil;
       _publicKeyBase64Str = [RSAKeyPair.publicKey base64EncodedString];
     }
   }
@@ -57,7 +58,6 @@
   
   SecKeyRef privateKey = [RSACryptor keyRefWithTag:_privateKeyTag error:error];
 
-  
   size_t signedHashBytesSize = SecKeyGetBlockSize(privateKey);
   uint8_t* signedHashBytes = malloc(signedHashBytesSize);
   memset(signedHashBytes, 0x0, signedHashBytesSize);
