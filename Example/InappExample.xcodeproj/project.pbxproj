@@ -11,7 +11,6 @@
 		4651C4501A3DDDCE00800F1A /* KIA.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4651C44F1A3DDDCE00800F1A /* KIA.bundle */; };
 		466386F11A47257C0013429D /* TheGirlWithTheDragonTatoo@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 466386F01A47257C0013429D /* TheGirlWithTheDragonTatoo@2x.jpg */; };
 		466386F71A472FA40013429D /* QRCode@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 466386F61A472FA40013429D /* QRCode@2x.png */; };
-		466386FB1A4730A20013429D /* XClose@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 466386FA1A4730A20013429D /* XClose@2x.png */; };
 		466386FD1A4731160013429D /* CloseButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 466386FC1A4731160013429D /* CloseButton@2x.png */; };
 		C946A3CC1A24C21D00A12CC6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C946A3CB1A24C21D00A12CC6 /* main.m */; };
 		C946A3CF1A24C21D00A12CC6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C946A3CE1A24C21D00A12CC6 /* AppDelegate.m */; };
@@ -36,7 +35,6 @@
 		4651C44F1A3DDDCE00800F1A /* KIA.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = KIA.bundle; path = ../inapp/KIA.bundle; sourceTree = "<group>"; };
 		466386F01A47257C0013429D /* TheGirlWithTheDragonTatoo@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "TheGirlWithTheDragonTatoo@2x.jpg"; sourceTree = "<group>"; };
 		466386F61A472FA40013429D /* QRCode@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "QRCode@2x.png"; sourceTree = "<group>"; };
-		466386FA1A4730A20013429D /* XClose@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "XClose@2x.png"; sourceTree = "<group>"; };
 		466386FC1A4731160013429D /* CloseButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CloseButton@2x.png"; sourceTree = "<group>"; };
 		C946A3C61A24C21D00A12CC6 /* InappExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InappExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C946A3CA1A24C21D00A12CC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -112,7 +110,6 @@
 			isa = PBXGroup;
 			children = (
 				466386FC1A4731160013429D /* CloseButton@2x.png */,
-				466386FA1A4730A20013429D /* XClose@2x.png */,
 				466386F61A472FA40013429D /* QRCode@2x.png */,
 				466386F01A47257C0013429D /* TheGirlWithTheDragonTatoo@2x.jpg */,
 				C946A3CA1A24C21D00A12CC6 /* Info.plist */,
@@ -218,7 +215,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4651C4501A3DDDCE00800F1A /* KIA.bundle in Resources */,
-				466386FB1A4730A20013429D /* XClose@2x.png in Resources */,
 				466386FD1A4731160013429D /* CloseButton@2x.png in Resources */,
 				C946A3D51A24C21D00A12CC6 /* Main.storyboard in Resources */,
 				466386F71A472FA40013429D /* QRCode@2x.png in Resources */,

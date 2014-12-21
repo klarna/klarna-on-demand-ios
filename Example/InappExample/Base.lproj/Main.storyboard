@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Main View Controller-->
@@ -15,25 +14,25 @@
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4J7-9N-mgN">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4J7-9N-mgN">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
-                                    <view alpha="0.69999999999999996" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HUZ-us-UUh">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                    <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HUZ-us-UUh">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="QRCode.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ydm-IV-Dki">
-                                        <rect key="frame" x="40" y="124" width="240" height="240"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="QRCode.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ydm-IV-Dki">
+                                        <rect key="frame" x="180" y="180" width="240" height="240"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="240" id="iEk-MZ-0c4"/>
                                             <constraint firstAttribute="height" constant="240" id="ws2-l2-8MM"/>
                                         </constraints>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oxV-xM-1Qr">
-                                        <rect key="frame" x="257" y="100" width="48" height="48"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oxV-xM-1Qr">
+                                        <rect key="frame" x="400" y="150" width="48" height="48"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="48" id="2bn-5D-5nq"/>
@@ -49,24 +48,24 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="oxV-xM-1Qr" firstAttribute="leading" secondItem="Ydm-IV-Dki" secondAttribute="trailing" constant="-23" id="3HI-KX-Hu3"/>
                                     <constraint firstAttribute="bottom" secondItem="HUZ-us-UUh" secondAttribute="bottom" id="H9w-1P-B4q"/>
-                                    <constraint firstAttribute="centerX" secondItem="Ydm-IV-Dki" secondAttribute="centerX" id="Pqt-3B-tTD"/>
                                     <constraint firstAttribute="trailing" secondItem="HUZ-us-UUh" secondAttribute="trailing" id="Viv-JI-qI5"/>
-                                    <constraint firstItem="Ydm-IV-Dki" firstAttribute="top" secondItem="oxV-xM-1Qr" secondAttribute="bottom" constant="-24" id="YmN-sN-sNT"/>
-                                    <constraint firstAttribute="centerY" secondItem="Ydm-IV-Dki" secondAttribute="centerY" constant="40" id="fve-mQ-74v"/>
+                                    <constraint firstItem="Ydm-IV-Dki" firstAttribute="top" secondItem="oxV-xM-1Qr" secondAttribute="bottom" constant="-18" id="bt5-4H-juM"/>
+                                    <constraint firstAttribute="centerY" secondItem="Ydm-IV-Dki" secondAttribute="centerY" id="cis-qV-rSI"/>
+                                    <constraint firstAttribute="centerX" secondItem="Ydm-IV-Dki" secondAttribute="centerX" id="dnG-kO-msk"/>
+                                    <constraint firstItem="oxV-xM-1Qr" firstAttribute="leading" secondItem="Ydm-IV-Dki" secondAttribute="trailing" constant="-20" id="mBg-bq-SHo"/>
                                     <constraint firstItem="HUZ-us-UUh" firstAttribute="leading" secondItem="4J7-9N-mgN" secondAttribute="leading" id="pTT-SS-MDQ"/>
                                     <constraint firstItem="HUZ-us-UUh" firstAttribute="top" secondItem="4J7-9N-mgN" secondAttribute="top" id="zI6-Lf-I6y"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TheGirlWithTheDragonTatoo.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Cp3-fR-niM">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="508"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TheGirlWithTheDragonTatoo.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Cp3-fR-niM">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IXn-Xj-qyg">
-                                <rect key="frame" x="0.0" y="508" width="320" height="60"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IXn-Xj-qyg">
+                                <rect key="frame" x="0.0" y="540" width="600" height="60"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="320" id="NbA-K5-udy"/>
+                                    <constraint firstAttribute="width" constant="600" id="NbA-K5-udy"/>
                                     <constraint firstAttribute="height" constant="60" id="ce9-Yi-Bh8"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
@@ -79,7 +78,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="You'll have to register first" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ghJ-bn-wPZ">
-                                <rect key="frame" x="82" y="547" width="156" height="21"/>
+                                <rect key="frame" x="222" y="579" width="156" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -87,13 +86,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Cp3-fR-niM" firstAttribute="leading" secondItem="IXn-Xj-qyg" secondAttribute="leading" id="2JP-6k-Hqa"/>
+                            <constraint firstItem="Cp3-fR-niM" firstAttribute="trailing" secondItem="4J7-9N-mgN" secondAttribute="trailing" id="2Vb-NL-CE8"/>
+                            <constraint firstItem="Cp3-fR-niM" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="6mW-B9-e8l"/>
+                            <constraint firstAttribute="centerX" secondItem="IXn-Xj-qyg" secondAttribute="centerX" id="C5a-4Z-lDL"/>
                             <constraint firstAttribute="centerX" secondItem="ghJ-bn-wPZ" secondAttribute="centerX" id="FGM-qC-9NP"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="IXn-Xj-qyg" secondAttribute="bottom" id="Hvb-rx-Omb"/>
-                            <constraint firstItem="Cp3-fR-niM" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="PU7-NC-WpZ"/>
-                            <constraint firstItem="Cp3-fR-niM" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" id="ffd-Ra-jSy"/>
-                            <constraint firstItem="IXn-Xj-qyg" firstAttribute="top" secondItem="Cp3-fR-niM" secondAttribute="bottom" id="heU-JQ-IeW"/>
+                            <constraint firstItem="Cp3-fR-niM" firstAttribute="trailing" secondItem="IXn-Xj-qyg" secondAttribute="trailing" id="NiN-qx-2bx"/>
+                            <constraint firstItem="Cp3-fR-niM" firstAttribute="bottom" secondItem="2fi-mo-0CV" secondAttribute="top" id="edJ-Jd-q9x"/>
+                            <constraint firstItem="Cp3-fR-niM" firstAttribute="top" secondItem="4J7-9N-mgN" secondAttribute="top" id="oKd-kc-d2p"/>
+                            <constraint firstItem="4J7-9N-mgN" firstAttribute="bottom" secondItem="2fi-mo-0CV" secondAttribute="top" id="tTy-cn-fWv"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="ghJ-bn-wPZ" secondAttribute="bottom" id="uOV-43-mUd"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Cp3-fR-niM" secondAttribute="trailing" constant="-16" id="xUT-ls-Fpi"/>
+                            <constraint firstItem="Cp3-fR-niM" firstAttribute="leading" secondItem="4J7-9N-mgN" secondAttribute="leading" id="wF5-Ea-NE9"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="uBb-PF-46a"/>
@@ -105,7 +109,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="832" y="727"/>
+            <point key="canvasLocation" x="1560" y="767"/>
         </scene>
     </scenes>
     <resources>
@@ -113,9 +117,4 @@
         <image name="QRCode.png" width="1500" height="1500"/>
         <image name="TheGirlWithTheDragonTatoo.jpg" width="691" height="1024"/>
     </resources>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
-    </simulatedMetricsContainer>
 </document>
