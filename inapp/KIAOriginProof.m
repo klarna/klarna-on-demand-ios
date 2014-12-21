@@ -35,7 +35,7 @@
   static NSDateFormatter *iso8601DateFormatter = nil;
   static dispatch_once_t onceToken;
   dispatch_once(&onceToken, ^{
-    NSDateFormatter *iso8601DateFormatter = [[NSDateFormatter alloc] init];
+    iso8601DateFormatter = [[NSDateFormatter alloc] init];
     NSLocale *enUSPOSIXLocale = [NSLocale localeWithLocaleIdentifier:@"en_US_POSIX"];
     [iso8601DateFormatter setLocale:enUSPOSIXLocale];
     [iso8601DateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssZZZZZ"];
