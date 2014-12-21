@@ -21,9 +21,12 @@
 + (id)sharedKIACrypto {
   static KIACrypto *sharedKIACrypto = nil;
   static dispatch_once_t onceToken;
-  dispatch_once(&onceToken, ^{
-    sharedKIACrypto = [[self alloc] init];
-  });
+  if(sharedKIACrypto == nil)
+  {
+    dispatch_once(&onceToken, ^{
+      sharedKIACrypto = [[self alloc] init];
+    });
+  }
   return sharedKIACrypto;
 }
 
