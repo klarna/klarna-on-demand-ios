@@ -20,7 +20,7 @@
  *  @param token      Token that uniquely identifies the user.
  */
 @required
-- (void)klarnaRegistrationController:(KIARegistrationViewController *)controller didFinishWithUserToken:(KIAToken *)token;
+- (void)klarnaRegistrationController:(KIARegistrationViewController *)controller finishedWithUserToken:(KIAToken *)token;
 
 /**
  *  Handler for registration failure events.
@@ -40,7 +40,6 @@
 - (void)klarnaRegistrationCancelled:(KIARegistrationViewController *)controller;
 
 @end
-
 
 /**
  *  Responsible for registering a new user and setting his Klarna payment method.
