@@ -10,29 +10,36 @@
 @implementation MainViewController
 
 - (void)viewDidLoad {
-  [self updateButtonVisibility];
+  self.registerLabel.hidden = [self hasUserToken];
 }
 
 - (IBAction)onRegisterPressed:(id)sender {
-  // Create a new Klarna registration view-controller, initialized with MainViewController as event-handler.
-  KIARegistrationViewController *registrationViewController = [[KIARegistrationViewController alloc] initWithDelegate:self];
-  
-  // Create navigation controller with Klarna registration view-controller as the root view controller.
-  UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:registrationViewController];
-  
-  // Show navigation controller (in a modal presentation).
-  [self presentViewController:navigationController
-                     animated:YES
-                   completion:nil];
+  if([self hasUserToken])
+  {
+    [self.view bringSubviewToFront:_QRView];
+  }
+  else
+  {
+    // Create a new Klarna registration view-controller, initialized with MainViewController as event-handler.
+    KIARegistrationViewController *registrationViewController = [[KIARegistrationViewController alloc] initWithDelegate:self];
+    
+    // Create navigation controller with Klarna registration view-controller as the root view controller.
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:registrationViewController];
+    
+    // Show navigation controller (in a modal presentation).
+    [self presentViewController:navigationController
+                       animated:YES
+                     completion:nil];
+  }
 }
 
 - (IBAction)onPreferencesPressed:(id)sender {
   // Create a new Klarna preferences view-controller, initialized with MainViewController as the event-handler, and the user token that was saved when the user completed the registration process.
   KIAPreferencesViewController *preferencesViewController = [[KIAPreferencesViewController alloc] initWithDelegate:self andToken:[self getUserToken]];
-
+  
   // Create navigation controller with Klarna preferences view-controller as the root view controller.
   UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:preferencesViewController];
-
+  
   // Show navigation controller (in a modal presentation).
   [self presentViewController:navigationController
                      animated:YES
@@ -58,7 +65,7 @@
   // Save user token for future-use, in order to identify the user.
   [self saveUserToken:userToken.token];
   
-  [self updateButtonVisibility];
+  self.registerLabel.hidden = true;
 }
 
 - (void)klarnaPreferencesFailed:(KIAPreferencesViewController *)controller {
@@ -102,9 +109,8 @@
   return [self getUserToken] != nil;
 }
 
-- (void)updateButtonVisibility {
-  _registerButton.hidden = [self hasUserToken];
-  _buyButton.hidden = ![self hasUserToken];
-  _preferencesButton.hidden = ![self hasUserToken];
+- (IBAction)backToFirstPage:(id)sender {
+  [self.view sendSubviewToBack:_QRView];
 }
+
 @end

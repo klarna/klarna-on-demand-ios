@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		4651C4471A3DD5EC00800F1A /* libInapp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4651C4461A3DD5EC00800F1A /* libInapp.a */; };
 		4651C4501A3DDDCE00800F1A /* KIA.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4651C44F1A3DDDCE00800F1A /* KIA.bundle */; };
+		466386F11A47257C0013429D /* TheGirlWithTheDragonTatoo@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 466386F01A47257C0013429D /* TheGirlWithTheDragonTatoo@2x.jpg */; };
+		466386F71A472FA40013429D /* QRCode@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 466386F61A472FA40013429D /* QRCode@2x.png */; };
+		466386FB1A4730A20013429D /* XClose@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 466386FA1A4730A20013429D /* XClose@2x.png */; };
+		466386FD1A4731160013429D /* CloseButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 466386FC1A4731160013429D /* CloseButton@2x.png */; };
 		C946A3CC1A24C21D00A12CC6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C946A3CB1A24C21D00A12CC6 /* main.m */; };
 		C946A3CF1A24C21D00A12CC6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C946A3CE1A24C21D00A12CC6 /* AppDelegate.m */; };
 		C946A3D21A24C21D00A12CC6 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C946A3D11A24C21D00A12CC6 /* MainViewController.m */; };
@@ -30,6 +34,10 @@
 /* Begin PBXFileReference section */
 		4651C4461A3DD5EC00800F1A /* libInapp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libInapp.a; path = "../../../Library/Developer/Xcode/DerivedData/Inapp-byplifmbihknkwfgkkvwhjomxrlv/Build/Products/Debug-iphoneos/libInapp.a"; sourceTree = "<group>"; };
 		4651C44F1A3DDDCE00800F1A /* KIA.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = KIA.bundle; path = ../inapp/KIA.bundle; sourceTree = "<group>"; };
+		466386F01A47257C0013429D /* TheGirlWithTheDragonTatoo@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "TheGirlWithTheDragonTatoo@2x.jpg"; sourceTree = "<group>"; };
+		466386F61A472FA40013429D /* QRCode@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "QRCode@2x.png"; sourceTree = "<group>"; };
+		466386FA1A4730A20013429D /* XClose@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "XClose@2x.png"; sourceTree = "<group>"; };
+		466386FC1A4731160013429D /* CloseButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CloseButton@2x.png"; sourceTree = "<group>"; };
 		C946A3C61A24C21D00A12CC6 /* InappExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InappExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C946A3CA1A24C21D00A12CC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C946A3CB1A24C21D00A12CC6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -103,6 +111,10 @@
 		C946A3C91A24C21D00A12CC6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				466386FC1A4731160013429D /* CloseButton@2x.png */,
+				466386FA1A4730A20013429D /* XClose@2x.png */,
+				466386F61A472FA40013429D /* QRCode@2x.png */,
+				466386F01A47257C0013429D /* TheGirlWithTheDragonTatoo@2x.jpg */,
 				C946A3CA1A24C21D00A12CC6 /* Info.plist */,
 				C946A3CB1A24C21D00A12CC6 /* main.m */,
 			);
@@ -206,9 +218,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				4651C4501A3DDDCE00800F1A /* KIA.bundle in Resources */,
+				466386FB1A4730A20013429D /* XClose@2x.png in Resources */,
+				466386FD1A4731160013429D /* CloseButton@2x.png in Resources */,
 				C946A3D51A24C21D00A12CC6 /* Main.storyboard in Resources */,
+				466386F71A472FA40013429D /* QRCode@2x.png in Resources */,
 				C946A3DA1A24C21D00A12CC6 /* LaunchScreen.xib in Resources */,
 				C946A3D71A24C21D00A12CC6 /* Images.xcassets in Resources */,
+				466386F11A47257C0013429D /* TheGirlWithTheDragonTatoo@2x.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
