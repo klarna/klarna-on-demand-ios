@@ -18,7 +18,7 @@
 #pragma mark Button clicks
 
 - (IBAction)onBuyPressed:(id)sender {
-  // if a token has been previously created,
+  // if a token has been previously created
   if([self hasUserToken])
   {
     // TODO: send order request to app-server.
@@ -54,7 +54,7 @@
                    completion:nil];
 }
 
-#pragma mark KIA registration delegate
+#pragma mark Registration delegate
 
 - (void)klarnaRegistrationFailed:(KIARegistrationViewController *)controller {
   // You may also want to convey this failure to your user.
@@ -78,7 +78,7 @@
   self.changePaymentButton.hidden = false;
 }
 
-#pragma mark KIA preferences delegate
+#pragma mark Preferences delegate
 
 - (void)klarnaPreferencesFailed:(KIAPreferencesViewController *)controller {
   // Dismiss Klarna preferences view-controller.
