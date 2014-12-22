@@ -1,5 +1,6 @@
 #import "KIAContext.h"
 #import "KIAUrl.h"
+#import "KIACrypto.h"
 
 SPEC_BEGIN(KIAUrlSpec)
 
@@ -32,6 +33,12 @@ describe(@".registrationUrl", ^{
     [[[KIAUrl registrationUrl].absoluteString should] containString:@"locale=sv"];
   });
   
+  it(@"should return a url with a public key parameter", ^{
+    [[KIAContext class] stub:@selector(getApiKey) andReturn:@"skadoo"];
+    [[NSBundle mainBundle] stub:@selector(bundleIdentifier) andReturn:@"bundle_identifier"];
+    [[KIACrypto sharedKIACrypto] stub:@selector(publicKeyBase64Str) andReturn:@"skadoo_public_key"];
+    [[[KIAUrl registrationUrl].absoluteString should] containString:@"public_key=skadoo_public_key"];
+  });
 });
 
 describe(@".preferencesUrlWithToken:", ^{
@@ -66,6 +73,7 @@ describe(@".preferencesUrlWithToken:", ^{
     
     [[[KIAUrl preferencesUrlWithToken:token].absoluteString should] containString:@"locale=sv"];
   });
+  
 });
 
 SPEC_END

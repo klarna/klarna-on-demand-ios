@@ -7,7 +7,7 @@
 
 @interface KIAOriginProof (Test)
 
-+(NSString *)timestamp;
++ (NSString *)timestamp;
 
 @end
 

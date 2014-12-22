@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		4651C4451A3D93E300800F1A /* KIAPreferencesViewControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 4651C4441A3D93E300800F1A /* KIAPreferencesViewControllerSpec.m */; };
-		4651C4531A3DDE9200800F1A /* KIAWebViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 4651C4511A3DDE9200800F1A /* KIAWebViewController.h */; };
 		4651C4541A3DDE9200800F1A /* KIAWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4651C4521A3DDE9200800F1A /* KIAWebViewController.m */; };
 		465CF5901A42DB9E00EC092D /* KIACryptoSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 465CF58F1A42DB9E00EC092D /* KIACryptoSpec.m */; };
+		466387021A480DD20013429D /* KIASpecHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 466387011A480DD20013429D /* KIASpecHelper.m */; };
 		467F0EC21A2B6DE900A76845 /* Jockey.m in Sources */ = {isa = PBXBuildFile; fileRef = 467F0EC11A2B6DE900A76845 /* Jockey.m */; };
 		467F0EDB1A2C6AC900A76845 /* KIAToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 467F0ED91A2C696100A76845 /* KIAToken.m */; };
 		46872D191A2B240000707282 /* KIARegistrationViewControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 46872D181A2B240000707282 /* KIARegistrationViewControllerSpec.m */; };
@@ -75,6 +75,8 @@
 		4651C4511A3DDE9200800F1A /* KIAWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = KIAWebViewController.h; path = ../inapp/KIAWebViewController.h; sourceTree = "<group>"; };
 		4651C4521A3DDE9200800F1A /* KIAWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = KIAWebViewController.m; path = ../inapp/KIAWebViewController.m; sourceTree = "<group>"; };
 		465CF58F1A42DB9E00EC092D /* KIACryptoSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KIACryptoSpec.m; sourceTree = "<group>"; };
+		466387001A480DD20013429D /* KIASpecHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KIASpecHelper.h; sourceTree = "<group>"; };
+		466387011A480DD20013429D /* KIASpecHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KIASpecHelper.m; sourceTree = "<group>"; };
 		467F0EC01A2B6DE900A76845 /* Jockey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Jockey.h; path = 3rdParty/JockeyJS/Jockey.h; sourceTree = "<group>"; };
 		467F0EC11A2B6DE900A76845 /* Jockey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Jockey.m; path = 3rdParty/JockeyJS/Jockey.m; sourceTree = "<group>"; };
 		467F0ED81A2C696100A76845 /* KIAToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KIAToken.h; path = inapp/KIAToken.h; sourceTree = SOURCE_ROOT; };
@@ -252,6 +254,8 @@
 		C90D1C6F1A24CBD100016FE4 /* InappTests */ = {
 			isa = PBXGroup;
 			children = (
+				466387001A480DD20013429D /* KIASpecHelper.h */,
+				466387011A480DD20013429D /* KIASpecHelper.m */,
 				C9FC95401A278AAD00485500 /* KIAContextSpec.m */,
 				465CF58F1A42DB9E00EC092D /* KIACryptoSpec.m */,
 				C9E7F25A1A405D0E0005205B /* KIAOriginProofSpec.m */,
@@ -564,7 +568,6 @@
 				C9E7F22E1A3F3FEA0005205B /* BDAESCBC256Cryptor.m in Sources */,
 				C9E7F2451A3F4A410005205B /* KIAOriginProof.m in Sources */,
 				C9E7F2311A3F3FEA0005205B /* BDCryptorError.m in Sources */,
-				4651C4531A3DDE9200800F1A /* KIAWebViewController.h in Sources */,
 				C9E7F23A1A3F3FEA0005205B /* NSDictionary+BDJSONSerialization.m in Sources */,
 				4651C4541A3DDE9200800F1A /* KIAWebViewController.m in Sources */,
 				C9E7F23C1A3F3FEA0005205B /* NSObject+BDJSONSerialization.m in Sources */,
@@ -592,6 +595,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C903A2E11A2523B6009AE44D /* KIAUrlSpec.m in Sources */,
+				466387021A480DD20013429D /* KIASpecHelper.m in Sources */,
 				C9FC95411A278AAD00485500 /* KIAContextSpec.m in Sources */,
 				4651C4451A3D93E300800F1A /* KIAPreferencesViewControllerSpec.m in Sources */,
 				C9E7F25B1A405D0E0005205B /* KIAOriginProofSpec.m in Sources */,

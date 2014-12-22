@@ -1,36 +1,11 @@
 #import <Foundation/Foundation.h>
-
 #import "KIAOriginProof.h"
 #import "KIACrypto.h"
 #import <Foundation/NSJSONSerialization.h>
 #import "BDRSACryptor.h"
 #import "BDError.h"
 #import "NSString+Base64.h"
-
-@interface KIACrypto (Test)
-
-+(void)resetKeychain;
-
-@end
-
-@implementation KIACrypto (Test)
-
-+(void)resetKeychain {
-  [self deleteAllKeysForSecClass:kSecClassGenericPassword];
-  [self deleteAllKeysForSecClass:kSecClassInternetPassword];
-  [self deleteAllKeysForSecClass:kSecClassCertificate];
-  [self deleteAllKeysForSecClass:kSecClassKey];
-  [self deleteAllKeysForSecClass:kSecClassIdentity];
-}
-
-+(void)deleteAllKeysForSecClass:(CFTypeRef)secClass {
-  NSMutableDictionary* dict = [NSMutableDictionary dictionary];
-  [dict setObject:(__bridge id)secClass forKey:(__bridge id)kSecClass];
-  OSStatus result = SecItemDelete((__bridge CFDictionaryRef) dict);
-  NSAssert(result == noErr || result == errSecItemNotFound, @"Error deleting keychain data (%ld)", (long) result);
-}
-
-@end
+#import "KIASpecHelper.h"
 
 SPEC_BEGIN(KIACryptoSpec)
 
@@ -43,7 +18,7 @@ describe(@".getSignatureWithText", ^{
   it(@"should calculate a valid signature", ^{
     BDRSACryptor *rsaCryptor = [[BDRSACryptor alloc] init];
     BDError *error = [[BDError alloc] init];
-    [rsaCryptor setPrivateKey:@"-----BEGIN RSA PRIVATE KEY-----\nMIIBOgIBAAJBAK3h0RtywI11idN0CfZlyo1LhA/7ssmGN5Wl+qNdk+/d0xVpb50U\nWr1gdmaBkbYEsDj1EbaVtChA9tKtFMNw9PkCAwEAAQJANSQHYSkf2durJJmZFdmk\nHqyOjsfwqxA+2phgUh8eQDb8z5Bv5DYmgpDMI7wBzfYtJtS2j40/2Ium8VQgJp7P\nAQIhAN6X1HQCJhfVh5lAEjcsIlOiu+UrAB6P2zYouk24iUghAiEAx/p6ssSi12rK\nERMOcAzbLVIjYGi4CcGCU2HvyxW0sdkCICVuqPadSeSmLvhxkt6eWGNyMWDXe1yo\nWnfgH3xkdQmhAiEAlMRf1vG1eq+01vLoQK8vtg1ux9/fWVKdk04+R0REgjECIACX\njuUhQyJKyGGEF+2NOnEix/6Eo+gM6rkyaIfDC3Nb\n-----END RSA PRIVATE KEY-----\n" tag:[rsaCryptor privateKeyIdentifierWithTag:@"kia"] error:error];
+    [rsaCryptor setPrivateKey:@"-----BEGIN RSA PRIVATE KEY-----\nMIIBOgIBAAJBAK3h0RtywI11idN0CfZlyo1LhA/7ssmGN5Wl+qNdk+/d0xVpb50U\nWr1gdmaBkbYEsDj1EbaVtChA9tKtFMNw9PkCAwEAAQJANSQHYSkf2durJJmZFdmk\nHqyOjsfwqxA+2phgUh8eQDb8z5Bv5DYmgpDMI7wBzfYtJtS2j40/2Ium8VQgJp7P\nAQIhAN6X1HQCJhfVh5lAEjcsIlOiu+UrAB6P2zYouk24iUghAiEAx/p6ssSi12rK\nERMOcAzbLVIjYGi4CcGCU2HvyxW0sdkCICVuqPadSeSmLvhxkt6eWGNyMWDXe1yo\nWnfgH3xkdQmhAiEAlMRf1vG1eq+01vLoQK8vtg1ux9/fWVKdk04+R0REgjECIACX\njuUhQyJKyGGEF+2NOnEix/6Eo+gM6rkyaIfDC3Nb\n-----END RSA PRIVATE KEY-----\n" tag:@"bundle_identifier.privateKey.kia" error:error];
     
     NSString *signature = [[KIACrypto sharedKIACrypto] getSignatureWithData:[@"my_data" dataUsingEncoding:NSUTF8StringEncoding]];
     
@@ -53,53 +28,39 @@ describe(@".getSignatureWithText", ^{
 
 describe(@".init", ^{
   
+  beforeEach(^{
+    [KIASpecHelper resetKeychain];
+    (void) [[KIACrypto alloc] init];
+  });
+  
   it(@"should create a private key in keychain with the correct tag", ^{
-    [KIACrypto resetKeychain];
-    
-    BDRSACryptor *rsaCryptor = [[BDRSACryptor alloc] init];
-    BDError *error = [[BDError alloc] init];
-    
-    [[KIACrypto alloc] init];
-
-    [rsaCryptor keyRefWithTag:@"bundle_identifier.privateKey.kia" error:error];
-    [[theValue(error.errors.count) should] equal:theValue(0)];
-    
-    [rsaCryptor keyRefWithTag:@"bundle_identifier.publicKey.kia" error:error];
-    [[theValue(error.errors.count) should] equal:theValue(0)];
+    [[theValue([KIASpecHelper tagExistsInKeychain:@"bundle_identifier.privateKey.kia"]) should] equal: theValue(YES)];
+  });
+  
+  it(@"should create a public key in keychain with the correct tag", ^{
+    [[theValue([KIASpecHelper tagExistsInKeychain:@"bundle_identifier.publicKey.kia"]) should] equal: theValue(YES)];
   });
   
   it(@"should return same key on two consecutive calls", ^{
-    [KIACrypto resetKeychain];
-
-    BDRSACryptor *rsaCryptor = [[BDRSACryptor alloc] init];
-    BDError *error = [[BDError alloc] init];
+    NSString *firstPrivateKey = [KIASpecHelper privateKeyForTag:@"bundle_identifier.privateKey.kia"];
+    NSString *firstPublicKey = [KIASpecHelper publicKeyForTag:@"bundle_identifier.publicKey.kia"];
     
-    [[KIACrypto alloc] init];
-    NSString *firstPrivateKey = [rsaCryptor PEMFormattedPrivateKey:@"bundle_identifier.privateKey.kia" error:error];
-    NSString *firstPublicKey = [rsaCryptor X509FormattedPublicKey:@"bundle_identifier.publicKey.kia" error:error];
-    
-    [[KIACrypto alloc] init];
-    NSString *secondPrivateKey = [rsaCryptor PEMFormattedPrivateKey:@"bundle_identifier.privateKey.kia" error:error];
-    NSString *secondPublicKey = [rsaCryptor X509FormattedPublicKey:@"bundle_identifier.publicKey.kia" error:error];
+    (void) [[KIACrypto alloc] init];
+    NSString *secondPrivateKey = [KIASpecHelper privateKeyForTag:@"bundle_identifier.privateKey.kia"];
+    NSString *secondPublicKey = [KIASpecHelper publicKeyForTag:@"bundle_identifier.publicKey.kia"];
     
     [[firstPrivateKey should] equal:secondPrivateKey];
     [[firstPublicKey should] equal:secondPublicKey];
   });
   
   it(@"should generate a different key after key-chain reset", ^{
-    [KIACrypto resetKeychain];
+    NSString *firstPrivateKey = [KIASpecHelper privateKeyForTag:@"bundle_identifier.privateKey.kia"];
+    NSString *firstPublicKey = [KIASpecHelper publicKeyForTag:@"bundle_identifier.publicKey.kia"];
     
-    BDRSACryptor *rsaCryptor = [[BDRSACryptor alloc] init];
-    BDError *error = [[BDError alloc] init];
-    
-    [[KIACrypto alloc] init];
-    NSString *firstPrivateKey = [rsaCryptor PEMFormattedPrivateKey:@"bundle_identifier.privateKey.kia" error:error];
-    NSString *firstPublicKey = [rsaCryptor X509FormattedPublicKey:@"bundle_identifier.publicKey.kia" error:error];
-    
-    [KIACrypto resetKeychain];
-    [[KIACrypto alloc] init];
-    NSString *secondPrivateKey = [rsaCryptor PEMFormattedPrivateKey:@"bundle_identifier.privateKey.kia" error:error];
-    NSString *secondPublicKey = [rsaCryptor X509FormattedPublicKey:@"bundle_identifier.publicKey.kia" error:error];
+    [KIASpecHelper resetKeychain];
+    (void) [[KIACrypto alloc] init];
+    NSString *secondPrivateKey = [KIASpecHelper privateKeyForTag:@"bundle_identifier.privateKey.kia"];
+    NSString *secondPublicKey = [KIASpecHelper publicKeyForTag:@"bundle_identifier.publicKey.kia"];
     
     [[firstPrivateKey shouldNot] equal:secondPrivateKey];
     [[firstPublicKey shouldNot] equal:secondPublicKey];
