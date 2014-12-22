@@ -73,7 +73,7 @@ Displaying the view is great, but will only get you so far. It is important to k
 
 <a name="kia_registration_view_controller_delegate"></a>
 ####The KIARegistrationViewControllerDelegate protocol
-The registration view expects its delegate to comform to this protocol, which exposes three different types of callbacks:
+The registration view expects its delegate to conform to this protocol, which exposes three different types of callbacks:
 
 1. Registration complete - the user successfully completed the registration process, and has been assigned a token that you can use to place orders on the user's behalf.
 2. Registration cancelled - the user chose to back out of the registration process.
@@ -152,7 +152,7 @@ Klarna's payment preferences are managed internally by the SDK so you don't need
 
 <a name="kia_preferences_view_controller_delegate"></a>
 ####The KIAPreferencesViewControllerDelegate protocol
-The preferences view expects its delegate to comform to this protocol, which exposes two different types of callbacks:
+The preferences view expects its delegate to conform to this protocol, which exposes two different types of callbacks:
 
 1. Preferences closed - the user actively requested to close the preferences view.
 2. Preference operation failed - an error of some sort has prevented the user from successfully using the preferences view.
