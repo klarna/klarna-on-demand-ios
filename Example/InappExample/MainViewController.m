@@ -11,10 +11,27 @@
 @implementation MainViewController
 
 - (void)viewDidLoad {
-  [self updateButtonVisibility];
+  [super viewDidLoad];
+  
+  [self initializeUIElements];
 }
 
-- (IBAction)onRegisterPressed:(id)sender {
+#pragma mark Button clicks
+
+- (IBAction)onBuyPressed:(id)sender {
+  // if a token has been previously created
+  if([self hasUserToken])
+  {
+    // create origin proof for order.
+     NSString *originProof = [KIAOriginProof generateWithAmount:9900 currency:@"SEK" userToken:[self getUserToken]];
+
+    // TODO: send order request to app-server.
+
+    // show QR Code for the movie.
+    [self showQRView];
+  }
+  else
+  {
   // Create a new Klarna registration view-controller, initialized with MainViewController as event-handler.
   KIARegistrationViewController *registrationViewController = [[KIARegistrationViewController alloc] initWithDelegate:self];
   
@@ -26,8 +43,9 @@
                      animated:YES
                    completion:nil];
 }
+}
 
-- (IBAction)onPreferencesPressed:(id)sender {
+- (IBAction)onChangePaymentPressed:(id)sender {
   // Create a new Klarna preferences view-controller, initialized with MainViewController as the event-handler, and the user token that was saved when the user completed the registration process.
   KIAPreferencesViewController *preferencesViewController = [[KIAPreferencesViewController alloc] initWithDelegate:self andToken:[self getUserToken]];
 
@@ -40,6 +58,7 @@
                    completion:nil];
 }
 
+#pragma mark Registration delegate
 
 - (void)klarnaRegistrationFailed:(KIARegistrationViewController *)controller {
   // You may also want to convey this failure to your user.
@@ -59,8 +78,11 @@
   // Save user token for future-use, in order to identify the user.
   [self saveUserToken:userToken.token];
   
-  [self updateButtonVisibility];
+  self.registerLabel.hidden = true;
+  self.changePaymentButton.hidden = false;
 }
+
+#pragma mark Preferences delegate
 
 - (void)klarnaPreferencesFailed:(KIAPreferencesViewController *)controller {
   // Dismiss Klarna preferences view-controller.
@@ -72,12 +94,7 @@
   [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (IBAction)onBuyPressed:(id)sender {
-  NSString *originProof = [KIAOriginProof generateWithAmount:3600 currency:@"SEK" userToken:[self getUserToken]];
-  
-  NSString *message = [NSString stringWithFormat:@"Order sent to app-server with token: %@ and origin-proof: %@", [self getUserToken], originProof];
-  ALERT(message);
-}
+#pragma mark User token persistence
 
 /**
  *  Save user token locally in device.
@@ -105,9 +122,23 @@
   return [self getUserToken] != nil;
 }
 
-- (void)updateButtonVisibility {
-  _registerButton.hidden = [self hasUserToken];
-  _buyButton.hidden = ![self hasUserToken];
-  _preferencesButton.hidden = ![self hasUserToken];
+# pragma mark UI behaviours
+
+- (void)initializeUIElements {
+  _buyButton.titleLabel.numberOfLines = 1;
+  _buyButton.titleLabel.adjustsFontSizeToFitWidth = YES;
+  _buyButton.titleLabel.lineBreakMode = NSLineBreakByClipping;
+  
+  _registerLabel.hidden = [self hasUserToken];
+  _changePaymentButton.hidden = ![self hasUserToken];
 }
+
+- (IBAction)hideQRView:(id)sender {
+  [self.view sendSubviewToBack:_QRView];
+}
+
+- (void)showQRView {
+  [self.view bringSubviewToFront:_QRView];
+}
+
 @end
