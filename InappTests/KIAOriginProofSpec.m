@@ -22,7 +22,6 @@ describe(@".generateWithAmount", ^{
   });
   
   it(@"should return a base64 encoded json in the correct format", ^{
-    
     NSString *originProof = [KIAOriginProof generateWithAmount:3600 currency:@"SEK" userToken:@"my_token"];
     
     NSData *decodedriginProof = [[NSData alloc] initWithBase64EncodedString:originProof options:0];
@@ -43,16 +42,10 @@ describe(@".generateWithAmount", ^{
 });
 
 describe(@".timestamp", ^{
-  NSDate *now = [NSDate date];
+  NSDate *now = [NSDate dateWithTimeIntervalSince1970:0];
   [NSDate stub:@selector(date) andReturn:now];
-  
-  NSDateFormatter *iso8601DateFormatter = [[NSDateFormatter alloc] init];
-  NSLocale *enUSPOSIXLocale = [NSLocale localeWithLocaleIdentifier:@"en_US_POSIX"];
-  [iso8601DateFormatter setLocale:enUSPOSIXLocale];
-  [iso8601DateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssZZZZZ"];
 
-  NSDate *timestamp = [iso8601DateFormatter dateFromString:[KIAOriginProof timestamp]];
-  [[timestamp should] equal:now];
+  [[[KIAOriginProof timestamp] should] equal:@"1970-01-01T02:00:00+02:00"];
 });
 
 SPEC_END
