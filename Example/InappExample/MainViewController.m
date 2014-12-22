@@ -10,13 +10,21 @@
 @implementation MainViewController
 
 - (void)viewDidLoad {
-  self.registerLabel.hidden = [self hasUserToken];
+  [super viewDidLoad];
+  
+  [self initializeUIElements];
 }
 
-- (IBAction)onRegisterPressed:(id)sender {
+#pragma mark Button clicks
+
+- (IBAction)onBuyPressed:(id)sender {
+  // if a token has been previously created,
   if([self hasUserToken])
   {
-    [self.view bringSubviewToFront:_QRView];
+    // TODO: send order request to app-server.
+    
+    // show QR Code for the movie.
+    [self showQRView];
   }
   else
   {
@@ -33,7 +41,7 @@
   }
 }
 
-- (IBAction)onPreferencesPressed:(id)sender {
+- (IBAction)onChangePaymentPressed:(id)sender {
   // Create a new Klarna preferences view-controller, initialized with MainViewController as the event-handler, and the user token that was saved when the user completed the registration process.
   KIAPreferencesViewController *preferencesViewController = [[KIAPreferencesViewController alloc] initWithDelegate:self andToken:[self getUserToken]];
   
@@ -46,6 +54,7 @@
                    completion:nil];
 }
 
+#pragma mark KIA registration delegate
 
 - (void)klarnaRegistrationFailed:(KIARegistrationViewController *)controller {
   // You may also want to convey this failure to your user.
@@ -66,7 +75,10 @@
   [self saveUserToken:userToken.token];
   
   self.registerLabel.hidden = true;
+  self.changePaymentButton.hidden = false;
 }
+
+#pragma mark KIA preferences delegate
 
 - (void)klarnaPreferencesFailed:(KIAPreferencesViewController *)controller {
   // Dismiss Klarna preferences view-controller.
@@ -78,10 +90,7 @@
   [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (IBAction)onBuyPressed:(id)sender {
-  NSString *message = [NSString stringWithFormat:@"Order sent to app-server with token: %@", [self getUserToken]];
-  ALERT(message);
-}
+#pragma mark User token persistence
 
 /**
  *  Save user token locally in device.
@@ -109,8 +118,23 @@
   return [self getUserToken] != nil;
 }
 
-- (IBAction)backToFirstPage:(id)sender {
+# pragma mark UI behaviours
+
+- (void)initializeUIElements {
+  _buyButton.titleLabel.numberOfLines = 1;
+  _buyButton.titleLabel.adjustsFontSizeToFitWidth = YES;
+  _buyButton.titleLabel.lineBreakMode = NSLineBreakByClipping;
+  
+  _registerLabel.hidden = [self hasUserToken];
+  _changePaymentButton.hidden = ![self hasUserToken];
+}
+
+- (IBAction)hideQRView:(id)sender {
   [self.view sendSubviewToBack:_QRView];
+}
+
+- (void)showQRView {
+  [self.view bringSubviewToFront:_QRView];
 }
 
 @end
