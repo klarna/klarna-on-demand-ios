@@ -42,4 +42,17 @@ describe(@".generateWithAmount", ^{
   
 });
 
+describe(@".timestamp", ^{
+  NSDate *now = [NSDate date];
+  [NSDate stub:@selector(date) andReturn:now];
+  
+  NSDateFormatter *iso8601DateFormatter = [[NSDateFormatter alloc] init];
+  NSLocale *enUSPOSIXLocale = [NSLocale localeWithLocaleIdentifier:@"en_US_POSIX"];
+  [iso8601DateFormatter setLocale:enUSPOSIXLocale];
+  [iso8601DateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssZZZZZ"];
+
+  NSDate *timestamp = [iso8601DateFormatter dateFromString:[KIAOriginProof timestamp]];
+  [[timestamp should] equal:now];
+});
+
 SPEC_END
