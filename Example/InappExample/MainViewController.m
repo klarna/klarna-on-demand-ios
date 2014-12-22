@@ -2,6 +2,7 @@
 #import "KIARegistrationViewController.h"
 #import "KIAPreferencesViewController.h"
 #import "KIAContext.h"
+#import "KIAOriginProof.h"
 
 #define ALERT(str) [[[UIAlertView alloc] initWithTitle:@"Alert" message:str delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil] show]
 
@@ -21,33 +22,36 @@
   // if a token has been previously created
   if([self hasUserToken])
   {
+    // create origin proof for order.
+     NSString *originProof = [KIAOriginProof generateWithAmount:9900 currency:@"SEK" userToken:[self getUserToken]];
+
     // TODO: send order request to app-server.
-    
+
     // show QR Code for the movie.
     [self showQRView];
   }
   else
   {
-    // Create a new Klarna registration view-controller, initialized with MainViewController as event-handler.
-    KIARegistrationViewController *registrationViewController = [[KIARegistrationViewController alloc] initWithDelegate:self];
-    
-    // Create navigation controller with Klarna registration view-controller as the root view controller.
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:registrationViewController];
-    
-    // Show navigation controller (in a modal presentation).
-    [self presentViewController:navigationController
-                       animated:YES
-                     completion:nil];
-  }
+  // Create a new Klarna registration view-controller, initialized with MainViewController as event-handler.
+  KIARegistrationViewController *registrationViewController = [[KIARegistrationViewController alloc] initWithDelegate:self];
+  
+  // Create navigation controller with Klarna registration view-controller as the root view controller.
+  UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:registrationViewController];
+  
+  // Show navigation controller (in a modal presentation).
+  [self presentViewController:navigationController
+                     animated:YES
+                   completion:nil];
+}
 }
 
 - (IBAction)onChangePaymentPressed:(id)sender {
   // Create a new Klarna preferences view-controller, initialized with MainViewController as the event-handler, and the user token that was saved when the user completed the registration process.
   KIAPreferencesViewController *preferencesViewController = [[KIAPreferencesViewController alloc] initWithDelegate:self andToken:[self getUserToken]];
-  
+
   // Create navigation controller with Klarna preferences view-controller as the root view controller.
   UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:preferencesViewController];
-  
+
   // Show navigation controller (in a modal presentation).
   [self presentViewController:navigationController
                      animated:YES
