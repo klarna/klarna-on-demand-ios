@@ -33,11 +33,11 @@ describe(@".init", ^{
     (void) [[KIACrypto alloc] init];
   });
   
-  it(@"should create a private key in keychain with the correct tag", ^{
+  it(@"should create a private key in the keychain with the correct tag", ^{
     [[theValue([KIASpecHelper tagExistsInKeychain:@"bundle_identifier.privateKey.kia"]) should] equal: theValue(YES)];
   });
   
-  it(@"should create a public key in keychain with the correct tag", ^{
+  it(@"should create a public key in the keychain with the correct tag", ^{
     [[theValue([KIASpecHelper tagExistsInKeychain:@"bundle_identifier.publicKey.kia"]) should] equal: theValue(YES)];
   });
   
@@ -53,7 +53,7 @@ describe(@".init", ^{
     [[firstPublicKey should] equal:secondPublicKey];
   });
   
-  it(@"should generate a different key after key-chain reset", ^{
+  it(@"should generate a different key after existing keys are deleted", ^{
     NSString *firstPrivateKey = [KIASpecHelper privateKeyForTag:@"bundle_identifier.privateKey.kia"];
     NSString *firstPublicKey = [KIASpecHelper publicKeyForTag:@"bundle_identifier.publicKey.kia"];
     

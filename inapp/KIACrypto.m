@@ -7,12 +7,6 @@
 #include <CommonCrypto/CommonDigest.h>
 #import "NSData+Base64.h"
 #import "NSString+Base64.h"
-@interface KIACrypto ()
-
-@property (strong, nonatomic) NSString *publicKeyTag;
-@property (strong, nonatomic) NSString *privateKeyTag;
-
-@end
 
 @implementation KIACrypto
 
@@ -22,7 +16,7 @@
   static KIACrypto *sharedKIACrypto = nil;
   static dispatch_once_t onceToken;
   dispatch_once(&onceToken, ^{
-      sharedKIACrypto = [[self alloc] init];
+    sharedKIACrypto = [[self alloc] init];
   });
   return sharedKIACrypto;
 }
@@ -32,15 +26,18 @@
     BDError *error = [[BDError alloc] init];
     BDRSACryptor *RSACryptor = [[BDRSACryptor alloc] init];
     
-    _publicKeyTag = [RSACryptor publicKeyIdentifierWithTag:KIA_TAG];
-    _privateKeyTag = [RSACryptor privateKeyIdentifierWithTag:KIA_TAG];
+    NSString *publicKeyTag = [RSACryptor publicKeyIdentifierWithTag:KIA_TAG];
+    NSString *privateKeyTag = [RSACryptor privateKeyIdentifierWithTag:KIA_TAG];
     
-    SecKeyRef publicKeyRef = [RSACryptor keyRefWithTag:_publicKeyTag error:error];
-    SecKeyRef privateKeyRef = [RSACryptor keyRefWithTag:_privateKeyTag error:error];
-    if (publicKeyRef && privateKeyRef) {
-      NSString *publicKeyStr = [RSACryptor X509FormattedPublicKey:_publicKeyTag error:error];
+    SecKeyRef publicKeyRef = [RSACryptor keyRefWithTag:publicKeyTag error:error];
+    SecKeyRef privateKeyRef = [RSACryptor keyRefWithTag:privateKeyTag error:error];
+    if (publicKeyRef && privateKeyRef)
+    {
+      NSString *publicKeyStr = [RSACryptor X509FormattedPublicKey:publicKeyTag error:error];
       _publicKeyBase64Str = [publicKeyStr base64EncodedString];
-    } else {
+    }
+    else
+    {
       BDRSACryptorKeyPair *RSAKeyPair = [RSACryptor generateKeyPairWithKeyIdentifier:KIA_TAG error:error];
       if(RSAKeyPair == nil)
         return nil;
@@ -56,8 +53,9 @@
   BDRSACryptor *RSACryptor = [[BDRSACryptor alloc] init];
   BDError *error = [[BDError alloc] init];
   
-  SecKeyRef privateKey = [RSACryptor keyRefWithTag:_privateKeyTag error:error];
-
+  NSString *privateKeyTag = [RSACryptor privateKeyIdentifierWithTag:KIA_TAG];
+  SecKeyRef privateKey = [RSACryptor keyRefWithTag:privateKeyTag error:error];
+  
   size_t signedHashBytesSize = SecKeyGetBlockSize(privateKey);
   uint8_t* signedHashBytes = malloc(signedHashBytesSize);
   memset(signedHashBytes, 0x0, signedHashBytesSize);

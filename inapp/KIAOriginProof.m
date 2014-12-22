@@ -7,9 +7,9 @@
 
 + (NSString *)generateWithAmount:(int)amount currency:(NSString *)currency userToken:(NSString *)userToken {
   NSData *data = [self jsonDataWithDictionary:@{@"amount": [NSNumber numberWithInt:amount],
-                                            @"currency": currency,
-                                            @"user_token": userToken,
-                                            @"timestamp": [self timestamp]}];
+                                                @"currency": currency,
+                                                @"user_token": userToken,
+                                                @"timestamp": [self timestamp]}];
   
   NSString *signature = [[KIACrypto sharedKIACrypto] getSignatureWithData:data];
   NSAssert(signature.length > 0, @"KIA signature creation failed.");
@@ -22,8 +22,8 @@
 
 + (NSData *)jsonDataWithDictionary:(NSDictionary *) dictionary {
   return [NSJSONSerialization dataWithJSONObject:dictionary
-                              options:0
-                              error:nil];
+                                         options:0
+                                           error:nil];
 }
 
 + (NSString *)timestamp {
