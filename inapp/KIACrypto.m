@@ -29,8 +29,8 @@
     NSString *publicKeyTag = [RSACryptor publicKeyIdentifierWithTag:KIA_TAG];
     NSString *privateKeyTag = [RSACryptor privateKeyIdentifierWithTag:KIA_TAG];
     
-    SecKeyRef publicKeyRef = [RSACryptor keyRefWithTag:publicKeyTag error:error];
-    SecKeyRef privateKeyRef = [RSACryptor keyRefWithTag:privateKeyTag error:error];
+    SecKeyRef publicKeyRef = [RSACryptor keyRefWithTag:publicKeyTag error:nil];
+    SecKeyRef privateKeyRef = [RSACryptor keyRefWithTag:privateKeyTag error:nil];
     if (publicKeyRef && privateKeyRef)
     {
       NSString *publicKeyStr = [RSACryptor X509FormattedPublicKey:publicKeyTag error:error];
@@ -39,8 +39,12 @@
     else
     {
       BDRSACryptorKeyPair *RSAKeyPair = [RSACryptor generateKeyPairWithKeyIdentifier:KIA_TAG error:error];
-      if(RSAKeyPair == nil)
-        return nil;
+        
+        if(RSAKeyPair == nil)
+        {
+            return nil;
+        }
+        
       _publicKeyBase64Str = [RSAKeyPair.publicKey base64EncodedString];
     }
   }
