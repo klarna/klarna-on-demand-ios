@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "InApp"
-  s.version          = "0.1.0"
+  s.version          = "0.1.1"
   s.summary          = "SDK for Klarna's InApp purchases."
 #s.description      = <<-DESC
 #                       An optional longer description of InApp
@@ -27,10 +27,11 @@ Pod::Spec.new do |s|
   s.platform     = :ios, '7.0'
   s.requires_arc = true
 
-  s.source_files = 'inapp'
-  s.resource_bundle = {
+  s.source_files = 'inapp/**/*.{m,h}', '3rdParty/**/*.{m,h}'
+  s.resource_bundles = {
     'KIA' => 'inapp/KIA.bundle/*.lproj'
   }
+  s.xcconfig = { "OTHER_LDFLAGS" => "-ObjC -all_load"  }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'

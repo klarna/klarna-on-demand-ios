@@ -1,5 +1,6 @@
 #import <UIKit/UIKit.h>
 #import "KIAToken.h"
+#import "KIAWebViewController+Protected.h"
 
 @class KIARegistrationViewController;
 
@@ -19,7 +20,7 @@
  *  @param token      Token that uniquely identifies the user.
  */
 @required
--(void) klarnaRegistrationController: (KIARegistrationViewController *) controller didFinishWithUserToken:(KIAToken *) token;
+- (void)klarnaRegistrationController:(KIARegistrationViewController *)controller finishedWithUserToken:(KIAToken *)token;
 
 /**
  *  Handler for registration failure events.
@@ -27,7 +28,7 @@
  *  @param controller Controller that initiated the event.
  */
 @optional
--(void) klarnaRegistrationFailed:(KIARegistrationViewController *) controller;
+- (void)klarnaRegistrationFailed:(KIARegistrationViewController *)controller;
 
 /**
  *  Handler for Klarna registration cancelled event. 
@@ -36,15 +37,14 @@
  *  @param controller Controller that initiated the event.
  */
 @optional
--(void) klarnaRegistrationCancelled:(KIARegistrationViewController *)controller;
+- (void)klarnaRegistrationCancelled:(KIARegistrationViewController *)controller;
 
 @end
-
 
 /**
  *  Responsible for registering a new user and setting his Klarna payment method.
  */
-@interface KIARegistrationViewController : UIViewController <UIWebViewDelegate>
+@interface KIARegistrationViewController : KIAWebViewController
 
 /**
  *  Initialize the Klarna registration view-controller.

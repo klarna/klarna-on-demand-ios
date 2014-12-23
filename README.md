@@ -5,15 +5,16 @@
 [![License](https://img.shields.io/cocoapods/l/InApp.svg?style=flat)](http://cocoadocs.org/docsets/InApp)
 [![Platform](https://img.shields.io/cocoapods/p/InApp.svg?style=flat)](http://cocoadocs.org/docsets/InApp)
 
+Klarna In-App allows you to offer Klarna's payment solution in mobile apps that offer on demand services. It's a perfect fit for apps selling concert tickets, taxi rides, food pick-ups, etc.
+
 This project contains Klarna's In-App purchase SDK for iOS, as well as a sample application utilizing the SDK.
+
+![It's Klarna in your App](screenshot.png)
 
 While not necessary, the simplest way to get going with both the sample application and the SDK is to use [CocoaPods](http://cocoapods.org) and so all the following instructions will focus on that approach. For an alternative approach, see the [official documentation](http://this_should_be_some_valid_link).
 
-## Using the SDK in your code
-Simply add the following line to your Podfile:
-
-    pod "InApp"
-
+## Using the SDK
+Have a look at the [integration guide](doc/integration.md) for full details on how to use our SDK in your application.
 
 ## Running the sample application
 Assuming you've cloned the repository, simply cd into the repo, open *Inapp.xcworkspace* and run the *InappExample* project.
@@ -33,7 +34,7 @@ You'll need to install [CocoaPods](http://cocoapods.org) in order to properly wo
 3. Open Inapp.xcworkspace and code away
 
 ### Tests
-A pull request must include tests for the proposed fixes/functionality. We use [Kiwi](https://github.com/kiwi-bdd/Kiwi) to write our tests and you can find the tests themselves under the *Inapp* project in the *InappTets* folder.
+Pull requests must include tests for their proposed fixes/functionality. We use [Kiwi](https://github.com/kiwi-bdd/Kiwi) to write our tests and you can find the tests themselves under the *Inapp* project in the *InappTests* folder.
 
 
 ## Author

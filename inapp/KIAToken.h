@@ -8,8 +8,8 @@
 /**
  *  The user's token, which is used for making orders.
  */
-@property (weak, nonatomic) NSString *token;
+@property (strong, nonatomic) NSString *token;
 
-- (id)initWithToken: (NSString *) aToken;
+- (id)initWithToken:(NSString *)token;
 
 @end
