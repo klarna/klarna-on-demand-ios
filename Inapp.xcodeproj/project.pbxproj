@@ -7,22 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4651C4451A3D93E300800F1A /* KIAPreferencesViewControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 4651C4441A3D93E300800F1A /* KIAPreferencesViewControllerSpec.m */; };
-		4651C4541A3DDE9200800F1A /* KIAWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4651C4521A3DDE9200800F1A /* KIAWebViewController.m */; };
-		465CF5901A42DB9E00EC092D /* KIACryptoSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 465CF58F1A42DB9E00EC092D /* KIACryptoSpec.m */; };
-		466387021A480DD20013429D /* KIASpecHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 466387011A480DD20013429D /* KIASpecHelper.m */; };
+		4651C4451A3D93E300800F1A /* KODPreferencesViewControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 4651C4441A3D93E300800F1A /* KODPreferencesViewControllerSpec.m */; };
+		4651C4541A3DDE9200800F1A /* KODWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4651C4521A3DDE9200800F1A /* KODWebViewController.m */; };
+		465CF5901A42DB9E00EC092D /* KODCryptoSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 465CF58F1A42DB9E00EC092D /* KODCryptoSpec.m */; };
+		466387021A480DD20013429D /* KODSpecHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 466387011A480DD20013429D /* KODSpecHelper.m */; };
 		467F0EC21A2B6DE900A76845 /* Jockey.m in Sources */ = {isa = PBXBuildFile; fileRef = 467F0EC11A2B6DE900A76845 /* Jockey.m */; };
-		467F0EDB1A2C6AC900A76845 /* KIAToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 467F0ED91A2C696100A76845 /* KIAToken.m */; };
-		46872D191A2B240000707282 /* KIARegistrationViewControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 46872D181A2B240000707282 /* KIARegistrationViewControllerSpec.m */; };
-		46D37ABD1A374A6500E6AC7A /* KIAPreferencesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46D37ABC1A374A6500E6AC7A /* KIAPreferencesViewController.m */; };
+		467F0EDB1A2C6AC900A76845 /* KODToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 467F0ED91A2C696100A76845 /* KODToken.m */; };
+		46872D191A2B240000707282 /* KODRegistrationViewControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 46872D181A2B240000707282 /* KODRegistrationViewControllerSpec.m */; };
+		46D37ABD1A374A6500E6AC7A /* KODPreferencesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46D37ABC1A374A6500E6AC7A /* KODPreferencesViewController.m */; };
 		94089DAB3DF698D7BB0ACB25 /* libPods-InappTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D1FE0E1CBCA1595B5EFACB69 /* libPods-InappTests.a */; };
-		C903A2E11A2523B6009AE44D /* KIAUrlSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C903A2E01A2523B6009AE44D /* KIAUrlSpec.m */; };
+		C903A2E11A2523B6009AE44D /* KODUrlSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C903A2E01A2523B6009AE44D /* KODUrlSpec.m */; };
 		C90D1C6C1A24CBD100016FE4 /* libInapp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C90D1C601A24CBD100016FE4 /* libInapp.a */; };
-		C90D1C891A24CD2800016FE4 /* KIAContext.m in Sources */ = {isa = PBXBuildFile; fileRef = C90D1C841A24CD2800016FE4 /* KIAContext.m */; };
-		C90D1C8A1A24CD2800016FE4 /* KIARegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C90D1C861A24CD2800016FE4 /* KIARegistrationViewController.m */; };
-		C90D1C8B1A24CD2800016FE4 /* KIAUrl.m in Sources */ = {isa = PBXBuildFile; fileRef = C90D1C881A24CD2800016FE4 /* KIAUrl.m */; };
-		C954ABA71A345B5E00574C11 /* KIALocalization.m in Sources */ = {isa = PBXBuildFile; fileRef = C954ABA61A345B5E00574C11 /* KIALocalization.m */; };
-		C954ABE11A35AB6300574C11 /* KIA.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C954ABCD1A34950300574C11 /* KIA.bundle */; };
+		C90D1C891A24CD2800016FE4 /* KODContext.m in Sources */ = {isa = PBXBuildFile; fileRef = C90D1C841A24CD2800016FE4 /* KODContext.m */; };
+		C90D1C8A1A24CD2800016FE4 /* KODRegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C90D1C861A24CD2800016FE4 /* KODRegistrationViewController.m */; };
+		C90D1C8B1A24CD2800016FE4 /* KODUrl.m in Sources */ = {isa = PBXBuildFile; fileRef = C90D1C881A24CD2800016FE4 /* KODUrl.m */; };
+		C954ABA71A345B5E00574C11 /* KODLocalization.m in Sources */ = {isa = PBXBuildFile; fileRef = C954ABA61A345B5E00574C11 /* KODLocalization.m */; };
+		C954ABE11A35AB6300574C11 /* KOD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C954ABCD1A34950300574C11 /* KOD.bundle */; };
 		C9E7F22E1A3F3FEA0005205B /* BDAESCBC256Cryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F1FB1A3F3FEA0005205B /* BDAESCBC256Cryptor.m */; };
 		C9E7F22F1A3F3FEA0005205B /* BDAESCryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F1FD1A3F3FEA0005205B /* BDAESCryptor.m */; };
 		C9E7F2301A3F3FEA0005205B /* BDCryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F1FF1A3F3FEA0005205B /* BDCryptor.m */; };
@@ -41,10 +41,10 @@
 		C9E7F23D1A3F3FEA0005205B /* NSString+BDJSONSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2211A3F3FEA0005205B /* NSString+BDJSONSerialization.m */; };
 		C9E7F23E1A3F3FEA0005205B /* NSString+BDUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2241A3F3FEA0005205B /* NSString+BDUtilities.m */; };
 		C9E7F23F1A3F3FEA0005205B /* BDError.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2271A3F3FEA0005205B /* BDError.m */; };
-		C9E7F2421A3F45170005205B /* KIACrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2411A3F45170005205B /* KIACrypto.m */; };
-		C9E7F2451A3F4A410005205B /* KIAOriginProof.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2441A3F4A410005205B /* KIAOriginProof.m */; };
-		C9E7F25B1A405D0E0005205B /* KIAOriginProofSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F25A1A405D0E0005205B /* KIAOriginProofSpec.m */; };
-		C9FC95411A278AAD00485500 /* KIAContextSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FC95401A278AAD00485500 /* KIAContextSpec.m */; };
+		C9E7F2421A3F45170005205B /* KODCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2411A3F45170005205B /* KODCrypto.m */; };
+		C9E7F2451A3F4A410005205B /* KODOriginProof.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2441A3F4A410005205B /* KODOriginProof.m */; };
+		C9E7F25B1A405D0E0005205B /* KODOriginProofSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F25A1A405D0E0005205B /* KODOriginProofSpec.m */; };
+		C9FC95411A278AAD00485500 /* KODContextSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FC95401A278AAD00485500 /* KODContextSpec.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,36 +70,36 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		4651C40E1A38A4BC00800F1A /* KIAWebViewController+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "KIAWebViewController+Protected.h"; path = "inapp/KIAWebViewController+Protected.h"; sourceTree = SOURCE_ROOT; };
-		4651C4441A3D93E300800F1A /* KIAPreferencesViewControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KIAPreferencesViewControllerSpec.m; sourceTree = "<group>"; };
-		4651C4511A3DDE9200800F1A /* KIAWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = KIAWebViewController.h; path = ../inapp/KIAWebViewController.h; sourceTree = "<group>"; };
-		4651C4521A3DDE9200800F1A /* KIAWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = KIAWebViewController.m; path = ../inapp/KIAWebViewController.m; sourceTree = "<group>"; };
-		465CF58F1A42DB9E00EC092D /* KIACryptoSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KIACryptoSpec.m; sourceTree = "<group>"; };
-		466387001A480DD20013429D /* KIASpecHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KIASpecHelper.h; sourceTree = "<group>"; };
-		466387011A480DD20013429D /* KIASpecHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KIASpecHelper.m; sourceTree = "<group>"; };
+		4651C40E1A38A4BC00800F1A /* KODWebViewController+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "KODWebViewController+Protected.h"; path = "inapp/KODWebViewController+Protected.h"; sourceTree = SOURCE_ROOT; };
+		4651C4441A3D93E300800F1A /* KODPreferencesViewControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KODPreferencesViewControllerSpec.m; sourceTree = "<group>"; };
+		4651C4511A3DDE9200800F1A /* KODWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = KODWebViewController.h; path = ../inapp/KODWebViewController.h; sourceTree = "<group>"; };
+		4651C4521A3DDE9200800F1A /* KODWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = KODWebViewController.m; path = ../inapp/KODWebViewController.m; sourceTree = "<group>"; };
+		465CF58F1A42DB9E00EC092D /* KODCryptoSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KODCryptoSpec.m; sourceTree = "<group>"; };
+		466387001A480DD20013429D /* KODSpecHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KODSpecHelper.h; sourceTree = "<group>"; };
+		466387011A480DD20013429D /* KODSpecHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KODSpecHelper.m; sourceTree = "<group>"; };
 		467F0EC01A2B6DE900A76845 /* Jockey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Jockey.h; path = 3rdParty/JockeyJS/Jockey.h; sourceTree = "<group>"; };
 		467F0EC11A2B6DE900A76845 /* Jockey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Jockey.m; path = 3rdParty/JockeyJS/Jockey.m; sourceTree = "<group>"; };
-		467F0ED81A2C696100A76845 /* KIAToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KIAToken.h; path = inapp/KIAToken.h; sourceTree = SOURCE_ROOT; };
-		467F0ED91A2C696100A76845 /* KIAToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KIAToken.m; path = inapp/KIAToken.m; sourceTree = SOURCE_ROOT; };
-		46872D181A2B240000707282 /* KIARegistrationViewControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KIARegistrationViewControllerSpec.m; sourceTree = "<group>"; };
-		46D37ABB1A374A6500E6AC7A /* KIAPreferencesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KIAPreferencesViewController.h; path = ../inapp/KIAPreferencesViewController.h; sourceTree = "<group>"; };
-		46D37ABC1A374A6500E6AC7A /* KIAPreferencesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KIAPreferencesViewController.m; path = ../inapp/KIAPreferencesViewController.m; sourceTree = "<group>"; };
+		467F0ED81A2C696100A76845 /* KODToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KODToken.h; path = inapp/KODToken.h; sourceTree = SOURCE_ROOT; };
+		467F0ED91A2C696100A76845 /* KODToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KODToken.m; path = inapp/KODToken.m; sourceTree = SOURCE_ROOT; };
+		46872D181A2B240000707282 /* KODRegistrationViewControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KODRegistrationViewControllerSpec.m; sourceTree = "<group>"; };
+		46D37ABB1A374A6500E6AC7A /* KODPreferencesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KODPreferencesViewController.h; path = ../inapp/KODPreferencesViewController.h; sourceTree = "<group>"; };
+		46D37ABC1A374A6500E6AC7A /* KODPreferencesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KODPreferencesViewController.m; path = ../inapp/KODPreferencesViewController.m; sourceTree = "<group>"; };
 		787D5A12488247D4C7B5FC9E /* Pods-InappTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InappTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InappTests/Pods-InappTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8A6713AF3B794D95017D61E6 /* Pods-InappTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InappTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-InappTests/Pods-InappTests.release.xcconfig"; sourceTree = "<group>"; };
 		C903A2DD1A2523A8009AE44D /* InappTests.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InappTests.pch; sourceTree = "<group>"; };
 		C903A2DE1A2523A8009AE44D /* InappTests.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = InappTests.plist; sourceTree = "<group>"; };
-		C903A2E01A2523B6009AE44D /* KIAUrlSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KIAUrlSpec.m; sourceTree = "<group>"; };
+		C903A2E01A2523B6009AE44D /* KODUrlSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KODUrlSpec.m; sourceTree = "<group>"; };
 		C90D1C601A24CBD100016FE4 /* libInapp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libInapp.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C90D1C6B1A24CBD100016FE4 /* InappTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InappTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C90D1C831A24CD2800016FE4 /* KIAContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KIAContext.h; sourceTree = "<group>"; };
-		C90D1C841A24CD2800016FE4 /* KIAContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KIAContext.m; sourceTree = "<group>"; };
-		C90D1C851A24CD2800016FE4 /* KIARegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KIARegistrationViewController.h; sourceTree = "<group>"; };
-		C90D1C861A24CD2800016FE4 /* KIARegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KIARegistrationViewController.m; sourceTree = "<group>"; };
-		C90D1C871A24CD2800016FE4 /* KIAUrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KIAUrl.h; sourceTree = "<group>"; };
-		C90D1C881A24CD2800016FE4 /* KIAUrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KIAUrl.m; sourceTree = "<group>"; };
-		C954ABA51A345B5E00574C11 /* KIALocalization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KIALocalization.h; path = inapp/KIALocalization.h; sourceTree = SOURCE_ROOT; };
-		C954ABA61A345B5E00574C11 /* KIALocalization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KIALocalization.m; path = inapp/KIALocalization.m; sourceTree = SOURCE_ROOT; };
-		C954ABCD1A34950300574C11 /* KIA.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = KIA.bundle; path = inapp/KIA.bundle; sourceTree = SOURCE_ROOT; };
+		C90D1C831A24CD2800016FE4 /* KODContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KODContext.h; sourceTree = "<group>"; };
+		C90D1C841A24CD2800016FE4 /* KODContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KODContext.m; sourceTree = "<group>"; };
+		C90D1C851A24CD2800016FE4 /* KODRegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KODRegistrationViewController.h; sourceTree = "<group>"; };
+		C90D1C861A24CD2800016FE4 /* KODRegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KODRegistrationViewController.m; sourceTree = "<group>"; };
+		C90D1C871A24CD2800016FE4 /* KODUrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KODUrl.h; sourceTree = "<group>"; };
+		C90D1C881A24CD2800016FE4 /* KODUrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KODUrl.m; sourceTree = "<group>"; };
+		C954ABA51A345B5E00574C11 /* KODLocalization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KODLocalization.h; path = inapp/KODLocalization.h; sourceTree = SOURCE_ROOT; };
+		C954ABA61A345B5E00574C11 /* KODLocalization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KODLocalization.m; path = inapp/KODLocalization.m; sourceTree = SOURCE_ROOT; };
+		C954ABCD1A34950300574C11 /* KOD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = KOD.bundle; path = inapp/KOD.bundle; sourceTree = SOURCE_ROOT; };
 		C9E7F1FA1A3F3FEA0005205B /* BDAESCBC256Cryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDAESCBC256Cryptor.h; sourceTree = "<group>"; };
 		C9E7F1FB1A3F3FEA0005205B /* BDAESCBC256Cryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDAESCBC256Cryptor.m; sourceTree = "<group>"; };
 		C9E7F1FC1A3F3FEA0005205B /* BDAESCryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDAESCryptor.h; sourceTree = "<group>"; };
@@ -138,13 +138,13 @@
 		C9E7F2261A3F3FEA0005205B /* BDError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDError.h; sourceTree = "<group>"; };
 		C9E7F2271A3F3FEA0005205B /* BDError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDError.m; sourceTree = "<group>"; };
 		C9E7F22D1A3F3FEA0005205B /* BDLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDLog.h; sourceTree = "<group>"; };
-		C9E7F2401A3F45170005205B /* KIACrypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KIACrypto.h; path = inapp/KIACrypto.h; sourceTree = SOURCE_ROOT; };
-		C9E7F2411A3F45170005205B /* KIACrypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KIACrypto.m; path = inapp/KIACrypto.m; sourceTree = SOURCE_ROOT; };
-		C9E7F2431A3F4A410005205B /* KIAOriginProof.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KIAOriginProof.h; path = inapp/KIAOriginProof.h; sourceTree = SOURCE_ROOT; };
-		C9E7F2441A3F4A410005205B /* KIAOriginProof.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KIAOriginProof.m; path = inapp/KIAOriginProof.m; sourceTree = SOURCE_ROOT; };
-		C9E7F25A1A405D0E0005205B /* KIAOriginProofSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KIAOriginProofSpec.m; sourceTree = "<group>"; };
+		C9E7F2401A3F45170005205B /* KODCrypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KODCrypto.h; path = inapp/KODCrypto.h; sourceTree = SOURCE_ROOT; };
+		C9E7F2411A3F45170005205B /* KODCrypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KODCrypto.m; path = inapp/KODCrypto.m; sourceTree = SOURCE_ROOT; };
+		C9E7F2431A3F4A410005205B /* KODOriginProof.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KODOriginProof.h; path = inapp/KODOriginProof.h; sourceTree = SOURCE_ROOT; };
+		C9E7F2441A3F4A410005205B /* KODOriginProof.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KODOriginProof.m; path = inapp/KODOriginProof.m; sourceTree = SOURCE_ROOT; };
+		C9E7F25A1A405D0E0005205B /* KODOriginProofSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KODOriginProofSpec.m; sourceTree = "<group>"; };
 		C9E7F2621A4086980005205B /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
-		C9FC95401A278AAD00485500 /* KIAContextSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KIAContextSpec.m; sourceTree = "<group>"; };
+		C9FC95401A278AAD00485500 /* KODContextSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KODContextSpec.m; sourceTree = "<group>"; };
 		D1FE0E1CBCA1595B5EFACB69 /* libPods-InappTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-InappTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -227,26 +227,26 @@
 		C90D1C621A24CBD100016FE4 /* Inapp */ = {
 			isa = PBXGroup;
 			children = (
-				C954ABCD1A34950300574C11 /* KIA.bundle */,
-				C90D1C831A24CD2800016FE4 /* KIAContext.h */,
-				C90D1C841A24CD2800016FE4 /* KIAContext.m */,
-				C954ABA51A345B5E00574C11 /* KIALocalization.h */,
-				C954ABA61A345B5E00574C11 /* KIALocalization.m */,
-				46D37ABB1A374A6500E6AC7A /* KIAPreferencesViewController.h */,
-				46D37ABC1A374A6500E6AC7A /* KIAPreferencesViewController.m */,
-				C90D1C851A24CD2800016FE4 /* KIARegistrationViewController.h */,
-				C90D1C861A24CD2800016FE4 /* KIARegistrationViewController.m */,
-				467F0ED81A2C696100A76845 /* KIAToken.h */,
-				467F0ED91A2C696100A76845 /* KIAToken.m */,
-				C90D1C871A24CD2800016FE4 /* KIAUrl.h */,
-				C90D1C881A24CD2800016FE4 /* KIAUrl.m */,
-				4651C4511A3DDE9200800F1A /* KIAWebViewController.h */,
-				4651C4521A3DDE9200800F1A /* KIAWebViewController.m */,
-				4651C40E1A38A4BC00800F1A /* KIAWebViewController+Protected.h */,
-				C9E7F2401A3F45170005205B /* KIACrypto.h */,
-				C9E7F2411A3F45170005205B /* KIACrypto.m */,
-				C9E7F2431A3F4A410005205B /* KIAOriginProof.h */,
-				C9E7F2441A3F4A410005205B /* KIAOriginProof.m */,
+				C954ABCD1A34950300574C11 /* KOD.bundle */,
+				C90D1C831A24CD2800016FE4 /* KODContext.h */,
+				C90D1C841A24CD2800016FE4 /* KODContext.m */,
+				C954ABA51A345B5E00574C11 /* KODLocalization.h */,
+				C954ABA61A345B5E00574C11 /* KODLocalization.m */,
+				46D37ABB1A374A6500E6AC7A /* KODPreferencesViewController.h */,
+				46D37ABC1A374A6500E6AC7A /* KODPreferencesViewController.m */,
+				C90D1C851A24CD2800016FE4 /* KODRegistrationViewController.h */,
+				C90D1C861A24CD2800016FE4 /* KODRegistrationViewController.m */,
+				467F0ED81A2C696100A76845 /* KODToken.h */,
+				467F0ED91A2C696100A76845 /* KODToken.m */,
+				C90D1C871A24CD2800016FE4 /* KODUrl.h */,
+				C90D1C881A24CD2800016FE4 /* KODUrl.m */,
+				4651C4511A3DDE9200800F1A /* KODWebViewController.h */,
+				4651C4521A3DDE9200800F1A /* KODWebViewController.m */,
+				4651C40E1A38A4BC00800F1A /* KODWebViewController+Protected.h */,
+				C9E7F2401A3F45170005205B /* KODCrypto.h */,
+				C9E7F2411A3F45170005205B /* KODCrypto.m */,
+				C9E7F2431A3F4A410005205B /* KODOriginProof.h */,
+				C9E7F2441A3F4A410005205B /* KODOriginProof.m */,
 			);
 			path = Inapp;
 			sourceTree = "<group>";
@@ -254,14 +254,14 @@
 		C90D1C6F1A24CBD100016FE4 /* InappTests */ = {
 			isa = PBXGroup;
 			children = (
-				466387001A480DD20013429D /* KIASpecHelper.h */,
-				466387011A480DD20013429D /* KIASpecHelper.m */,
-				C9FC95401A278AAD00485500 /* KIAContextSpec.m */,
-				465CF58F1A42DB9E00EC092D /* KIACryptoSpec.m */,
-				C9E7F25A1A405D0E0005205B /* KIAOriginProofSpec.m */,
-				4651C4441A3D93E300800F1A /* KIAPreferencesViewControllerSpec.m */,
-				46872D181A2B240000707282 /* KIARegistrationViewControllerSpec.m */,
-				C903A2E01A2523B6009AE44D /* KIAUrlSpec.m */,
+				466387001A480DD20013429D /* KODSpecHelper.h */,
+				466387011A480DD20013429D /* KODSpecHelper.m */,
+				C9FC95401A278AAD00485500 /* KODContextSpec.m */,
+				465CF58F1A42DB9E00EC092D /* KODCryptoSpec.m */,
+				C9E7F25A1A405D0E0005205B /* KODOriginProofSpec.m */,
+				4651C4441A3D93E300800F1A /* KODPreferencesViewControllerSpec.m */,
+				46872D181A2B240000707282 /* KODRegistrationViewControllerSpec.m */,
+				C903A2E01A2523B6009AE44D /* KODUrlSpec.m */,
 				C90D1C701A24CBD100016FE4 /* Supporting Files */,
 			);
 			path = InappTests;
@@ -515,7 +515,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C954ABE11A35AB6300574C11 /* KIA.bundle in Resources */,
+				C954ABE11A35AB6300574C11 /* KOD.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -566,26 +566,26 @@
 				C9E7F2321A3F3FEA0005205B /* BDRSACryptor.m in Sources */,
 				C9E7F23D1A3F3FEA0005205B /* NSString+BDJSONSerialization.m in Sources */,
 				C9E7F22E1A3F3FEA0005205B /* BDAESCBC256Cryptor.m in Sources */,
-				C9E7F2451A3F4A410005205B /* KIAOriginProof.m in Sources */,
+				C9E7F2451A3F4A410005205B /* KODOriginProof.m in Sources */,
 				C9E7F2311A3F3FEA0005205B /* BDCryptorError.m in Sources */,
 				C9E7F23A1A3F3FEA0005205B /* NSDictionary+BDJSONSerialization.m in Sources */,
-				4651C4541A3DDE9200800F1A /* KIAWebViewController.m in Sources */,
+				4651C4541A3DDE9200800F1A /* KODWebViewController.m in Sources */,
 				C9E7F23C1A3F3FEA0005205B /* NSObject+BDJSONSerialization.m in Sources */,
-				C9E7F2421A3F45170005205B /* KIACrypto.m in Sources */,
+				C9E7F2421A3F45170005205B /* KODCrypto.m in Sources */,
 				C9E7F2331A3F3FEA0005205B /* BDRSACryptorKeyPair.m in Sources */,
-				C954ABA71A345B5E00574C11 /* KIALocalization.m in Sources */,
+				C954ABA71A345B5E00574C11 /* KODLocalization.m in Sources */,
 				C9E7F22F1A3F3FEA0005205B /* BDAESCryptor.m in Sources */,
 				C9E7F2391A3F3FEA0005205B /* NSData+BDJSONSerialization.m in Sources */,
-				467F0EDB1A2C6AC900A76845 /* KIAToken.m in Sources */,
+				467F0EDB1A2C6AC900A76845 /* KODToken.m in Sources */,
 				C9E7F2341A3F3FEA0005205B /* BDSHA512Cryptor.m in Sources */,
 				C9E7F23E1A3F3FEA0005205B /* NSString+BDUtilities.m in Sources */,
 				467F0EC21A2B6DE900A76845 /* Jockey.m in Sources */,
-				C90D1C8A1A24CD2800016FE4 /* KIARegistrationViewController.m in Sources */,
-				C90D1C891A24CD2800016FE4 /* KIAContext.m in Sources */,
+				C90D1C8A1A24CD2800016FE4 /* KODRegistrationViewController.m in Sources */,
+				C90D1C891A24CD2800016FE4 /* KODContext.m in Sources */,
 				C9E7F2371A3F3FEA0005205B /* BDJSONError.m in Sources */,
 				C9E7F23F1A3F3FEA0005205B /* BDError.m in Sources */,
-				C90D1C8B1A24CD2800016FE4 /* KIAUrl.m in Sources */,
-				46D37ABD1A374A6500E6AC7A /* KIAPreferencesViewController.m in Sources */,
+				C90D1C8B1A24CD2800016FE4 /* KODUrl.m in Sources */,
+				46D37ABD1A374A6500E6AC7A /* KODPreferencesViewController.m in Sources */,
 				C9E7F2301A3F3FEA0005205B /* BDCryptor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -594,13 +594,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C903A2E11A2523B6009AE44D /* KIAUrlSpec.m in Sources */,
-				466387021A480DD20013429D /* KIASpecHelper.m in Sources */,
-				C9FC95411A278AAD00485500 /* KIAContextSpec.m in Sources */,
-				4651C4451A3D93E300800F1A /* KIAPreferencesViewControllerSpec.m in Sources */,
-				C9E7F25B1A405D0E0005205B /* KIAOriginProofSpec.m in Sources */,
-				46872D191A2B240000707282 /* KIARegistrationViewControllerSpec.m in Sources */,
-				465CF5901A42DB9E00EC092D /* KIACryptoSpec.m in Sources */,
+				C903A2E11A2523B6009AE44D /* KODUrlSpec.m in Sources */,
+				466387021A480DD20013429D /* KODSpecHelper.m in Sources */,
+				C9FC95411A278AAD00485500 /* KODContextSpec.m in Sources */,
+				4651C4451A3D93E300800F1A /* KODPreferencesViewControllerSpec.m in Sources */,
+				C9E7F25B1A405D0E0005205B /* KODOriginProofSpec.m in Sources */,
+				46872D191A2B240000707282 /* KODRegistrationViewControllerSpec.m in Sources */,
+				465CF5901A42DB9E00EC092D /* KODCryptoSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
