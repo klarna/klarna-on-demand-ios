@@ -1,5 +1,5 @@
 #
-# Be sure to run `pod lib lint InApp.podspec' to ensure this is a
+# Be sure to run `pod lib lint KlarnaOnDemand.podspec' to ensure this is a
 # valid spec and remove all comments before submitting the spec.
 #
 # Any lines starting with a # are optional, but encouraged
@@ -8,20 +8,20 @@
 #
 
 Pod::Spec.new do |s|
-  s.name             = "InApp"
+  s.name             = "KlarnaOnDemand"
   s.version          = "0.1.1"
-  s.summary          = "SDK for Klarna's InApp purchases."
+  s.summary          = "SDK for Klarna's KlarnaOnDemand purchases."
 #s.description      = <<-DESC
-#                       An optional longer description of InApp
+#                       An optional longer description of KlarnaOnDemand
 #
 #                       * Markdown format.
 #                       * Don't worry about the indent, we strip it!
 #                       DESC
-  s.homepage         = "https://github.com/<GITHUB_USERNAME>/InApp"
+  s.homepage         = "https://github.com/<GITHUB_USERNAME>/KlarnaOnDemand"
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'MIT'
   s.author           = { "Klarna" => "???@klarna.com" }
-  s.source           = { :git => "https://github.com/<GITHUB_USERNAME>/InApp.git", :tag => s.version.to_s }
+  s.source           = { :git => "https://github.com/<GITHUB_USERNAME>/KlarnaOnDemand.git", :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.platform     = :ios, '7.0'

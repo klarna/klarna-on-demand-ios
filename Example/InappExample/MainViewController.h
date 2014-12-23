@@ -1,8 +1,8 @@
 #import <UIKit/UIKit.h>
-#import "KIARegistrationViewController.h"
-#import "KIAPreferencesViewController.h"
+#import "KODRegistrationViewController.h"
+#import "KODPreferencesViewController.h"
 
-@interface MainViewController : UIViewController<KIARegistrationViewControllerDelegate, KIAPreferencesViewControllerDelegate>
+@interface MainViewController : UIViewController<KODRegistrationViewControllerDelegate, KODPreferencesViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *buyButton;
 

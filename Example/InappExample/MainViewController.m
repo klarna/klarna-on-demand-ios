@@ -1,8 +1,8 @@
 #import "MainViewController.h"
-#import "KIARegistrationViewController.h"
-#import "KIAPreferencesViewController.h"
-#import "KIAContext.h"
-#import "KIAOriginProof.h"
+#import "KODRegistrationViewController.h"
+#import "KODPreferencesViewController.h"
+#import "KODContext.h"
+#import "KODOriginProof.h"
 
 #define ALERT(str) [[[UIAlertView alloc] initWithTitle:@"Alert" message:str delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil] show]
 
@@ -23,7 +23,7 @@
   if([self hasUserToken])
   {
     // create origin proof for order.
-     NSString *originProof = [KIAOriginProof generateWithAmount:9900 currency:@"SEK" userToken:[self getUserToken]];
+     NSString *originProof = [KODOriginProof generateWithAmount:9900 currency:@"SEK" userToken:[self getUserToken]];
 
     // TODO: send order request to app-server.
 
@@ -33,7 +33,7 @@
   else
   {
   // Create a new Klarna registration view-controller, initialized with MainViewController as event-handler.
-  KIARegistrationViewController *registrationViewController = [[KIARegistrationViewController alloc] initWithDelegate:self];
+  KODRegistrationViewController *registrationViewController = [[KODRegistrationViewController alloc] initWithDelegate:self];
   
   // Create navigation controller with Klarna registration view-controller as the root view controller.
   UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:registrationViewController];
@@ -47,7 +47,7 @@
 
 - (IBAction)onChangePaymentPressed:(id)sender {
   // Create a new Klarna preferences view-controller, initialized with MainViewController as the event-handler, and the user token that was saved when the user completed the registration process.
-  KIAPreferencesViewController *preferencesViewController = [[KIAPreferencesViewController alloc] initWithDelegate:self andToken:[self getUserToken]];
+  KODPreferencesViewController *preferencesViewController = [[KODPreferencesViewController alloc] initWithDelegate:self andToken:[self getUserToken]];
 
   // Create navigation controller with Klarna preferences view-controller as the root view controller.
   UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:preferencesViewController];
@@ -60,18 +60,18 @@
 
 #pragma mark Registration delegate
 
-- (void)klarnaRegistrationFailed:(KIARegistrationViewController *)controller {
+- (void)klarnaRegistrationFailed:(KODRegistrationViewController *)controller {
   // You may also want to convey this failure to your user.
   // Dismiss Klarna registration view-controller.
   [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)klarnaRegistrationCancelled:(KIARegistrationViewController *)controller {
+- (void)klarnaRegistrationCancelled:(KODRegistrationViewController *)controller {
   // Dismiss Klarna registration view-controller.
   [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)klarnaRegistrationController:(KIARegistrationViewController *)controller finishedWithUserToken:(KIAToken *)userToken {
+- (void)klarnaRegistrationController:(KODRegistrationViewController *)controller finishedWithUserToken:(KODToken *)userToken {
   // Dismiss Klarna registration view-controller.
   [self dismissViewControllerAnimated:YES completion:nil];
   
@@ -84,12 +84,12 @@
 
 #pragma mark Preferences delegate
 
-- (void)klarnaPreferencesFailed:(KIAPreferencesViewController *)controller {
+- (void)klarnaPreferencesFailed:(KODPreferencesViewController *)controller {
   // Dismiss Klarna preferences view-controller.
   [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)klarnaPreferencesClosed:(KIAPreferencesViewController *)controller {
+- (void)klarnaPreferencesClosed:(KODPreferencesViewController *)controller {
   // Dismiss Klarna preferences view-controller.
   [self dismissViewControllerAnimated:YES completion:nil];
 }

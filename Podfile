@@ -1,4 +1,4 @@
-target 'InappTests' do
+target 'KlarnaOnDemandTests' do
 
   pod 'Kiwi'
 

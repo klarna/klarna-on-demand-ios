@@ -1,9 +1,9 @@
-# InApp
+# KlarnaOnDemand
 
 [![CI Status](https://api.travis-ci.org/yuval-netanel/inapp-ios.svg?style=flat)](https://travis-ci.org/yuval-netanel/inapp-ios)
-[![Version](https://img.shields.io/cocoapods/v/InApp.svg?style=flat)](http://cocoadocs.org/docsets/InApp)
-[![License](https://img.shields.io/cocoapods/l/InApp.svg?style=flat)](http://cocoadocs.org/docsets/InApp)
-[![Platform](https://img.shields.io/cocoapods/p/InApp.svg?style=flat)](http://cocoadocs.org/docsets/InApp)
+[![Version](https://img.shields.io/cocoapods/v/KlarnaOnDemand.svg?style=flat)](http://cocoadocs.org/docsets/KlarnaOnDemand)
+[![License](https://img.shields.io/cocoapods/l/KlarnaOnDemand.svg?style=flat)](http://cocoadocs.org/docsets/KlarnaOnDemand)
+[![Platform](https://img.shields.io/cocoapods/p/KlarnaOnDemand.svg?style=flat)](http://cocoadocs.org/docsets/KlarnaOnDemand)
 
 Klarna In-App allows you to offer Klarna's payment solution in mobile apps that offer on demand services. It's a perfect fit for apps selling concert tickets, taxi rides, food pick-ups, etc.
 
@@ -43,4 +43,4 @@ Klarna
 
 ## License
 
-InApp is available under the Apache 2.0 license. See the LICENSE file for more info.
+KlarnaOnDemand is available under the Apache 2.0 license. See the LICENSE file for more info.
