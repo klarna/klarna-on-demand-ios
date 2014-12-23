@@ -81,9 +81,14 @@
                                       length:(NSUInteger)signedHashBytesSize];
   
   if (hashBytes)
+  {
     free(hashBytes);
+  }
+    
   if (signedHashBytes)
+  {
     free(signedHashBytes);
+  }
   
   return [signedHash base64EncodedString];
 }
