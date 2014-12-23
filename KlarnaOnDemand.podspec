@@ -27,9 +27,9 @@ Pod::Spec.new do |s|
   s.platform     = :ios, '7.0'
   s.requires_arc = true
 
-  s.source_files = 'inapp/**/*.{m,h}', '3rdParty/**/*.{m,h}'
+  s.source_files = ‘KlarnaOnDemand/**/*.{m,h}’, '3rdParty/**/*.{m,h}'
   s.resource_bundles = {
-    'KIA' => 'inapp/KIA.bundle/*.lproj'
+    ‘KOD’ => 'KlarnaOnDemand/KIA.bundle/*.lproj'
   }
   s.xcconfig = { "OTHER_LDFLAGS" => "-ObjC -all_load"  }
 

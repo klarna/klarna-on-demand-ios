@@ -9,15 +9,17 @@
 /* Begin PBXBuildFile section */
 		460FDB6E1A499F2500CF327B /* KOD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 460FDB6D1A499F2500CF327B /* KOD.bundle */; };
 		460FDB721A49A21200CF327B /* libKlarnaOnDemand.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 460FDB711A49A21200CF327B /* libKlarnaOnDemand.a */; };
-		466386F11A47257C0013429D /* TheGirlWithTheDragonTatoo@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 466386F01A47257C0013429D /* TheGirlWithTheDragonTatoo@2x.jpg */; };
-		466386F71A472FA40013429D /* QRCode@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 466386F61A472FA40013429D /* QRCode@2x.png */; };
-		466386FD1A4731160013429D /* CloseButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 466386FC1A4731160013429D /* CloseButton@2x.png */; };
-		C946A3CC1A24C21D00A12CC6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C946A3CB1A24C21D00A12CC6 /* main.m */; };
-		C946A3CF1A24C21D00A12CC6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C946A3CE1A24C21D00A12CC6 /* AppDelegate.m */; };
-		C946A3D21A24C21D00A12CC6 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C946A3D11A24C21D00A12CC6 /* MainViewController.m */; };
-		C946A3D51A24C21D00A12CC6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C946A3D31A24C21D00A12CC6 /* Main.storyboard */; };
-		C946A3D71A24C21D00A12CC6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C946A3D61A24C21D00A12CC6 /* Images.xcassets */; };
-		C946A3DA1A24C21D00A12CC6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C946A3D81A24C21D00A12CC6 /* LaunchScreen.xib */; };
+		460FDB751A49A35200CF327B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 460FDB741A49A35200CF327B /* AppDelegate.m */; };
+		460FDB781A49A36000CF327B /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 460FDB771A49A36000CF327B /* MainViewController.m */; };
+		460FDB841A49A3B500CF327B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 460FDB801A49A3B500CF327B /* LaunchScreen.xib */; };
+		460FDB851A49A3B500CF327B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 460FDB821A49A3B500CF327B /* Main.storyboard */; };
+		460FDB871A49A3C500CF327B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 460FDB861A49A3C500CF327B /* Images.xcassets */; };
+		460FDB8B1A49A3E600CF327B /* CloseButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 460FDB881A49A3E600CF327B /* CloseButton@2x.png */; };
+		460FDB8C1A49A3E600CF327B /* QRCode@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 460FDB891A49A3E600CF327B /* QRCode@2x.png */; };
+		460FDB8D1A49A3E600CF327B /* TheGirlWithTheDragonTatoo@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 460FDB8A1A49A3E600CF327B /* TheGirlWithTheDragonTatoo@2x.jpg */; };
+		460FDB901A49A3F100CF327B /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 460FDB8E1A49A3F100CF327B /* Info.plist */; };
+		460FDB911A49A3F100CF327B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 460FDB8F1A49A3F100CF327B /* main.m */; };
+		460FDB931A49A3FC00CF327B /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 460FDB921A49A3FC00CF327B /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,23 +35,21 @@
 /* Begin PBXFileReference section */
 		460FDB6D1A499F2500CF327B /* KOD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = KOD.bundle; path = ../KlarnaOnDemand/KOD.bundle; sourceTree = "<group>"; };
 		460FDB711A49A21200CF327B /* libKlarnaOnDemand.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libKlarnaOnDemand.a; path = "../build/Debug-iphoneos/libKlarnaOnDemand.a"; sourceTree = "<group>"; };
-		466386F01A47257C0013429D /* TheGirlWithTheDragonTatoo@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "TheGirlWithTheDragonTatoo@2x.jpg"; sourceTree = "<group>"; };
-		466386F61A472FA40013429D /* QRCode@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "QRCode@2x.png"; sourceTree = "<group>"; };
-		466386FC1A4731160013429D /* CloseButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CloseButton@2x.png"; sourceTree = "<group>"; };
+		460FDB731A49A35200CF327B /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = KlarnaOnDemandExample/AppDelegate.h; sourceTree = SOURCE_ROOT; };
+		460FDB741A49A35200CF327B /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = KlarnaOnDemandExample/AppDelegate.m; sourceTree = SOURCE_ROOT; };
+		460FDB761A49A36000CF327B /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = KlarnaOnDemandExample/MainViewController.h; sourceTree = SOURCE_ROOT; };
+		460FDB771A49A36000CF327B /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = KlarnaOnDemandExample/MainViewController.m; sourceTree = SOURCE_ROOT; };
+		460FDB811A49A3B500CF327B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = KlarnaOnDemandExample/Base.lproj/LaunchScreen.xib; sourceTree = SOURCE_ROOT; };
+		460FDB831A49A3B500CF327B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = KlarnaOnDemandExample/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
+		460FDB861A49A3C500CF327B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = KlarnaOnDemandExample/Images.xcassets; sourceTree = SOURCE_ROOT; };
+		460FDB881A49A3E600CF327B /* CloseButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "CloseButton@2x.png"; path = "KlarnaOnDemandExample/Images.xcassets/CloseButton@2x.png"; sourceTree = SOURCE_ROOT; };
+		460FDB891A49A3E600CF327B /* QRCode@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "QRCode@2x.png"; path = "KlarnaOnDemandExample/Images.xcassets/QRCode@2x.png"; sourceTree = SOURCE_ROOT; };
+		460FDB8A1A49A3E600CF327B /* TheGirlWithTheDragonTatoo@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "TheGirlWithTheDragonTatoo@2x.jpg"; path = "KlarnaOnDemandExample/Images.xcassets/TheGirlWithTheDragonTatoo@2x.jpg"; sourceTree = SOURCE_ROOT; };
+		460FDB8E1A49A3F100CF327B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = KlarnaOnDemandExample/Info.plist; sourceTree = SOURCE_ROOT; };
+		460FDB8F1A49A3F100CF327B /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = KlarnaOnDemandExample/main.m; sourceTree = SOURCE_ROOT; };
+		460FDB921A49A3FC00CF327B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = KlarnaOnDemandExampleTests/Info.plist; sourceTree = SOURCE_ROOT; };
 		C946A3C61A24C21D00A12CC6 /* KlarnaOnDemandExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KlarnaOnDemandExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		C946A3CA1A24C21D00A12CC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C946A3CB1A24C21D00A12CC6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		C946A3CD1A24C21D00A12CC6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		C946A3CE1A24C21D00A12CC6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		C946A3D01A24C21D00A12CC6 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
-		C946A3D11A24C21D00A12CC6 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		C946A3D41A24C21D00A12CC6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		C946A3D61A24C21D00A12CC6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		C946A3D91A24C21D00A12CC6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		C946A3DF1A24C21D00A12CC6 /* KlarnaOnDemandExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KlarnaOnDemandExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C946A3E41A24C21D00A12CC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C9E7F25E1A407D280005205B /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/Main.strings; sourceTree = "<group>"; };
-		C9E7F25F1A407D280005205B /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,13 +94,13 @@
 		C946A3C81A24C21D00A12CC6 /* KlarnaOnDemandExample */ = {
 			isa = PBXGroup;
 			children = (
-				C946A3CD1A24C21D00A12CC6 /* AppDelegate.h */,
-				C946A3CE1A24C21D00A12CC6 /* AppDelegate.m */,
-				C946A3D01A24C21D00A12CC6 /* MainViewController.h */,
-				C946A3D11A24C21D00A12CC6 /* MainViewController.m */,
-				C946A3D31A24C21D00A12CC6 /* Main.storyboard */,
-				C946A3D61A24C21D00A12CC6 /* Images.xcassets */,
-				C946A3D81A24C21D00A12CC6 /* LaunchScreen.xib */,
+				460FDB861A49A3C500CF327B /* Images.xcassets */,
+				460FDB801A49A3B500CF327B /* LaunchScreen.xib */,
+				460FDB821A49A3B500CF327B /* Main.storyboard */,
+				460FDB761A49A36000CF327B /* MainViewController.h */,
+				460FDB771A49A36000CF327B /* MainViewController.m */,
+				460FDB731A49A35200CF327B /* AppDelegate.h */,
+				460FDB741A49A35200CF327B /* AppDelegate.m */,
 				C946A3C91A24C21D00A12CC6 /* Supporting Files */,
 			);
 			name = KlarnaOnDemandExample;
@@ -110,11 +110,11 @@
 		C946A3C91A24C21D00A12CC6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				466386FC1A4731160013429D /* CloseButton@2x.png */,
-				466386F61A472FA40013429D /* QRCode@2x.png */,
-				466386F01A47257C0013429D /* TheGirlWithTheDragonTatoo@2x.jpg */,
-				C946A3CA1A24C21D00A12CC6 /* Info.plist */,
-				C946A3CB1A24C21D00A12CC6 /* main.m */,
+				460FDB8E1A49A3F100CF327B /* Info.plist */,
+				460FDB8F1A49A3F100CF327B /* main.m */,
+				460FDB881A49A3E600CF327B /* CloseButton@2x.png */,
+				460FDB891A49A3E600CF327B /* QRCode@2x.png */,
+				460FDB8A1A49A3E600CF327B /* TheGirlWithTheDragonTatoo@2x.jpg */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -131,7 +131,7 @@
 		C946A3E31A24C21D00A12CC6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				C946A3E41A24C21D00A12CC6 /* Info.plist */,
+				460FDB921A49A3FC00CF327B /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -216,13 +216,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				466386FD1A4731160013429D /* CloseButton@2x.png in Resources */,
-				C946A3D51A24C21D00A12CC6 /* Main.storyboard in Resources */,
-				466386F71A472FA40013429D /* QRCode@2x.png in Resources */,
+				460FDB901A49A3F100CF327B /* Info.plist in Resources */,
+				460FDB851A49A3B500CF327B /* Main.storyboard in Resources */,
+				460FDB931A49A3FC00CF327B /* Info.plist in Resources */,
+				460FDB8B1A49A3E600CF327B /* CloseButton@2x.png in Resources */,
+				460FDB871A49A3C500CF327B /* Images.xcassets in Resources */,
+				460FDB8D1A49A3E600CF327B /* TheGirlWithTheDragonTatoo@2x.jpg in Resources */,
+				460FDB8C1A49A3E600CF327B /* QRCode@2x.png in Resources */,
 				460FDB6E1A499F2500CF327B /* KOD.bundle in Resources */,
-				C946A3DA1A24C21D00A12CC6 /* LaunchScreen.xib in Resources */,
-				C946A3D71A24C21D00A12CC6 /* Images.xcassets in Resources */,
-				466386F11A47257C0013429D /* TheGirlWithTheDragonTatoo@2x.jpg in Resources */,
+				460FDB841A49A3B500CF327B /* LaunchScreen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,9 +242,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C946A3D21A24C21D00A12CC6 /* MainViewController.m in Sources */,
-				C946A3CF1A24C21D00A12CC6 /* AppDelegate.m in Sources */,
-				C946A3CC1A24C21D00A12CC6 /* main.m in Sources */,
+				460FDB751A49A35200CF327B /* AppDelegate.m in Sources */,
+				460FDB911A49A3F100CF327B /* main.m in Sources */,
+				460FDB781A49A36000CF327B /* MainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,22 +266,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		C946A3D31A24C21D00A12CC6 /* Main.storyboard */ = {
+		460FDB801A49A3B500CF327B /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				C946A3D41A24C21D00A12CC6 /* Base */,
-				C9E7F25E1A407D280005205B /* sv */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		C946A3D81A24C21D00A12CC6 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C946A3D91A24C21D00A12CC6 /* Base */,
-				C9E7F25F1A407D280005205B /* sv */,
+				460FDB811A49A3B500CF327B /* Base */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		460FDB821A49A3B500CF327B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				460FDB831A49A3B500CF327B /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
