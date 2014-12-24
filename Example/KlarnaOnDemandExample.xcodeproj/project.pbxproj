@@ -14,9 +14,7 @@
 		460FDB841A49A3B500CF327B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 460FDB801A49A3B500CF327B /* LaunchScreen.xib */; };
 		460FDB851A49A3B500CF327B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 460FDB821A49A3B500CF327B /* Main.storyboard */; };
 		460FDB871A49A3C500CF327B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 460FDB861A49A3C500CF327B /* Images.xcassets */; };
-		460FDB901A49A3F100CF327B /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 460FDB8E1A49A3F100CF327B /* Info.plist */; };
 		460FDB911A49A3F100CF327B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 460FDB8F1A49A3F100CF327B /* main.m */; };
-		460FDB931A49A3FC00CF327B /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 460FDB921A49A3FC00CF327B /* Info.plist */; };
 		469203AB1A4AC52900A628D6 /* CloseButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 469203A81A4AC52900A628D6 /* CloseButton@2x.png */; };
 		469203AC1A4AC52900A628D6 /* QRCode@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 469203A91A4AC52900A628D6 /* QRCode@2x.png */; };
 		469203AD1A4AC52900A628D6 /* TheGirlWithTheDragonTatoo@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 469203AA1A4AC52900A628D6 /* TheGirlWithTheDragonTatoo@2x.jpg */; };
@@ -225,9 +223,7 @@
 				469203AC1A4AC52900A628D6 /* QRCode@2x.png in Resources */,
 				469203AD1A4AC52900A628D6 /* TheGirlWithTheDragonTatoo@2x.jpg in Resources */,
 				469203AB1A4AC52900A628D6 /* CloseButton@2x.png in Resources */,
-				460FDB901A49A3F100CF327B /* Info.plist in Resources */,
 				460FDB851A49A3B500CF327B /* Main.storyboard in Resources */,
-				460FDB931A49A3FC00CF327B /* Info.plist in Resources */,
 				460FDB871A49A3C500CF327B /* Images.xcassets in Resources */,
 				460FDB6E1A499F2500CF327B /* KOD.bundle in Resources */,
 				460FDB841A49A3B500CF327B /* LaunchScreen.xib in Resources */,
