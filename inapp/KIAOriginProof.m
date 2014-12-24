@@ -6,18 +6,20 @@
 @implementation KIAOriginProof
 
 + (NSString *)generateWithAmount:(int)amount currency:(NSString *)currency userToken:(NSString *)userToken {
-  NSData *data = [self jsonDataWithDictionary:@{@"amount": [NSNumber numberWithInt:amount],
+  NSData *transactionData = [self jsonDataWithDictionary:@{@"amount": [NSNumber numberWithInt:amount],
                                                 @"currency": currency,
                                                 @"user_token": userToken,
                                                 @"timestamp": [self timestamp]}];
   
-  NSString *signature = [[KIACrypto sharedKIACrypto] getSignatureWithData:data];
+  NSString *signature = [[KIACrypto sharedKIACrypto] getSignatureWithData:transactionData];
   NSAssert(signature.length > 0, @"KIA signature creation failed.");
   
-  NSDictionary *originProof = @{@"data": [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding],
+  NSDictionary *originProof = @{@"data": [[NSString alloc] initWithData:transactionData encoding:NSUTF8StringEncoding],
                                 @"signature": signature};
   
-  return [[self jsonDataWithDictionary:originProof] base64EncodedString];
+  NSString *originProofAsString = [[self jsonDataWithDictionary:originProof] base64EncodedString];
+
+  return originProofAsString;
 }
 
 + (NSData *)jsonDataWithDictionary:(NSDictionary *) dictionary {
