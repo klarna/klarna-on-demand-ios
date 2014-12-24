@@ -5,9 +5,9 @@
 [![License](https://img.shields.io/cocoapods/l/KlarnaOnDemand.svg?style=flat)](http://cocoadocs.org/docsets/KlarnaOnDemand)
 [![Platform](https://img.shields.io/cocoapods/p/KlarnaOnDemand.svg?style=flat)](http://cocoadocs.org/docsets/KlarnaOnDemand)
 
-Klarna On-Demand allows you to offer Klarna's payment solution in mobile apps that offer on demand services. It's a perfect fit for apps selling concert tickets, taxi rides, food pick-ups, etc.
+Klarna on-demand allows you to offer Klarna's payment solution in mobile apps that offer on demand services. It's a perfect fit for apps selling concert tickets, taxi rides, food pick-ups, etc.
 
-This project contains Klarna's In-App On-Demand purchase SDK for iOS, as well as a sample application utilizing the SDK.
+This project contains Klarna's on-demand purchase SDK for iOS, as well as a sample application utilizing the SDK.
 
 ![It's Klarna in your App](screenshot.png)
 

@@ -10,9 +10,9 @@
 Pod::Spec.new do |s|
   s.name             = "klarna-on-demand-ios"
   s.version          = "0.1.1"
-  s.summary          = "SDK for Klarna's On-Demand purchases."
+  s.summary          = "SDK for Klarna's on-demand purchases."
 #s.description      = <<-DESC
-#                       An optional longer description of Klarna On Demand
+#                       An optional longer description of Klarna on-demand
 #
 #                       * Markdown format.
 #                       * Don't worry about the indent, we strip it!
@@ -27,9 +27,9 @@ Pod::Spec.new do |s|
   s.platform     = :ios, '7.0'
   s.requires_arc = true
 
-  s.source_files = ‘KlarnaOnDemand/**/*.{m,h}’, '3rdParty/**/*.{m,h}'
+  s.source_files = 'KlarnaOnDemand/**/*.{m,h}', '3rdParty/**/*.{m,h}'
   s.resource_bundles = {
-    ‘KOD’ => 'KlarnaOnDemand/KOD.bundle/*.lproj'
+    'KOD' => 'KlarnaOnDemand/KOD.bundle/*.lproj'
   }
   s.xcconfig = { "OTHER_LDFLAGS" => "-ObjC -all_load"  }
 
