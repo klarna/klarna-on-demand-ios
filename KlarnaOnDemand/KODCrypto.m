@@ -39,10 +39,8 @@
     {
       BDError *error = [[BDError alloc] init];
       BDRSACryptorKeyPair *RSAKeyPair = [RSACryptor generateKeyPairWithKeyIdentifier:KOD_TAG error:error];
-      if(RSAKeyPair == nil)
-      {
-        return nil;
-	  }
+      NSAssert(RSAKeyPair, @"Failed to create rsa key-pair");
+      
       _publicKeyBase64Str = [RSAKeyPair.publicKey base64EncodedString];
     }
   }

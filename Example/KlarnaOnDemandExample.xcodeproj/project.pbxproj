@@ -20,16 +20,6 @@
 		469203AD1A4AC52900A628D6 /* TheGirlWithTheDragonTatoo@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 469203AA1A4AC52900A628D6 /* TheGirlWithTheDragonTatoo@2x.jpg */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		C946A3E01A24C21D00A12CC6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C946A3BE1A24C21D00A12CC6 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C946A3C51A24C21D00A12CC6;
-			remoteInfo = KlarnaOnDemandExample;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		460FDB6D1A499F2500CF327B /* KOD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = KOD.bundle; path = ../KlarnaOnDemand/KOD.bundle; sourceTree = "<group>"; };
 		460FDB711A49A21200CF327B /* libKlarnaOnDemand.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libKlarnaOnDemand.a; path = "../build/Debug-iphoneos/libKlarnaOnDemand.a"; sourceTree = "<group>"; };
@@ -42,12 +32,10 @@
 		460FDB861A49A3C500CF327B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = KlarnaOnDemandExample/Images.xcassets; sourceTree = SOURCE_ROOT; };
 		460FDB8E1A49A3F100CF327B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = KlarnaOnDemandExample/Info.plist; sourceTree = SOURCE_ROOT; };
 		460FDB8F1A49A3F100CF327B /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = KlarnaOnDemandExample/main.m; sourceTree = SOURCE_ROOT; };
-		460FDB921A49A3FC00CF327B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = KlarnaOnDemandExampleTests/Info.plist; sourceTree = SOURCE_ROOT; };
 		469203A81A4AC52900A628D6 /* CloseButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CloseButton@2x.png"; sourceTree = "<group>"; };
 		469203A91A4AC52900A628D6 /* QRCode@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "QRCode@2x.png"; sourceTree = "<group>"; };
 		469203AA1A4AC52900A628D6 /* TheGirlWithTheDragonTatoo@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "TheGirlWithTheDragonTatoo@2x.jpg"; sourceTree = "<group>"; };
 		C946A3C61A24C21D00A12CC6 /* KlarnaOnDemandExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KlarnaOnDemandExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		C946A3DF1A24C21D00A12CC6 /* KlarnaOnDemandExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KlarnaOnDemandExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,13 +44,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				460FDB721A49A21200CF327B /* libKlarnaOnDemand.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C946A3DC1A24C21D00A12CC6 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,7 +66,6 @@
 				460FDB711A49A21200CF327B /* libKlarnaOnDemand.a */,
 				460FDB6D1A499F2500CF327B /* KOD.bundle */,
 				C946A3C81A24C21D00A12CC6 /* KlarnaOnDemandExample */,
-				C946A3E21A24C21D00A12CC6 /* KlarnaOnDemandExampleTests */,
 				C946A3C71A24C21D00A12CC6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -94,7 +74,6 @@
 			isa = PBXGroup;
 			children = (
 				C946A3C61A24C21D00A12CC6 /* KlarnaOnDemandExample.app */,
-				C946A3DF1A24C21D00A12CC6 /* KlarnaOnDemandExampleTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -124,22 +103,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		C946A3E21A24C21D00A12CC6 /* KlarnaOnDemandExampleTests */ = {
-			isa = PBXGroup;
-			children = (
-				C946A3E31A24C21D00A12CC6 /* Supporting Files */,
-			);
-			path = KlarnaOnDemandExampleTests;
-			sourceTree = "<group>";
-		};
-		C946A3E31A24C21D00A12CC6 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				460FDB921A49A3FC00CF327B /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -160,24 +123,6 @@
 			productReference = C946A3C61A24C21D00A12CC6 /* KlarnaOnDemandExample.app */;
 			productType = "com.apple.product-type.application";
 		};
-		C946A3DE1A24C21D00A12CC6 /* KlarnaOnDemandExampleTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C946A3EC1A24C21D00A12CC6 /* Build configuration list for PBXNativeTarget "KlarnaOnDemandExampleTests" */;
-			buildPhases = (
-				C946A3DB1A24C21D00A12CC6 /* Sources */,
-				C946A3DC1A24C21D00A12CC6 /* Frameworks */,
-				C946A3DD1A24C21D00A12CC6 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				C946A3E11A24C21D00A12CC6 /* PBXTargetDependency */,
-			);
-			name = KlarnaOnDemandExampleTests;
-			productName = KlarnaOnDemandExampleTests;
-			productReference = C946A3DF1A24C21D00A12CC6 /* KlarnaOnDemandExampleTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -189,10 +134,6 @@
 				TargetAttributes = {
 					C946A3C51A24C21D00A12CC6 = {
 						CreatedOnToolsVersion = 6.1;
-					};
-					C946A3DE1A24C21D00A12CC6 = {
-						CreatedOnToolsVersion = 6.1;
-						TestTargetID = C946A3C51A24C21D00A12CC6;
 					};
 				};
 			};
@@ -210,7 +151,6 @@
 			projectRoot = "";
 			targets = (
 				C946A3C51A24C21D00A12CC6 /* KlarnaOnDemandExample */,
-				C946A3DE1A24C21D00A12CC6 /* KlarnaOnDemandExampleTests */,
 			);
 		};
 /* End PBXProject section */
@@ -230,13 +170,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C946A3DD1A24C21D00A12CC6 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -250,22 +183,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C946A3DB1A24C21D00A12CC6 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		C946A3E11A24C21D00A12CC6 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = C946A3C51A24C21D00A12CC6 /* KlarnaOnDemandExample */;
-			targetProxy = C946A3E01A24C21D00A12CC6 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		460FDB801A49A3B500CF327B /* LaunchScreen.xib */ = {
@@ -395,40 +313,6 @@
 			};
 			name = Release;
 		};
-		C946A3ED1A24C21D00A12CC6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = KlarnaOnDemandExampleTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = KlarnaOnDemandExampleTests;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KlarnaOnDemandExample.app/KlarnaOnDemandExample";
-			};
-			name = Debug;
-		};
-		C946A3EE1A24C21D00A12CC6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = KlarnaOnDemandExampleTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = KlarnaOnDemandExampleTests;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KlarnaOnDemandExample.app/KlarnaOnDemandExample";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -446,15 +330,6 @@
 			buildConfigurations = (
 				C946A3EA1A24C21D00A12CC6 /* Debug */,
 				C946A3EB1A24C21D00A12CC6 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		C946A3EC1A24C21D00A12CC6 /* Build configuration list for PBXNativeTarget "KlarnaOnDemandExampleTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C946A3ED1A24C21D00A12CC6 /* Debug */,
-				C946A3EE1A24C21D00A12CC6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
