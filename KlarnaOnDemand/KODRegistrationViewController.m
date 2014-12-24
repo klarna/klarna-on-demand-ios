@@ -58,8 +58,8 @@
   NSAssert(token, @"KODToken failed to create.");
   if ([_delegate respondsToSelector:@selector(klarnaRegistrationController:finishedWithUserToken:)])
   {
-    KODToken *kiaToken = [[KODToken alloc] initWithToken: token];
-    [_delegate klarnaRegistrationController:self finishedWithUserToken:kiaToken];
+    KODToken *kodToken = [[KODToken alloc] initWithToken: token];
+    [_delegate klarnaRegistrationController:self finishedWithUserToken:kodToken];
   }
 }
 

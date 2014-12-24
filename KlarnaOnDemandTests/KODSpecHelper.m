@@ -39,7 +39,7 @@
   BDRSACryptor *rsaCryptor = [[BDRSACryptor alloc] init];
   BDError *error = [[BDError alloc] init];
   
-  NSString *publicKey = [rsaCryptor X509FormattedPublicKey:@"bundle_identifier.publicKey.kia" error:error];
+  NSString *publicKey = [rsaCryptor X509FormattedPublicKey:@"bundle_identifier.publicKey.kod" error:error];
   return error.errors.count == 0 ? publicKey : nil;
 }
 @end

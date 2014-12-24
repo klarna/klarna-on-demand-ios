@@ -344,9 +344,7 @@ static unsigned char oidSequence [] = { 0x30, 0x0d, 0x06, 0x09, 0x2a, 0x86, 0x48
                               [self X509PublicHeader],
                               [encodedKey base64EncodedStringWithWrapWidth:[self PEMWrapWidth]],
                               [self X509PublicFooter]];
-    
-//    BDDebugLog(@"PEM formatted key:\n%@", returnString);
-    
+        
     return returnString;
 }
 

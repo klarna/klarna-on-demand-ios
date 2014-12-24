@@ -17,9 +17,9 @@
   NSDictionary *originProof = @{@"data": [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding],
                                 @"signature": signature};
   
-  NSString *originProofAsString = [[self jsonDataWithDictionary:originProof] base64EncodedString];
+  NSString *base64EncodedOriginProof = [[self jsonDataWithDictionary:originProof] base64EncodedString];
 
-  return originProofAsString;
+  return base64EncodedOriginProof;
 }
 
 + (NSData *)jsonDataWithDictionary:(NSDictionary *) dictionary {

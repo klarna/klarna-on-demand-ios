@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C81f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6246"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -88,7 +88,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="z7F-Ke-Xck">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="z7F-Ke-Xck">
                                 <rect key="frame" x="124" y="573" width="352" height="25"/>
                                 <rect key="contentStretch" x="0.0" y="0.0" width="0.5" height="1"/>
                                 <constraints>
@@ -118,10 +118,12 @@
                             <constraint firstAttribute="centerX" secondItem="ghJ-bn-wPZ" secondAttribute="centerX" id="GDm-3S-a89"/>
                             <constraint firstAttribute="trailingMargin" secondItem="4J7-9N-mgN" secondAttribute="trailing" constant="-16" id="I1a-24-fvH"/>
                             <constraint firstItem="Cp3-fR-niM" firstAttribute="top" secondItem="4J7-9N-mgN" secondAttribute="top" id="Jwf-Mk-wQZ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="4J7-9N-mgN" secondAttribute="trailing" constant="-16" id="K7e-gY-WYV"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="ghJ-bn-wPZ" secondAttribute="bottom" constant="4" id="Nzc-Qo-wcw"/>
                             <constraint firstItem="4J7-9N-mgN" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" id="VpQ-YL-Azf"/>
                             <constraint firstItem="Cp3-fR-niM" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="ZoF-eq-HMS"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Cp3-fR-niM" secondAttribute="trailing" constant="-16" id="enb-aJ-kdL"/>
+                            <constraint firstItem="4J7-9N-mgN" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="fVc-zs-WEq"/>
                             <constraint firstAttribute="trailingMargin" secondItem="IXn-Xj-qyg" secondAttribute="trailing" constant="-16" id="fkd-J1-kqE"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="IXn-Xj-qyg" secondAttribute="bottom" id="if6-nv-oe2"/>
                             <constraint firstItem="Cp3-fR-niM" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="-20" id="oW5-55-3NS"/>
@@ -134,7 +136,9 @@
                                 <exclude reference="VpQ-YL-Azf"/>
                                 <exclude reference="ofl-ja-GUd"/>
                                 <exclude reference="5jg-OO-Tg8"/>
+                                <exclude reference="CNI-tt-8OO"/>
                                 <exclude reference="oW5-55-3NS"/>
+                                <exclude reference="oqJ-hw-u8D"/>
                                 <exclude reference="3jr-D6-nqQ"/>
                             </mask>
                         </variation>

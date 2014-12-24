@@ -10,7 +10,7 @@
 
 @implementation KODCrypto
 
-#define KOD_TAG @"kia"
+#define KOD_TAG @"kod"
 
 + (id)sharedKODCrypto {
   static KODCrypto *sharedKODCrypto = nil;
@@ -32,12 +32,12 @@
     SecKeyRef privateKeyRef = [RSACryptor keyRefWithTag:privateKeyTag error:nil];
     if (publicKeyRef && privateKeyRef)
     {
-      BDError *error = [[BDError alloc] init];
-      NSString *publicKeyStr = [RSACryptor X509FormattedPublicKey:publicKeyTag error:error];
+      NSString *publicKeyStr = [RSACryptor X509FormattedPublicKey:publicKeyTag error:nil];
       _publicKeyBase64Str = [publicKeyStr base64EncodedString];
     }
     else
     {
+      BDError *error = [[BDError alloc] init];
       BDRSACryptorKeyPair *RSAKeyPair = [RSACryptor generateKeyPairWithKeyIdentifier:KOD_TAG error:error];
       if(RSAKeyPair == nil)
       {
