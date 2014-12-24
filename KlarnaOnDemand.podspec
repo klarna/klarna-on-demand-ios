@@ -10,7 +10,7 @@
 Pod::Spec.new do |s|
   s.name             = "klarna-on-demand-ios"
   s.version          = "0.1.1"
-  s.summary          = "SDK for Klarna's Klarna On-Demand purchases."
+  s.summary          = "SDK for Klarna's On-Demand purchases."
 #s.description      = <<-DESC
 #                       An optional longer description of Klarna On Demand
 #
