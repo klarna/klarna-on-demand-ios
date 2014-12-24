@@ -28,7 +28,7 @@
 			containerPortal = C946A3BE1A24C21D00A12CC6 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = C946A3C51A24C21D00A12CC6;
-			remoteInfo = InappExample;
+			remoteInfo = KlarnaOnDemandExample;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -104,7 +104,7 @@
 				C946A3C91A24C21D00A12CC6 /* Supporting Files */,
 			);
 			name = KlarnaOnDemandExample;
-			path = InappExample;
+			path = KlarnaOnDemandExample;
 			sourceTree = "<group>";
 		};
 		C946A3C91A24C21D00A12CC6 /* Supporting Files */ = {
@@ -125,7 +125,7 @@
 				C946A3E31A24C21D00A12CC6 /* Supporting Files */,
 			);
 			name = KlarnaOnDemandExampleTests;
-			path = InappExampleTests;
+			path = KlarnaOnDemandExampleTests;
 			sourceTree = "<group>";
 		};
 		C946A3E31A24C21D00A12CC6 /* Supporting Files */ = {
@@ -152,7 +152,7 @@
 			dependencies = (
 			);
 			name = KlarnaOnDemandExample;
-			productName = InappExample;
+			productName = KlarnaOnDemandExample;
 			productReference = C946A3C61A24C21D00A12CC6 /* KlarnaOnDemandExample.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -170,7 +170,7 @@
 				C946A3E11A24C21D00A12CC6 /* PBXTargetDependency */,
 			);
 			name = KlarnaOnDemandExampleTests;
-			productName = InappExampleTests;
+			productName = KlarnaOnDemandExampleTests;
 			productReference = C946A3DF1A24C21D00A12CC6 /* KlarnaOnDemandExampleTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
@@ -367,13 +367,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = InappExample/Info.plist;
+				INFOPLIST_FILE = KlarnaOnDemandExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Inapp-byplifmbihknkwfgkkvwhjomxrlv/Build/Products/Debug-iphoneos",
-					"/Users/tomerlevi/proj/inapp-ios/build/Debug-iphoneos",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/KlarnaOnDemand-byplifmbihknkwfgkkvwhjomxrlv/Build/Products/Debug-iphoneos",
+					"/Users/tomerlevi/proj/KlarnaOnDemand-ios/build/Debug-iphoneos",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -387,13 +387,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = InappExample/Info.plist;
+				INFOPLIST_FILE = KlarnaOnDemandExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Inapp-byplifmbihknkwfgkkvwhjomxrlv/Build/Products/Debug-iphoneos",
-					"/Users/tomerlevi/proj/inapp-ios/build/Debug-iphoneos",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/KlarnaOnDemand-byplifmbihknkwfgkkvwhjomxrlv/Build/Products/Debug-iphoneos",
+					"/Users/tomerlevi/proj/KlarnaOnDemand-ios/build/Debug-iphoneos",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -415,10 +415,10 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = InappExampleTests/Info.plist;
+				INFOPLIST_FILE = KlarnaOnDemandExampleTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = KlarnaOnDemandExampleTests;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/InappExample.app/InappExample";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KlarnaOnDemandExample.app/KlarnaOnDemandExample";
 			};
 			name = Debug;
 		};
@@ -430,10 +430,10 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = InappExampleTests/Info.plist;
+				INFOPLIST_FILE = KlarnaOnDemandExampleTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = KlarnaOnDemandExampleTests;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/InappExample.app/InappExample";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KlarnaOnDemandExample.app/KlarnaOnDemandExample";
 			};
 			name = Release;
 		};
