@@ -372,11 +372,6 @@
 				INFOPLIST_FILE = KlarnaOnDemandExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/KlarnaOnDemand-byplifmbihknkwfgkkvwhjomxrlv/Build/Products/Debug-iphoneos",
-					"/Users/tomerlevi/proj/KlarnaOnDemand-ios/build/Debug-iphoneos",
-				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
@@ -392,11 +387,6 @@
 				INFOPLIST_FILE = KlarnaOnDemandExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/KlarnaOnDemand-byplifmbihknkwfgkkvwhjomxrlv/Build/Products/Debug-iphoneos",
-					"/Users/tomerlevi/proj/KlarnaOnDemand-ios/build/Debug-iphoneos",
-				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
