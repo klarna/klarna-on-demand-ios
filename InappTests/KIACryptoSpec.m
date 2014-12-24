@@ -68,5 +68,20 @@ describe(@".init", ^{
   
 });
 
+describe(@".sharedKIACrypto", ^{
+  
+  beforeEach(^{
+    [KIASpecHelper resetKeychain];
+  });
+  
+  it(@"should return an initialized object when there is no key in keychain", ^{
+    [[[KIACrypto sharedKIACrypto] shouldNot] beNil];
+  });
+  
+  it(@"should return an initialized object when there is a key in keychain", ^{
+    [[KIACrypto alloc] init];
+    [[[KIACrypto sharedKIACrypto] shouldNot] beNil];
+  });
+  
 SPEC_END
 

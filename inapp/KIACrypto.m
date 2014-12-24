@@ -23,7 +23,6 @@
 
 - (id)init {
   if (self = [super init]) {
-    BDError *error = [[BDError alloc] init];
     BDRSACryptor *RSACryptor = [[BDRSACryptor alloc] init];
     
     NSString *publicKeyTag = [RSACryptor publicKeyIdentifierWithTag:KIA_TAG];
@@ -33,18 +32,27 @@
     SecKeyRef privateKeyRef = [RSACryptor keyRefWithTag:privateKeyTag error:nil];
     if (publicKeyRef && privateKeyRef)
     {
+      BDError *error = [[BDError alloc] init];
       NSString *publicKeyStr = [RSACryptor X509FormattedPublicKey:publicKeyTag error:error];
       _publicKeyBase64Str = [publicKeyStr base64EncodedString];
     }
     else
     {
+      BDError *error = [[BDError alloc] init];
       BDRSACryptorKeyPair *RSAKeyPair = [RSACryptor generateKeyPairWithKeyIdentifier:KIA_TAG error:error];
+<<<<<<< Updated upstream
         
         if(RSAKeyPair == nil)
         {
             return nil;
         }
         
+=======
+      if(RSAKeyPair == nil)
+      {
+        return nil;
+      }
+>>>>>>> Stashed changes
       _publicKeyBase64Str = [RSAKeyPair.publicKey base64EncodedString];
     }
   }

@@ -12,7 +12,7 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  
+    
   [self initializeUIElements];
 }
 
@@ -42,7 +42,7 @@
   [self presentViewController:navigationController
                      animated:YES
                    completion:nil];
-}
+  }
 }
 
 - (IBAction)onChangePaymentPressed:(id)sender {
@@ -131,14 +131,18 @@
   
   _registerLabel.hidden = [self hasUserToken];
   _changePaymentButton.hidden = ![self hasUserToken];
+  
+  [self hideQRView:nil];
 }
 
 - (IBAction)hideQRView:(id)sender {
-  [self.view sendSubviewToBack:_QRView];
+  self.QRView.hidden = YES;
+  [self.view sendSubviewToBack:self.QRView];
 }
 
 - (void)showQRView {
-  [self.view bringSubviewToFront:_QRView];
+  self.QRView.hidden = NO;
+  [self.view bringSubviewToFront:self.QRView];
 }
 
 @end
