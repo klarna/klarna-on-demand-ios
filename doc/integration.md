@@ -6,7 +6,7 @@ This guide assumes you use [CocoaPods](http://cocoapods.org) to manage your proj
 
 Open up your Podfile and add the following line:
 
-    pod "InApp"
+    pod "klarna-on-demand-ios"
 
 Then simply run `pod install` in your project directory and you will be good to go.
 
@@ -17,14 +17,14 @@ We recommend setting your API key in your AppDelegate in the manner shown below:
 
 ```objective-c
 #import "AppDelegate.h"
-#import "KIAContext.h"
+#import "KODContext.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   // Set Klarna's API key. This is an actual test key that you can use to try things out,
   // though it would be best to use your personalized test key.
-  [KIAContext setApiKey:@"test_29f612e8-1576-423f-80a8-679f354e4c89"];
+  [KODContext setApiKey:@"test_29f612e8-1576-423f-80a8-679f354e4c89"];
   return YES;
 }
 @end
@@ -41,7 +41,7 @@ For the sake of this example, we will assume we have a button that launches the 
 First off, import the registration view's header file into your view controller:
 
 ```objective-c
-#import "KIARegistrationViewController.h"
+#import "KODRegistrationViewController.h"
 ```
 
 Then, assuming the button's touch handler is called `onRegisterPressed`, set it up like this:
@@ -49,7 +49,7 @@ Then, assuming the button's touch handler is called `onRegisterPressed`, set it 
 ```objective-c
 - (IBAction)onRegisterPressed:(id)sender {
   // Create a new Klarna registration view controller, initialized with the containing controller as its event-handler
-  KIARegistrationViewController *registrationViewController = [[KIARegistrationViewController alloc] initWithDelegate:self];
+  KODRegistrationViewController *registrationViewController = [[KODRegistrationViewController alloc] initWithDelegate:self];
 
   // Create a navigation controller with the registration view controller as its root view controller
   UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:registrationViewController];
@@ -63,7 +63,7 @@ Then, assuming the button's touch handler is called `onRegisterPressed`, set it 
 
 There are a couple of things that are worth pointing out in the code above:
 
-- To properly initialize the registration view, you need to supply it with a delegate that it will use to notify you of various important events. We will go over these events later when we examine the [KIARegistrationViewControllerDelegate](#kia_registration_view_controller_delegate) protocol. We recommend having the view controller that hosts the registration view conform to said protocol.
+- To properly initialize the registration view, you need to supply it with a delegate that it will use to notify you of various important events. We will go over these events later when we examine the [KODRegistrationViewControllerDelegate](#kia_registration_view_controller_delegate) protocol. We recommend having the view controller that hosts the registration view conform to said protocol.
 - We display the registration view by making it part of a navigation view controller. This is the recommended way to display the registration view, and will give users the option to back out of the registration process.
 
 This is really all there is to displaying the registration view.
@@ -72,28 +72,28 @@ This is really all there is to displaying the registration view.
 Displaying the view is great, but will only get you so far. It is important to know how our users interact with the view and to that end the view dispatches events to a delegate supplied during its initialization.
 
 <a name="kia_registration_view_controller_delegate"></a>
-####The KIARegistrationViewControllerDelegate protocol
+####The KODRegistrationViewControllerDelegate protocol
 The registration view expects its delegate to conform to this protocol, which exposes three different types of callbacks:
 
 1. Registration complete - the user successfully completed the registration process, and has been assigned a token that you can use to place orders on the user's behalf.
 2. Registration cancelled - the user chose to back out of the registration process.
 3. Registration failed - an error of some sort has prevented the user from successfully going through the registration process.
 
-Building upon the code sample from the previous section, consider the following methods which make a view controller conform to the KIARegistrationViewControllerDelegate protocol. The methods correspond to the types of callbacks we have just listed:
+Building upon the code sample from the previous section, consider the following methods which make a view controller conform to the KODRegistrationViewControllerDelegate protocol. The methods correspond to the types of callbacks we have just listed:
 
 ```objective-c
-- (void)klarnaRegistrationController:(KIARegistrationViewController *)controller finishedWithUserToken:(KIAToken *)userToken {
+- (void)klarnaRegistrationController:(KODRegistrationViewController *)controller finishedWithUserToken:(KODToken *)userToken {
   // Dismiss the registration view and store the user's token
   [self dismissViewControllerAnimated:YES completion:nil];
   [self saveUserToken:userToken.token]; // this is for illustrative purposes, we do not supply this method
 }
 
-- (void)klarnaRegistrationCancelled:(KIARegistrationViewController *)controller {
+- (void)klarnaRegistrationCancelled:(KODRegistrationViewController *)controller {
   // Dismiss the registration view
   [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)klarnaRegistrationFailed:(KIARegistrationViewController *)controller {
+- (void)klarnaRegistrationFailed:(KODRegistrationViewController *)controller {
   // Dismiss Klarna registration view and notify the user of the error
   [self dismissViewControllerAnimated:YES completion:nil];
   [self notifyRegistrationFailed]; // Again, this is just an illustration
@@ -118,7 +118,7 @@ It is good practice to allow users to access the preferences view on demand. Let
 First, import the preferences view's header file into your view controller:
 
 ```objective-c
-#import "KIAPreferencesViewController.h"
+#import "KODPreferencesViewController.h"
 ```
 
 Then, assuming the button's touch handler is called `onPreferencesPressed`, set it up in the following manner:
@@ -126,7 +126,7 @@ Then, assuming the button's touch handler is called `onPreferencesPressed`, set 
 ```objective-c
 - (IBAction)onPreferencesPressed:(id)sender {
   // Create a new Klarna preferences view controller
-  KIAPreferencesViewController *preferencesViewController = [[KIAPreferencesViewController alloc] initWithDelegate:self andToken:userToken];
+  KODPreferencesViewController *preferencesViewController = [[KODPreferencesViewController alloc] initWithDelegate:self andToken:userToken];
 
   // Create a navigation controller with the preferences view controller as its root view controller
   UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:preferencesViewController];
@@ -141,7 +141,7 @@ Then, assuming the button's touch handler is called `onPreferencesPressed`, set 
 There are a few things that are worth pointing out in the code above:
 
 - To properly initialize the preferences view, you need to supply it with the following:
- - A delegate that it will use to notify you of various important events. We will go over these events later when we examine the [KIAPreferencesViewControllerDelegate](#kia_preferences_view_controller_delegate) protocol. The code describes the recommended approach, where we supply the hosting view controller that should conform to said protocol.
+ - A delegate that it will use to notify you of various important events. We will go over these events later when we examine the [KODPreferencesViewControllerDelegate](#kia_preferences_view_controller_delegate) protocol. The code describes the recommended approach, where we supply the hosting view controller that should conform to said protocol.
  - The user token obtained during the user's registration. Assume this token was stored in `userToken` used above.
 - We display the preferences view by making it part of a navigation view controller. This is the recommended way to display the preferences view, as it allows users to close the preferences view and return to your application.
 
@@ -151,21 +151,21 @@ This is all it takes to display the preferences view.
 Klarna's payment preferences are managed internally by the SDK so you don't need to worry about them. However, your application needs to know when the user is finished with the preferences view, or if an error occurred. To make this possible, the view dispatches events to the delegate supplied during its initialization.
 
 <a name="kia_preferences_view_controller_delegate"></a>
-####The KIAPreferencesViewControllerDelegate protocol
+####The KODPreferencesViewControllerDelegate protocol
 The preferences view expects its delegate to conform to this protocol, which exposes two different types of callbacks:
 
 1. Preferences closed - the user actively requested to close the preferences view.
 2. Preference operation failed - an error of some sort has prevented the user from successfully using the preferences view.
 
-Building upon the code sample from the previous section, consider the following methods which make a view controller conform to the KIAPreferencesViewControllerDelegate protocol. The methods correspond to the types of callbacks we have just listed:
+Building upon the code sample from the previous section, consider the following methods which make a view controller conform to the KODPreferencesViewControllerDelegate protocol. The methods correspond to the types of callbacks we have just listed:
 
 ```objective-c
-- (void)klarnaPreferencesClosed:(KIAPreferencesViewController *)controller {
+- (void)klarnaPreferencesClosed:(KODPreferencesViewController *)controller {
   // Dismiss the preferences view
   [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)klarnaPreferencesFailed:(KIAPreferencesViewController *)controller {
+- (void)klarnaPreferencesFailed:(KODPreferencesViewController *)controller {
   // Dismiss the preferences view and notify the user that an error occurred
   [self dismissViewControllerAnimated:YES completion:nil];
   [self notifyOfPreferencesError]; // This method is an illustration and is not part of the SDK

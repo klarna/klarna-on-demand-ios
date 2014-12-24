@@ -4,8 +4,8 @@ language: objective-c
 # before_install: cd Example && pod install && cd -
 
 script:
-- xcodebuild test -workspace Inapp.xcworkspace -scheme Inapp -destination 'platform=iOS Simulator,name=iPhone 5s,OS=7.1' -destination 'platform=iOS Simulator,name=iPhone 5s,OS=8.1' | xcpretty -c
-- xcodebuild test -workspace Inapp.xcworkspace -scheme InappExample -destination 'platform=iOS Simulator,name=iPhone 5s,OS=7.1' -destination 'platform=iOS Simulator,name=iPhone 5s,OS=8.1' | xcpretty -c
+- xcodebuild test -workspace KlarnaOnDemand.xcworkspace -scheme KlarnaOnDemand -destination 'platform=iOS Simulator,name=iPhone 5s,OS=7.1' -destination 'platform=iOS Simulator,name=iPhone 5s,OS=8.1' | xcpretty -c
+- xcodebuild test -workspace KlarnaOnDemand.xcworkspace -scheme KlarnaOnDemandExample -destination 'platform=iOS Simulator,name=iPhone 5s,OS=7.1' -destination 'platform=iOS Simulator,name=iPhone 5s,OS=8.1' | xcpretty -c
 
 notifications:
   email:
