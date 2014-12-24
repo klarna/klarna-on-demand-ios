@@ -6,7 +6,7 @@
 
 #define ALERT(str) [[[UIAlertView alloc] initWithTitle:@"Alert" message:str delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil] show]
 
-#define USER_TOKEN_KEY @"user_token"
+NSString *const UserTokenKey = @"user_token";
 
 @implementation MainViewController
 
@@ -104,7 +104,7 @@
  */
 - (void)saveUserToken:(NSString *)token {
   NSUserDefaults *standardUserDefaults = [NSUserDefaults standardUserDefaults];
-  [standardUserDefaults setValue:token forKey:USER_TOKEN_KEY];
+  [standardUserDefaults setValue:token forKey:UserTokenKey];
   [standardUserDefaults synchronize];
 }
 
@@ -115,7 +115,7 @@
  
  */
 - (NSString *)getUserToken {
-  return [[NSUserDefaults standardUserDefaults] objectForKey:USER_TOKEN_KEY];
+  return [[NSUserDefaults standardUserDefaults] objectForKey:UserTokenKey];
 }
 
 - (bool)hasUserToken {

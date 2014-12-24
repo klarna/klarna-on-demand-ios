@@ -2,10 +2,10 @@
 #import "KODContext.h"
 #import "KODCrypto.h"
 
-#define KLARNA_PLAYGROUND_URL @"https://inapp.playground.klarna.com"
-#define KLARNA_PRODUCTION_URL @"https://inapp.klarna.com"
-
 @implementation KODUrl
+
+NSString *const KlarnaPlaygroundUrl = @"https://inapp.playground.klarna.com";
+NSString *const KlarnaProductionUrl = @"https://inapp.klarna.com";
 
 + (NSURL *)registrationUrl {
   NSString *publicKeyBase64Str = [[KODCrypto sharedKODCrypto] publicKeyBase64Str];
@@ -20,9 +20,9 @@
 
 + (NSString *)baseUrl {
   if ([[KODContext getApiKey] hasPrefix:@"test_"]) {
-    return KLARNA_PLAYGROUND_URL;
+    return KlarnaPlaygroundUrl;
   }
-  return KLARNA_PRODUCTION_URL;
+  return KlarnaProductionUrl;
 }
 
 + (NSString *)locale {

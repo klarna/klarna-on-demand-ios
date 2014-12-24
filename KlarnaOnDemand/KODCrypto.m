@@ -10,7 +10,7 @@
 
 @implementation KODCrypto
 
-#define KOD_TAG @"kod"
+NSString *const KodTag = @"kod";
 
 + (id)sharedKODCrypto {
   static KODCrypto *sharedKODCrypto = nil;
@@ -25,8 +25,8 @@
   if (self = [super init]) {
     BDRSACryptor *RSACryptor = [[BDRSACryptor alloc] init];
     
-    NSString *publicKeyTag = [RSACryptor publicKeyIdentifierWithTag:KOD_TAG];
-    NSString *privateKeyTag = [RSACryptor privateKeyIdentifierWithTag:KOD_TAG];
+    NSString *publicKeyTag = [RSACryptor publicKeyIdentifierWithTag:KodTag];
+    NSString *privateKeyTag = [RSACryptor privateKeyIdentifierWithTag:KodTag];
     
     SecKeyRef publicKeyRef = [RSACryptor keyRefWithTag:publicKeyTag error:nil];
     SecKeyRef privateKeyRef = [RSACryptor keyRefWithTag:privateKeyTag error:nil];
@@ -38,7 +38,7 @@
     else
     {
       BDError *error = [[BDError alloc] init];
-      BDRSACryptorKeyPair *RSAKeyPair = [RSACryptor generateKeyPairWithKeyIdentifier:KOD_TAG error:error];
+      BDRSACryptorKeyPair *RSAKeyPair = [RSACryptor generateKeyPairWithKeyIdentifier:KodTag error:error];
       NSAssert(RSAKeyPair, @"Failed to create rsa key-pair");
       
       _publicKeyBase64Str = [RSAKeyPair.publicKey base64EncodedString];
@@ -53,7 +53,7 @@
   BDRSACryptor *RSACryptor = [[BDRSACryptor alloc] init];
   BDError *error = [[BDError alloc] init];
   
-  NSString *privateKeyTag = [RSACryptor privateKeyIdentifierWithTag:KOD_TAG];
+  NSString *privateKeyTag = [RSACryptor privateKeyIdentifierWithTag:KodTag];
   SecKeyRef privateKey = [RSACryptor keyRefWithTag:privateKeyTag error:error];
   
   size_t signedHashBytesSize = SecKeyGetBlockSize(privateKey);
