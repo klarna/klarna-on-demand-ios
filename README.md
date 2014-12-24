@@ -1,4 +1,4 @@
-# KlarnaOnDemand
+# Klarna On Demand
 
 [![CI Status](https://api.travis-ci.org/klarna/klarna-on-demand-ios.svg?style=flat)](https://travis-ci.org/klarna/klarna-on-demand-ios)
 [![Version](https://img.shields.io/cocoapods/v/KlarnaOnDemand.svg?style=flat)](http://cocoadocs.org/docsets/KlarnaOnDemand)
