@@ -14,12 +14,12 @@
 		460FDB841A49A3B500CF327B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 460FDB801A49A3B500CF327B /* LaunchScreen.xib */; };
 		460FDB851A49A3B500CF327B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 460FDB821A49A3B500CF327B /* Main.storyboard */; };
 		460FDB871A49A3C500CF327B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 460FDB861A49A3C500CF327B /* Images.xcassets */; };
-		460FDB8B1A49A3E600CF327B /* CloseButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 460FDB881A49A3E600CF327B /* CloseButton@2x.png */; };
-		460FDB8C1A49A3E600CF327B /* QRCode@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 460FDB891A49A3E600CF327B /* QRCode@2x.png */; };
-		460FDB8D1A49A3E600CF327B /* TheGirlWithTheDragonTatoo@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 460FDB8A1A49A3E600CF327B /* TheGirlWithTheDragonTatoo@2x.jpg */; };
 		460FDB901A49A3F100CF327B /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 460FDB8E1A49A3F100CF327B /* Info.plist */; };
 		460FDB911A49A3F100CF327B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 460FDB8F1A49A3F100CF327B /* main.m */; };
 		460FDB931A49A3FC00CF327B /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 460FDB921A49A3FC00CF327B /* Info.plist */; };
+		469203A41A4AC4E700A628D6 /* CloseButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 469203A11A4AC4E700A628D6 /* CloseButton@2x.png */; };
+		469203A51A4AC4E700A628D6 /* QRCode@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 469203A21A4AC4E700A628D6 /* QRCode@2x.png */; };
+		469203A61A4AC4E700A628D6 /* TheGirlWithTheDragonTatoo@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 469203A31A4AC4E700A628D6 /* TheGirlWithTheDragonTatoo@2x.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,12 +42,12 @@
 		460FDB811A49A3B500CF327B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = KlarnaOnDemandExample/Base.lproj/LaunchScreen.xib; sourceTree = SOURCE_ROOT; };
 		460FDB831A49A3B500CF327B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = KlarnaOnDemandExample/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		460FDB861A49A3C500CF327B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = KlarnaOnDemandExample/Images.xcassets; sourceTree = SOURCE_ROOT; };
-		460FDB881A49A3E600CF327B /* CloseButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "CloseButton@2x.png"; path = "KlarnaOnDemandExample/Images.xcassets/CloseButton@2x.png"; sourceTree = SOURCE_ROOT; };
-		460FDB891A49A3E600CF327B /* QRCode@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "QRCode@2x.png"; path = "KlarnaOnDemandExample/Images.xcassets/QRCode@2x.png"; sourceTree = SOURCE_ROOT; };
-		460FDB8A1A49A3E600CF327B /* TheGirlWithTheDragonTatoo@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "TheGirlWithTheDragonTatoo@2x.jpg"; path = "KlarnaOnDemandExample/Images.xcassets/TheGirlWithTheDragonTatoo@2x.jpg"; sourceTree = SOURCE_ROOT; };
 		460FDB8E1A49A3F100CF327B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = KlarnaOnDemandExample/Info.plist; sourceTree = SOURCE_ROOT; };
 		460FDB8F1A49A3F100CF327B /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = KlarnaOnDemandExample/main.m; sourceTree = SOURCE_ROOT; };
 		460FDB921A49A3FC00CF327B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = KlarnaOnDemandExampleTests/Info.plist; sourceTree = SOURCE_ROOT; };
+		469203A11A4AC4E700A628D6 /* CloseButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CloseButton@2x.png"; sourceTree = "<group>"; };
+		469203A21A4AC4E700A628D6 /* QRCode@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "QRCode@2x.png"; sourceTree = "<group>"; };
+		469203A31A4AC4E700A628D6 /* TheGirlWithTheDragonTatoo@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "TheGirlWithTheDragonTatoo@2x.jpg"; sourceTree = "<group>"; };
 		C946A3C61A24C21D00A12CC6 /* KlarnaOnDemandExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KlarnaOnDemandExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C946A3DF1A24C21D00A12CC6 /* KlarnaOnDemandExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KlarnaOnDemandExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -103,18 +103,17 @@
 				460FDB741A49A35200CF327B /* AppDelegate.m */,
 				C946A3C91A24C21D00A12CC6 /* Supporting Files */,
 			);
-			name = KlarnaOnDemandExample;
 			path = KlarnaOnDemandExample;
 			sourceTree = "<group>";
 		};
 		C946A3C91A24C21D00A12CC6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				469203A11A4AC4E700A628D6 /* CloseButton@2x.png */,
+				469203A21A4AC4E700A628D6 /* QRCode@2x.png */,
+				469203A31A4AC4E700A628D6 /* TheGirlWithTheDragonTatoo@2x.jpg */,
 				460FDB8E1A49A3F100CF327B /* Info.plist */,
 				460FDB8F1A49A3F100CF327B /* main.m */,
-				460FDB881A49A3E600CF327B /* CloseButton@2x.png */,
-				460FDB891A49A3E600CF327B /* QRCode@2x.png */,
-				460FDB8A1A49A3E600CF327B /* TheGirlWithTheDragonTatoo@2x.jpg */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -124,7 +123,6 @@
 			children = (
 				C946A3E31A24C21D00A12CC6 /* Supporting Files */,
 			);
-			name = KlarnaOnDemandExampleTests;
 			path = KlarnaOnDemandExampleTests;
 			sourceTree = "<group>";
 		};
@@ -216,15 +214,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				469203A51A4AC4E700A628D6 /* QRCode@2x.png in Resources */,
 				460FDB901A49A3F100CF327B /* Info.plist in Resources */,
 				460FDB851A49A3B500CF327B /* Main.storyboard in Resources */,
 				460FDB931A49A3FC00CF327B /* Info.plist in Resources */,
-				460FDB8B1A49A3E600CF327B /* CloseButton@2x.png in Resources */,
 				460FDB871A49A3C500CF327B /* Images.xcassets in Resources */,
-				460FDB8D1A49A3E600CF327B /* TheGirlWithTheDragonTatoo@2x.jpg in Resources */,
-				460FDB8C1A49A3E600CF327B /* QRCode@2x.png in Resources */,
 				460FDB6E1A499F2500CF327B /* KOD.bundle in Resources */,
+				469203A41A4AC4E700A628D6 /* CloseButton@2x.png in Resources */,
 				460FDB841A49A3B500CF327B /* LaunchScreen.xib in Resources */,
+				469203A61A4AC4E700A628D6 /* TheGirlWithTheDragonTatoo@2x.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
