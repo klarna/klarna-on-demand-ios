@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+<<<<<<< Updated upstream:Inapp.xcodeproj/project.pbxproj
 		4651C4451A3D93E300800F1A /* KIAPreferencesViewControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 4651C4441A3D93E300800F1A /* KIAPreferencesViewControllerSpec.m */; };
 		4651C4541A3DDE9200800F1A /* KIAWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4651C4521A3DDE9200800F1A /* KIAWebViewController.m */; };
 		465CF5901A42DB9E00EC092D /* KIACryptoSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 465CF58F1A42DB9E00EC092D /* KIACryptoSpec.m */; };
@@ -23,6 +24,26 @@
 		C90D1C8B1A24CD2800016FE4 /* KIAUrl.m in Sources */ = {isa = PBXBuildFile; fileRef = C90D1C881A24CD2800016FE4 /* KIAUrl.m */; };
 		C954ABA71A345B5E00574C11 /* KIALocalization.m in Sources */ = {isa = PBXBuildFile; fileRef = C954ABA61A345B5E00574C11 /* KIALocalization.m */; };
 		C954ABE11A35AB6300574C11 /* KIA.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C954ABCD1A34950300574C11 /* KIA.bundle */; };
+=======
+		4651C4541A3DDE9200800F1A /* KODWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4651C4521A3DDE9200800F1A /* KODWebViewController.m */; };
+		467F0EC21A2B6DE900A76845 /* Jockey.m in Sources */ = {isa = PBXBuildFile; fileRef = 467F0EC11A2B6DE900A76845 /* Jockey.m */; };
+		467F0EDB1A2C6AC900A76845 /* KODToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 467F0ED91A2C696100A76845 /* KODToken.m */; };
+		468323D81A4ACCB60030B3F1 /* KODSpecHelper.h in Sources */ = {isa = PBXBuildFile; fileRef = 466387001A480DD20013429D /* KODSpecHelper.h */; };
+		468323D91A4ACCB60030B3F1 /* KODSpecHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 466387011A480DD20013429D /* KODSpecHelper.m */; };
+		468323DA1A4ACCB60030B3F1 /* KODContextSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FC95401A278AAD00485500 /* KODContextSpec.m */; };
+		468323DB1A4ACCB60030B3F1 /* KODCryptoSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 465CF58F1A42DB9E00EC092D /* KODCryptoSpec.m */; };
+		468323DC1A4ACCB60030B3F1 /* KODOriginProofSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F25A1A405D0E0005205B /* KODOriginProofSpec.m */; };
+		468323DD1A4ACCB60030B3F1 /* KODPreferencesViewControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 4651C4441A3D93E300800F1A /* KODPreferencesViewControllerSpec.m */; };
+		468323DE1A4ACCB60030B3F1 /* KODRegistrationViewControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 46872D181A2B240000707282 /* KODRegistrationViewControllerSpec.m */; };
+		468323DF1A4ACCB60030B3F1 /* KODUrlSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C903A2E01A2523B6009AE44D /* KODUrlSpec.m */; };
+		46D37ABD1A374A6500E6AC7A /* KODPreferencesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46D37ABC1A374A6500E6AC7A /* KODPreferencesViewController.m */; };
+		C90D1C6C1A24CBD100016FE4 /* libKlarnaOnDemand.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C90D1C601A24CBD100016FE4 /* libKlarnaOnDemand.a */; };
+		C90D1C891A24CD2800016FE4 /* KODContext.m in Sources */ = {isa = PBXBuildFile; fileRef = C90D1C841A24CD2800016FE4 /* KODContext.m */; };
+		C90D1C8A1A24CD2800016FE4 /* KODRegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C90D1C861A24CD2800016FE4 /* KODRegistrationViewController.m */; };
+		C90D1C8B1A24CD2800016FE4 /* KODUrl.m in Sources */ = {isa = PBXBuildFile; fileRef = C90D1C881A24CD2800016FE4 /* KODUrl.m */; };
+		C954ABA71A345B5E00574C11 /* KODLocalization.m in Sources */ = {isa = PBXBuildFile; fileRef = C954ABA61A345B5E00574C11 /* KODLocalization.m */; };
+		C954ABE11A35AB6300574C11 /* KOD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C954ABCD1A34950300574C11 /* KOD.bundle */; };
+>>>>>>> Stashed changes:KlarnaOnDemand.xcodeproj/project.pbxproj
 		C9E7F22E1A3F3FEA0005205B /* BDAESCBC256Cryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F1FB1A3F3FEA0005205B /* BDAESCBC256Cryptor.m */; };
 		C9E7F22F1A3F3FEA0005205B /* BDAESCryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F1FD1A3F3FEA0005205B /* BDAESCryptor.m */; };
 		C9E7F2301A3F3FEA0005205B /* BDCryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F1FF1A3F3FEA0005205B /* BDCryptor.m */; };
@@ -41,10 +62,16 @@
 		C9E7F23D1A3F3FEA0005205B /* NSString+BDJSONSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2211A3F3FEA0005205B /* NSString+BDJSONSerialization.m */; };
 		C9E7F23E1A3F3FEA0005205B /* NSString+BDUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2241A3F3FEA0005205B /* NSString+BDUtilities.m */; };
 		C9E7F23F1A3F3FEA0005205B /* BDError.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2271A3F3FEA0005205B /* BDError.m */; };
+<<<<<<< Updated upstream:Inapp.xcodeproj/project.pbxproj
 		C9E7F2421A3F45170005205B /* KIACrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2411A3F45170005205B /* KIACrypto.m */; };
 		C9E7F2451A3F4A410005205B /* KIAOriginProof.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2441A3F4A410005205B /* KIAOriginProof.m */; };
 		C9E7F25B1A405D0E0005205B /* KIAOriginProofSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F25A1A405D0E0005205B /* KIAOriginProofSpec.m */; };
 		C9FC95411A278AAD00485500 /* KIAContextSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FC95401A278AAD00485500 /* KIAContextSpec.m */; };
+=======
+		C9E7F2421A3F45170005205B /* KODCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2411A3F45170005205B /* KODCrypto.m */; };
+		C9E7F2451A3F4A410005205B /* KODOriginProof.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2441A3F4A410005205B /* KODOriginProof.m */; };
+		E4FC8287776950D3A8F3BE8B /* libPods-KlarnaOnDemandTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 443BC01E8B6591BA34CE5172 /* libPods-KlarnaOnDemandTests.a */; };
+>>>>>>> Stashed changes:KlarnaOnDemand.xcodeproj/project.pbxproj
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -594,6 +621,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+<<<<<<< Updated upstream:Inapp.xcodeproj/project.pbxproj
 				C903A2E11A2523B6009AE44D /* KIAUrlSpec.m in Sources */,
 				466387021A480DD20013429D /* KIASpecHelper.m in Sources */,
 				C9FC95411A278AAD00485500 /* KIAContextSpec.m in Sources */,
@@ -601,6 +629,16 @@
 				C9E7F25B1A405D0E0005205B /* KIAOriginProofSpec.m in Sources */,
 				46872D191A2B240000707282 /* KIARegistrationViewControllerSpec.m in Sources */,
 				465CF5901A42DB9E00EC092D /* KIACryptoSpec.m in Sources */,
+=======
+				468323D81A4ACCB60030B3F1 /* KODSpecHelper.h in Sources */,
+				468323D91A4ACCB60030B3F1 /* KODSpecHelper.m in Sources */,
+				468323DA1A4ACCB60030B3F1 /* KODContextSpec.m in Sources */,
+				468323DB1A4ACCB60030B3F1 /* KODCryptoSpec.m in Sources */,
+				468323DC1A4ACCB60030B3F1 /* KODOriginProofSpec.m in Sources */,
+				468323DD1A4ACCB60030B3F1 /* KODPreferencesViewControllerSpec.m in Sources */,
+				468323DE1A4ACCB60030B3F1 /* KODRegistrationViewControllerSpec.m in Sources */,
+				468323DF1A4ACCB60030B3F1 /* KODUrlSpec.m in Sources */,
+>>>>>>> Stashed changes:KlarnaOnDemand.xcodeproj/project.pbxproj
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
