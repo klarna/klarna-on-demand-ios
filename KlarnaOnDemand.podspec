@@ -8,20 +8,20 @@
 #
 
 Pod::Spec.new do |s|
-  s.name             = "KlarnaOnDemand"
+  s.name             = "klarna-on-demand-ios"
   s.version          = "0.1.1"
-  s.summary          = "SDK for Klarna's KlarnaOnDemand purchases."
+  s.summary          = "SDK for Klarna's On-Demand purchases."
 #s.description      = <<-DESC
-#                       An optional longer description of KlarnaOnDemand
+#                       An optional longer description of Klarna On Demand
 #
 #                       * Markdown format.
 #                       * Don't worry about the indent, we strip it!
 #                       DESC
-  s.homepage         = "https://github.com/<GITHUB_USERNAME>/KlarnaOnDemand"
+  s.homepage         = "https://github.com/klarna/klarna-on-demand-ios"
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'MIT'
   s.author           = { "Klarna" => "???@klarna.com" }
-  s.source           = { :git => "https://github.com/<GITHUB_USERNAME>/KlarnaOnDemand.git", :tag => s.version.to_s }
+  s.source           = { :git => "https://github.com/klarna/klarna-on-demand-ios.git", :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.platform     = :ios, '7.0'
@@ -29,7 +29,7 @@ Pod::Spec.new do |s|
 
   s.source_files = ‘KlarnaOnDemand/**/*.{m,h}’, '3rdParty/**/*.{m,h}'
   s.resource_bundles = {
-    ‘KOD’ => 'KlarnaOnDemand/KIA.bundle/*.lproj'
+    ‘KOD’ => 'KlarnaOnDemand/KOD.bundle/*.lproj'
   }
   s.xcconfig = { "OTHER_LDFLAGS" => "-ObjC -all_load"  }
 
