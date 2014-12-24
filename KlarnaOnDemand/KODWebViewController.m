@@ -3,10 +3,11 @@
 #import "KODContext.h"
 #import "KODLocalization.h"
 #import "KODWebViewController+Protected.h"
-NSString *const JockeyUserReady = @"userReady";
-NSString *const JockeyUserError =  @"userError";
 
 @implementation KODWebViewController
+
+NSString *const JockeyUserReady = @"userReady";
+NSString *const JockeyUserError =  @"userError";
 
 - (void)viewDidLoad {
   [super viewDidLoad];
