@@ -76,13 +76,11 @@ NSString *const KodTag = @"kod";
   NSData* signedHash = [NSData dataWithBytes:signedHashBytes
                                       length:(NSUInteger)signedHashBytesSize];
   
-  if (hashBytes)
-  {
+  if (hashBytes) {
     free(hashBytes);
   }
     
-  if (signedHashBytes)
-  {
+  if (signedHashBytes) {
     free(signedHashBytes);
   }
   

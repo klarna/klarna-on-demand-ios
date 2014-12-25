@@ -20,8 +20,7 @@ NSString *const UserTokenKey = @"user_token";
 
 - (IBAction)onBuyPressed:(id)sender {
   // if a token has been previously created
-  if([self hasUserToken])
-  {
+  if([self hasUserToken]) {
     // create origin proof for order.
      NSString *originProof = [KODOriginProof generateWithAmount:9900 currency:@"SEK" userToken:[self getUserToken]];
 
@@ -30,8 +29,7 @@ NSString *const UserTokenKey = @"user_token";
     // show QR Code for the movie.
     [self showQRView];
   }
-  else
-  {
+  else {
   // Create a new Klarna registration view-controller, initialized with MainViewController as event-handler.
   KODRegistrationViewController *registrationViewController = [[KODRegistrationViewController alloc] initWithDelegate:self];
   

@@ -56,8 +56,7 @@ NSString *const JockeyUserError =  @"userError";
   self.navigationItem.hidesBackButton = YES;
   
   NSString *dismissButtonTitle = [KODLocalization localizedStringForKey:[self dismissButtonLabelKey]];
-  if(dismissButtonTitle == nil)
-  {
+  if(dismissButtonTitle == nil) {
     dismissButtonTitle = [KODLocalization localizedStringForKey:@"PREFERENCES_DEFAULT_DISMISS_BUTTON_TEXT"];
   }
   
