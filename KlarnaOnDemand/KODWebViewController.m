@@ -3,10 +3,11 @@
 #import "KODContext.h"
 #import "KODLocalization.h"
 #import "KODWebViewController+Protected.h"
-#define JOCKEY_USER_READY @"userReady"
-#define JOCKEY_USER_ERROR @"userError"
 
 @implementation KODWebViewController
+
+NSString *const JockeyUserReady = @"userReady";
+NSString *const JockeyUserError =  @"userError";
 
 - (void)viewDidLoad {
   [super viewDidLoad];
@@ -55,8 +56,7 @@
   self.navigationItem.hidesBackButton = YES;
   
   NSString *dismissButtonTitle = [KODLocalization localizedStringForKey:[self dismissButtonLabelKey]];
-  if(dismissButtonTitle == nil)
-  {
+  if(dismissButtonTitle == nil) {
     dismissButtonTitle = [KODLocalization localizedStringForKey:@"PREFERENCES_DEFAULT_DISMISS_BUTTON_TEXT"];
   }
   
@@ -98,18 +98,18 @@
 }
 
 - (void)registerJockeyEvents {
-  [Jockey on:JOCKEY_USER_READY perform:^(NSDictionary *payload) {
+  [Jockey on:JockeyUserReady perform:^(NSDictionary *payload) {
     [self handleUserReadyEventWithPayload: payload];
   }];
   
-  [Jockey on:JOCKEY_USER_ERROR perform:^(NSDictionary *payload) {
+  [Jockey on:JockeyUserError perform:^(NSDictionary *payload) {
     [self handleUserErrorEvent];
   }];
 }
 
 - (void)unregisterJockeyCallbacks {
-  [Jockey off:JOCKEY_USER_READY];
-  [Jockey off:JOCKEY_USER_ERROR];
+  [Jockey off:JockeyUserReady];
+  [Jockey off:JockeyUserError];
 }
 
 

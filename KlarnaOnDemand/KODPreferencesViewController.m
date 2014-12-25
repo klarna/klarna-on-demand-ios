@@ -47,8 +47,7 @@
 }
 
 - (void)dismissButtonPressed {
-  if ([_delegate respondsToSelector:@selector(klarnaPreferencesClosed:)])
-  {
+  if ([_delegate respondsToSelector:@selector(klarnaPreferencesClosed:)]) {
     [_delegate klarnaPreferencesClosed:self];
   }
 }
@@ -61,8 +60,7 @@
 }
 
 - (void)handleUserErrorEvent {
-  if ([_delegate respondsToSelector:@selector(klarnaPreferencesFailed:)])
-  {
+  if ([_delegate respondsToSelector:@selector(klarnaPreferencesFailed:)]) {
     [_delegate klarnaPreferencesFailed:self];
   }
 }

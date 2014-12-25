@@ -40,15 +40,13 @@
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
   [super webView:webView didFailLoadWithError:error];
   
-  if (error.code != NSURLErrorCancelled && [_delegate respondsToSelector:@selector(klarnaRegistrationFailed:)])
-  {
+  if (error.code != NSURLErrorCancelled && [_delegate respondsToSelector:@selector(klarnaRegistrationFailed:)]) {
     [_delegate klarnaRegistrationFailed:self];
   }
 }
 
 - (void)dismissButtonPressed {
-  if ([_delegate respondsToSelector:@selector(klarnaRegistrationCancelled:)])
-  {
+  if ([_delegate respondsToSelector:@selector(klarnaRegistrationCancelled:)]) {
     [_delegate klarnaRegistrationCancelled:self];
   }
 }
@@ -56,16 +54,14 @@
 - (void)handleUserReadyEventWithPayload:(NSDictionary *)payload {
   NSString *token = payload[@"userToken"];
   NSAssert(token, @"KODToken failed to create.");
-  if ([_delegate respondsToSelector:@selector(klarnaRegistrationController:finishedWithUserToken:)])
-  {
-    KODToken *kiaToken = [[KODToken alloc] initWithToken: token];
-    [_delegate klarnaRegistrationController:self finishedWithUserToken:kiaToken];
+  if ([_delegate respondsToSelector:@selector(klarnaRegistrationController:finishedWithUserToken:)]) {
+    KODToken *kodToken = [[KODToken alloc] initWithToken: token];
+    [_delegate klarnaRegistrationController:self finishedWithUserToken:kodToken];
   }
 }
 
 - (void)handleUserErrorEvent {
-  if ([_delegate respondsToSelector:@selector(klarnaRegistrationFailed:)])
-  {
+  if ([_delegate respondsToSelector:@selector(klarnaRegistrationFailed:)]) {
     [_delegate klarnaRegistrationFailed:self];
   }
 }
