@@ -12,7 +12,7 @@ NSString *const UserTokenKey = @"user_token";
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-    
+
   [self initializeUIElements];
 }
 
@@ -135,12 +135,10 @@ NSString *const UserTokenKey = @"user_token";
 
 - (IBAction)hideQRView:(id)sender {
   self.QRView.hidden = YES;
-  [self.view sendSubviewToBack:self.QRView];
 }
 
 - (void)showQRView {
   self.QRView.hidden = NO;
-  [self.view bringSubviewToFront:self.QRView];
 }
 
 @end
