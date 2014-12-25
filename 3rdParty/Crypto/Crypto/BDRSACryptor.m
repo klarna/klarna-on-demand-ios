@@ -209,10 +209,10 @@ static unsigned char oidSequence [] = { 0x30, 0x0d, 0x06, 0x09, 0x2a, 0x86, 0x48
     NSString *privateKeyIdentifier = [self privateKeyIdentifierWithTag:keyIdentifier];
     
     [self removeKey:publicKeyIdentifier
-              error:nil];
+              error:error];
     
     [self removeKey:privateKeyIdentifier
-              error:nil];
+              error:error];
     
     NSMutableDictionary *publicKeyAttributes = [NSMutableDictionary dictionary];
     [publicKeyAttributes setObject:[NSNumber numberWithBool:YES] forKey:(__bridge id)kSecAttrIsPermanent];
