@@ -1,6 +1,6 @@
 # Klarna On Demand
 
-[![CI Status](https://api.travis-ci.org/klarna/klarna-on-demand-ios.svg?style=flat)](https://travis-ci.org/klarna/klarna-on-demand-ios)
+[![Build Status](https://travis-ci.org/klarna/klarna-on-demand-ios.svg?branch=master)](https://travis-ci.org/klarna/klarna-on-demand-ios)
 [![Version](https://img.shields.io/cocoapods/v/KlarnaOnDemand.svg?style=flat)](http://cocoadocs.org/docsets/KlarnaOnDemand)
 [![License](https://img.shields.io/cocoapods/l/KlarnaOnDemand.svg?style=flat)](http://cocoadocs.org/docsets/KlarnaOnDemand)
 [![Platform](https://img.shields.io/cocoapods/p/KlarnaOnDemand.svg?style=flat)](http://cocoadocs.org/docsets/KlarnaOnDemand)
