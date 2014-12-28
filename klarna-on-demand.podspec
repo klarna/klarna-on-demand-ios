@@ -27,20 +27,27 @@ Pod::Spec.new do |s|
   s.platform     = :ios, '7.0'
   s.requires_arc = true
 
-  s.source_files = 'KlarnaOnDemand/**/*.{m,h}', '3rdParty/**/*.{m,h}'
+  s.source_files = 'KlarnaOnDemand/**/*.{m,h}'
+
   s.resource_bundles = {
     'KOD' => 'KlarnaOnDemand/KOD.bundle/*.lproj'
   }
-  s.xcconfig = { "OTHER_LDFLAGS" => "-ObjC -all_load"  }
-  s.prefix_header_contents = """
-  #ifdef __OBJC__
-    #import <Foundation/Foundation.h>
-    #import \"BDError.h\"
-    #import \"BDLog.h\"
-  #endif
-  """
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.default_subspecs = %w[Crypto JockeyJS]
+
+  s.subspec 'Crypto' do |s|
+    s.source_files  = '3rdParty/Crypto/**/*.{m,h}'
+    s.xcconfig = { "OTHER_LDFLAGS" => "-ObjC -all_load"  }
+    s.prefix_header_contents = """
+      #ifdef __OBJC__
+        #import <Foundation/Foundation.h>
+        #import \"BDError.h\"
+        #import \"BDLog.h\"
+      #endif
+    """
+  end
+
+  s.subspec 'JockeyJS' do |s|
+    s.source_files  = '3rdParty/JockeyJS/*.{m,h}'
+  end
 end
