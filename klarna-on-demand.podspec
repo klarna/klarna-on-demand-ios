@@ -32,6 +32,13 @@ Pod::Spec.new do |s|
     'KOD' => 'KlarnaOnDemand/KOD.bundle/*.lproj'
   }
   s.xcconfig = { "OTHER_LDFLAGS" => "-ObjC -all_load"  }
+  s.prefix_header_contents = """
+  #ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+    #import \"BDError.h\"
+    #import \"BDLog.h\"
+  #endif
+  """
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
