@@ -14,8 +14,8 @@ describe(@"KODRegistrationViewControllerSpec", ^{
     [KODContext stub:@selector(getApiKey) andReturn:@"test_skadoo"];
   });
   
-  it(@"should call delegate's .klarnaRegistrationController:finishedWithUserToken on .handleUserReadyEvent when a token was received", ^{
-    [[kodRegistrationDelegate should] receive:@selector(klarnaRegistrationController:finishedWithUserToken:) withArguments:kodRegistrationController, [[KODToken alloc] initWithToken:@"my_token"]];
+  it(@"should call delegate's .klarnaRegistrationController:finishedResilt on .handleUserReadyEvent when a token was received", ^{
+    [[kodRegistrationDelegate should] receive:@selector(klarnaRegistrationController:finishedWithResult:) withArguments:kodRegistrationController, [[KODRegistrationResult alloc] initWithToken:@"my_token"]];
     
     [kodRegistrationController handleUserReadyEventWithPayload:@{@"userToken":@"my_token"}];
   });

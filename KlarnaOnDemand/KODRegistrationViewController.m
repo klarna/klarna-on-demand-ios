@@ -54,9 +54,9 @@
 - (void)handleUserReadyEventWithPayload:(NSDictionary *)payload {
   NSString *token = payload[@"userToken"];
   NSAssert(token, @"KODToken failed to create.");
-  if ([_delegate respondsToSelector:@selector(klarnaRegistrationController:finishedWithUserToken:)]) {
-    KODToken *kodToken = [[KODToken alloc] initWithToken: token];
-    [_delegate klarnaRegistrationController:self finishedWithUserToken:kodToken];
+  if ([_delegate respondsToSelector:@selector(klarnaRegistrationController:finishedWithResult:)]) {
+    KODRegistrationResult *kodRegistrationResult = [[KODRegistrationResult alloc] initWithToken: token];
+    [_delegate klarnaRegistrationController:self finishedWithResult:kodRegistrationResult];
   }
 }
 

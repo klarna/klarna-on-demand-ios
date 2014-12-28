@@ -1,5 +1,5 @@
 #import <UIKit/UIKit.h>
-#import "KODToken.h"
+#import "KODRegistrationResult.h"
 #import "KODWebViewController+Protected.h"
 
 @class KODRegistrationViewController;
@@ -17,10 +17,10 @@
  *  The token is required for making orders on behalf of the user.
  *
  *  @param controller Controller that initiated the event.
- *  @param token      Token that uniquely identifies the user.
+ *  @param registrationResult  Registration result which holds the token that uniquely identifies the user.
  */
 @required
-- (void)klarnaRegistrationController:(KODRegistrationViewController *)controller finishedWithUserToken:(KODToken *)token;
+- (void)klarnaRegistrationController:(KODRegistrationViewController *)controller finishedWithResult:(KODRegistrationResult *)registrationResult;
 
 /**
  *  Handler for registration failure events.
