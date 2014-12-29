@@ -6,13 +6,13 @@
 
 #define ALERT(str) [[[UIAlertView alloc] initWithTitle:@"Alert" message:str delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil] show]
 
-#define USER_TOKEN_KEY @"user_token"
+NSString *const UserTokenKey = @"user_token";
 
 @implementation MainViewController
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  
+
   [self initializeUIElements];
 }
 
@@ -20,8 +20,7 @@
 
 - (IBAction)onBuyPressed:(id)sender {
   // if a token has been previously created
-  if([self hasUserToken])
-  {
+  if([self hasUserToken]) {
     // create origin proof for order.
      NSString *originProof = [KODOriginProof generateWithAmount:9900 currency:@"SEK" userToken:[self getUserToken]];
 
@@ -30,8 +29,7 @@
     // show QR Code for the movie.
     [self showQRView];
   }
-  else
-  {
+  else {
   // Create a new Klarna registration view-controller, initialized with MainViewController as event-handler.
   KODRegistrationViewController *registrationViewController = [[KODRegistrationViewController alloc] initWithDelegate:self];
   
@@ -42,7 +40,7 @@
   [self presentViewController:navigationController
                      animated:YES
                    completion:nil];
-}
+  }
 }
 
 - (IBAction)onChangePaymentPressed:(id)sender {
@@ -104,7 +102,7 @@
  */
 - (void)saveUserToken:(NSString *)token {
   NSUserDefaults *standardUserDefaults = [NSUserDefaults standardUserDefaults];
-  [standardUserDefaults setValue:token forKey:USER_TOKEN_KEY];
+  [standardUserDefaults setValue:token forKey:UserTokenKey];
   [standardUserDefaults synchronize];
 }
 
@@ -115,7 +113,7 @@
  
  */
 - (NSString *)getUserToken {
-  return [[NSUserDefaults standardUserDefaults] objectForKey:USER_TOKEN_KEY];
+  return [[NSUserDefaults standardUserDefaults] objectForKey:UserTokenKey];
 }
 
 - (bool)hasUserToken {
@@ -131,14 +129,16 @@
   
   _registerLabel.hidden = [self hasUserToken];
   _changePaymentButton.hidden = ![self hasUserToken];
+  
+  [self hideQRView:nil];
 }
 
 - (IBAction)hideQRView:(id)sender {
-  [self.view sendSubviewToBack:_QRView];
+  self.QRView.hidden = YES;
 }
 
 - (void)showQRView {
-  [self.view bringSubviewToFront:_QRView];
+  self.QRView.hidden = NO;
 }
 
 @end

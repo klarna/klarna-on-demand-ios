@@ -6,31 +6,31 @@
 SPEC_BEGIN(KODPreferencesViewControllerSpec)
 
 describe(@"KODPreferencesViewControllerSpec", ^{
-  __block id kiaPreferencesDelegate;
-  __block KODPreferencesViewController *kiaPreferencesController;
+  __block id kodPreferencesDelegate;
+  __block KODPreferencesViewController *kodPreferencesController;
   
   beforeEach(^{
-    kiaPreferencesDelegate = [KWMock nullMockForProtocol:@protocol(KODPreferencesViewControllerDelegate)];
-    kiaPreferencesController = [[KODPreferencesViewController alloc] initWithDelegate:kiaPreferencesDelegate andToken:@"my_token"];
+    kodPreferencesDelegate = [KWMock nullMockForProtocol:@protocol(KODPreferencesViewControllerDelegate)];
+    kodPreferencesController = [[KODPreferencesViewController alloc] initWithDelegate:kodPreferencesDelegate andToken:@"my_token"];
     [KODContext stub:@selector(getApiKey) andReturn:@"test_skadoo"];
   });
   
   it(@"should call the delegate's .klarnaPreferencesFailed method when the web view fails to load", ^{
-    [[[kiaPreferencesDelegate should] receive] klarnaPreferencesFailed:kiaPreferencesController];
+    [[[kodPreferencesDelegate should] receive] klarnaPreferencesFailed:kodPreferencesController];
     
-    [kiaPreferencesController webView:nil didFailLoadWithError:[NSError errorWithDomain:@"Domain" code:1234 userInfo:nil]];
+    [kodPreferencesController webView:nil didFailLoadWithError:[NSError errorWithDomain:@"Domain" code:1234 userInfo:nil]];
   });
     
   it(@"does not call the delegate's .klarnaPreferencesFailed when the web view fails with NSURLErrorCancelled", ^{
-    [[[kiaPreferencesDelegate shouldNot] receive] klarnaPreferencesFailed:kiaPreferencesController];
+    [[[kodPreferencesDelegate shouldNot] receive] klarnaPreferencesFailed:kodPreferencesController];
     
-    [kiaPreferencesController webView:nil didFailLoadWithError:[NSError errorWithDomain:@"Domain" code:NSURLErrorCancelled userInfo:nil]];
+    [kodPreferencesController webView:nil didFailLoadWithError:[NSError errorWithDomain:@"Domain" code:NSURLErrorCancelled userInfo:nil]];
   });
   
   it(@"should call the delegate's .klarnaPreferencesClosed when the dismiss button is pressed", ^{
-    [[[kiaPreferencesDelegate should] receive] klarnaPreferencesClosed:kiaPreferencesController];
+    [[[kodPreferencesDelegate should] receive] klarnaPreferencesClosed:kodPreferencesController];
     
-    [kiaPreferencesController dismissButtonPressed];
+    [kodPreferencesController dismissButtonPressed];
   });
   
 });
