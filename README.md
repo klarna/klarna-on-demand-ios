@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/klarna/klarna-on-demand-ios.svg?branch=master)](https://travis-ci.org/klarna/klarna-on-demand-ios)
 [![Version](https://img.shields.io/cocoapods/v/Klarna-on-Demand.svg?style=flat)](http://cocoadocs.org/docsets/Klarna-on-Demand)
-[![License](https://img.shields.io/cocoapods/l/Klarna-on-Demand.svg?style=flat)](http://cocoadocs.org/docsets/Klarna-on-Demand)
+[![License](https://img.shields.io/cocoapods/l/Klarna-on-Demand.svg?style=flat)](https://www.apache.org/licenses/LICENSE-2.0.html)
 [![Platform](https://img.shields.io/cocoapods/p/Klarna-on-Demand.svg?style=flat)](http://cocoadocs.org/docsets/Klarna-on-Demand)
 
 Klarna on-demand allows you to integrate Klarna's payment solution in mobile apps that offer on demand services. It's a perfect fit for apps selling concert tickets, taxi rides, food pick-ups, etc.
