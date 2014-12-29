@@ -6,7 +6,7 @@ This guide assumes you use [CocoaPods](http://cocoapods.org) to manage your proj
 
 Open up your Podfile and add the following line:
 
-    pod "klarna-on-demand-ios"
+    pod "Klarna-on-Demand"
 
 Then simply run `pod install` in your project directory and you will be good to go.
 
