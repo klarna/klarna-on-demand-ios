@@ -69,7 +69,7 @@ NSString *const UserTokenKey = @"user_token";
   [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)klarnaRegistrationController:(KODRegistrationViewController *)controller finishedWithUserResult:(KODRegistrationResult *)registrationResult {
+- (void)klarnaRegistrationController:(KODRegistrationViewController *)controller finishedWithResult:(KODRegistrationResult *)registrationResult {
   // Dismiss Klarna registration view-controller.
   [self dismissViewControllerAnimated:YES completion:nil];
   
