@@ -17,7 +17,7 @@
  *  The token is required for making orders on behalf of the user.
  *
  *  @param controller Controller that initiated the event.
- *  @param registrationResult  Registration result which holds the token that uniquely identifies the user.
+ *  @param registrationResult Registration result which holds the token that uniquely identifies the user.
  */
 @required
 - (void)klarnaRegistrationController:(KODRegistrationViewController *)controller finishedWithResult:(KODRegistrationResult *)registrationResult;
