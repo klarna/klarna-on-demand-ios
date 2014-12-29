@@ -9,6 +9,11 @@
   return self;
 }
 
+- (id)init {
+  NSAssert(NO, @"Initialize with -initWithToken:");
+  return nil;
+}
+
 - (BOOL)isEqual:(id)object {
   if([object isKindOfClass:[KODRegistrationResult class]]) {
     KODRegistrationResult *objectAsKODRegistrationResult = (KODRegistrationResult *) object;

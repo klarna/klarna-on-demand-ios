@@ -22,6 +22,7 @@
 		C90D1C891A24CD2800016FE4 /* KODContext.m in Sources */ = {isa = PBXBuildFile; fileRef = C90D1C841A24CD2800016FE4 /* KODContext.m */; };
 		C90D1C8A1A24CD2800016FE4 /* KODRegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C90D1C861A24CD2800016FE4 /* KODRegistrationViewController.m */; };
 		C90D1C8B1A24CD2800016FE4 /* KODUrl.m in Sources */ = {isa = PBXBuildFile; fileRef = C90D1C881A24CD2800016FE4 /* KODUrl.m */; };
+		C92CF9501A51999C00430691 /* KODRegistrationResultSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C92CF94F1A51999C00430691 /* KODRegistrationResultSpec.m */; };
 		C954ABA71A345B5E00574C11 /* KODLocalization.m in Sources */ = {isa = PBXBuildFile; fileRef = C954ABA61A345B5E00574C11 /* KODLocalization.m */; };
 		C954ABE11A35AB6300574C11 /* KOD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C954ABCD1A34950300574C11 /* KOD.bundle */; };
 		C9E7F22E1A3F3FEA0005205B /* BDAESCBC256Cryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F1FB1A3F3FEA0005205B /* BDAESCBC256Cryptor.m */; };
@@ -99,6 +100,7 @@
 		C90D1C861A24CD2800016FE4 /* KODRegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KODRegistrationViewController.m; sourceTree = "<group>"; };
 		C90D1C871A24CD2800016FE4 /* KODUrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KODUrl.h; sourceTree = "<group>"; };
 		C90D1C881A24CD2800016FE4 /* KODUrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KODUrl.m; sourceTree = "<group>"; };
+		C92CF94F1A51999C00430691 /* KODRegistrationResultSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KODRegistrationResultSpec.m; sourceTree = "<group>"; };
 		C954ABA51A345B5E00574C11 /* KODLocalization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KODLocalization.h; path = KlarnaOnDemand/KODLocalization.h; sourceTree = SOURCE_ROOT; };
 		C954ABA61A345B5E00574C11 /* KODLocalization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KODLocalization.m; path = KlarnaOnDemand/KODLocalization.m; sourceTree = SOURCE_ROOT; };
 		C954ABCD1A34950300574C11 /* KOD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = KOD.bundle; path = KlarnaOnDemand/KOD.bundle; sourceTree = SOURCE_ROOT; };
@@ -267,6 +269,7 @@
 				46872D181A2B240000707282 /* KODRegistrationViewControllerSpec.m */,
 				C903A2E01A2523B6009AE44D /* KODUrlSpec.m */,
 				C90D1C701A24CBD100016FE4 /* Supporting Files */,
+				C92CF94F1A51999C00430691 /* KODRegistrationResultSpec.m */,
 			);
 			path = KlarnaOnDemandTests;
 			sourceTree = "<group>";
@@ -599,6 +602,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				468323D91A4ACCB60030B3F1 /* KODSpecHelper.m in Sources */,
+				C92CF9501A51999C00430691 /* KODRegistrationResultSpec.m in Sources */,
 				468323DA1A4ACCB60030B3F1 /* KODContextSpec.m in Sources */,
 				468323DB1A4ACCB60030B3F1 /* KODCryptoSpec.m in Sources */,
 				468323DC1A4ACCB60030B3F1 /* KODOriginProofSpec.m in Sources */,
