@@ -1,38 +1,22 @@
-#
-# Be sure to run `pod lib lint KlarnaOnDemand.podspec' to ensure this is a
-# valid spec and remove all comments before submitting the spec.
-#
-# Any lines starting with a # are optional, but encouraged
-#
-# To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html
-#
-
 Pod::Spec.new do |s|
-  s.name             = "klarna-on-demand"
+  s.name             = "Klarna-On-Demand"
   s.version          = "0.1.1"
   s.summary          = "SDK for Klarna's on-demand purchases."
-#s.description      = <<-DESC
-#                       An optional longer description of Klarna on-demand
-#
-#                       * Markdown format.
-#                       * Don't worry about the indent, we strip it!
-#                       DESC
+  s.description      = <<-DESC
+                          Klarna on-demand allows you to offer Klarna's payment solution in mobile apps that offer on demand services.
+                          It's a perfect fit for apps selling concert tickets, taxi rides, food pick-ups, etc.
+                       DESC
   s.homepage         = "https://github.com/klarna/klarna-on-demand-ios"
-  # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
+  s.screenshots      = "https://github.com/klarna/klarna-on-demand-ios/blob/master/screenshot.png"
   s.license          = 'MIT'
   s.author           = { "Klarna" => "index.e@klarna.com" }
   s.source           = { :git => "https://github.com/klarna/klarna-on-demand-ios.git", :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
-
   s.platform     = :ios, '7.0'
   s.requires_arc = true
-
   s.source_files = 'KlarnaOnDemand/**/*.{m,h}'
-
   s.resource_bundles = {
     'KOD' => 'KlarnaOnDemand/KOD.bundle/*.lproj'
   }
-
   s.default_subspecs = %w[Crypto JockeyJS]
 
   s.subspec 'Crypto' do |s|
