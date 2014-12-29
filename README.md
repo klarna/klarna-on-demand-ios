@@ -5,13 +5,13 @@
 [![License](https://img.shields.io/cocoapods/l/KlarnaOnDemand.svg?style=flat)](http://cocoadocs.org/docsets/KlarnaOnDemand)
 [![Platform](https://img.shields.io/cocoapods/p/KlarnaOnDemand.svg?style=flat)](http://cocoadocs.org/docsets/KlarnaOnDemand)
 
-Klarna on-demand allows you to offer Klarna's payment solution in mobile apps that offer on demand services. It's a perfect fit for apps selling concert tickets, taxi rides, food pick-ups, etc.
+Klarna on-demand allows you to integrate Klarna's payment solution in mobile apps that offer on demand services. It's a perfect fit for apps selling concert tickets, taxi rides, food pick-ups, etc.
 
 This project contains Klarna's on-demand purchase SDK for iOS, as well as a sample application utilizing the SDK.
 
 ![It's Klarna in your App](screenshot.png)
 
-While not necessary, the simplest way to get going with both the sample application and the SDK is to use [CocoaPods](http://cocoapods.org) and so all the following instructions will focus on that approach. For an alternative approach, see the [official documentation](http://this_should_be_some_valid_link).
+While not necessary, the simplest way to get going with both the sample application and the SDK is to use [CocoaPods](http://cocoapods.org) and so all the following instructions will focus on that approach. For an alternative approach, see the [official documentation](http://developers.klarna.com).
 
 ## Using the SDK
 Have a look at the [integration guide](doc/integration.md) for full details on how to use our SDK in your application.
@@ -43,4 +43,4 @@ Klarna
 
 ## License
 
-KlarnaOnDemand is available under the Apache 2.0 license. See the LICENSE file for more info.
+KlarnaOnDemand is available under the Apache 2.0 license. See the [LICENSE](./LICENSE) file for more info.

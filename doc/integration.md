@@ -2,7 +2,7 @@
 This guide includes all information necessary to receive payments from a user of your application through Klarna. In this guide, you will see how to allow the user to register his device with Klarna, change payment preferences and perform purchases.
 
 ##Including the SDK in your project
-This guide assumes you use [CocoaPods](http://cocoapods.org) to manage your project dependencies. If you do not, refer to our [official documentation](http://this_should_be_some_valid_link) for an alternative setup approach.
+This guide assumes you use [CocoaPods](http://cocoapods.org) to manage your project dependencies. If you do not, refer to our [official documentation](http://developers.klarna.com) for an alternative setup approach.
 
 Open up your Podfile and add the following line:
 
@@ -63,7 +63,7 @@ Then, assuming the button's touch handler is called `onRegisterPressed`, set it 
 
 There are a couple of things that are worth pointing out in the code above:
 
-- To properly initialize the registration view, you need to supply it with a delegate that it will use to notify you of various important events. We will go over these events later when we examine the [KODRegistrationViewControllerDelegate](#kia_registration_view_controller_delegate) protocol. We recommend having the view controller that hosts the registration view conform to said protocol.
+- To properly initialize the registration view, you need to supply it with a delegate that it will use to notify you of various important events. We will go over these events later when we examine the [KODRegistrationViewControllerDelegate](#kod_registration_view_controller_delegate) protocol. We recommend having the view controller that hosts the registration view conform to said protocol.
 - We display the registration view by making it part of a navigation view controller. This is the recommended way to display the registration view, and will give users the option to back out of the registration process.
 
 This is really all there is to displaying the registration view.
@@ -71,7 +71,7 @@ This is really all there is to displaying the registration view.
 ###Interacting with the view
 Displaying the view is great, but will only get you so far. It is important to know how our users interact with the view and to that end the view dispatches events to a delegate supplied during its initialization.
 
-<a name="kia_registration_view_controller_delegate"></a>
+<a name="kod_registration_view_controller_delegate"></a>
 ####The KODRegistrationViewControllerDelegate protocol
 The registration view expects its delegate to conform to this protocol, which exposes three different types of callbacks:
 
@@ -141,7 +141,7 @@ Then, assuming the button's touch handler is called `onPreferencesPressed`, set 
 There are a few things that are worth pointing out in the code above:
 
 - To properly initialize the preferences view, you need to supply it with the following:
- - A delegate that it will use to notify you of various important events. We will go over these events later when we examine the [KODPreferencesViewControllerDelegate](#kia_preferences_view_controller_delegate) protocol. The code describes the recommended approach, where we supply the hosting view controller that should conform to said protocol.
+ - A delegate that it will use to notify you of various important events. We will go over these events later when we examine the [KODPreferencesViewControllerDelegate](#kod_preferences_view_controller_delegate) protocol. The code describes the recommended approach, where we supply the hosting view controller that should conform to said protocol.
  - The user token obtained during the user's registration. Assume this token was stored in `userToken` used above.
 - We display the preferences view by making it part of a navigation view controller. This is the recommended way to display the preferences view, as it allows users to close the preferences view and return to your application.
 
@@ -150,7 +150,7 @@ This is all it takes to display the preferences view.
 ###Interacting with the view
 Klarna's payment preferences are managed internally by the SDK so you don't need to worry about them. However, your application needs to know when the user is finished with the preferences view, or if an error occurred. To make this possible, the view dispatches events to the delegate supplied during its initialization.
 
-<a name="kia_preferences_view_controller_delegate"></a>
+<a name="kod_preferences_view_controller_delegate"></a>
 ####The KODPreferencesViewControllerDelegate protocol
 The preferences view expects its delegate to conform to this protocol, which exposes two different types of callbacks:
 
