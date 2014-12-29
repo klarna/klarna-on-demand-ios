@@ -70,12 +70,12 @@ NSString *const UserTokenKey = @"user_token";
   [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)klarnaRegistrationController:(KODRegistrationViewController *)controller finishedWithUserToken:(KODToken *)userToken {
+- (void)klarnaRegistrationController:(KODRegistrationViewController *)controller finishedWithResult:(KODRegistrationResult *)registrationResult {
   // Dismiss Klarna registration view-controller.
   [self dismissViewControllerAnimated:YES completion:nil];
   
   // Save user token for future-use, in order to identify the user.
-  [self saveUserToken:userToken.token];
+  [self saveUserToken:registrationResult.token];
   
   self.registerLabel.hidden = true;
   self.changePaymentButton.hidden = false;
