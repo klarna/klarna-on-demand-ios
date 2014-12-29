@@ -5,11 +5,11 @@ Pod::Spec.new do |s|
   s.description      = <<-DESC
                           Klarna on-demand allows you to offer Klarna's payment solution in mobile apps that offer on demand services.
                           It's a perfect fit for apps selling concert tickets, taxi rides, food pick-ups, etc.
-                       DESC
+  DESC
   s.homepage         = "https://github.com/klarna/klarna-on-demand-ios"
   s.screenshots      = "https://github.com/klarna/klarna-on-demand-ios/blob/master/screenshot.png"
   s.license          = 'MIT'
-  s.author           = { "Klarna" => "index.e@klarna.com" }
+  s.author           = { "Klarna InDeX Team" => "index.e@klarna.com" }
   s.source           = { :git => "https://github.com/klarna/klarna-on-demand-ios.git", :tag => s.version.to_s }
   s.platform     = :ios, '7.0'
   s.requires_arc = true
@@ -19,10 +19,10 @@ Pod::Spec.new do |s|
   }
   s.default_subspecs = %w[Crypto JockeyJS]
 
-  s.subspec 'Crypto' do |s|
-    s.source_files  = '3rdParty/Crypto/**/*.{m,h}'
-    s.xcconfig = { "OTHER_LDFLAGS" => "-ObjC -all_load"  }
-    s.prefix_header_contents = """
+  s.subspec 'Crypto' do |crypto|
+    crypto.source_files  = '3rdParty/Crypto/**/*.{m,h}'
+    crypto.xcconfig = { "OTHER_LDFLAGS" => "-ObjC -all_load"  }
+    crypto.prefix_header_contents = """
       #ifdef __OBJC__
         #import <Foundation/Foundation.h>
         #import \"BDError.h\"
@@ -31,7 +31,7 @@ Pod::Spec.new do |s|
     """
   end
 
-  s.subspec 'JockeyJS' do |s|
-    s.source_files  = '3rdParty/JockeyJS/*.{m,h}'
+  s.subspec 'JockeyJS' do |jockey|
+    jockey.source_files  = '3rdParty/JockeyJS/*.{m,h}'
   end
 end
