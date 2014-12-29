@@ -8,12 +8,12 @@ Pod::Spec.new do |s|
   DESC
   s.homepage         = "https://github.com/klarna/klarna-on-demand-ios"
   s.screenshots      = "https://raw.githubusercontent.com/klarna/klarna-on-demand-ios/master/screenshot.png"
-  s.license          = 'MIT'
+  s.license          = 'Apache 2.0'
   s.author           = { "Klarna InDeX Team" => "index.e@klarna.com" }
   s.source           = { :git => "https://github.com/klarna/klarna-on-demand-ios.git", :tag => s.version.to_s }
-  s.platform     = :ios, '7.0'
-  s.requires_arc = true
-  s.source_files = 'KlarnaOnDemand/**/*.{m,h}'
+  s.platform         = :ios, '7.0'
+  s.requires_arc     = true
+  s.source_files     = 'KlarnaOnDemand/**/*.{m,h}'
   s.resource_bundles = {
     'KOD' => 'KlarnaOnDemand/KOD.bundle/*.lproj'
   }
