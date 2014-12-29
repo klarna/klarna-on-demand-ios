@@ -14,8 +14,8 @@
 - (id)initWithDelegate:(id<KODPreferencesViewControllerDelegate>)delegate andToken:(NSString *)token {
   self = [super init];
   if (self) {
-    _delegate = delegate;
-    _token = token;
+    self.delegate = delegate;
+    self.token = token;
   }
   return self;
 }
@@ -26,7 +26,7 @@
 }
 
 - (NSURL *)url {
-  return [KODUrl preferencesUrlWithToken: _token];
+  return [KODUrl preferencesUrlWithToken: self.token];
 }
 
 - (NSString *)title {
@@ -40,15 +40,15 @@
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
   [super webView:webView didFailLoadWithError:error];
   
-  if (error.code != NSURLErrorCancelled && [_delegate respondsToSelector:@selector(klarnaPreferencesFailed:)])
+  if (error.code != NSURLErrorCancelled && [self.delegate respondsToSelector:@selector(klarnaPreferencesFailed:)])
   {
-    [_delegate klarnaPreferencesFailed:self];
+    [self.delegate klarnaPreferencesFailed:self];
   }
 }
 
 - (void)dismissButtonPressed {
-  if ([_delegate respondsToSelector:@selector(klarnaPreferencesClosed:)]) {
-    [_delegate klarnaPreferencesClosed:self];
+  if ([self.delegate respondsToSelector:@selector(klarnaPreferencesClosed:)]) {
+    [self.delegate klarnaPreferencesClosed:self];
   }
 }
 
@@ -60,8 +60,8 @@
 }
 
 - (void)handleUserErrorEvent {
-  if ([_delegate respondsToSelector:@selector(klarnaPreferencesFailed:)]) {
-    [_delegate klarnaPreferencesFailed:self];
+  if ([self.delegate respondsToSelector:@selector(klarnaPreferencesFailed:)]) {
+    [self.delegate klarnaPreferencesFailed:self];
   }
 }
 

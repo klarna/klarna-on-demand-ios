@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		4651C4541A3DDE9200800F1A /* KODWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4651C4521A3DDE9200800F1A /* KODWebViewController.m */; };
 		467F0EC21A2B6DE900A76845 /* Jockey.m in Sources */ = {isa = PBXBuildFile; fileRef = 467F0EC11A2B6DE900A76845 /* Jockey.m */; };
-		467F0EDB1A2C6AC900A76845 /* KODToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 467F0ED91A2C696100A76845 /* KODToken.m */; };
+		467F0EDB1A2C6AC900A76845 /* KODRegistrationResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 467F0ED91A2C696100A76845 /* KODRegistrationResult.m */; };
 		468323D91A4ACCB60030B3F1 /* KODSpecHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 466387011A480DD20013429D /* KODSpecHelper.m */; };
 		468323DA1A4ACCB60030B3F1 /* KODContextSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FC95401A278AAD00485500 /* KODContextSpec.m */; };
 		468323DB1A4ACCB60030B3F1 /* KODCryptoSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 465CF58F1A42DB9E00EC092D /* KODCryptoSpec.m */; };
@@ -22,6 +22,7 @@
 		C90D1C891A24CD2800016FE4 /* KODContext.m in Sources */ = {isa = PBXBuildFile; fileRef = C90D1C841A24CD2800016FE4 /* KODContext.m */; };
 		C90D1C8A1A24CD2800016FE4 /* KODRegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C90D1C861A24CD2800016FE4 /* KODRegistrationViewController.m */; };
 		C90D1C8B1A24CD2800016FE4 /* KODUrl.m in Sources */ = {isa = PBXBuildFile; fileRef = C90D1C881A24CD2800016FE4 /* KODUrl.m */; };
+		C92CF9501A51999C00430691 /* KODRegistrationResultSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C92CF94F1A51999C00430691 /* KODRegistrationResultSpec.m */; };
 		C954ABA71A345B5E00574C11 /* KODLocalization.m in Sources */ = {isa = PBXBuildFile; fileRef = C954ABA61A345B5E00574C11 /* KODLocalization.m */; };
 		C954ABE11A35AB6300574C11 /* KOD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C954ABCD1A34950300574C11 /* KOD.bundle */; };
 		C9E7F22E1A3F3FEA0005205B /* BDAESCBC256Cryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F1FB1A3F3FEA0005205B /* BDAESCBC256Cryptor.m */; };
@@ -81,8 +82,8 @@
 		466387011A480DD20013429D /* KODSpecHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KODSpecHelper.m; sourceTree = "<group>"; };
 		467F0EC01A2B6DE900A76845 /* Jockey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Jockey.h; path = 3rdParty/JockeyJS/Jockey.h; sourceTree = "<group>"; };
 		467F0EC11A2B6DE900A76845 /* Jockey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Jockey.m; path = 3rdParty/JockeyJS/Jockey.m; sourceTree = "<group>"; };
-		467F0ED81A2C696100A76845 /* KODToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KODToken.h; path = KlarnaOnDemand/KODToken.h; sourceTree = SOURCE_ROOT; };
-		467F0ED91A2C696100A76845 /* KODToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KODToken.m; path = KlarnaOnDemand/KODToken.m; sourceTree = SOURCE_ROOT; };
+		467F0ED81A2C696100A76845 /* KODRegistrationResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KODRegistrationResult.h; path = KlarnaOnDemand/KODRegistrationResult.h; sourceTree = SOURCE_ROOT; };
+		467F0ED91A2C696100A76845 /* KODRegistrationResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KODRegistrationResult.m; path = KlarnaOnDemand/KODRegistrationResult.m; sourceTree = SOURCE_ROOT; };
 		46872D181A2B240000707282 /* KODRegistrationViewControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KODRegistrationViewControllerSpec.m; sourceTree = "<group>"; };
 		46D37ABB1A374A6500E6AC7A /* KODPreferencesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KODPreferencesViewController.h; path = ../KlarnaOnDemand/KODPreferencesViewController.h; sourceTree = "<group>"; };
 		46D37ABC1A374A6500E6AC7A /* KODPreferencesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KODPreferencesViewController.m; path = ../KlarnaOnDemand/KODPreferencesViewController.m; sourceTree = "<group>"; };
@@ -99,6 +100,7 @@
 		C90D1C861A24CD2800016FE4 /* KODRegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KODRegistrationViewController.m; sourceTree = "<group>"; };
 		C90D1C871A24CD2800016FE4 /* KODUrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KODUrl.h; sourceTree = "<group>"; };
 		C90D1C881A24CD2800016FE4 /* KODUrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KODUrl.m; sourceTree = "<group>"; };
+		C92CF94F1A51999C00430691 /* KODRegistrationResultSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KODRegistrationResultSpec.m; sourceTree = "<group>"; };
 		C954ABA51A345B5E00574C11 /* KODLocalization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KODLocalization.h; path = KlarnaOnDemand/KODLocalization.h; sourceTree = SOURCE_ROOT; };
 		C954ABA61A345B5E00574C11 /* KODLocalization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KODLocalization.m; path = KlarnaOnDemand/KODLocalization.m; sourceTree = SOURCE_ROOT; };
 		C954ABCD1A34950300574C11 /* KOD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = KOD.bundle; path = KlarnaOnDemand/KOD.bundle; sourceTree = SOURCE_ROOT; };
@@ -240,8 +242,8 @@
 				46D37ABC1A374A6500E6AC7A /* KODPreferencesViewController.m */,
 				C90D1C851A24CD2800016FE4 /* KODRegistrationViewController.h */,
 				C90D1C861A24CD2800016FE4 /* KODRegistrationViewController.m */,
-				467F0ED81A2C696100A76845 /* KODToken.h */,
-				467F0ED91A2C696100A76845 /* KODToken.m */,
+				467F0ED81A2C696100A76845 /* KODRegistrationResult.h */,
+				467F0ED91A2C696100A76845 /* KODRegistrationResult.m */,
 				C90D1C871A24CD2800016FE4 /* KODUrl.h */,
 				C90D1C881A24CD2800016FE4 /* KODUrl.m */,
 				4651C4511A3DDE9200800F1A /* KODWebViewController.h */,
@@ -267,6 +269,7 @@
 				46872D181A2B240000707282 /* KODRegistrationViewControllerSpec.m */,
 				C903A2E01A2523B6009AE44D /* KODUrlSpec.m */,
 				C90D1C701A24CBD100016FE4 /* Supporting Files */,
+				C92CF94F1A51999C00430691 /* KODRegistrationResultSpec.m */,
 			);
 			path = KlarnaOnDemandTests;
 			sourceTree = "<group>";
@@ -580,7 +583,7 @@
 				C954ABA71A345B5E00574C11 /* KODLocalization.m in Sources */,
 				C9E7F22F1A3F3FEA0005205B /* BDAESCryptor.m in Sources */,
 				C9E7F2391A3F3FEA0005205B /* NSData+BDJSONSerialization.m in Sources */,
-				467F0EDB1A2C6AC900A76845 /* KODToken.m in Sources */,
+				467F0EDB1A2C6AC900A76845 /* KODRegistrationResult.m in Sources */,
 				C9E7F2341A3F3FEA0005205B /* BDSHA512Cryptor.m in Sources */,
 				C9E7F23E1A3F3FEA0005205B /* NSString+BDUtilities.m in Sources */,
 				467F0EC21A2B6DE900A76845 /* Jockey.m in Sources */,
@@ -599,6 +602,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				468323D91A4ACCB60030B3F1 /* KODSpecHelper.m in Sources */,
+				C92CF9501A51999C00430691 /* KODRegistrationResultSpec.m in Sources */,
 				468323DA1A4ACCB60030B3F1 /* KODContextSpec.m in Sources */,
 				468323DB1A4ACCB60030B3F1 /* KODCryptoSpec.m in Sources */,
 				468323DC1A4ACCB60030B3F1 /* KODOriginProofSpec.m in Sources */,

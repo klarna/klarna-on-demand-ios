@@ -15,7 +15,7 @@
 - (id)initWithDelegate:(id<KODRegistrationViewControllerDelegate>)delegate {
   self = [super init];
   if (self) {
-    _delegate = delegate;
+    self.delegate = delegate;
   }
   return self;
 }
@@ -40,29 +40,29 @@
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
   [super webView:webView didFailLoadWithError:error];
   
-  if (error.code != NSURLErrorCancelled && [_delegate respondsToSelector:@selector(klarnaRegistrationFailed:)]) {
-    [_delegate klarnaRegistrationFailed:self];
+  if (error.code != NSURLErrorCancelled && [self.delegate respondsToSelector:@selector(klarnaRegistrationFailed:)]) {
+    [self.delegate klarnaRegistrationFailed:self];
   }
 }
 
 - (void)dismissButtonPressed {
-  if ([_delegate respondsToSelector:@selector(klarnaRegistrationCancelled:)]) {
-    [_delegate klarnaRegistrationCancelled:self];
+  if ([self.delegate respondsToSelector:@selector(klarnaRegistrationCancelled:)]) {
+    [self.delegate klarnaRegistrationCancelled:self];
   }
 }
 
 - (void)handleUserReadyEventWithPayload:(NSDictionary *)payload {
   NSString *token = payload[@"userToken"];
   NSAssert(token, @"KODToken failed to create.");
-  if ([_delegate respondsToSelector:@selector(klarnaRegistrationController:finishedWithUserToken:)]) {
-    KODToken *kodToken = [[KODToken alloc] initWithToken: token];
-    [_delegate klarnaRegistrationController:self finishedWithUserToken:kodToken];
+  if ([self.delegate respondsToSelector:@selector(klarnaRegistrationController:finishedWithResult:)]) {
+    KODRegistrationResult *kodRegistrationResult = [[KODRegistrationResult alloc] initWithToken:token];
+    [self.delegate klarnaRegistrationController:self finishedWithResult:kodRegistrationResult];
   }
 }
 
 - (void)handleUserErrorEvent {
-  if ([_delegate respondsToSelector:@selector(klarnaRegistrationFailed:)]) {
-    [_delegate klarnaRegistrationFailed:self];
+  if ([self.delegate respondsToSelector:@selector(klarnaRegistrationFailed:)]) {
+    [self.delegate klarnaRegistrationFailed:self];
   }
 }
 
