@@ -22,13 +22,7 @@ Pod::Spec.new do |s|
   s.subspec 'Crypto' do |crypto|
     crypto.source_files  = '3rdParty/Crypto/**/*.{m,h}'
     crypto.xcconfig = { "OTHER_LDFLAGS" => "-ObjC -all_load"  }
-    crypto.prefix_header_contents = """
-      #ifdef __OBJC__
-        #import <Foundation/Foundation.h>
-        #import \"BDError.h\"
-        #import \"BDLog.h\"
-      #endif
-    """
+    crypto.prefix_header_file = '3rdParty/Crypto/Crypto-Prefix.pch'
   end
 
   s.subspec 'JockeyJS' do |jockey|
