@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
                           It's a perfect fit for apps selling concert tickets, taxi rides, food pick-ups, etc.
   DESC
   s.homepage         = "https://github.com/klarna/klarna-on-demand-ios"
-  s.screenshots      = "https://github.com/klarna/klarna-on-demand-ios/blob/master/screenshot.png"
+  s.screenshots      = "https://raw.githubusercontent.com/klarna/klarna-on-demand-ios/master/screenshot.png"
   s.license          = 'MIT'
   s.author           = { "Klarna InDeX Team" => "index.e@klarna.com" }
   s.source           = { :git => "https://github.com/klarna/klarna-on-demand-ios.git", :tag => s.version.to_s }
