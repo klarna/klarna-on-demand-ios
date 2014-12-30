@@ -32,7 +32,8 @@ NSString *const UserTokenKey = @"user_token";
         }
         failure:^(AFHTTPRequestOperation *operation, NSError *error) {
           // Display an error.
-          ALERT(@"Failed to purchase ticket");
+          NSString *errorMessage = [NSString stringWithFormat:@"%@%@", @"Failed to purchase ticket - ", error.localizedDescription];
+          ALERT(errorMessage);
         }
   ];
 }
