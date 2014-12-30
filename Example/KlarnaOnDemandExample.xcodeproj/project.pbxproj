@@ -18,6 +18,7 @@
 		469203AB1A4AC52900A628D6 /* CloseButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 469203A81A4AC52900A628D6 /* CloseButton@2x.png */; };
 		469203AC1A4AC52900A628D6 /* QRCode@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 469203A91A4AC52900A628D6 /* QRCode@2x.png */; };
 		469203AD1A4AC52900A628D6 /* TheGirlWithTheDragonTatoo@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 469203AA1A4AC52900A628D6 /* TheGirlWithTheDragonTatoo@2x.jpg */; };
+		A988AC89498A774D942CE371 /* libPods-KlarnaOnDemandExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7754B5FAB47273B4794D5357 /* libPods-KlarnaOnDemandExample.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,7 +36,10 @@
 		469203A81A4AC52900A628D6 /* CloseButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CloseButton@2x.png"; sourceTree = "<group>"; };
 		469203A91A4AC52900A628D6 /* QRCode@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "QRCode@2x.png"; sourceTree = "<group>"; };
 		469203AA1A4AC52900A628D6 /* TheGirlWithTheDragonTatoo@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "TheGirlWithTheDragonTatoo@2x.jpg"; sourceTree = "<group>"; };
+		7754B5FAB47273B4794D5357 /* libPods-KlarnaOnDemandExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KlarnaOnDemandExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE4AA4E2CE5D2220590E5D3B /* Pods-KlarnaOnDemandExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KlarnaOnDemandExample.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-KlarnaOnDemandExample/Pods-KlarnaOnDemandExample.debug.xcconfig"; sourceTree = "<group>"; };
 		C946A3C61A24C21D00A12CC6 /* KlarnaOnDemandExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KlarnaOnDemandExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4E9446173CDBD9678396A00 /* Pods-KlarnaOnDemandExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KlarnaOnDemandExample.release.xcconfig"; path = "../Pods/Target Support Files/Pods-KlarnaOnDemandExample/Pods-KlarnaOnDemandExample.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,12 +48,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				460FDB721A49A21200CF327B /* libKlarnaOnDemand.a in Frameworks */,
+				A988AC89498A774D942CE371 /* libPods-KlarnaOnDemandExample.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0457940BEE91F8EB2B9DD05F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AE4AA4E2CE5D2220590E5D3B /* Pods-KlarnaOnDemandExample.debug.xcconfig */,
+				F4E9446173CDBD9678396A00 /* Pods-KlarnaOnDemandExample.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		3E3D7982DB28161A671B8BCD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7754B5FAB47273B4794D5357 /* libPods-KlarnaOnDemandExample.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		469203A71A4AC52900A628D6 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
@@ -67,6 +89,8 @@
 				460FDB6D1A499F2500CF327B /* KOD.bundle */,
 				C946A3C81A24C21D00A12CC6 /* KlarnaOnDemandExample */,
 				C946A3C71A24C21D00A12CC6 /* Products */,
+				0457940BEE91F8EB2B9DD05F /* Pods */,
+				3E3D7982DB28161A671B8BCD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -110,9 +134,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C946A3E91A24C21D00A12CC6 /* Build configuration list for PBXNativeTarget "KlarnaOnDemandExample" */;
 			buildPhases = (
+				9F475E6B491C00EAB85C349D /* Check Pods Manifest.lock */,
 				C946A3C21A24C21D00A12CC6 /* Sources */,
 				C946A3C31A24C21D00A12CC6 /* Frameworks */,
 				C946A3C41A24C21D00A12CC6 /* Resources */,
+				D2910A18D190F601C3BB49B4 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -171,6 +197,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9F475E6B491C00EAB85C349D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D2910A18D190F601C3BB49B4 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-KlarnaOnDemandExample/Pods-KlarnaOnDemandExample-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C946A3C21A24C21D00A12CC6 /* Sources */ = {
@@ -285,30 +344,26 @@
 		};
 		C946A3EA1A24C21D00A12CC6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AE4AA4E2CE5D2220590E5D3B /* Pods-KlarnaOnDemandExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = KlarnaOnDemandExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-all_load",
-				);
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = KlarnaOnDemandExample;
 			};
 			name = Debug;
 		};
 		C946A3EB1A24C21D00A12CC6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4E9446173CDBD9678396A00 /* Pods-KlarnaOnDemandExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = KlarnaOnDemandExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-all_load",
-				);
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = KlarnaOnDemandExample;
 			};
 			name = Release;

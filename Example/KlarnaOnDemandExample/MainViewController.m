@@ -1,3 +1,4 @@
+#import "AFNetworking/AFNetworking.h"
 #import "MainViewController.h"
 #import "KODRegistrationViewController.h"
 #import "KODPreferencesViewController.h"
@@ -16,6 +17,30 @@ NSString *const UserTokenKey = @"user_token";
   [self initializeUIElements];
 }
 
+- (void)performPurchaseOfItemWithReference:(NSString *)reference usingProof:(NSString *)originProof {
+  AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+  manager.requestSerializer = [AFJSONRequestSerializer serializer];
+  NSString *userToken = [self getUserToken];
+
+  NSDictionary *params = @{
+    @"origin_proof" : originProof,
+    @"reference" :    reference,
+    @"user_token" :   userToken
+  };
+
+  [manager POST:@"http://localhost:9292/pay" parameters:params
+        success:^(AFHTTPRequestOperation *operation, id responseObject) {
+          // show QR Code for the movie.
+          [self showQRView];
+        }
+        failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+          // Display an error.
+          NSString *errorMessage = [NSString stringWithFormat:@"%@%@", @"Failed to purchase ticket - ", error.localizedDescription];
+          ALERT(errorMessage);
+        }
+  ];
+}
+
 #pragma mark Button clicks
 
 - (IBAction)onBuyPressed:(id)sender {
@@ -24,10 +49,8 @@ NSString *const UserTokenKey = @"user_token";
     // create origin proof for order.
      NSString *originProof = [KODOriginProof generateWithAmount:9900 currency:@"SEK" userToken:[self getUserToken]];
 
-    // TODO: send order request to app-server.
-
-    // show QR Code for the movie.
-    [self showQRView];
+    // send order request to app-server.
+    [self performPurchaseOfItemWithReference:@"TCKT0001" usingProof:originProof];
   }
   else {
   // Create a new Klarna registration view-controller, initialized with MainViewController as event-handler.
