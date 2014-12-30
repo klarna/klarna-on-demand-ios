@@ -9,7 +9,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   // Set Klarna's API key.
-  [KODContext setApiKey:@"test_29f612e8-1576-423f-80a8-679f354e4c89"];
+  [KODContext setApiKey:@"test_d8324b98-97ce-4974-88de-eaab2fdf4f14"];
   return YES;
 }
 
