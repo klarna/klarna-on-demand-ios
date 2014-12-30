@@ -13,25 +13,21 @@ Pod::Spec.new do |s|
   s.source           = { :git => "https://github.com/klarna/klarna-on-demand-ios.git", :tag => s.version.to_s }
   s.platform         = :ios, '7.0'
   s.requires_arc     = true
-  s.source_files     = 'KlarnaOnDemand/**/*.{m,h}'
+  s.source_files     = 'KlarnaOnDemand/**/*.{h,m}'
   s.resource_bundles = {
     'KOD' => 'KlarnaOnDemand/KOD.bundle/*.lproj'
   }
   s.default_subspecs = %w[Crypto JockeyJS]
 
   s.subspec 'Crypto' do |crypto|
-    crypto.source_files  = '3rdParty/Crypto/**/*.{m,h}'
+    crypto.source_files  = '3rdParty/Crypto/**/*.m'
+    crypto.private_header_files = '3rdParty/Crypto/**/*.h'
     crypto.xcconfig = { "OTHER_LDFLAGS" => "-ObjC -all_load"  }
-    crypto.prefix_header_contents = """
-      #ifdef __OBJC__
-        #import <Foundation/Foundation.h>
-        #import \"BDError.h\"
-        #import \"BDLog.h\"
-      #endif
-    """
+    crypto.prefix_header_file = '3rdParty/Crypto/Crypto-Prefix.pch'
   end
 
   s.subspec 'JockeyJS' do |jockey|
-    jockey.source_files  = '3rdParty/JockeyJS/*.{m,h}'
+    jockey.source_files  = '3rdParty/JockeyJS/*.m'
+    jockey.private_header_files = '3rdParty/JockeyJS/*.h'
   end
 end
