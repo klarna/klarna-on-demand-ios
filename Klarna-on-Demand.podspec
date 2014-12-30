@@ -20,14 +20,14 @@ Pod::Spec.new do |s|
   s.default_subspecs = %w[Crypto JockeyJS]
 
   s.subspec 'Crypto' do |crypto|
-    crypto.source_files  = '3rdParty/Crypto/**/*.m'
+    crypto.source_files  = '3rdParty/Crypto/**/*.{h,m}'
     crypto.private_header_files = '3rdParty/Crypto/**/*.h'
     crypto.xcconfig = { "OTHER_LDFLAGS" => "-ObjC -all_load"  }
     crypto.prefix_header_file = '3rdParty/Crypto/Crypto-Prefix.pch'
   end
 
   s.subspec 'JockeyJS' do |jockey|
-    jockey.source_files  = '3rdParty/JockeyJS/*.m'
+    jockey.source_files  = '3rdParty/JockeyJS/*.{h,m}'
     jockey.private_header_files = '3rdParty/JockeyJS/*.h'
   end
 end
