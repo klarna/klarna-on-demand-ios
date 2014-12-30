@@ -118,6 +118,11 @@ As hinted above, the KODRegistrationViewControllerDelegate may not be the only p
 ###When should you show the registration view?
 While we've seen how to utilize the registration view, we never talked about **when** you should display it. While it is ultimately up to you to decide, we have a fairly straightforward recommendation - you should only display the registration view when you do not have a user token stored. Assuming your user has gone through the registration process successfully and received a token there is no need to have the user register again, as tokens do not expire (though they can be revoked).
 
+## Performing purchases
+The aim of this SDK is to allow users to make purchases through your application, backed by Klarna as a payment method. However, the SDK does not offer any direct methods to perform a purchase as this will expose your application's private Klarna credentials. Instead, applications using the SDK are expected to work in concert with an application backend, which will perform the actual purchase requests.
+
+In this section, we will see how to communicate with such a backend and for that purpose we supply a sample backend that you can find [here](https://github.com/klarna/sample-app-backend). Reading the sample backend's documentation will allow you to fully grasp how an application using this SDK is expected to perform purchases, and you are encouraged to take a look if things become too unclear.
+
 ##The preferences view
 After having registered to pay using Klarna, users may wish to view or even alter their payment settings (for example, users may wish to switch from using a credit card to monthly invoice payments). As was the case with registration, the SDK provides a view for this purpose. Using the user token acquired during the registration process, you will be able to present your users with a preferences view.
 
