@@ -30,6 +30,7 @@ We recommend setting your API key in your AppDelegate in the manner shown below:
 @end
 ```
 
+<a name="registration_view"></a>
 ##The registration view
 Users must go through a quick registration process in order to pay using Klarna. To make this process as simple as possible, the SDK provides a registration view that you should present to your users. Once the registration process is complete, you will receive a token that will allow you to receive payments from the user.
 
@@ -103,6 +104,16 @@ Building upon the code sample from the previous section, consider the following 
 
 As you can see, your first order of business will usually be to dismiss the registration view upon any of the events occurring. Then, depending on the event, you will want to take further action such as storing the user token or displaying an error message.
 
+You should also declare that your view controller implements the protocol by writing something along the following lines:
+
+```objective-c
+@interface MainViewController : UIViewController<KODRegistrationViewControllerDelegate, ...>
+// Various interface definitions
+@end
+```
+
+As hinted above, the KODRegistrationViewControllerDelegate may not be the only protocol that your view controller adheres to.
+
 <a name="when_to_show_registration"></a>
 ###When should you show the registration view?
 While we've seen how to utilize the registration view, we never talked about **when** you should display it. While it is ultimately up to you to decide, we have a fairly straightforward recommendation - you should only display the registration view when you do not have a user token stored. Assuming your user has gone through the registration process successfully and received a token there is no need to have the user register again, as tokens do not expire (though they can be revoked).
@@ -174,3 +185,11 @@ Building upon the code sample from the previous section, consider the following 
 ```
 
 As you can see, your first order of business will usually be to dismiss the preferences view upon any of the events occurring. In case of an error, you are strongly encouraged to notify the user as most errors are unrecoverable and require the preferences view to be reopened.
+
+Remember that you should also declare that your view controller conforms to the protocol. Assuming the view controller in question is the same one from when we set up the [registration view](#registration_view), you would go about this by declaring it like so:
+
+```objective-c
+@interface MainViewController : UIViewController<KODRegistrationViewControllerDelegate, KODPreferencesViewControllerDelegate>
+// Various interface definitions
+@end
+```
