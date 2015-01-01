@@ -11,7 +11,7 @@ This project contains Klarna's on-demand purchase SDK for iOS, as well as a samp
 
 ![It's Klarna in your App](screenshot.png)
 
-While not necessary, the simplest way to get going with both the sample application and the SDK is to use [CocoaPods](http://cocoapods.org) and so all the following instructions will focus on that approach. For an alternative approach, see the [official documentation](http://developers.klarna.com).
+While not necessary, the simplest way to get going with both the sample application and the SDK is to use [CocoaPods](http://cocoapods.org) and so all the following instructions will focus on that approach. For an alternative approach, see the [official documentation (coming soon)](http://developers.klarna.com).
 
 ## Using the SDK
 Have a look at the [integration guide](doc/integration.md) for full details on how to use our SDK in your application.
@@ -19,7 +19,7 @@ Have a look at the [integration guide](doc/integration.md) for full details on h
 ## Running the sample application
 Assuming you've cloned the repository, simply cd into the repo, open *KlarnaOnDemand.xcworkspace* and run the *KlarnaOnDemandExample* project.
 
-**Note:** While this will get the application up and running, you will not be able to successfully perform purchases without a backend for the application to interact with. You should go [here](https://github.com/klarna/sample-app-backend) and follow the instructions provided to get the backend running on your local machine.
+**Note:** While this will get the application up and running, you will not be able to successfully perform purchases without a backend for the application to interact with. You should go [here](https://github.com/klarna/sample-app-backend) and follow the instructions provided to get a sample backend running on your local machine.
 
 ## Contributing
 You'd like to help us out? That's great! Here's what you need to do in order to contribute.
