@@ -126,7 +126,7 @@ In this section, we will see how to communicate with such a backend and for that
 ###Signing requests
 While you can, and almost certainly will, communicate with your application's backend in a way that is different than the very simplistic approach we will present here, one thing you will always have to do is sign your purchase request. This will significantly increase your user's security while buying and the SDK makes this task incredibly easy.
 
-Let us say a user wants to make a purchase for 40.50 Euro, all that's necessary to generate the relevant signature is to include the following header in your code:
+Let us say a user wants to make a purchase for a total of 40.50 Euros. All that's necessary to generate the relevant signature is to include the following header in your code:
 
 ```objective-c
 #import "KODOriginProof.h"
@@ -139,6 +139,47 @@ NSString *originProof = [KODOriginProof generateWithAmount:4050 currency:@"EUR" 
 ```
 
 Assume `storedToken` contains the user's token as received during registration. Note that the method expects the purchase amount to be supplied in cents. You can find the method's full documentation [here](http://cocoadocs.org/docsets/Klarna-on-Demand/0.1.2/Classes/KODOriginProof.html#//api/name/generateWithAmount:currency:userToken:).
+
+###Purchase example
+Now that we know how to generate the signature we will need for the purchase to go through, let us show how to send information to the sample backend so that the purchase will actually take place.
+
+You will most likely have a "buy" button somewhere in your application. The code below shows how such a button might be implemented in your application's controller:
+
+```objective-c
+- (IBAction)onBuyPressed:(id)sender {
+  // create an origin proof, as seen in previous section
+  NSString *originProof = [KODOriginProof generateWithAmount:9900 currency:@"SEK" userToken:storedToken];
+
+  // send the purchase request to the backend
+  AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+  manager.requestSerializer = [AFJSONRequestSerializer serializer];
+
+  NSDictionary *params = @{
+    @"origin_proof" : originProof,
+    @"reference" :    @"TCKT0001",
+    @"user_token" :   storedToken
+  };
+
+  [manager POST:@"http://localhost:9292/pay" parameters:params
+        success:^(AFHTTPRequestOperation *operation, id responseObject) {
+          // The purchase was successful!
+        }
+        failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+          // Something bad happened
+        }
+  ];
+}
+```
+
+The code above, which utilizes the [AFNetworking](http://afnetworking.com/) framework, is less daunting than it seems. All it does is send the following JSON to `http://localhost:9292/pay` (where the sample backend expects purchase requests when run locally):
+
+```json
+{
+  "origin-proof":"eyJkYXRhIjoie1wiYW1vdW50XCI6OTkwMCxcImN1cnJlbmN5",
+  "reference":"TCKT0001",
+  "user_token":"c4efa3a2-3c02-4544-9259-720285788f60"
+}
+```
 
 ##The preferences view
 After having registered to pay using Klarna, users may wish to view or even alter their payment settings (for example, users may wish to switch from using a credit card to monthly invoice payments). As was the case with registration, the SDK provides a view for this purpose. Using the user token acquired during the registration process, you will be able to present your users with a preferences view.
