@@ -145,8 +145,8 @@ You will most likely have a "buy" button somewhere in your application. The code
 
 ```objective-c
 - (IBAction)onBuyPressed:(id)sender {
-  // create an origin proof, as seen in the previous section
-  NSString *originProof = [KODOriginProof generateWithAmount:4050 currency:@"SEK" userToken:storedToken];
+  // create an origin proof, as seen in the previous section (notice this is not the exact same call)
+  NSString *originProof = [KODOriginProof generateWithAmount:9900 currency:@"SEK" userToken:storedToken];
 
   // send the purchase request to the backend
   AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
