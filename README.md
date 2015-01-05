@@ -39,5 +39,4 @@ You'll need to install [CocoaPods](http://cocoapods.org) in order to properly wo
 Pull requests must include tests for their proposed fixes/functionality. We use [Kiwi](https://github.com/kiwi-bdd/Kiwi) to write our tests and you can find the tests themselves under the *KlarnaOnDemand* project in the *KlarnaOnDemandTests* folder.
 
 ## License
-
 Klarna on Demand is available under the Apache 2.0 license. See the [LICENSE](./LICENSE) file for more info.

@@ -104,15 +104,13 @@ Building upon the code sample from the previous section, consider the following 
 
 As you can see, your first order of business will usually be to dismiss the registration view upon any of the events occurring. Then, depending on the event, you will want to take further action such as storing the user token or displaying an error message.
 
-You should also declare that your view controller implements the protocol by writing something along the following lines:
+You should also declare that your view controller implements the protocol by declaring it in the following fashion:
 
 ```objective-c
-@interface MainViewController : UIViewController<KODRegistrationViewControllerDelegate, ...>
+@interface MainViewController : UIViewController<KODRegistrationViewControllerDelegate>
 // Various interface definitions
 @end
 ```
-
-As hinted above, the KODRegistrationViewControllerDelegate may not be the only protocol that your view controller adheres to.
 
 <a name="when_to_show_registration"></a>
 ###When should you show the registration view?
@@ -148,7 +146,7 @@ You will most likely have a "buy" button somewhere in your application. The code
 ```objective-c
 - (IBAction)onBuyPressed:(id)sender {
   // create an origin proof, as seen in the previous section
-  NSString *originProof = [KODOriginProof generateWithAmount:9900 currency:@"SEK" userToken:storedToken];
+  NSString *originProof = [KODOriginProof generateWithAmount:4050 currency:@"SEK" userToken:storedToken];
 
   // send the purchase request to the backend
   AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
@@ -175,11 +173,13 @@ The code above, which utilizes the [AFNetworking](http://afnetworking.com/) fram
 
 ```json
 {
-  "origin-proof":"eyJkYXRhIjoie1wiYW1vdW50XCI6OTkwMCxcImN1cnJlbmN5",
+  "origin_proof":"eyJkYXRhIjoie1wiYW1vdW50XCI6OTkwMCxcImN1cnJlbmN5",
   "reference":"TCKT0001",
   "user_token":"c4efa3a2-3c02-4544-9259-720285788f60"
 }
 ```
+
+This JSON contains the data required for the sample backend to know which purchase request to issue. The `reference` identifies the item to purchase, the `user_token` identifies the user for which to perform the purchase and the `origin_proof` proves that the request originated from the user's device.
 
 Remember that if you try this out for yourself, your origin proof and user token will obviously be different. Also note the placeholder comments in the "success" and "failure" blocks above, where you will most likely want to notify the user of the purchase attempt's outcome.
 
@@ -188,7 +188,7 @@ This is really all there is to performing a purchase, though as previously menti
 ##The preferences view
 After having registered to pay using Klarna, users may wish to view or even alter their payment settings (for example, users may wish to switch from using a credit card to monthly invoice payments). As was the case with registration, the SDK provides a view for this purpose. Using the user token acquired during the registration process, you will be able to present your users with a preferences view.
 
-**Note:** It is important to point out that the preferences view will not function properly without network access.
+**Note:** It is important to point out that the preferences view will not function properly without network access. Also, a user's token will remain constant regardless of any preference changes.
 
 ###Showing the view
 It is good practice to allow users to access the preferences view on demand. Let's see how to set up a button that launches the preferences view.
