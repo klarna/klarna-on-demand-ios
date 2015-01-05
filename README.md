@@ -1,4 +1,4 @@
-# Klarna On Demand
+# Klarna on Demand
 
 [![Build Status](https://travis-ci.org/klarna/klarna-on-demand-ios.svg?branch=master)](https://travis-ci.org/klarna/klarna-on-demand-ios)
 [![Version](https://img.shields.io/cocoapods/v/Klarna-on-Demand.svg?style=flat)](http://cocoadocs.org/docsets/Klarna-on-Demand)
@@ -38,11 +38,6 @@ You'll need to install [CocoaPods](http://cocoapods.org) in order to properly wo
 ### Tests
 Pull requests must include tests for their proposed fixes/functionality. We use [Kiwi](https://github.com/kiwi-bdd/Kiwi) to write our tests and you can find the tests themselves under the *KlarnaOnDemand* project in the *KlarnaOnDemandTests* folder.
 
-
-## Author
-
-Klarna
-
 ## License
 
-KlarnaOnDemand is available under the Apache 2.0 license. See the [LICENSE](./LICENSE) file for more info.
+Klarna on Demand is available under the Apache 2.0 license. See the [LICENSE](./LICENSE) file for more info.
