@@ -30,7 +30,7 @@ describe(@".registrationUrl", ^{
     [[registrationUrl should] containString:@"locale=sv"];
   });
   
-  it(@"should include the public key in the reigstration url", ^{
+  it(@"should include the public key in registration url", ^{
     [[NSBundle mainBundle] stub:@selector(bundleIdentifier) andReturn:@"bundle_identifier"];
     [[KODCrypto sharedKODCrypto] stub:@selector(publicKeyBase64Str) andReturn:@"skadoo_public_key"];
     
@@ -38,7 +38,7 @@ describe(@".registrationUrl", ^{
     [[registrationUrl should] containString:@"public_key=skadoo_public_key"];
   });
   
-  it(@"should include the api key in the registration url", ^{
+  it(@"should include the api key in registration url", ^{
     NSString *registrationUrl = [KODUrl registrationUrl].absoluteString;
     [[registrationUrl should] containString: [NSString stringWithFormat:@"api_key=%@",[KODContext getApiKey]]];
   });
