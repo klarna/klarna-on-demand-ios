@@ -34,7 +34,7 @@ We recommend setting your API key in your AppDelegate in the manner shown below:
 ##The registration view
 Users must go through a quick registration process in order to pay using Klarna. To make this process as simple as possible, the SDK provides a registration view that you should present to your users. Once the registration process is complete, you will receive a token that will allow you to receive payments from the user.
 
-**Note:** It is important to point out that the registration view will not function properly without network access.
+**Note:** It is important to point out that the registration view will not function properly without network access, and that it does not currently support a landscape orientation.
 
 ###Showing the view
 For the sake of this example, we will assume we have a button that launches the registration view (we will cover a better way to handle this [later](#when_to_show_registration)).
@@ -188,7 +188,7 @@ This is really all there is to performing a purchase, though as previously menti
 ##The preferences view
 After having registered to pay using Klarna, users may wish to view or even alter their payment settings (for example, users may wish to switch from using a credit card to monthly invoice payments). As was the case with registration, the SDK provides a view for this purpose. Using the user token acquired during the registration process, you will be able to present your users with a preferences view.
 
-**Note:** It is important to point out that the preferences view will not function properly without network access. Also, a user's token will remain constant regardless of any preference changes.
+**Note:** It is important to point out that the preferences view will not function properly without network access, and that it does not currently support a landscape orientation. Also, a user's token will remain constant regardless of any preference changes.
 
 ###Showing the view
 It is good practice to allow users to access the preferences view on demand. Let's see how to set up a button that launches the preferences view.
