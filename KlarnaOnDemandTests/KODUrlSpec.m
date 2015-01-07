@@ -30,31 +30,24 @@ describe(@".registrationUrl", ^{
     [[registrationUrl should] containString:@"locale=sv"];
   });
   
-  it(@"should include the public key in the reigstration url", ^{
+  it(@"should include the public key in reigstration url", ^{
     [[NSBundle mainBundle] stub:@selector(bundleIdentifier) andReturn:@"bundle_identifier"];
     [[KODCrypto sharedKODCrypto] stub:@selector(publicKeyBase64Str) andReturn:@"skadoo_public_key"];
     
     NSString *registrationUrl = [KODUrl registrationUrl].absoluteString;
     [[registrationUrl should] containString:@"public_key=skadoo_public_key"];
   });
-  
-  it(@"should include the api key in the registration url", ^{
-    NSString *registrationUrl = [KODUrl registrationUrl].absoluteString;
-    [[registrationUrl should] containString: [NSString stringWithFormat:@"api_key=%@",[KODContext getApiKey]]];
-  });
 });
 
 describe(@".preferencesUrlWithToken:", ^{
   
-  beforeEach(^{
-    [[KODContext class] stub:@selector(getApiKey) andReturn:@"test_skadoo"];
-  });
-
   let(token, ^id{
     return @"my_token";
   });
   
   it(@"should return a playground preferences url when token is for playground", ^{
+    [[KODContext class] stub:@selector(getApiKey) andReturn:@"test_skadoo"];
+    
     NSString *preferencesUrl = [KODUrl preferencesUrlWithToken:token].absoluteString;
     NSString *expectedPrefix = [NSString stringWithFormat:@"%@%@%@",@"https://inapp.playground.klarna.com/users/", token, @"/preferences"];
     [[theValue([preferencesUrl hasPrefix:expectedPrefix]) should] equal:theValue(YES)];
@@ -69,16 +62,13 @@ describe(@".preferencesUrlWithToken:", ^{
   });
   
   it(@"should return a url with Swedish locale when locale is Swedish", ^{
+    [[KODContext class] stub:@selector(getApiKey) andReturn:@"skadoo"];
     [[NSBundle mainBundle] stub:@selector(preferredLocalizations) andReturn:@[@"sv"]];
     
     NSString *preferencesUrl = [KODUrl preferencesUrlWithToken:token].absoluteString;
     [[preferencesUrl should] containString:@"locale=sv"];
   });
   
-  it(@"should include the api key in the preferences url", ^{
-    NSString *preferencesUrl = [KODUrl preferencesUrlWithToken:token].absoluteString;
-    [[preferencesUrl should] containString: [NSString stringWithFormat:@"api_key=%@",[KODContext getApiKey]]];
-  });
 });
 
 SPEC_END
