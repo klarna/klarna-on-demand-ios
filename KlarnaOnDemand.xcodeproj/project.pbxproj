@@ -236,23 +236,23 @@
 				C954ABCD1A34950300574C11 /* KOD.bundle */,
 				C90D1C831A24CD2800016FE4 /* KODContext.h */,
 				C90D1C841A24CD2800016FE4 /* KODContext.m */,
+				C9E7F2401A3F45170005205B /* KODCrypto.h */,
+				C9E7F2411A3F45170005205B /* KODCrypto.m */,
 				C954ABA51A345B5E00574C11 /* KODLocalization.h */,
 				C954ABA61A345B5E00574C11 /* KODLocalization.m */,
+				C9E7F2431A3F4A410005205B /* KODOriginProof.h */,
+				C9E7F2441A3F4A410005205B /* KODOriginProof.m */,
 				46D37ABB1A374A6500E6AC7A /* KODPreferencesViewController.h */,
 				46D37ABC1A374A6500E6AC7A /* KODPreferencesViewController.m */,
-				C90D1C851A24CD2800016FE4 /* KODRegistrationViewController.h */,
-				C90D1C861A24CD2800016FE4 /* KODRegistrationViewController.m */,
 				467F0ED81A2C696100A76845 /* KODRegistrationResult.h */,
 				467F0ED91A2C696100A76845 /* KODRegistrationResult.m */,
+				C90D1C851A24CD2800016FE4 /* KODRegistrationViewController.h */,
+				C90D1C861A24CD2800016FE4 /* KODRegistrationViewController.m */,
 				C90D1C871A24CD2800016FE4 /* KODUrl.h */,
 				C90D1C881A24CD2800016FE4 /* KODUrl.m */,
 				4651C4511A3DDE9200800F1A /* KODWebViewController.h */,
 				4651C4521A3DDE9200800F1A /* KODWebViewController.m */,
 				4651C40E1A38A4BC00800F1A /* KODWebViewController+Protected.h */,
-				C9E7F2401A3F45170005205B /* KODCrypto.h */,
-				C9E7F2411A3F45170005205B /* KODCrypto.m */,
-				C9E7F2431A3F4A410005205B /* KODOriginProof.h */,
-				C9E7F2441A3F4A410005205B /* KODOriginProof.m */,
 			);
 			path = KlarnaOnDemand;
 			sourceTree = "<group>";
@@ -268,8 +268,8 @@
 				4651C4441A3D93E300800F1A /* KODPreferencesViewControllerSpec.m */,
 				46872D181A2B240000707282 /* KODRegistrationViewControllerSpec.m */,
 				C903A2E01A2523B6009AE44D /* KODUrlSpec.m */,
-				C90D1C701A24CBD100016FE4 /* Supporting Files */,
 				C92CF94F1A51999C00430691 /* KODRegistrationResultSpec.m */,
+				C90D1C701A24CBD100016FE4 /* Supporting Files */,
 			);
 			path = KlarnaOnDemandTests;
 			sourceTree = "<group>";
