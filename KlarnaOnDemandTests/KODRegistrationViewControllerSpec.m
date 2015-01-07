@@ -33,10 +33,10 @@ describe(@"KODRegistrationViewControllerSpec", ^{
   });
 
   it(@"should call the delegate's .klarnaRegistrationCancelled when the dismiss button is pressed", ^{
-      [[[kodRegistrationDelegate should] receive] klarnaRegistrationCancelled:kodRegistrationController];
+    [[[kodRegistrationDelegate should] receive] klarnaRegistrationCancelled:kodRegistrationController];
 
-      [kodRegistrationController dismissButtonPressed];
-    });
+    [kodRegistrationController dismissButtonPressed];
+  });
 });
 
 SPEC_END

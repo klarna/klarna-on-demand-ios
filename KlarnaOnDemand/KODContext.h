@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
 
 /**
- * Klarna On Demand context
+ * Manages the application-wide context for Klarna on Demand payments.
  */
 @interface KODContext : NSObject
 
