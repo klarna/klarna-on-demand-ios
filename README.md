@@ -7,7 +7,7 @@
 
 Klarna on-demand allows you to integrate Klarna's payment solution in mobile apps that offer on demand services. It's a perfect fit for apps selling concert tickets, taxi rides, food pick-ups, etc.
 
-This project contains Klarna's on-demand purchase SDK for iOS, as well as a sample application utilizing the SDK.
+This project contains Klarna's on-demand purchase SDK for iOS 7+, as well as a sample application utilizing the SDK.
 
 ![It's Klarna in your App](screenshot.png)
 
