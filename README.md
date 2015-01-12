@@ -19,7 +19,7 @@ Have a look at the [integration guide](doc/integration.md) for full details on h
 ## Running the sample application
 Assuming you've cloned the repository, simply cd into the repo, open *KlarnaOnDemand.xcworkspace* and run the *KlarnaOnDemandExample* project.
 
-**Note:** While this will get the application up and running, you will not be able to successfully perform purchases without a backend for the application to interact with. You should go [here](https://github.com/klarna/sample-app-backend) and follow the instructions provided to get a sample backend running on your local machine.
+**Note:** While this will get the application up and running, you will not be able to successfully perform purchases without a backend for the application to interact with. You should go [here](https://github.com/klarna/sample-ondemand-backend) and follow the instructions provided to get a sample backend running on your local machine.
 
 ## Contributing
 You'd like to help us out? That's great! Here's what you need to do in order to contribute.
