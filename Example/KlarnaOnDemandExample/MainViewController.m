@@ -53,16 +53,16 @@ NSString *const UserTokenKey = @"user_token";
     [self performPurchaseOfItemWithReference:@"TCKT0001" usingProof:originProof];
   }
   else {
-  // Create a new Klarna registration view-controller, initialized with MainViewController as event-handler.
-  KODRegistrationViewController *registrationViewController = [[KODRegistrationViewController alloc] initWithDelegate:self];
-  
-  // Create navigation controller with Klarna registration view-controller as the root view controller.
-  UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:registrationViewController];
-  
-  // Show navigation controller (in a modal presentation).
-  [self presentViewController:navigationController
-                     animated:YES
-                   completion:nil];
+    // Create a new Klarna registration view-controller, initialized with MainViewController as event-handler.
+    KODRegistrationViewController *registrationViewController = [[KODRegistrationViewController alloc] initWithDelegate:self];
+
+    // Create navigation controller with Klarna registration view-controller as the root view controller.
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:registrationViewController];
+
+    // Show navigation controller (in a modal presentation).
+    [self presentViewController:navigationController
+                       animated:YES
+                     completion:nil];
   }
 }
 
