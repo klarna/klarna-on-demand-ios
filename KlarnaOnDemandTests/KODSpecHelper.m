@@ -42,4 +42,19 @@
   NSString *publicKey = [rsaCryptor X509FormattedPublicKey:@"bundle_identifier.publicKey.kod" error:error];
   return error.errors.count == 0 ? publicKey : nil;
 }
+
++ (NSDictionary *)originProofDictionaryFromOriginProof:(NSString *)originProof {
+  NSData *decodedriginProof = [[NSData alloc] initWithBase64EncodedString:originProof options:0];
+  return [NSJSONSerialization JSONObjectWithData: decodedriginProof
+                                         options: NSJSONReadingMutableContainers
+                                           error: nil];
+}
+
+
++ (NSDictionary *)dataDictionaryFromOriginProof:(NSString *)originProof {
+  NSDictionary *originProofDic = [self originProofDictionaryFromOriginProof:originProof];
+  
+  NSData *data = [originProofDic[@"data"] dataUsingEncoding:NSUTF8StringEncoding];
+  return [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+}
 @end
