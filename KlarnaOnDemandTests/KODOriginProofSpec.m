@@ -32,7 +32,7 @@ describe(@".generateWithAmount", ^{
     [[originProofDic[@"signature"] should] equal:@"my_signature"];
   });
   
-  it(@"should generate different id for each order", ^{
+  it(@"should generate a different id for each order", ^{
     NSString *originProofA = [KODOriginProof generateWithAmount:3600 currency:@"SEK" userToken:@"my_token"];
     NSData *decodedriginProofA = [[NSData alloc] initWithBase64EncodedString:originProofA options:0];
     NSDictionary *originProofDicA = [NSJSONSerialization JSONObjectWithData: decodedriginProofA
