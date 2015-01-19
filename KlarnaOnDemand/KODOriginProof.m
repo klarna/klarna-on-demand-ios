@@ -9,7 +9,7 @@
   NSData *data = [self jsonDataWithDictionary:@{@"amount": [NSNumber numberWithInt:amount],
                                                 @"currency": currency,
                                                 @"user_token": userToken,
-                                                @"timestamp": [self timestamp]}];
+                                                @"id": [[NSUUID UUID] UUIDString]}];
   
   NSString *signature = [[KODCrypto sharedKODCrypto] getSignatureWithData:data];
   NSAssert(signature.length > 0, @"KOD signature creation failed.");
@@ -26,24 +26,6 @@
   return [NSJSONSerialization dataWithJSONObject:dictionary
                                          options:0
                                            error:nil];
-}
-
-+ (NSString *)timestamp {
-  NSDate *now = [NSDate date];
-  return [[self iso8601DateFormatter] stringFromDate:now];
-}
-
-+ (NSDateFormatter *)iso8601DateFormatter {
-  static NSDateFormatter *iso8601DateFormatter = nil;
-  static dispatch_once_t onceToken;
-  dispatch_once(&onceToken, ^{
-    iso8601DateFormatter = [[NSDateFormatter alloc] init];
-    NSLocale *enUSPOSIXLocale = [NSLocale localeWithLocaleIdentifier:@"en_US_POSIX"];
-    [iso8601DateFormatter setLocale:enUSPOSIXLocale];
-    [iso8601DateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssZZZZZ"];
-  });
-  
-  return iso8601DateFormatter;
 }
 
 @end
