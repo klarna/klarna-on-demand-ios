@@ -154,9 +154,9 @@ Let us say a user wants to make a purchase for a total of 40.50 Euros. All that'
 which will allow you to perform the method call below:
 
 ```objective-c
-NSString *originProof = [[[KODOriginProof alloc] initWithAmount:4050
-                                                       currency:@"EUR"
-                                                      userToken:storedToken] description];
+KODOriginProof *originProof = [[KODOriginProof alloc] initWithAmount:4050
+                                                            currency:@"EUR"
+                                                           userToken:storedToken];
 ```
 
 Assume `storedToken` contains the user's token as received during registration. Note that the method expects the purchase amount to be supplied in cents. You can find the method's full documentation [here](http://cocoadocs.org/docsets/Klarna-on-Demand/0.1.2/Classes/KODOriginProof.html#//api/name/generateWithAmount:currency:userToken:).
@@ -169,14 +169,16 @@ You will most likely have a "buy" button somewhere in your application. The code
 ```objective-c
 - (IBAction)onBuyPressed:(id)sender {
   // create an origin proof, as seen in the previous section (notice this is not the exact same call)
-  NSString *originProof = [KODOriginProof generateWithAmount:9900 currency:@"SEK" userToken:storedToken];
+  KODOriginProof *originProof = [[KODOriginProof alloc] initWithAmount:9900
+                                                              currency:@"SEK"
+                                                             userToken:storedToken];
 
   // send the purchase request to the backend
   AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
   manager.requestSerializer = [AFJSONRequestSerializer serializer];
 
   NSDictionary *params = @{
-    @"origin_proof" : originProof,
+    @"origin_proof" : [originProof description],
     @"reference" :    @"TCKT0001",
     @"user_token" :   storedToken
   };
@@ -202,7 +204,7 @@ The code above, which utilizes the [AFNetworking](http://afnetworking.com/) fram
 }
 ```
 
-This JSON contains the data required for the sample backend to know which purchase request to issue. The `reference` identifies the item to purchase, the `user_token` identifies the user for which to perform the purchase and the `origin_proof` proves that the request originated from the user's device.
+This JSON contains the data required for the sample backend to know which purchase request to issue. The `reference` identifies the item to purchase, the `user_token` identifies the user for which to perform the purchase and the `origin_proof` proves that the request originated from the user's device. Note how we sent a string representation of `originProof` by calling its `description` method.
 
 Remember that if you try this out for yourself, your origin proof and user token will obviously be different. Also note the placeholder comments in the "success" and "failure" blocks above, where you will most likely want to notify the user of the purchase attempt's outcome.
 
