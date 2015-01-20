@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "Klarna-on-Demand"
-  s.version          = "0.1.4"
+  s.version          = "0.1.5"
   s.summary          = "SDK for Klarna's on-demand purchase service."
   s.description      = <<-DESC
                           Klarna on-demand allows you to integrate Klarna's payment solution in mobile apps that offer on demand services.
