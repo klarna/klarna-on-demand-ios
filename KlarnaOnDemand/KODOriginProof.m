@@ -9,6 +9,7 @@
 @property(strong, nonatomic) NSString *currency;
 @property(strong, nonatomic) NSString *userToken;
 @property(strong, nonatomic) NSString *uuid;
+@property(strong, nonatomic) NSString *originProofBase64Str;
 
 @end
 
@@ -21,6 +22,7 @@
     self.currency = currency;
     self.userToken = userToken;
     self.uuid = [[NSUUID UUID] UUIDString];
+    self.originProofBase64Str = [self generateBase64Str];
   }
   return self;
 }
@@ -31,6 +33,10 @@
 }
 
 - (NSString *)description {
+  return self.originProofBase64Str;
+}
+
+- (NSString *)generateBase64Str {
   NSData *data = [self jsonDataWithDictionary:@{@"amount":[NSNumber numberWithInt: self.amount],
                                                 @"currency":self.currency,
                                                 @"user_token":self.userToken,
@@ -43,7 +49,7 @@
                                 @"signature": signature};
   
   NSString *base64EncodedOriginProof = [[self jsonDataWithDictionary:originProof] base64EncodedString];
-
+  
   return base64EncodedOriginProof;
 }
 

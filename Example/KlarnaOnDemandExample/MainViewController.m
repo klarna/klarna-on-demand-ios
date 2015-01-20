@@ -13,21 +13,21 @@ NSString *const UserTokenKey = @"user_token";
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-
+  
   [self initializeUIElements];
 }
 
-- (void)performPurchaseOfItemWithReference:(NSString *)reference usingProof:(NSString *)originProof {
+- (void)performPurchaseOfItemWithReference:(NSString *)reference withOriginProof:(KODOriginProof *)originProof {
   AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
   manager.requestSerializer = [AFJSONRequestSerializer serializer];
   NSString *userToken = [self getUserToken];
-
+  
   NSDictionary *params = @{
-    @"origin_proof" : originProof,
-    @"reference" :    reference,
-    @"user_token" :   userToken
-  };
-
+                           @"origin_proof" : [originProof description],
+                           @"reference" :    reference,
+                           @"user_token" :   userToken
+                           };
+  
   [manager POST:@"http://localhost:9292/pay" parameters:params
         success:^(AFHTTPRequestOperation *operation, id responseObject) {
           // show QR Code for the movie.
@@ -38,7 +38,7 @@ NSString *const UserTokenKey = @"user_token";
           NSString *errorMessage = [NSString stringWithFormat:@"%@%@", @"Failed to purchase ticket - ", error.localizedDescription];
           ALERT(errorMessage);
         }
-  ];
+   ];
 }
 
 #pragma mark Button clicks
@@ -47,20 +47,20 @@ NSString *const UserTokenKey = @"user_token";
   // if a token has been previously created
   if([self hasUserToken]) {
     // create origin proof for order.
-    NSString *originProof = [[[KODOriginProof alloc] initWithAmount:9900
-                                                           currency:@"SEK"
-                                                          userToken:[self getUserToken]] description];
-
+    KODOriginProof *originProof = [[KODOriginProof alloc] initWithAmount:9900
+                                                                currency:@"SEK"
+                                                               userToken:[self getUserToken]];
+    
     // send order request to app-server.
-    [self performPurchaseOfItemWithReference:@"TCKT0001" usingProof:originProof];
+    [self performPurchaseOfItemWithReference:@"TCKT0001" withOriginProof:originProof];
   }
   else {
     // Create a new Klarna registration view-controller, initialized with MainViewController as event-handler.
     KODRegistrationViewController *registrationViewController = [[KODRegistrationViewController alloc] initWithDelegate:self];
-
+    
     // Create navigation controller with Klarna registration view-controller as the root view controller.
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:registrationViewController];
-
+    
     // Show navigation controller (in a modal presentation).
     [self presentViewController:navigationController
                        animated:YES
@@ -71,10 +71,10 @@ NSString *const UserTokenKey = @"user_token";
 - (IBAction)onChangePaymentPressed:(id)sender {
   // Create a new Klarna preferences view-controller, initialized with MainViewController as the event-handler, and the user token that was saved when the user completed the registration process.
   KODPreferencesViewController *preferencesViewController = [[KODPreferencesViewController alloc] initWithDelegate:self andToken:[self getUserToken]];
-
+  
   // Create navigation controller with Klarna preferences view-controller as the root view controller.
   UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:preferencesViewController];
-
+  
   // Show navigation controller (in a modal presentation).
   [self presentViewController:navigationController
                      animated:YES
