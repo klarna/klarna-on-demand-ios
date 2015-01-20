@@ -5,15 +5,14 @@
 
 @interface KODOriginProof ()
 
-
 @property(nonatomic, assign) int amount;
 @property(strong, nonatomic) NSString *currency;
 @property(strong, nonatomic) NSString *userToken;
+@property(strong, nonatomic) NSString *uuid;
 
 @end
 
 @implementation KODOriginProof
-
 
 - (id)initWithAmount:(int)amount currency:(NSString *)currency userToken:(NSString *)userToken {
   self = [super init];
@@ -21,6 +20,7 @@
     self.amount = amount;
     self.currency = currency;
     self.userToken = userToken;
+    self.uuid = [[NSUUID UUID] UUIDString];
   }
   return self;
 }
@@ -31,10 +31,10 @@
 }
 
 - (NSString *)description {
-  NSData *data = [self jsonDataWithDictionary:@{@"amount": [NSNumber numberWithInt: self.amount],
-                                                @"currency": self.currency,
-                                                @"user_token": self.userToken,
-                                                @"id": [[NSUUID UUID] UUIDString]}];
+  NSData *data = [self jsonDataWithDictionary:@{@"amount":[NSNumber numberWithInt: self.amount],
+                                                @"currency":self.currency,
+                                                @"user_token":self.userToken,
+                                                @"id":self.uuid}];
   
   NSString *signature = [[KODCrypto sharedKODCrypto] getSignatureWithData:data];
   NSAssert(signature.length > 0, @"KOD signature creation failed.");
