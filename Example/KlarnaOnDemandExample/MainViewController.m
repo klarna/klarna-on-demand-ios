@@ -18,17 +18,17 @@ NSString *const UserTokenKey = @"user_token";
   [self updateUIElements];
 }
 
-- (void)performPurchaseOfItemWithReference:(NSString *)reference withOriginProof:(KODOriginProof *)originProof {
+- (void)performPurchaseOfItemWithReference:(NSString *)reference originProof:(KODOriginProof *)originProof {
   AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
   manager.requestSerializer = [AFJSONRequestSerializer serializer];
   NSString *userToken = [self getUserToken];
-  
+
   NSDictionary *params = @{
                            @"origin_proof" : [originProof description],
                            @"reference" :    reference,
                            @"user_token" :   userToken
                            };
-  
+
   [manager POST:@"http://localhost:9292/pay" parameters:params
         success:^(AFHTTPRequestOperation *operation, id responseObject) {
           // show QR Code for the movie.
@@ -51,9 +51,9 @@ NSString *const UserTokenKey = @"user_token";
     KODOriginProof *originProof = [[KODOriginProof alloc] initWithAmount:9900
                                                                 currency:@"SEK"
                                                                userToken:[self getUserToken]];
-    
+
     // send order request to app-server.
-    [self performPurchaseOfItemWithReference:@"TCKT0001" withOriginProof:originProof];
+    [self performPurchaseOfItemWithReference:@"TCKT0001" originProof:originProof];
   }
   else {
     // Create a new Klarna registration view-controller, initialized with MainViewController as event-handler.
@@ -72,10 +72,10 @@ NSString *const UserTokenKey = @"user_token";
 - (IBAction)onChangePaymentPressed:(id)sender {
   // Create a new Klarna preferences view-controller, initialized with MainViewController as the event-handler, and the user token that was saved when the user completed the registration process.
   KODPreferencesViewController *preferencesViewController = [[KODPreferencesViewController alloc] initWithDelegate:self andToken:[self getUserToken]];
-  
+
   // Create navigation controller with Klarna preferences view-controller as the root view controller.
   UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:preferencesViewController];
-  
+
   // Show navigation controller (in a modal presentation).
   [self presentViewController:navigationController
                      animated:YES
@@ -98,10 +98,10 @@ NSString *const UserTokenKey = @"user_token";
 - (void)klarnaRegistrationController:(KODRegistrationViewController *)controller finishedWithResult:(KODRegistrationResult *)registrationResult {
   // Dismiss Klarna registration view-controller.
   [self dismissViewControllerAnimated:YES completion:nil];
-  
+
   // Save user token for future-use, in order to identify the user.
   [self saveUserToken:registrationResult.token];
-  
+
   [self updateUIElements];
 }
 
@@ -135,7 +135,6 @@ NSString *const UserTokenKey = @"user_token";
  *  Get the token that was saved after registration finished.
  *
  *  @return A token that uniquely identifies the user, or nil of no token has been stored.
- 
  */
 - (NSString *)getUserToken {
   return [[NSUserDefaults standardUserDefaults] objectForKey:UserTokenKey];
