@@ -15,6 +15,7 @@ NSString *const UserTokenKey = @"user_token";
   [super viewDidLoad];
 
   [self initializeUIElements];
+  [self updateUIElements];
 }
 
 - (void)performPurchaseOfItemWithReference:(NSString *)reference usingProof:(NSString *)originProof {
@@ -99,8 +100,7 @@ NSString *const UserTokenKey = @"user_token";
   // Save user token for future-use, in order to identify the user.
   [self saveUserToken:registrationResult.token];
   
-  self.registerLabel.hidden = true;
-  self.changePaymentButton.hidden = false;
+  [self updateUIElements];
 }
 
 #pragma mark Preferences delegate
@@ -149,7 +149,9 @@ NSString *const UserTokenKey = @"user_token";
   _buyButton.titleLabel.numberOfLines = 1;
   _buyButton.titleLabel.adjustsFontSizeToFitWidth = YES;
   _buyButton.titleLabel.lineBreakMode = NSLineBreakByClipping;
-  
+}
+
+- (void)updateUIElements {
   _registerLabel.hidden = [self hasUserToken];
   _changePaymentButton.hidden = ![self hasUserToken];
   
