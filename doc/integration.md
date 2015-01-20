@@ -37,7 +37,7 @@ Users must go through a quick registration process in order to pay using Klarna.
 **Note:** It is important to point out that the registration view will not function properly without network access, and that it does not currently support a landscape orientation.
 
 ###Showing the view
-For the sake of this example, we will assume we have a button that launches the registration view (we will cover a better way to handle this [later](#when_to_show_registration)).
+For the sake of this example, assume we have a button that launches the registration view (we will cover a better approach [later](#when_to_show_registration)).
 
 First off, import the registration view's header file into your view controller:
 
