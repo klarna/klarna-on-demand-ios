@@ -10,8 +10,10 @@ describe(@".getApiKey", ^{
   
   it(@"should return the API key previously set", ^{
     [KODContext setApiKey:@"my_key"];
-    
+
     [[[KODContext getApiKey] should] equal:@"my_key"];
+
+    [KODContext setApiKey:nil];
   });
 });
 
