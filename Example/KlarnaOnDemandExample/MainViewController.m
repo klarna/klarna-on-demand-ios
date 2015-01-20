@@ -47,7 +47,9 @@ NSString *const UserTokenKey = @"user_token";
   // if a token has been previously created
   if([self hasUserToken]) {
     // create origin proof for order.
-    NSString *originProof = [KODOriginProof generateWithAmount:9900 currency:@"SEK" userToken:[self getUserToken]];
+    NSString *originProof = [[[KODOriginProof alloc] initWithAmount:9900
+                                                           currency:@"SEK"
+                                                          userToken:[self getUserToken]] description];
 
     // send order request to app-server.
     [self performPurchaseOfItemWithReference:@"TCKT0001" usingProof:originProof];

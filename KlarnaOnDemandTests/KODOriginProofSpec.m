@@ -8,7 +8,7 @@
 
 SPEC_BEGIN(KODOriginProofSpec)
 
-describe(@".generateWithAmount", ^{
+describe(@"#description", ^{
   NSString *const UUID_PATTERN = @"[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}";
   
   beforeEach(^{
@@ -17,7 +17,7 @@ describe(@".generateWithAmount", ^{
   });
   
   it(@"should return a base64 encoded json in the correct format", ^{
-    NSString *originProof = [KODOriginProof generateWithAmount:3600 currency:@"SEK" userToken:@"my_token"];
+    NSString *originProof = [[[KODOriginProof alloc] initWithAmount:3600 currency:@"SEK" userToken:@"my_token"] description];
     NSDictionary *dataDic  = [KODSpecHelper dataDictionaryFromOriginProof:originProof];
     
     [[dataDic[@"amount"] should] equal:[NSNumber numberWithInt:3600]];
@@ -30,10 +30,10 @@ describe(@".generateWithAmount", ^{
   });
   
   it(@"should generate a different id for each order", ^{
-    NSString *originProofA = [KODOriginProof generateWithAmount:3600 currency:@"SEK" userToken:@"my_token"];
+    NSString *originProofA = [[[KODOriginProof alloc] initWithAmount:3600 currency:@"SEK" userToken:@"my_token"] description];
     NSDictionary *dataDicA  = [KODSpecHelper dataDictionaryFromOriginProof:originProofA];
     
-    NSString *originProofB = [KODOriginProof generateWithAmount:3600 currency:@"SEK" userToken:@"my_token"];
+    NSString *originProofB = [[[KODOriginProof alloc] initWithAmount:3600 currency:@"SEK" userToken:@"my_token"] description];
     NSDictionary *dataDicB  = [KODSpecHelper dataDictionaryFromOriginProof:originProofB];
     
     [[dataDicA[@"id"] shouldNot] equal:dataDicB[@"id"]];

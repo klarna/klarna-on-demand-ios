@@ -133,7 +133,9 @@ Let us say a user wants to make a purchase for a total of 40.50 Euros. All that'
 which will allow you to perform the method call below:
 
 ```objective-c
-NSString *originProof = [KODOriginProof generateWithAmount:4050 currency:@"EUR" userToken:storedToken];
+NSString *originProof = [[[KODOriginProof alloc] initWithAmount:4050
+                                                       currency:@"EUR"
+                                                      userToken:storedToken] description];
 ```
 
 Assume `storedToken` contains the user's token as received during registration. Note that the method expects the purchase amount to be supplied in cents. You can find the method's full documentation [here](http://cocoadocs.org/docsets/Klarna-on-Demand/0.1.2/Classes/KODOriginProof.html#//api/name/generateWithAmount:currency:userToken:).

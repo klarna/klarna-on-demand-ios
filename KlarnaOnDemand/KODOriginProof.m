@@ -3,12 +3,37 @@
 #import <Foundation/NSJSONSerialization.h>
 #import "NSData+Base64.h"
 
+@interface KODOriginProof ()
+
+
+@property(nonatomic, assign) int amount;
+@property(strong, nonatomic) NSString *currency;
+@property(strong, nonatomic) NSString *userToken;
+
+@end
+
 @implementation KODOriginProof
 
-+ (NSString *)generateWithAmount:(int)amount currency:(NSString *)currency userToken:(NSString *)userToken {
-  NSData *data = [self jsonDataWithDictionary:@{@"amount": [NSNumber numberWithInt:amount],
-                                                @"currency": currency,
-                                                @"user_token": userToken,
+
+- (id)initWithAmount:(int)amount currency:(NSString *)currency userToken:(NSString *)userToken {
+  self = [super init];
+  if (self) {
+    self.amount = amount;
+    self.currency = currency;
+    self.userToken = userToken;
+  }
+  return self;
+}
+
+- (id)init {
+  NSAssert(NO, @"Initialize with -initWithAmount:currency:userToken");
+  return nil;
+}
+
+- (NSString *)description {
+  NSData *data = [self jsonDataWithDictionary:@{@"amount": [NSNumber numberWithInt: self.amount],
+                                                @"currency": self.currency,
+                                                @"user_token": self.userToken,
                                                 @"id": [[NSUUID UUID] UUIDString]}];
   
   NSString *signature = [[KODCrypto sharedKODCrypto] getSignatureWithData:data];
@@ -22,7 +47,7 @@
   return base64EncodedOriginProof;
 }
 
-+ (NSData *)jsonDataWithDictionary:(NSDictionary *) dictionary {
+- (NSData *)jsonDataWithDictionary:(NSDictionary *) dictionary {
   return [NSJSONSerialization dataWithJSONObject:dictionary
                                          options:0
                                            error:nil];

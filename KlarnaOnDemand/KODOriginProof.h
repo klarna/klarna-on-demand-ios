@@ -14,6 +14,13 @@
  *
  *  @return An origin proof that needs to be sent along with the purchase for it to succeed.
  */
-+ (NSString *)generateWithAmount:(int)amount currency:(NSString *)currency userToken:(NSString *)userToken;
+- (id)initWithAmount:(int)amount currency:(NSString *)currency userToken:(NSString *)userToken;
+
+/**
+ *  Generates an origin proof NString that matches the details of the purchase it will be used to verify.
+ *
+ *  @return An origin proof NString that needs to be sent along with the purchase for it to succeed.
+ */
+- (NSString *)description;
 
 @end
