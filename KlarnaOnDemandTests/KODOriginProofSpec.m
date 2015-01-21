@@ -13,7 +13,7 @@ describe(@".generateWithAmount", ^{
   
   beforeEach(^{
     [[NSBundle mainBundle] stub:@selector(bundleIdentifier) andReturn:@"bundle_identifier"];
-    [[KODCrypto sharedKODCrypto] stub:@selector(getSignatureWithData:) andReturn:@"my_signature"];
+    [[KODCrypto sharedKODCrypto] stub:@selector(signWithData:) andReturn:@"my_signature"];
   });
   
   it(@"should return a base64 encoded json in the correct format", ^{

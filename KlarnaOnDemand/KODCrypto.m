@@ -48,7 +48,7 @@ NSString *const KodTag = @"kod";
 }
 
 
-- (NSString *)getSignatureWithData:(NSData *)plainData {
+- (NSString *)signWithData:(NSData *)plainData {
   
   BDRSACryptor *RSACryptor = [[BDRSACryptor alloc] init];
   BDError *error = [[BDError alloc] init];
