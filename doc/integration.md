@@ -159,7 +159,7 @@ KODOriginProof *originProof = [[KODOriginProof alloc] initWithAmount:4050
                                                            userToken:storedToken];
 ```
 
-Assume `storedToken` contains the user's token as received during registration. Note that the method expects the purchase amount to be supplied in cents. You can find the method's full documentation [here](http://cocoadocs.org/docsets/Klarna-on-Demand/0.1.2/Classes/KODOriginProof.html#//api/name/generateWithAmount:currency:userToken:).
+Assume `storedToken` contains the user's token as received during registration. Note that the method expects the purchase amount to be supplied in cents. You can find the method's full documentation [here](http://cocoadocs.org/docsets/Klarna-on-Demand/0.1.5/Classes/KODOriginProof.html#//api/name/initWithAmount:currency:userToken:).
 
 ###Purchase example
 We now know how to generate the signature required for a purchase to go through. Let us see how to send it, along with other required information, to the sample backend.
