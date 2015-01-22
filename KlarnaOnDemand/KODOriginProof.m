@@ -42,7 +42,7 @@
                                                 @"user_token":self.userToken,
                                                 @"id":self.uuid}];
 
-  NSString *signature = [[KODCrypto sharedKODCrypto] getSignatureWithData:data];
+  NSString *signature = [[KODCrypto sharedKODCrypto] signWithData:data];
   NSAssert(signature.length > 0, @"KOD signature creation failed.");
 
   NSDictionary *originProof = @{@"data": [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding],

@@ -6,6 +6,6 @@
 
 + (id)sharedKODCrypto;
 
-- (NSString *)getSignatureWithData:(NSData *)plainData;
+- (NSString *)signWithData:(NSData *)plainData;
 
 @end
