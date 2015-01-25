@@ -1,5 +1,6 @@
 #import "KODUrl.h"
-#import "Jockey.h"
+#import <UIKit/UIKit.h>
+#import <JockeyJS/Jockey.h>
 #import "KODContext.h"
 #import "KODLocalization.h"
 #import "KODWebViewController+Protected.h"

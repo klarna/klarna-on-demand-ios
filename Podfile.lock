@@ -20,14 +20,17 @@ PODS:
   - AFNetworking/UIKit (2.5.0):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - JockeyJS (1.0.0)
   - Kiwi (2.3.1)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
+  - JockeyJS
   - Kiwi
 
 SPEC CHECKSUMS:
   AFNetworking: 0f54cb5d16ce38c1b76948faffb8d5fb705021c7
+  JockeyJS: 506d191e00709739d87bc19c9ba9f9bc0aad3d07
   Kiwi: 73e1400209055ee9c8ba78c6012b6b642d0fb9f7
 
 COCOAPODS: 0.35.0
