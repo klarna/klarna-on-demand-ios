@@ -1,795 +1,2430 @@
-// !$*UTF8*$!
-{
-	archiveVersion = 1;
-	classes = {
-	};
-	objectVersion = 46;
-	objects = {
-
-/* Begin PBXBuildFile section */
-		4651C4541A3DDE9200800F1A /* KODWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4651C4521A3DDE9200800F1A /* KODWebViewController.m */; };
-		467F0EC21A2B6DE900A76845 /* Jockey.m in Sources */ = {isa = PBXBuildFile; fileRef = 467F0EC11A2B6DE900A76845 /* Jockey.m */; };
-		467F0EDB1A2C6AC900A76845 /* KODRegistrationResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 467F0ED91A2C696100A76845 /* KODRegistrationResult.m */; };
-		468323D91A4ACCB60030B3F1 /* KODSpecHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 466387011A480DD20013429D /* KODSpecHelper.m */; };
-		468323DA1A4ACCB60030B3F1 /* KODContextSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FC95401A278AAD00485500 /* KODContextSpec.m */; };
-		468323DB1A4ACCB60030B3F1 /* KODCryptoSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 465CF58F1A42DB9E00EC092D /* KODCryptoSpec.m */; };
-		468323DC1A4ACCB60030B3F1 /* KODOriginProofSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F25A1A405D0E0005205B /* KODOriginProofSpec.m */; };
-		468323DD1A4ACCB60030B3F1 /* KODPreferencesViewControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 4651C4441A3D93E300800F1A /* KODPreferencesViewControllerSpec.m */; };
-		468323DE1A4ACCB60030B3F1 /* KODRegistrationViewControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 46872D181A2B240000707282 /* KODRegistrationViewControllerSpec.m */; };
-		468323DF1A4ACCB60030B3F1 /* KODUrlSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C903A2E01A2523B6009AE44D /* KODUrlSpec.m */; };
-		46D37ABD1A374A6500E6AC7A /* KODPreferencesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46D37ABC1A374A6500E6AC7A /* KODPreferencesViewController.m */; };
-		C90D1C6C1A24CBD100016FE4 /* libKlarnaOnDemand.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C90D1C601A24CBD100016FE4 /* libKlarnaOnDemand.a */; };
-		C90D1C891A24CD2800016FE4 /* KODContext.m in Sources */ = {isa = PBXBuildFile; fileRef = C90D1C841A24CD2800016FE4 /* KODContext.m */; };
-		C90D1C8A1A24CD2800016FE4 /* KODRegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C90D1C861A24CD2800016FE4 /* KODRegistrationViewController.m */; };
-		C90D1C8B1A24CD2800016FE4 /* KODUrl.m in Sources */ = {isa = PBXBuildFile; fileRef = C90D1C881A24CD2800016FE4 /* KODUrl.m */; };
-		C92CF9501A51999C00430691 /* KODRegistrationResultSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C92CF94F1A51999C00430691 /* KODRegistrationResultSpec.m */; };
-		C954ABA71A345B5E00574C11 /* KODLocalization.m in Sources */ = {isa = PBXBuildFile; fileRef = C954ABA61A345B5E00574C11 /* KODLocalization.m */; };
-		C954ABE11A35AB6300574C11 /* KOD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C954ABCD1A34950300574C11 /* KOD.bundle */; };
-		C9E7F22E1A3F3FEA0005205B /* BDAESCBC256Cryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F1FB1A3F3FEA0005205B /* BDAESCBC256Cryptor.m */; };
-		C9E7F22F1A3F3FEA0005205B /* BDAESCryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F1FD1A3F3FEA0005205B /* BDAESCryptor.m */; };
-		C9E7F2301A3F3FEA0005205B /* BDCryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F1FF1A3F3FEA0005205B /* BDCryptor.m */; };
-		C9E7F2311A3F3FEA0005205B /* BDCryptorError.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2011A3F3FEA0005205B /* BDCryptorError.m */; };
-		C9E7F2321A3F3FEA0005205B /* BDRSACryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2031A3F3FEA0005205B /* BDRSACryptor.m */; };
-		C9E7F2331A3F3FEA0005205B /* BDRSACryptorKeyPair.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2051A3F3FEA0005205B /* BDRSACryptorKeyPair.m */; };
-		C9E7F2341A3F3FEA0005205B /* BDSHA512Cryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2071A3F3FEA0005205B /* BDSHA512Cryptor.m */; };
-		C9E7F2351A3F3FEA0005205B /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F20C1A3F3FEA0005205B /* NSData+Base64.m */; };
-		C9E7F2361A3F3FEA0005205B /* NSString+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F20E1A3F3FEA0005205B /* NSString+Base64.m */; };
-		C9E7F2371A3F3FEA0005205B /* BDJSONError.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2151A3F3FEA0005205B /* BDJSONError.m */; };
-		C9E7F2381A3F3FEA0005205B /* NSArray+BDJSONSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2171A3F3FEA0005205B /* NSArray+BDJSONSerialization.m */; };
-		C9E7F2391A3F3FEA0005205B /* NSData+BDJSONSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2191A3F3FEA0005205B /* NSData+BDJSONSerialization.m */; };
-		C9E7F23A1A3F3FEA0005205B /* NSDictionary+BDJSONSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F21B1A3F3FEA0005205B /* NSDictionary+BDJSONSerialization.m */; };
-		C9E7F23B1A3F3FEA0005205B /* NSDictionary+BDParseJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F21D1A3F3FEA0005205B /* NSDictionary+BDParseJSON.m */; };
-		C9E7F23C1A3F3FEA0005205B /* NSObject+BDJSONSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F21F1A3F3FEA0005205B /* NSObject+BDJSONSerialization.m */; };
-		C9E7F23D1A3F3FEA0005205B /* NSString+BDJSONSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2211A3F3FEA0005205B /* NSString+BDJSONSerialization.m */; };
-		C9E7F23E1A3F3FEA0005205B /* NSString+BDUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2241A3F3FEA0005205B /* NSString+BDUtilities.m */; };
-		C9E7F23F1A3F3FEA0005205B /* BDError.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2271A3F3FEA0005205B /* BDError.m */; };
-		C9E7F2421A3F45170005205B /* KODCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2411A3F45170005205B /* KODCrypto.m */; };
-		C9E7F2451A3F4A410005205B /* KODOriginProof.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2441A3F4A410005205B /* KODOriginProof.m */; };
-		E4FC8287776950D3A8F3BE8B /* libPods-KlarnaOnDemandTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 443BC01E8B6591BA34CE5172 /* libPods-KlarnaOnDemandTests.a */; };
-/* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		C90D1C6D1A24CBD100016FE4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C90D1C581A24CBD100016FE4 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C90D1C5F1A24CBD100016FE4;
-			remoteInfo = KlarnaOnDemand;
-		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		C90D1C5E1A24CBD100016FE4 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "include/$(PRODUCT_NAME)";
-			dstSubfolderSpec = 16;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
-/* Begin PBXFileReference section */
-		443BC01E8B6591BA34CE5172 /* libPods-KlarnaOnDemandTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KlarnaOnDemandTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		460FDB621A4974A200CF327B /* libPods-KlarnaOnDemandTests-Kiwi.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-KlarnaOnDemandTests-Kiwi.a"; path = "Pods/build/Debug-iphoneos/libPods-KlarnaOnDemandTests-Kiwi.a"; sourceTree = "<group>"; };
-		4651C40E1A38A4BC00800F1A /* KODWebViewController+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "KODWebViewController+Protected.h"; path = "KlarnaOnDemand/KODWebViewController+Protected.h"; sourceTree = SOURCE_ROOT; };
-		4651C4441A3D93E300800F1A /* KODPreferencesViewControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KODPreferencesViewControllerSpec.m; sourceTree = "<group>"; };
-		4651C4511A3DDE9200800F1A /* KODWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = KODWebViewController.h; path = ../KlarnaOnDemand/KODWebViewController.h; sourceTree = "<group>"; };
-		4651C4521A3DDE9200800F1A /* KODWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = KODWebViewController.m; path = ../KlarnaOnDemand/KODWebViewController.m; sourceTree = "<group>"; };
-		465CF58F1A42DB9E00EC092D /* KODCryptoSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KODCryptoSpec.m; sourceTree = "<group>"; };
-		466387001A480DD20013429D /* KODSpecHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KODSpecHelper.h; sourceTree = "<group>"; };
-		466387011A480DD20013429D /* KODSpecHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KODSpecHelper.m; sourceTree = "<group>"; };
-		467F0EC01A2B6DE900A76845 /* Jockey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Jockey.h; path = 3rdParty/JockeyJS/Jockey.h; sourceTree = "<group>"; };
-		467F0EC11A2B6DE900A76845 /* Jockey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Jockey.m; path = 3rdParty/JockeyJS/Jockey.m; sourceTree = "<group>"; };
-		467F0ED81A2C696100A76845 /* KODRegistrationResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KODRegistrationResult.h; path = KlarnaOnDemand/KODRegistrationResult.h; sourceTree = SOURCE_ROOT; };
-		467F0ED91A2C696100A76845 /* KODRegistrationResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KODRegistrationResult.m; path = KlarnaOnDemand/KODRegistrationResult.m; sourceTree = SOURCE_ROOT; };
-		46872D181A2B240000707282 /* KODRegistrationViewControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KODRegistrationViewControllerSpec.m; sourceTree = "<group>"; };
-		46D37ABB1A374A6500E6AC7A /* KODPreferencesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KODPreferencesViewController.h; path = ../KlarnaOnDemand/KODPreferencesViewController.h; sourceTree = "<group>"; };
-		46D37ABC1A374A6500E6AC7A /* KODPreferencesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KODPreferencesViewController.m; path = ../KlarnaOnDemand/KODPreferencesViewController.m; sourceTree = "<group>"; };
-		787D5A12488247D4C7B5FC9E /* Pods-KlarnaOnDemandTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KlarnaOnDemandTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KlarnaOnDemandTests/Pods-KlarnaOnDemandTests.debug.xcconfig"; sourceTree = "<group>"; };
-		8A6713AF3B794D95017D61E6 /* Pods-KlarnaOnDemandTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KlarnaOnDemandTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KlarnaOnDemandTests/Pods-KlarnaOnDemandTests.release.xcconfig"; sourceTree = "<group>"; };
-		C903A2DD1A2523A8009AE44D /* KlarnaOnDemandTests.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KlarnaOnDemandTests.pch; sourceTree = "<group>"; };
-		C903A2DE1A2523A8009AE44D /* KlarnaOnDemandTests.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = KlarnaOnDemandTests.plist; sourceTree = "<group>"; };
-		C903A2E01A2523B6009AE44D /* KODUrlSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KODUrlSpec.m; sourceTree = "<group>"; };
-		C90D1C601A24CBD100016FE4 /* libKlarnaOnDemand.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libKlarnaOnDemand.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		C90D1C6B1A24CBD100016FE4 /* KlarnaOnDemandTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KlarnaOnDemandTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C90D1C831A24CD2800016FE4 /* KODContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KODContext.h; sourceTree = "<group>"; };
-		C90D1C841A24CD2800016FE4 /* KODContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KODContext.m; sourceTree = "<group>"; };
-		C90D1C851A24CD2800016FE4 /* KODRegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KODRegistrationViewController.h; sourceTree = "<group>"; };
-		C90D1C861A24CD2800016FE4 /* KODRegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KODRegistrationViewController.m; sourceTree = "<group>"; };
-		C90D1C871A24CD2800016FE4 /* KODUrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KODUrl.h; sourceTree = "<group>"; };
-		C90D1C881A24CD2800016FE4 /* KODUrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KODUrl.m; sourceTree = "<group>"; };
-		C92CF94F1A51999C00430691 /* KODRegistrationResultSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KODRegistrationResultSpec.m; sourceTree = "<group>"; };
-		C954ABA51A345B5E00574C11 /* KODLocalization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KODLocalization.h; path = KlarnaOnDemand/KODLocalization.h; sourceTree = SOURCE_ROOT; };
-		C954ABA61A345B5E00574C11 /* KODLocalization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KODLocalization.m; path = KlarnaOnDemand/KODLocalization.m; sourceTree = SOURCE_ROOT; };
-		C954ABCD1A34950300574C11 /* KOD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = KOD.bundle; path = KlarnaOnDemand/KOD.bundle; sourceTree = SOURCE_ROOT; };
-		C9E7F1FA1A3F3FEA0005205B /* BDAESCBC256Cryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDAESCBC256Cryptor.h; sourceTree = "<group>"; };
-		C9E7F1FB1A3F3FEA0005205B /* BDAESCBC256Cryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDAESCBC256Cryptor.m; sourceTree = "<group>"; };
-		C9E7F1FC1A3F3FEA0005205B /* BDAESCryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDAESCryptor.h; sourceTree = "<group>"; };
-		C9E7F1FD1A3F3FEA0005205B /* BDAESCryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDAESCryptor.m; sourceTree = "<group>"; };
-		C9E7F1FE1A3F3FEA0005205B /* BDCryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDCryptor.h; sourceTree = "<group>"; };
-		C9E7F1FF1A3F3FEA0005205B /* BDCryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDCryptor.m; sourceTree = "<group>"; };
-		C9E7F2001A3F3FEA0005205B /* BDCryptorError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDCryptorError.h; sourceTree = "<group>"; };
-		C9E7F2011A3F3FEA0005205B /* BDCryptorError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDCryptorError.m; sourceTree = "<group>"; };
-		C9E7F2021A3F3FEA0005205B /* BDRSACryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDRSACryptor.h; sourceTree = "<group>"; };
-		C9E7F2031A3F3FEA0005205B /* BDRSACryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDRSACryptor.m; sourceTree = "<group>"; };
-		C9E7F2041A3F3FEA0005205B /* BDRSACryptorKeyPair.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDRSACryptorKeyPair.h; sourceTree = "<group>"; };
-		C9E7F2051A3F3FEA0005205B /* BDRSACryptorKeyPair.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDRSACryptorKeyPair.m; sourceTree = "<group>"; };
-		C9E7F2061A3F3FEA0005205B /* BDSHA512Cryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSHA512Cryptor.h; sourceTree = "<group>"; };
-		C9E7F2071A3F3FEA0005205B /* BDSHA512Cryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDSHA512Cryptor.m; sourceTree = "<group>"; };
-		C9E7F2081A3F3FEA0005205B /* Crypto-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Crypto-Prefix.pch"; sourceTree = "<group>"; };
-		C9E7F20C1A3F3FEA0005205B /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
-		C9E7F20D1A3F3FEA0005205B /* NSString+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Base64.h"; sourceTree = "<group>"; };
-		C9E7F20E1A3F3FEA0005205B /* NSString+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Base64.m"; sourceTree = "<group>"; };
-		C9E7F2131A3F3FEA0005205B /* BDJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDJSON.h; sourceTree = "<group>"; };
-		C9E7F2141A3F3FEA0005205B /* BDJSONError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDJSONError.h; sourceTree = "<group>"; };
-		C9E7F2151A3F3FEA0005205B /* BDJSONError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDJSONError.m; sourceTree = "<group>"; };
-		C9E7F2161A3F3FEA0005205B /* NSArray+BDJSONSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+BDJSONSerialization.h"; sourceTree = "<group>"; };
-		C9E7F2171A3F3FEA0005205B /* NSArray+BDJSONSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+BDJSONSerialization.m"; sourceTree = "<group>"; };
-		C9E7F2181A3F3FEA0005205B /* NSData+BDJSONSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+BDJSONSerialization.h"; sourceTree = "<group>"; };
-		C9E7F2191A3F3FEA0005205B /* NSData+BDJSONSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+BDJSONSerialization.m"; sourceTree = "<group>"; };
-		C9E7F21A1A3F3FEA0005205B /* NSDictionary+BDJSONSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+BDJSONSerialization.h"; sourceTree = "<group>"; };
-		C9E7F21B1A3F3FEA0005205B /* NSDictionary+BDJSONSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+BDJSONSerialization.m"; sourceTree = "<group>"; };
-		C9E7F21C1A3F3FEA0005205B /* NSDictionary+BDParseJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+BDParseJSON.h"; sourceTree = "<group>"; };
-		C9E7F21D1A3F3FEA0005205B /* NSDictionary+BDParseJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+BDParseJSON.m"; sourceTree = "<group>"; };
-		C9E7F21E1A3F3FEA0005205B /* NSObject+BDJSONSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+BDJSONSerialization.h"; sourceTree = "<group>"; };
-		C9E7F21F1A3F3FEA0005205B /* NSObject+BDJSONSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+BDJSONSerialization.m"; sourceTree = "<group>"; };
-		C9E7F2201A3F3FEA0005205B /* NSString+BDJSONSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+BDJSONSerialization.h"; sourceTree = "<group>"; };
-		C9E7F2211A3F3FEA0005205B /* NSString+BDJSONSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+BDJSONSerialization.m"; sourceTree = "<group>"; };
-		C9E7F2231A3F3FEA0005205B /* NSString+BDUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+BDUtilities.h"; sourceTree = "<group>"; };
-		C9E7F2241A3F3FEA0005205B /* NSString+BDUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+BDUtilities.m"; sourceTree = "<group>"; };
-		C9E7F2261A3F3FEA0005205B /* BDError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDError.h; sourceTree = "<group>"; };
-		C9E7F2271A3F3FEA0005205B /* BDError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDError.m; sourceTree = "<group>"; };
-		C9E7F22D1A3F3FEA0005205B /* BDLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDLog.h; sourceTree = "<group>"; };
-		C9E7F2401A3F45170005205B /* KODCrypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KODCrypto.h; path = KlarnaOnDemand/KODCrypto.h; sourceTree = SOURCE_ROOT; };
-		C9E7F2411A3F45170005205B /* KODCrypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KODCrypto.m; path = KlarnaOnDemand/KODCrypto.m; sourceTree = SOURCE_ROOT; };
-		C9E7F2431A3F4A410005205B /* KODOriginProof.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KODOriginProof.h; path = KlarnaOnDemand/KODOriginProof.h; sourceTree = SOURCE_ROOT; };
-		C9E7F2441A3F4A410005205B /* KODOriginProof.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KODOriginProof.m; path = KlarnaOnDemand/KODOriginProof.m; sourceTree = SOURCE_ROOT; };
-		C9E7F25A1A405D0E0005205B /* KODOriginProofSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KODOriginProofSpec.m; sourceTree = "<group>"; };
-		C9E7F2621A4086980005205B /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
-		C9FC95401A278AAD00485500 /* KODContextSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KODContextSpec.m; sourceTree = "<group>"; };
-		D1FE0E1CBCA1595B5EFACB69 /* libPods-KlarnaOnDemandTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KlarnaOnDemandTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-/* End PBXFileReference section */
-
-/* Begin PBXFrameworksBuildPhase section */
-		C90D1C5D1A24CBD100016FE4 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C90D1C681A24CBD100016FE4 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C90D1C6C1A24CBD100016FE4 /* libKlarnaOnDemand.a in Frameworks */,
-				E4FC8287776950D3A8F3BE8B /* libPods-KlarnaOnDemandTests.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXFrameworksBuildPhase section */
-
-/* Begin PBXGroup section */
-		46872DF11A2B6C0900707282 /* 3rdParty */ = {
-			isa = PBXGroup;
-			children = (
-				C9E7F1F81A3F3FEA0005205B /* Crypto */,
-				46872DF21A2B6C1200707282 /* JockeyJS */,
-			);
-			name = 3rdParty;
-			sourceTree = "<group>";
-		};
-		46872DF21A2B6C1200707282 /* JockeyJS */ = {
-			isa = PBXGroup;
-			children = (
-				467F0EC01A2B6DE900A76845 /* Jockey.h */,
-				467F0EC11A2B6DE900A76845 /* Jockey.m */,
-			);
-			name = JockeyJS;
-			sourceTree = "<group>";
-		};
-		6F923A30568F1C8DCBD1121A /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				787D5A12488247D4C7B5FC9E /* Pods-KlarnaOnDemandTests.debug.xcconfig */,
-				8A6713AF3B794D95017D61E6 /* Pods-KlarnaOnDemandTests.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		C1E35C557067C2EA633DBCBD /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				460FDB621A4974A200CF327B /* libPods-KlarnaOnDemandTests-Kiwi.a */,
-				D1FE0E1CBCA1595B5EFACB69 /* libPods-KlarnaOnDemandTests.a */,
-				443BC01E8B6591BA34CE5172 /* libPods-KlarnaOnDemandTests.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		C90D1C571A24CBD100016FE4 = {
-			isa = PBXGroup;
-			children = (
-				46872DF11A2B6C0900707282 /* 3rdParty */,
-				C90D1C621A24CBD100016FE4 /* KlarnaOnDemand */,
-				C90D1C6F1A24CBD100016FE4 /* KlarnaOnDemandTests */,
-				C90D1C611A24CBD100016FE4 /* Products */,
-				6F923A30568F1C8DCBD1121A /* Pods */,
-				C1E35C557067C2EA633DBCBD /* Frameworks */,
-			);
-			sourceTree = "<group>";
-		};
-		C90D1C611A24CBD100016FE4 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				C90D1C601A24CBD100016FE4 /* libKlarnaOnDemand.a */,
-				C90D1C6B1A24CBD100016FE4 /* KlarnaOnDemandTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		C90D1C621A24CBD100016FE4 /* KlarnaOnDemand */ = {
-			isa = PBXGroup;
-			children = (
-				C954ABCD1A34950300574C11 /* KOD.bundle */,
-				C90D1C831A24CD2800016FE4 /* KODContext.h */,
-				C90D1C841A24CD2800016FE4 /* KODContext.m */,
-				C9E7F2401A3F45170005205B /* KODCrypto.h */,
-				C9E7F2411A3F45170005205B /* KODCrypto.m */,
-				C954ABA51A345B5E00574C11 /* KODLocalization.h */,
-				C954ABA61A345B5E00574C11 /* KODLocalization.m */,
-				C9E7F2431A3F4A410005205B /* KODOriginProof.h */,
-				C9E7F2441A3F4A410005205B /* KODOriginProof.m */,
-				46D37ABB1A374A6500E6AC7A /* KODPreferencesViewController.h */,
-				46D37ABC1A374A6500E6AC7A /* KODPreferencesViewController.m */,
-				467F0ED81A2C696100A76845 /* KODRegistrationResult.h */,
-				467F0ED91A2C696100A76845 /* KODRegistrationResult.m */,
-				C90D1C851A24CD2800016FE4 /* KODRegistrationViewController.h */,
-				C90D1C861A24CD2800016FE4 /* KODRegistrationViewController.m */,
-				C90D1C871A24CD2800016FE4 /* KODUrl.h */,
-				C90D1C881A24CD2800016FE4 /* KODUrl.m */,
-				4651C4511A3DDE9200800F1A /* KODWebViewController.h */,
-				4651C4521A3DDE9200800F1A /* KODWebViewController.m */,
-				4651C40E1A38A4BC00800F1A /* KODWebViewController+Protected.h */,
-			);
-			path = KlarnaOnDemand;
-			sourceTree = "<group>";
-		};
-		C90D1C6F1A24CBD100016FE4 /* KlarnaOnDemandTests */ = {
-			isa = PBXGroup;
-			children = (
-				466387001A480DD20013429D /* KODSpecHelper.h */,
-				466387011A480DD20013429D /* KODSpecHelper.m */,
-				C9FC95401A278AAD00485500 /* KODContextSpec.m */,
-				465CF58F1A42DB9E00EC092D /* KODCryptoSpec.m */,
-				C9E7F25A1A405D0E0005205B /* KODOriginProofSpec.m */,
-				4651C4441A3D93E300800F1A /* KODPreferencesViewControllerSpec.m */,
-				46872D181A2B240000707282 /* KODRegistrationViewControllerSpec.m */,
-				C903A2E01A2523B6009AE44D /* KODUrlSpec.m */,
-				C92CF94F1A51999C00430691 /* KODRegistrationResultSpec.m */,
-				C90D1C701A24CBD100016FE4 /* Supporting Files */,
-			);
-			path = KlarnaOnDemandTests;
-			sourceTree = "<group>";
-		};
-		C90D1C701A24CBD100016FE4 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				C903A2DD1A2523A8009AE44D /* KlarnaOnDemandTests.pch */,
-				C903A2DE1A2523A8009AE44D /* KlarnaOnDemandTests.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		C9E7F1F81A3F3FEA0005205B /* Crypto */ = {
-			isa = PBXGroup;
-			children = (
-				C9E7F1F91A3F3FEA0005205B /* Crypto */,
-				C9E7F2081A3F3FEA0005205B /* Crypto-Prefix.pch */,
-				C9E7F2091A3F3FEA0005205B /* External */,
-				C9E7F20F1A3F3FEA0005205B /* Utilities */,
-			);
-			name = Crypto;
-			path = 3rdParty/Crypto;
-			sourceTree = "<group>";
-		};
-		C9E7F1F91A3F3FEA0005205B /* Crypto */ = {
-			isa = PBXGroup;
-			children = (
-				C9E7F1FA1A3F3FEA0005205B /* BDAESCBC256Cryptor.h */,
-				C9E7F1FB1A3F3FEA0005205B /* BDAESCBC256Cryptor.m */,
-				C9E7F1FC1A3F3FEA0005205B /* BDAESCryptor.h */,
-				C9E7F1FD1A3F3FEA0005205B /* BDAESCryptor.m */,
-				C9E7F1FE1A3F3FEA0005205B /* BDCryptor.h */,
-				C9E7F1FF1A3F3FEA0005205B /* BDCryptor.m */,
-				C9E7F2001A3F3FEA0005205B /* BDCryptorError.h */,
-				C9E7F2011A3F3FEA0005205B /* BDCryptorError.m */,
-				C9E7F2021A3F3FEA0005205B /* BDRSACryptor.h */,
-				C9E7F2031A3F3FEA0005205B /* BDRSACryptor.m */,
-				C9E7F2041A3F3FEA0005205B /* BDRSACryptorKeyPair.h */,
-				C9E7F2051A3F3FEA0005205B /* BDRSACryptorKeyPair.m */,
-				C9E7F2061A3F3FEA0005205B /* BDSHA512Cryptor.h */,
-				C9E7F2071A3F3FEA0005205B /* BDSHA512Cryptor.m */,
-			);
-			path = Crypto;
-			sourceTree = "<group>";
-		};
-		C9E7F2091A3F3FEA0005205B /* External */ = {
-			isa = PBXGroup;
-			children = (
-				C9E7F20A1A3F3FEA0005205B /* Base64 */,
-			);
-			path = External;
-			sourceTree = "<group>";
-		};
-		C9E7F20A1A3F3FEA0005205B /* Base64 */ = {
-			isa = PBXGroup;
-			children = (
-				C9E7F2621A4086980005205B /* NSData+Base64.h */,
-				C9E7F20C1A3F3FEA0005205B /* NSData+Base64.m */,
-				C9E7F20D1A3F3FEA0005205B /* NSString+Base64.h */,
-				C9E7F20E1A3F3FEA0005205B /* NSString+Base64.m */,
-			);
-			path = Base64;
-			sourceTree = "<group>";
-		};
-		C9E7F20F1A3F3FEA0005205B /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-				C9E7F2101A3F3FEA0005205B /* General */,
-			);
-			path = Utilities;
-			sourceTree = "<group>";
-		};
-		C9E7F2101A3F3FEA0005205B /* General */ = {
-			isa = PBXGroup;
-			children = (
-				C9E7F2111A3F3FEA0005205B /* Categories */,
-				C9E7F2251A3F3FEA0005205B /* Error */,
-				C9E7F2281A3F3FEA0005205B /* HTTP */,
-				C9E7F22B1A3F3FEA0005205B /* Macros */,
-			);
-			path = General;
-			sourceTree = "<group>";
-		};
-		C9E7F2111A3F3FEA0005205B /* Categories */ = {
-			isa = PBXGroup;
-			children = (
-				C9E7F2121A3F3FEA0005205B /* JSON */,
-				C9E7F2221A3F3FEA0005205B /* String */,
-			);
-			path = Categories;
-			sourceTree = "<group>";
-		};
-		C9E7F2121A3F3FEA0005205B /* JSON */ = {
-			isa = PBXGroup;
-			children = (
-				C9E7F2131A3F3FEA0005205B /* BDJSON.h */,
-				C9E7F2141A3F3FEA0005205B /* BDJSONError.h */,
-				C9E7F2151A3F3FEA0005205B /* BDJSONError.m */,
-				C9E7F2161A3F3FEA0005205B /* NSArray+BDJSONSerialization.h */,
-				C9E7F2171A3F3FEA0005205B /* NSArray+BDJSONSerialization.m */,
-				C9E7F2181A3F3FEA0005205B /* NSData+BDJSONSerialization.h */,
-				C9E7F2191A3F3FEA0005205B /* NSData+BDJSONSerialization.m */,
-				C9E7F21A1A3F3FEA0005205B /* NSDictionary+BDJSONSerialization.h */,
-				C9E7F21B1A3F3FEA0005205B /* NSDictionary+BDJSONSerialization.m */,
-				C9E7F21C1A3F3FEA0005205B /* NSDictionary+BDParseJSON.h */,
-				C9E7F21D1A3F3FEA0005205B /* NSDictionary+BDParseJSON.m */,
-				C9E7F21E1A3F3FEA0005205B /* NSObject+BDJSONSerialization.h */,
-				C9E7F21F1A3F3FEA0005205B /* NSObject+BDJSONSerialization.m */,
-				C9E7F2201A3F3FEA0005205B /* NSString+BDJSONSerialization.h */,
-				C9E7F2211A3F3FEA0005205B /* NSString+BDJSONSerialization.m */,
-			);
-			path = JSON;
-			sourceTree = "<group>";
-		};
-		C9E7F2221A3F3FEA0005205B /* String */ = {
-			isa = PBXGroup;
-			children = (
-				C9E7F2231A3F3FEA0005205B /* NSString+BDUtilities.h */,
-				C9E7F2241A3F3FEA0005205B /* NSString+BDUtilities.m */,
-			);
-			path = String;
-			sourceTree = "<group>";
-		};
-		C9E7F2251A3F3FEA0005205B /* Error */ = {
-			isa = PBXGroup;
-			children = (
-				C9E7F2261A3F3FEA0005205B /* BDError.h */,
-				C9E7F2271A3F3FEA0005205B /* BDError.m */,
-			);
-			path = Error;
-			sourceTree = "<group>";
-		};
-		C9E7F2281A3F3FEA0005205B /* HTTP */ = {
-			isa = PBXGroup;
-			children = (
-				C9E7F2291A3F3FEA0005205B /* HTTPURLResponse */,
-			);
-			path = HTTP;
-			sourceTree = "<group>";
-		};
-		C9E7F2291A3F3FEA0005205B /* HTTPURLResponse */ = {
-			isa = PBXGroup;
-			children = (
-				C9E7F22A1A3F3FEA0005205B /* HTTPURLJSONArrayResponse */,
-			);
-			path = HTTPURLResponse;
-			sourceTree = "<group>";
-		};
-		C9E7F22A1A3F3FEA0005205B /* HTTPURLJSONArrayResponse */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = HTTPURLJSONArrayResponse;
-			sourceTree = "<group>";
-		};
-		C9E7F22B1A3F3FEA0005205B /* Macros */ = {
-			isa = PBXGroup;
-			children = (
-				C9E7F22C1A3F3FEA0005205B /* Log */,
-			);
-			path = Macros;
-			sourceTree = "<group>";
-		};
-		C9E7F22C1A3F3FEA0005205B /* Log */ = {
-			isa = PBXGroup;
-			children = (
-				C9E7F22D1A3F3FEA0005205B /* BDLog.h */,
-			);
-			path = Log;
-			sourceTree = "<group>";
-		};
-/* End PBXGroup section */
-
-/* Begin PBXNativeTarget section */
-		C90D1C5F1A24CBD100016FE4 /* KlarnaOnDemand */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C90D1C741A24CBD100016FE4 /* Build configuration list for PBXNativeTarget "KlarnaOnDemand" */;
-			buildPhases = (
-				C90D1C5C1A24CBD100016FE4 /* Sources */,
-				C90D1C5D1A24CBD100016FE4 /* Frameworks */,
-				C90D1C5E1A24CBD100016FE4 /* CopyFiles */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = KlarnaOnDemand;
-			productName = KlarnaOnDemand;
-			productReference = C90D1C601A24CBD100016FE4 /* libKlarnaOnDemand.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		C90D1C6A1A24CBD100016FE4 /* KlarnaOnDemandTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C90D1C771A24CBD100016FE4 /* Build configuration list for PBXNativeTarget "KlarnaOnDemandTests" */;
-			buildPhases = (
-				57538A2E547B109B5B321A46 /* Check Pods Manifest.lock */,
-				C90D1C671A24CBD100016FE4 /* Sources */,
-				C90D1C681A24CBD100016FE4 /* Frameworks */,
-				C90D1C691A24CBD100016FE4 /* Resources */,
-				735E4D1DED27D86DFA194620 /* Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				C90D1C6E1A24CBD100016FE4 /* PBXTargetDependency */,
-			);
-			name = KlarnaOnDemandTests;
-			productName = KlarnaOnDemandTests;
-			productReference = C90D1C6B1A24CBD100016FE4 /* KlarnaOnDemandTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-/* End PBXNativeTarget section */
-
-/* Begin PBXProject section */
-		C90D1C581A24CBD100016FE4 /* Project object */ = {
-			isa = PBXProject;
-			attributes = {
-				LastUpgradeCheck = 0610;
-				ORGANIZATIONNAME = Klarna;
-				TargetAttributes = {
-					C90D1C5F1A24CBD100016FE4 = {
-						CreatedOnToolsVersion = 6.1;
-					};
-					C90D1C6A1A24CBD100016FE4 = {
-						CreatedOnToolsVersion = 6.1;
-					};
-				};
-			};
-			buildConfigurationList = C90D1C5B1A24CBD100016FE4 /* Build configuration list for PBXProject "KlarnaOnDemand" */;
-			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
-			hasScannedForEncodings = 0;
-			knownRegions = (
-				en,
-			);
-			mainGroup = C90D1C571A24CBD100016FE4;
-			productRefGroup = C90D1C611A24CBD100016FE4 /* Products */;
-			projectDirPath = "";
-			projectRoot = "";
-			targets = (
-				C90D1C5F1A24CBD100016FE4 /* KlarnaOnDemand */,
-				C90D1C6A1A24CBD100016FE4 /* KlarnaOnDemandTests */,
-			);
-		};
-/* End PBXProject section */
-
-/* Begin PBXResourcesBuildPhase section */
-		C90D1C691A24CBD100016FE4 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C954ABE11A35AB6300574C11 /* KOD.bundle in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		57538A2E547B109B5B321A46 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		735E4D1DED27D86DFA194620 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KlarnaOnDemandTests/Pods-KlarnaOnDemandTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
-/* Begin PBXSourcesBuildPhase section */
-		C90D1C5C1A24CBD100016FE4 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C9E7F2351A3F3FEA0005205B /* NSData+Base64.m in Sources */,
-				C9E7F2361A3F3FEA0005205B /* NSString+Base64.m in Sources */,
-				C9E7F23B1A3F3FEA0005205B /* NSDictionary+BDParseJSON.m in Sources */,
-				C9E7F2381A3F3FEA0005205B /* NSArray+BDJSONSerialization.m in Sources */,
-				C9E7F2321A3F3FEA0005205B /* BDRSACryptor.m in Sources */,
-				C9E7F23D1A3F3FEA0005205B /* NSString+BDJSONSerialization.m in Sources */,
-				C9E7F22E1A3F3FEA0005205B /* BDAESCBC256Cryptor.m in Sources */,
-				C9E7F2451A3F4A410005205B /* KODOriginProof.m in Sources */,
-				C9E7F2311A3F3FEA0005205B /* BDCryptorError.m in Sources */,
-				C9E7F23A1A3F3FEA0005205B /* NSDictionary+BDJSONSerialization.m in Sources */,
-				4651C4541A3DDE9200800F1A /* KODWebViewController.m in Sources */,
-				C9E7F23C1A3F3FEA0005205B /* NSObject+BDJSONSerialization.m in Sources */,
-				C9E7F2421A3F45170005205B /* KODCrypto.m in Sources */,
-				C9E7F2331A3F3FEA0005205B /* BDRSACryptorKeyPair.m in Sources */,
-				C954ABA71A345B5E00574C11 /* KODLocalization.m in Sources */,
-				C9E7F22F1A3F3FEA0005205B /* BDAESCryptor.m in Sources */,
-				C9E7F2391A3F3FEA0005205B /* NSData+BDJSONSerialization.m in Sources */,
-				467F0EDB1A2C6AC900A76845 /* KODRegistrationResult.m in Sources */,
-				C9E7F2341A3F3FEA0005205B /* BDSHA512Cryptor.m in Sources */,
-				C9E7F23E1A3F3FEA0005205B /* NSString+BDUtilities.m in Sources */,
-				467F0EC21A2B6DE900A76845 /* Jockey.m in Sources */,
-				C90D1C8A1A24CD2800016FE4 /* KODRegistrationViewController.m in Sources */,
-				C90D1C891A24CD2800016FE4 /* KODContext.m in Sources */,
-				C9E7F2371A3F3FEA0005205B /* BDJSONError.m in Sources */,
-				C9E7F23F1A3F3FEA0005205B /* BDError.m in Sources */,
-				C90D1C8B1A24CD2800016FE4 /* KODUrl.m in Sources */,
-				46D37ABD1A374A6500E6AC7A /* KODPreferencesViewController.m in Sources */,
-				C9E7F2301A3F3FEA0005205B /* BDCryptor.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C90D1C671A24CBD100016FE4 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				468323D91A4ACCB60030B3F1 /* KODSpecHelper.m in Sources */,
-				C92CF9501A51999C00430691 /* KODRegistrationResultSpec.m in Sources */,
-				468323DA1A4ACCB60030B3F1 /* KODContextSpec.m in Sources */,
-				468323DB1A4ACCB60030B3F1 /* KODCryptoSpec.m in Sources */,
-				468323DC1A4ACCB60030B3F1 /* KODOriginProofSpec.m in Sources */,
-				468323DD1A4ACCB60030B3F1 /* KODPreferencesViewControllerSpec.m in Sources */,
-				468323DE1A4ACCB60030B3F1 /* KODRegistrationViewControllerSpec.m in Sources */,
-				468323DF1A4ACCB60030B3F1 /* KODUrlSpec.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		C90D1C6E1A24CBD100016FE4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = C90D1C5F1A24CBD100016FE4 /* KlarnaOnDemand */;
-			targetProxy = C90D1C6D1A24CBD100016FE4 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
-/* Begin XCBuildConfiguration section */
-		C90D1C721A24CBD100016FE4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREFIX_HEADER = "3rdParty/Crypto/Crypto-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
-			};
-			name = Debug;
-		};
-		C90D1C731A24CBD100016FE4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = YES;
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PREFIX_HEADER = "3rdParty/Crypto/Crypto-Prefix.pch";
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				SDKROOT = iphoneos;
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		C90D1C751A24CBD100016FE4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				OTHER_LDFLAGS = "";
-				PRODUCT_NAME = KlarnaOnDemand;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		C90D1C761A24CBD100016FE4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				OTHER_LDFLAGS = "";
-				PRODUCT_NAME = KlarnaOnDemand;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		C90D1C781A24CBD100016FE4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 787D5A12488247D4C7B5FC9E /* Pods-KlarnaOnDemandTests.debug.xcconfig */;
-			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREFIX_HEADER = KlarnaOnDemandTests/KlarnaOnDemandTests.pch;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = KlarnaOnDemandTests/KlarnaOnDemandTests.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
-				);
-				PRODUCT_NAME = KlarnaOnDemandTests;
-			};
-			name = Debug;
-		};
-		C90D1C791A24CBD100016FE4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8A6713AF3B794D95017D61E6 /* Pods-KlarnaOnDemandTests.release.xcconfig */;
-			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREFIX_HEADER = KlarnaOnDemandTests/KlarnaOnDemandTests.pch;
-				INFOPLIST_FILE = KlarnaOnDemandTests/KlarnaOnDemandTests.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
-				);
-				PRODUCT_NAME = KlarnaOnDemandTests;
-			};
-			name = Release;
-		};
-/* End XCBuildConfiguration section */
-
-/* Begin XCConfigurationList section */
-		C90D1C5B1A24CBD100016FE4 /* Build configuration list for PBXProject "KlarnaOnDemand" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C90D1C721A24CBD100016FE4 /* Debug */,
-				C90D1C731A24CBD100016FE4 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		C90D1C741A24CBD100016FE4 /* Build configuration list for PBXNativeTarget "KlarnaOnDemand" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C90D1C751A24CBD100016FE4 /* Debug */,
-				C90D1C761A24CBD100016FE4 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		C90D1C771A24CBD100016FE4 /* Build configuration list for PBXNativeTarget "KlarnaOnDemandTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C90D1C781A24CBD100016FE4 /* Debug */,
-				C90D1C791A24CBD100016FE4 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-/* End XCConfigurationList section */
-	};
-	rootObject = C90D1C581A24CBD100016FE4 /* Project object */;
-}
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>archiveVersion</key>
+	<string>1</string>
+	<key>classes</key>
+	<dict/>
+	<key>objectVersion</key>
+	<string>46</string>
+	<key>objects</key>
+	<dict>
+		<key>084A0A53FD7790C41AF0C423</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>libPods-KlarnaOnDemand.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>30A936A4C306C6CA7E53379B</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-KlarnaOnDemand.release.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Target Support Files/Pods-KlarnaOnDemand/Pods-KlarnaOnDemand.release.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>443BC01E8B6591BA34CE5172</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>libPods-KlarnaOnDemandTests.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>460FDB621A4974A200CF327B</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>archive.ar</string>
+			<key>name</key>
+			<string>libPods-KlarnaOnDemandTests-Kiwi.a</string>
+			<key>path</key>
+			<string>Pods/build/Debug-iphoneos/libPods-KlarnaOnDemandTests-Kiwi.a</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4651C40E1A38A4BC00800F1A</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>KODWebViewController+Protected.h</string>
+			<key>path</key>
+			<string>KlarnaOnDemand/KODWebViewController+Protected.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>4651C4441A3D93E300800F1A</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>KODPreferencesViewControllerSpec.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4651C4511A3DDE9200800F1A</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>KODWebViewController.h</string>
+			<key>path</key>
+			<string>../KlarnaOnDemand/KODWebViewController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4651C4521A3DDE9200800F1A</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>KODWebViewController.m</string>
+			<key>path</key>
+			<string>../KlarnaOnDemand/KODWebViewController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4651C4541A3DDE9200800F1A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>4651C4521A3DDE9200800F1A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>465CF58F1A42DB9E00EC092D</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>KODCryptoSpec.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>466387001A480DD20013429D</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>KODSpecHelper.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>466387011A480DD20013429D</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>KODSpecHelper.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>467F0EC01A2B6DE900A76845</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>Jockey.h</string>
+			<key>path</key>
+			<string>3rdParty/JockeyJS/Jockey.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>467F0EC11A2B6DE900A76845</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>Jockey.m</string>
+			<key>path</key>
+			<string>3rdParty/JockeyJS/Jockey.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>467F0EC21A2B6DE900A76845</key>
+		<dict>
+			<key>fileRef</key>
+			<string>467F0EC11A2B6DE900A76845</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>467F0ED81A2C696100A76845</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>KODRegistrationResult.h</string>
+			<key>path</key>
+			<string>KlarnaOnDemand/KODRegistrationResult.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>467F0ED91A2C696100A76845</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>KODRegistrationResult.m</string>
+			<key>path</key>
+			<string>KlarnaOnDemand/KODRegistrationResult.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>467F0EDB1A2C6AC900A76845</key>
+		<dict>
+			<key>fileRef</key>
+			<string>467F0ED91A2C696100A76845</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>468323D91A4ACCB60030B3F1</key>
+		<dict>
+			<key>fileRef</key>
+			<string>466387011A480DD20013429D</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>468323DA1A4ACCB60030B3F1</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C9FC95401A278AAD00485500</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>468323DB1A4ACCB60030B3F1</key>
+		<dict>
+			<key>fileRef</key>
+			<string>465CF58F1A42DB9E00EC092D</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>468323DC1A4ACCB60030B3F1</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C9E7F25A1A405D0E0005205B</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>468323DD1A4ACCB60030B3F1</key>
+		<dict>
+			<key>fileRef</key>
+			<string>4651C4441A3D93E300800F1A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>468323DE1A4ACCB60030B3F1</key>
+		<dict>
+			<key>fileRef</key>
+			<string>46872D181A2B240000707282</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>468323DF1A4ACCB60030B3F1</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C903A2E01A2523B6009AE44D</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>46872D181A2B240000707282</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>KODRegistrationViewControllerSpec.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>46872DF11A2B6C0900707282</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>C9E7F1F81A3F3FEA0005205B</string>
+				<string>46872DF21A2B6C1200707282</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>3rdParty</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>46872DF21A2B6C1200707282</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>467F0EC01A2B6DE900A76845</string>
+				<string>467F0EC11A2B6DE900A76845</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>JockeyJS</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>46D37ABB1A374A6500E6AC7A</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>KODPreferencesViewController.h</string>
+			<key>path</key>
+			<string>../KlarnaOnDemand/KODPreferencesViewController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>46D37ABC1A374A6500E6AC7A</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>KODPreferencesViewController.m</string>
+			<key>path</key>
+			<string>../KlarnaOnDemand/KODPreferencesViewController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>46D37ABD1A374A6500E6AC7A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>46D37ABC1A374A6500E6AC7A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>57538A2E547B109B5B321A46</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Check Pods Manifest.lock</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
+if [[ $? != 0 ]] ; then
+    cat &lt;&lt; EOM
+error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
+EOM
+    exit 1
+fi
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>6F923A30568F1C8DCBD1121A</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>787D5A12488247D4C7B5FC9E</string>
+				<string>8A6713AF3B794D95017D61E6</string>
+				<string>F7CC61B5FB47EC93B3B5CB1A</string>
+				<string>30A936A4C306C6CA7E53379B</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Pods</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>735E4D1DED27D86DFA194620</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Copy Pods Resources</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>"${SRCROOT}/Pods/Target Support Files/Pods-KlarnaOnDemandTests/Pods-KlarnaOnDemandTests-resources.sh"
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>787D5A12488247D4C7B5FC9E</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-KlarnaOnDemandTests.debug.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Target Support Files/Pods-KlarnaOnDemandTests/Pods-KlarnaOnDemandTests.debug.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8A6713AF3B794D95017D61E6</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-KlarnaOnDemandTests.release.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Target Support Files/Pods-KlarnaOnDemandTests/Pods-KlarnaOnDemandTests.release.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B6EA889B94E1D564EAA2FB42</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Copy Pods Resources</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>"${SRCROOT}/Pods/Target Support Files/Pods-KlarnaOnDemand/Pods-KlarnaOnDemand-resources.sh"
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>C1E35C557067C2EA633DBCBD</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>460FDB621A4974A200CF327B</string>
+				<string>D1FE0E1CBCA1595B5EFACB69</string>
+				<string>443BC01E8B6591BA34CE5172</string>
+				<string>084A0A53FD7790C41AF0C423</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Frameworks</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C3BACF1CC49885989330EBFA</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Check Pods Manifest.lock</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
+if [[ $? != 0 ]] ; then
+    cat &lt;&lt; EOM
+error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
+EOM
+    exit 1
+fi
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>C903A2DD1A2523A8009AE44D</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>KlarnaOnDemandTests.pch</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C903A2DE1A2523A8009AE44D</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>KlarnaOnDemandTests.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C903A2E01A2523B6009AE44D</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>KODUrlSpec.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C90D1C571A24CBD100016FE4</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>46872DF11A2B6C0900707282</string>
+				<string>C90D1C621A24CBD100016FE4</string>
+				<string>C90D1C6F1A24CBD100016FE4</string>
+				<string>C90D1C611A24CBD100016FE4</string>
+				<string>6F923A30568F1C8DCBD1121A</string>
+				<string>C1E35C557067C2EA633DBCBD</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C90D1C581A24CBD100016FE4</key>
+		<dict>
+			<key>attributes</key>
+			<dict>
+				<key>LastUpgradeCheck</key>
+				<string>0610</string>
+				<key>ORGANIZATIONNAME</key>
+				<string>Klarna</string>
+				<key>TargetAttributes</key>
+				<dict>
+					<key>C90D1C5F1A24CBD100016FE4</key>
+					<dict>
+						<key>CreatedOnToolsVersion</key>
+						<string>6.1</string>
+					</dict>
+					<key>C90D1C6A1A24CBD100016FE4</key>
+					<dict>
+						<key>CreatedOnToolsVersion</key>
+						<string>6.1</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>buildConfigurationList</key>
+			<string>C90D1C5B1A24CBD100016FE4</string>
+			<key>compatibilityVersion</key>
+			<string>Xcode 3.2</string>
+			<key>developmentRegion</key>
+			<string>English</string>
+			<key>hasScannedForEncodings</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXProject</string>
+			<key>knownRegions</key>
+			<array>
+				<string>en</string>
+			</array>
+			<key>mainGroup</key>
+			<string>C90D1C571A24CBD100016FE4</string>
+			<key>productRefGroup</key>
+			<string>C90D1C611A24CBD100016FE4</string>
+			<key>projectDirPath</key>
+			<string></string>
+			<key>projectReferences</key>
+			<array/>
+			<key>projectRoot</key>
+			<string></string>
+			<key>targets</key>
+			<array>
+				<string>C90D1C5F1A24CBD100016FE4</string>
+				<string>C90D1C6A1A24CBD100016FE4</string>
+			</array>
+		</dict>
+		<key>C90D1C5B1A24CBD100016FE4</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>C90D1C721A24CBD100016FE4</string>
+				<string>C90D1C731A24CBD100016FE4</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>C90D1C5C1A24CBD100016FE4</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>C9E7F2351A3F3FEA0005205B</string>
+				<string>C9E7F2361A3F3FEA0005205B</string>
+				<string>C9E7F23B1A3F3FEA0005205B</string>
+				<string>C9E7F2381A3F3FEA0005205B</string>
+				<string>C9E7F2321A3F3FEA0005205B</string>
+				<string>C9E7F23D1A3F3FEA0005205B</string>
+				<string>C9E7F22E1A3F3FEA0005205B</string>
+				<string>C9E7F2451A3F4A410005205B</string>
+				<string>C9E7F2311A3F3FEA0005205B</string>
+				<string>C9E7F23A1A3F3FEA0005205B</string>
+				<string>4651C4541A3DDE9200800F1A</string>
+				<string>C9E7F23C1A3F3FEA0005205B</string>
+				<string>C9E7F2421A3F45170005205B</string>
+				<string>C9E7F2331A3F3FEA0005205B</string>
+				<string>C954ABA71A345B5E00574C11</string>
+				<string>C9E7F22F1A3F3FEA0005205B</string>
+				<string>C9E7F2391A3F3FEA0005205B</string>
+				<string>467F0EDB1A2C6AC900A76845</string>
+				<string>C9E7F2341A3F3FEA0005205B</string>
+				<string>C9E7F23E1A3F3FEA0005205B</string>
+				<string>467F0EC21A2B6DE900A76845</string>
+				<string>C90D1C8A1A24CD2800016FE4</string>
+				<string>C90D1C891A24CD2800016FE4</string>
+				<string>C9E7F2371A3F3FEA0005205B</string>
+				<string>C9E7F23F1A3F3FEA0005205B</string>
+				<string>C90D1C8B1A24CD2800016FE4</string>
+				<string>46D37ABD1A374A6500E6AC7A</string>
+				<string>C9E7F2301A3F3FEA0005205B</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>C90D1C5D1A24CBD100016FE4</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>EEF4B711C4FDC7C8BAE8377D</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>C90D1C5E1A24CBD100016FE4</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>dstPath</key>
+			<string>include/$(PRODUCT_NAME)</string>
+			<key>dstSubfolderSpec</key>
+			<string>16</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXCopyFilesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>C90D1C5F1A24CBD100016FE4</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>C90D1C741A24CBD100016FE4</string>
+			<key>buildPhases</key>
+			<array>
+				<string>C3BACF1CC49885989330EBFA</string>
+				<string>C90D1C5C1A24CBD100016FE4</string>
+				<string>C90D1C5D1A24CBD100016FE4</string>
+				<string>C90D1C5E1A24CBD100016FE4</string>
+				<string>B6EA889B94E1D564EAA2FB42</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>KlarnaOnDemand</string>
+			<key>productName</key>
+			<string>KlarnaOnDemand</string>
+			<key>productReference</key>
+			<string>C90D1C601A24CBD100016FE4</string>
+			<key>productType</key>
+			<string>com.apple.product-type.library.static</string>
+		</dict>
+		<key>C90D1C601A24CBD100016FE4</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>libKlarnaOnDemand.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>C90D1C611A24CBD100016FE4</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>C90D1C601A24CBD100016FE4</string>
+				<string>C90D1C6B1A24CBD100016FE4</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Products</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C90D1C621A24CBD100016FE4</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>C954ABCD1A34950300574C11</string>
+				<string>C90D1C831A24CD2800016FE4</string>
+				<string>C90D1C841A24CD2800016FE4</string>
+				<string>C9E7F2401A3F45170005205B</string>
+				<string>C9E7F2411A3F45170005205B</string>
+				<string>C954ABA51A345B5E00574C11</string>
+				<string>C954ABA61A345B5E00574C11</string>
+				<string>C9E7F2431A3F4A410005205B</string>
+				<string>C9E7F2441A3F4A410005205B</string>
+				<string>46D37ABB1A374A6500E6AC7A</string>
+				<string>46D37ABC1A374A6500E6AC7A</string>
+				<string>467F0ED81A2C696100A76845</string>
+				<string>467F0ED91A2C696100A76845</string>
+				<string>C90D1C851A24CD2800016FE4</string>
+				<string>C90D1C861A24CD2800016FE4</string>
+				<string>C90D1C871A24CD2800016FE4</string>
+				<string>C90D1C881A24CD2800016FE4</string>
+				<string>4651C4511A3DDE9200800F1A</string>
+				<string>4651C4521A3DDE9200800F1A</string>
+				<string>4651C40E1A38A4BC00800F1A</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>KlarnaOnDemand</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C90D1C671A24CBD100016FE4</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>468323D91A4ACCB60030B3F1</string>
+				<string>C92CF9501A51999C00430691</string>
+				<string>468323DA1A4ACCB60030B3F1</string>
+				<string>468323DB1A4ACCB60030B3F1</string>
+				<string>468323DC1A4ACCB60030B3F1</string>
+				<string>468323DD1A4ACCB60030B3F1</string>
+				<string>468323DE1A4ACCB60030B3F1</string>
+				<string>468323DF1A4ACCB60030B3F1</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>C90D1C681A24CBD100016FE4</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>C90D1C6C1A24CBD100016FE4</string>
+				<string>E4FC8287776950D3A8F3BE8B</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>C90D1C691A24CBD100016FE4</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>C954ABE11A35AB6300574C11</string>
+			</array>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>C90D1C6A1A24CBD100016FE4</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>C90D1C771A24CBD100016FE4</string>
+			<key>buildPhases</key>
+			<array>
+				<string>57538A2E547B109B5B321A46</string>
+				<string>C90D1C671A24CBD100016FE4</string>
+				<string>C90D1C681A24CBD100016FE4</string>
+				<string>C90D1C691A24CBD100016FE4</string>
+				<string>735E4D1DED27D86DFA194620</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array>
+				<string>C90D1C6E1A24CBD100016FE4</string>
+			</array>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>KlarnaOnDemandTests</string>
+			<key>productName</key>
+			<string>KlarnaOnDemandTests</string>
+			<key>productReference</key>
+			<string>C90D1C6B1A24CBD100016FE4</string>
+			<key>productType</key>
+			<string>com.apple.product-type.bundle.unit-test</string>
+		</dict>
+		<key>C90D1C6B1A24CBD100016FE4</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.cfbundle</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>KlarnaOnDemandTests.xctest</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>C90D1C6C1A24CBD100016FE4</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C90D1C601A24CBD100016FE4</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>C90D1C6D1A24CBD100016FE4</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>C90D1C581A24CBD100016FE4</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>C90D1C5F1A24CBD100016FE4</string>
+			<key>remoteInfo</key>
+			<string>KlarnaOnDemand</string>
+		</dict>
+		<key>C90D1C6E1A24CBD100016FE4</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>target</key>
+			<string>C90D1C5F1A24CBD100016FE4</string>
+			<key>targetProxy</key>
+			<string>C90D1C6D1A24CBD100016FE4</string>
+		</dict>
+		<key>C90D1C6F1A24CBD100016FE4</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>466387001A480DD20013429D</string>
+				<string>466387011A480DD20013429D</string>
+				<string>C9FC95401A278AAD00485500</string>
+				<string>465CF58F1A42DB9E00EC092D</string>
+				<string>C9E7F25A1A405D0E0005205B</string>
+				<string>4651C4441A3D93E300800F1A</string>
+				<string>46872D181A2B240000707282</string>
+				<string>C903A2E01A2523B6009AE44D</string>
+				<string>C92CF94F1A51999C00430691</string>
+				<string>C90D1C701A24CBD100016FE4</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>KlarnaOnDemandTests</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C90D1C701A24CBD100016FE4</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>C903A2DD1A2523A8009AE44D</string>
+				<string>C903A2DE1A2523A8009AE44D</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Supporting Files</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C90D1C721A24CBD100016FE4</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_UNREACHABLE_CODE</key>
+				<string>YES</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_DYNAMIC_NO_PIC</key>
+				<string>NO</string>
+				<key>GCC_OPTIMIZATION_LEVEL</key>
+				<string>0</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>3rdParty/Crypto/Crypto-Prefix.pch</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
+				<string>NO</string>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES_ERROR</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES_AGGRESSIVE</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>7.0</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>YES</string>
+				<key>ONLY_ACTIVE_ARCH</key>
+				<string>YES</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>C90D1C731A24CBD100016FE4</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_UNREACHABLE_CODE</key>
+				<string>YES</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>YES</string>
+				<key>ENABLE_NS_ASSERTIONS</key>
+				<string>NO</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>3rdParty/Crypto/Crypto-Prefix.pch</string>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES_ERROR</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES_AGGRESSIVE</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>7.0</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>NO</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>VALIDATE_PRODUCT</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>C90D1C741A24CBD100016FE4</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>C90D1C751A24CBD100016FE4</string>
+				<string>C90D1C761A24CBD100016FE4</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>C90D1C751A24CBD100016FE4</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>F7CC61B5FB47EC93B3B5CB1A</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>PRODUCT_NAME</key>
+				<string>KlarnaOnDemand</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>C90D1C761A24CBD100016FE4</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>30A936A4C306C6CA7E53379B</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>PRODUCT_NAME</key>
+				<string>KlarnaOnDemand</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>C90D1C771A24CBD100016FE4</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>C90D1C781A24CBD100016FE4</string>
+				<string>C90D1C791A24CBD100016FE4</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>C90D1C781A24CBD100016FE4</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>787D5A12488247D4C7B5FC9E</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>FRAMEWORK_SEARCH_PATHS</key>
+				<array>
+					<string>$(SDKROOT)/Developer/Library/Frameworks</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>KlarnaOnDemandTests/KlarnaOnDemandTests.pch</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>INFOPLIST_FILE</key>
+				<string>KlarnaOnDemandTests/KlarnaOnDemandTests.plist</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
+				<key>LIBRARY_SEARCH_PATHS</key>
+				<array>
+					<string>$(inherited)</string>
+					<string>$(PROJECT_DIR)/Pods/build/Debug-iphoneos</string>
+				</array>
+				<key>PRODUCT_NAME</key>
+				<string>KlarnaOnDemandTests</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>C90D1C791A24CBD100016FE4</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>8A6713AF3B794D95017D61E6</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>FRAMEWORK_SEARCH_PATHS</key>
+				<array>
+					<string>$(SDKROOT)/Developer/Library/Frameworks</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>KlarnaOnDemandTests/KlarnaOnDemandTests.pch</string>
+				<key>INFOPLIST_FILE</key>
+				<string>KlarnaOnDemandTests/KlarnaOnDemandTests.plist</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
+				<key>LIBRARY_SEARCH_PATHS</key>
+				<array>
+					<string>$(inherited)</string>
+					<string>$(PROJECT_DIR)/Pods/build/Debug-iphoneos</string>
+				</array>
+				<key>PRODUCT_NAME</key>
+				<string>KlarnaOnDemandTests</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>C90D1C831A24CD2800016FE4</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>KODContext.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C90D1C841A24CD2800016FE4</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>KODContext.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C90D1C851A24CD2800016FE4</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>KODRegistrationViewController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C90D1C861A24CD2800016FE4</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>KODRegistrationViewController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C90D1C871A24CD2800016FE4</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>KODUrl.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C90D1C881A24CD2800016FE4</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>KODUrl.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C90D1C891A24CD2800016FE4</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C90D1C841A24CD2800016FE4</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>C90D1C8A1A24CD2800016FE4</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C90D1C861A24CD2800016FE4</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>C90D1C8B1A24CD2800016FE4</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C90D1C881A24CD2800016FE4</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>C92CF94F1A51999C00430691</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>KODRegistrationResultSpec.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C92CF9501A51999C00430691</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C92CF94F1A51999C00430691</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>C954ABA51A345B5E00574C11</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>KODLocalization.h</string>
+			<key>path</key>
+			<string>KlarnaOnDemand/KODLocalization.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>C954ABA61A345B5E00574C11</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>KODLocalization.m</string>
+			<key>path</key>
+			<string>KlarnaOnDemand/KODLocalization.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>C954ABA71A345B5E00574C11</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C954ABA61A345B5E00574C11</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>C954ABCD1A34950300574C11</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.plug-in</string>
+			<key>name</key>
+			<string>KOD.bundle</string>
+			<key>path</key>
+			<string>KlarnaOnDemand/KOD.bundle</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>C954ABE11A35AB6300574C11</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C954ABCD1A34950300574C11</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>C9E7F1F81A3F3FEA0005205B</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>C9E7F1F91A3F3FEA0005205B</string>
+				<string>C9E7F2081A3F3FEA0005205B</string>
+				<string>C9E7F2091A3F3FEA0005205B</string>
+				<string>C9E7F20F1A3F3FEA0005205B</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Crypto</string>
+			<key>path</key>
+			<string>3rdParty/Crypto</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C9E7F1F91A3F3FEA0005205B</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>C9E7F1FA1A3F3FEA0005205B</string>
+				<string>C9E7F1FB1A3F3FEA0005205B</string>
+				<string>C9E7F1FC1A3F3FEA0005205B</string>
+				<string>C9E7F1FD1A3F3FEA0005205B</string>
+				<string>C9E7F1FE1A3F3FEA0005205B</string>
+				<string>C9E7F1FF1A3F3FEA0005205B</string>
+				<string>C9E7F2001A3F3FEA0005205B</string>
+				<string>C9E7F2011A3F3FEA0005205B</string>
+				<string>C9E7F2021A3F3FEA0005205B</string>
+				<string>C9E7F2031A3F3FEA0005205B</string>
+				<string>C9E7F2041A3F3FEA0005205B</string>
+				<string>C9E7F2051A3F3FEA0005205B</string>
+				<string>C9E7F2061A3F3FEA0005205B</string>
+				<string>C9E7F2071A3F3FEA0005205B</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Crypto</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C9E7F1FA1A3F3FEA0005205B</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>BDAESCBC256Cryptor.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C9E7F1FB1A3F3FEA0005205B</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>BDAESCBC256Cryptor.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C9E7F1FC1A3F3FEA0005205B</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>BDAESCryptor.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C9E7F1FD1A3F3FEA0005205B</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>BDAESCryptor.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C9E7F1FE1A3F3FEA0005205B</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>BDCryptor.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C9E7F1FF1A3F3FEA0005205B</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>BDCryptor.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C9E7F2001A3F3FEA0005205B</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>BDCryptorError.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C9E7F2011A3F3FEA0005205B</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>BDCryptorError.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C9E7F2021A3F3FEA0005205B</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>BDRSACryptor.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C9E7F2031A3F3FEA0005205B</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>BDRSACryptor.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C9E7F2041A3F3FEA0005205B</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>BDRSACryptorKeyPair.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C9E7F2051A3F3FEA0005205B</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>BDRSACryptorKeyPair.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C9E7F2061A3F3FEA0005205B</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>BDSHA512Cryptor.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C9E7F2071A3F3FEA0005205B</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>BDSHA512Cryptor.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C9E7F2081A3F3FEA0005205B</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>Crypto-Prefix.pch</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C9E7F2091A3F3FEA0005205B</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>C9E7F20A1A3F3FEA0005205B</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>External</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C9E7F20A1A3F3FEA0005205B</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>C9E7F2621A4086980005205B</string>
+				<string>C9E7F20C1A3F3FEA0005205B</string>
+				<string>C9E7F20D1A3F3FEA0005205B</string>
+				<string>C9E7F20E1A3F3FEA0005205B</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Base64</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C9E7F20C1A3F3FEA0005205B</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>NSData+Base64.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C9E7F20D1A3F3FEA0005205B</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>NSString+Base64.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C9E7F20E1A3F3FEA0005205B</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>NSString+Base64.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C9E7F20F1A3F3FEA0005205B</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>C9E7F2101A3F3FEA0005205B</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Utilities</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C9E7F2101A3F3FEA0005205B</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>C9E7F2111A3F3FEA0005205B</string>
+				<string>C9E7F2251A3F3FEA0005205B</string>
+				<string>C9E7F2281A3F3FEA0005205B</string>
+				<string>C9E7F22B1A3F3FEA0005205B</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>General</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C9E7F2111A3F3FEA0005205B</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>C9E7F2121A3F3FEA0005205B</string>
+				<string>C9E7F2221A3F3FEA0005205B</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Categories</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C9E7F2121A3F3FEA0005205B</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>C9E7F2131A3F3FEA0005205B</string>
+				<string>C9E7F2141A3F3FEA0005205B</string>
+				<string>C9E7F2151A3F3FEA0005205B</string>
+				<string>C9E7F2161A3F3FEA0005205B</string>
+				<string>C9E7F2171A3F3FEA0005205B</string>
+				<string>C9E7F2181A3F3FEA0005205B</string>
+				<string>C9E7F2191A3F3FEA0005205B</string>
+				<string>C9E7F21A1A3F3FEA0005205B</string>
+				<string>C9E7F21B1A3F3FEA0005205B</string>
+				<string>C9E7F21C1A3F3FEA0005205B</string>
+				<string>C9E7F21D1A3F3FEA0005205B</string>
+				<string>C9E7F21E1A3F3FEA0005205B</string>
+				<string>C9E7F21F1A3F3FEA0005205B</string>
+				<string>C9E7F2201A3F3FEA0005205B</string>
+				<string>C9E7F2211A3F3FEA0005205B</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>JSON</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C9E7F2131A3F3FEA0005205B</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>BDJSON.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C9E7F2141A3F3FEA0005205B</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>BDJSONError.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C9E7F2151A3F3FEA0005205B</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>BDJSONError.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C9E7F2161A3F3FEA0005205B</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>NSArray+BDJSONSerialization.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C9E7F2171A3F3FEA0005205B</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>NSArray+BDJSONSerialization.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C9E7F2181A3F3FEA0005205B</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>NSData+BDJSONSerialization.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C9E7F2191A3F3FEA0005205B</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>NSData+BDJSONSerialization.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C9E7F21A1A3F3FEA0005205B</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>NSDictionary+BDJSONSerialization.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C9E7F21B1A3F3FEA0005205B</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>NSDictionary+BDJSONSerialization.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C9E7F21C1A3F3FEA0005205B</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>NSDictionary+BDParseJSON.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C9E7F21D1A3F3FEA0005205B</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>NSDictionary+BDParseJSON.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C9E7F21E1A3F3FEA0005205B</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>NSObject+BDJSONSerialization.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C9E7F21F1A3F3FEA0005205B</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>NSObject+BDJSONSerialization.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C9E7F2201A3F3FEA0005205B</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>NSString+BDJSONSerialization.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C9E7F2211A3F3FEA0005205B</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>NSString+BDJSONSerialization.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C9E7F2221A3F3FEA0005205B</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>C9E7F2231A3F3FEA0005205B</string>
+				<string>C9E7F2241A3F3FEA0005205B</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>String</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C9E7F2231A3F3FEA0005205B</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>NSString+BDUtilities.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C9E7F2241A3F3FEA0005205B</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>NSString+BDUtilities.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C9E7F2251A3F3FEA0005205B</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>C9E7F2261A3F3FEA0005205B</string>
+				<string>C9E7F2271A3F3FEA0005205B</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Error</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C9E7F2261A3F3FEA0005205B</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>BDError.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C9E7F2271A3F3FEA0005205B</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>BDError.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C9E7F2281A3F3FEA0005205B</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>C9E7F2291A3F3FEA0005205B</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>HTTP</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C9E7F2291A3F3FEA0005205B</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>C9E7F22A1A3F3FEA0005205B</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>HTTPURLResponse</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C9E7F22A1A3F3FEA0005205B</key>
+		<dict>
+			<key>children</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>HTTPURLJSONArrayResponse</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C9E7F22B1A3F3FEA0005205B</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>C9E7F22C1A3F3FEA0005205B</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Macros</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C9E7F22C1A3F3FEA0005205B</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>C9E7F22D1A3F3FEA0005205B</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Log</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C9E7F22D1A3F3FEA0005205B</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>BDLog.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C9E7F22E1A3F3FEA0005205B</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C9E7F1FB1A3F3FEA0005205B</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>C9E7F22F1A3F3FEA0005205B</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C9E7F1FD1A3F3FEA0005205B</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>C9E7F2301A3F3FEA0005205B</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C9E7F1FF1A3F3FEA0005205B</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>C9E7F2311A3F3FEA0005205B</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C9E7F2011A3F3FEA0005205B</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>C9E7F2321A3F3FEA0005205B</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C9E7F2031A3F3FEA0005205B</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>C9E7F2331A3F3FEA0005205B</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C9E7F2051A3F3FEA0005205B</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>C9E7F2341A3F3FEA0005205B</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C9E7F2071A3F3FEA0005205B</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>C9E7F2351A3F3FEA0005205B</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C9E7F20C1A3F3FEA0005205B</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>C9E7F2361A3F3FEA0005205B</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C9E7F20E1A3F3FEA0005205B</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>C9E7F2371A3F3FEA0005205B</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C9E7F2151A3F3FEA0005205B</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>C9E7F2381A3F3FEA0005205B</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C9E7F2171A3F3FEA0005205B</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>C9E7F2391A3F3FEA0005205B</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C9E7F2191A3F3FEA0005205B</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>C9E7F23A1A3F3FEA0005205B</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C9E7F21B1A3F3FEA0005205B</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>C9E7F23B1A3F3FEA0005205B</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C9E7F21D1A3F3FEA0005205B</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>C9E7F23C1A3F3FEA0005205B</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C9E7F21F1A3F3FEA0005205B</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>C9E7F23D1A3F3FEA0005205B</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C9E7F2211A3F3FEA0005205B</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>C9E7F23E1A3F3FEA0005205B</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C9E7F2241A3F3FEA0005205B</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>C9E7F23F1A3F3FEA0005205B</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C9E7F2271A3F3FEA0005205B</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>C9E7F2401A3F45170005205B</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>KODCrypto.h</string>
+			<key>path</key>
+			<string>KlarnaOnDemand/KODCrypto.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>C9E7F2411A3F45170005205B</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>KODCrypto.m</string>
+			<key>path</key>
+			<string>KlarnaOnDemand/KODCrypto.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>C9E7F2421A3F45170005205B</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C9E7F2411A3F45170005205B</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>C9E7F2431A3F4A410005205B</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>KODOriginProof.h</string>
+			<key>path</key>
+			<string>KlarnaOnDemand/KODOriginProof.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>C9E7F2441A3F4A410005205B</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>KODOriginProof.m</string>
+			<key>path</key>
+			<string>KlarnaOnDemand/KODOriginProof.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>C9E7F2451A3F4A410005205B</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C9E7F2441A3F4A410005205B</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>C9E7F25A1A405D0E0005205B</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>KODOriginProofSpec.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C9E7F2621A4086980005205B</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>NSData+Base64.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C9FC95401A278AAD00485500</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>KODContextSpec.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D1FE0E1CBCA1595B5EFACB69</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>libPods-KlarnaOnDemandTests.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>E4FC8287776950D3A8F3BE8B</key>
+		<dict>
+			<key>fileRef</key>
+			<string>443BC01E8B6591BA34CE5172</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>EEF4B711C4FDC7C8BAE8377D</key>
+		<dict>
+			<key>fileRef</key>
+			<string>084A0A53FD7790C41AF0C423</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>F7CC61B5FB47EC93B3B5CB1A</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-KlarnaOnDemand.debug.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Target Support Files/Pods-KlarnaOnDemand/Pods-KlarnaOnDemand.debug.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+	</dict>
+	<key>rootObject</key>
+	<string>C90D1C581A24CBD100016FE4</string>
+</dict>
+</plist>

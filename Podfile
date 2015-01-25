@@ -1,5 +1,9 @@
 workspace 'KlarnaOnDemand.xcworkspace'
 
+target 'KlarnaOnDemand' do
+  pod 'JockeyJS'
+end
+
 target 'KlarnaOnDemandTests' do
   pod 'Kiwi'
 end
