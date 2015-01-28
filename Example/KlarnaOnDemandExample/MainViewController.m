@@ -18,17 +18,71 @@ NSString *const UserTokenKey = @"user_token";
   [self updateUIElements];
 }
 
+#pragma mark Button clicks
+
+- (IBAction)onBuyPressed:(id)sender {
+  // if a token has not been previously created
+  if([self hasUserToken]) {
+    [self buyTicket];
+  }
+  else {
+    [self openKlarnaRegistration];
+  }
+}
+
+- (IBAction)onChangePaymentPressed:(id)sender {
+  [self openKlarnaPreferences];
+}
+
+#pragma mark Order using Klarna
+
+- (void) openKlarnaRegistration {
+  // Create a new Klarna registration view-controller, initialized with MainViewController as event-handler.
+  KODRegistrationViewController *registrationViewController = [[KODRegistrationViewController alloc] initWithDelegate:self];
+  
+  // Create navigation controller with Klarna registration view-controller as the root view controller.
+  UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:registrationViewController];
+  
+  // Show navigation controller (in a modal presentation).
+  [self presentViewController:navigationController
+                     animated:YES
+                   completion:nil];
+}
+
+- (void) openKlarnaPreferences {
+  // Create a new Klarna preferences view-controller, initialized with MainViewController as the event-handler, and the user token that was saved when the user completed the registration process.
+  KODPreferencesViewController *preferencesViewController = [[KODPreferencesViewController alloc] initWithDelegate:self andToken:[self getUserToken]];
+  
+  // Create navigation controller with Klarna preferences view-controller as the root view controller.
+  UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:preferencesViewController];
+  
+  // Show navigation controller (in a modal presentation).
+  [self presentViewController:navigationController
+                     animated:YES
+                   completion:nil];
+}
+
+- (void) buyTicket {
+  // create origin proof for order.
+  KODOriginProof *originProof = [[KODOriginProof alloc] initWithAmount:9900
+                                                              currency:@"SEK"
+                                                             userToken:[self getUserToken]];
+  
+  // send order request to app-server.
+  [self performPurchaseOfItemWithReference:@"TCKT0001" originProof:originProof];
+}
+
 - (void)performPurchaseOfItemWithReference:(NSString *)reference originProof:(KODOriginProof *)originProof {
   AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
   manager.requestSerializer = [AFJSONRequestSerializer serializer];
   NSString *userToken = [self getUserToken];
-
+  
   NSDictionary *params = @{
                            @"origin_proof" : [originProof description],
                            @"reference" :    reference,
                            @"user_token" :   userToken
                            };
-
+  
   [manager POST:@"http://localhost:9292/pay" parameters:params
         success:^(AFHTTPRequestOperation *operation, id responseObject) {
           // show QR Code for the movie.
@@ -42,47 +96,7 @@ NSString *const UserTokenKey = @"user_token";
    ];
 }
 
-#pragma mark Button clicks
-
-- (IBAction)onBuyPressed:(id)sender {
-  // if a token has been previously created
-  if([self hasUserToken]) {
-    // create origin proof for order.
-    KODOriginProof *originProof = [[KODOriginProof alloc] initWithAmount:9900
-                                                                currency:@"SEK"
-                                                               userToken:[self getUserToken]];
-
-    // send order request to app-server.
-    [self performPurchaseOfItemWithReference:@"TCKT0001" originProof:originProof];
-  }
-  else {
-    // Create a new Klarna registration view-controller, initialized with MainViewController as event-handler.
-    KODRegistrationViewController *registrationViewController = [[KODRegistrationViewController alloc] initWithDelegate:self];
-    
-    // Create navigation controller with Klarna registration view-controller as the root view controller.
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:registrationViewController];
-    
-    // Show navigation controller (in a modal presentation).
-    [self presentViewController:navigationController
-                       animated:YES
-                     completion:nil];
-  }
-}
-
-- (IBAction)onChangePaymentPressed:(id)sender {
-  // Create a new Klarna preferences view-controller, initialized with MainViewController as the event-handler, and the user token that was saved when the user completed the registration process.
-  KODPreferencesViewController *preferencesViewController = [[KODPreferencesViewController alloc] initWithDelegate:self andToken:[self getUserToken]];
-
-  // Create navigation controller with Klarna preferences view-controller as the root view controller.
-  UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:preferencesViewController];
-
-  // Show navigation controller (in a modal presentation).
-  [self presentViewController:navigationController
-                     animated:YES
-                   completion:nil];
-}
-
-#pragma mark Registration delegate
+#pragma mark Klarna registration delegate
 
 - (void)klarnaRegistrationFailed:(KODRegistrationViewController *)controller {
   // You may also want to convey this failure to your user.
@@ -103,9 +117,11 @@ NSString *const UserTokenKey = @"user_token";
   [self saveUserToken:registrationResult.token];
 
   [self updateUIElements];
+  
+  [self buyTicket];
 }
 
-#pragma mark Preferences delegate
+#pragma mark Klarna preferences delegate
 
 - (void)klarnaPreferencesFailed:(KODPreferencesViewController *)controller {
   // Dismiss Klarna preferences view-controller.
