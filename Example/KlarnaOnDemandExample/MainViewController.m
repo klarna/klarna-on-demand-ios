@@ -30,10 +30,6 @@ NSString *const UserTokenKey = @"user_token";
   }
 }
 
-- (IBAction)onChangePaymentPressed:(id)sender {
-  [self openKlarnaPreferences];
-}
-
 #pragma mark Order using Klarna
 
 - (void) openKlarnaRegistration {
@@ -49,7 +45,7 @@ NSString *const UserTokenKey = @"user_token";
                    completion:nil];
 }
 
-- (void) openKlarnaPreferences {
+- (IBAction) openKlarnaPreferences:(id)sender {
   // Create a new Klarna preferences view-controller, initialized with MainViewController as the event-handler, and the user token that was saved when the user completed the registration process.
   KODPreferencesViewController *preferencesViewController = [[KODPreferencesViewController alloc] initWithDelegate:self andToken:[self getUserToken]];
   
@@ -76,13 +72,13 @@ NSString *const UserTokenKey = @"user_token";
   AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
   manager.requestSerializer = [AFJSONRequestSerializer serializer];
   NSString *userToken = [self getUserToken];
-  
+
   NSDictionary *params = @{
                            @"origin_proof" : [originProof description],
                            @"reference" :    reference,
                            @"user_token" :   userToken
                            };
-  
+
   [manager POST:@"http://localhost:9292/pay" parameters:params
         success:^(AFHTTPRequestOperation *operation, id responseObject) {
           // show QR Code for the movie.
