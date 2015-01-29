@@ -109,7 +109,7 @@ NSString *const UserTokenKey = @"user_token";
   // Dismiss Klarna registration view-controller.
   [self dismissViewControllerAnimated:YES completion:nil];
 
-  // Save user token for future-use, in order to identify the user.
+  // Saves the user token so that we can identify the user in future calls.
   [self saveUserToken:registrationResult.token];
 
   [self updateUIElements];
