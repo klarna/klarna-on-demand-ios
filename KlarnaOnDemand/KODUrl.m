@@ -34,7 +34,7 @@ NSString *const KlarnaProductionUrl = @"https://inapp.klarna.com";
   return [[NSBundle mainBundle] preferredLocalizations].firstObject;
 }
 
-+ (NSString *) urlEndodeWithParam:(NSString *)param {
++ (NSString *) urlEncodeWithParam:(NSString *)param {
   return (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(
                                                                                NULL,
                                                                                (CFStringRef)param,
