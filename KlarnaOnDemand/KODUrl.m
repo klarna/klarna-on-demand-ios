@@ -9,7 +9,12 @@ NSString *const KlarnaProductionUrl = @"https://inapp.klarna.com";
 
 + (NSURL *)registrationUrl {
   NSString *publicKeyBase64Str = [[KODCrypto sharedKODCrypto] publicKeyBase64Str];
-  NSString *url = [NSString stringWithFormat:@"%@/registration/new?api_key=%@&locale=%@&public_key=%@", [self baseUrl], [KODContext getApiKey], [self locale], publicKeyBase64Str];
+
+  NSString *url = [NSString stringWithFormat:@"%@/registration/new?api_key=%@&locale=%@&public_key=%@",
+                   [self baseUrl],
+                   [KODContext getApiKey],
+                   [self locale],
+                   [self urlEndodeWithParam:publicKeyBase64Str]];
   return [NSURL URLWithString:url];
 }
 
@@ -27,6 +32,15 @@ NSString *const KlarnaProductionUrl = @"https://inapp.klarna.com";
 
 + (NSString *)locale {
   return [[NSBundle mainBundle] preferredLocalizations].firstObject;
+}
+
++ (NSString *) urlEncodeWithParam:(NSString *)param {
+  return (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(
+                                                                               NULL,
+                                                                               (CFStringRef)param,
+                                                                               NULL,
+                                                                               (CFStringRef)@"!*'();:@&=+$,/?%#[]",
+                                                                               kCFStringEncodingUTF8 ));
 }
 
 @end
