@@ -14,7 +14,7 @@ NSString *const KlarnaProductionUrl = @"https://inapp.klarna.com";
                    [self baseUrl],
                    [KODContext getApiKey],
                    [self locale],
-                   [self urlEndodeWithParam:publicKeyBase64Str]];
+                   [self urlEncodeWithParam:publicKeyBase64Str]];
   return [NSURL URLWithString:url];
 }
 
