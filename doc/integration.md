@@ -204,7 +204,7 @@ The code above, which utilizes the [AFNetworking](http://afnetworking.com/) fram
 }
 ```
 
-This JSON contains the data required for the sample backend to know which purchase request to issue. The `reference` identifies the item to purchase, the `user_token` identifies the user for which to perform the purchase and the `origin_proof` proves that the request originated from the user's device. Note how we sent a string representation of `originProof` by calling its `description` method.
+This JSON contains the data required for the sample backend to know which purchase request to issue. The `reference` identifies the item to purchase, the `user_token` identifies the user for whom to perform the purchase and the `origin_proof` proves that the request originated from the user's device. Note how we sent a string representation of `originProof` by calling its `description` method.
 
 Remember that if you try this out for yourself, your origin proof and user token will obviously be different. Also note the placeholder comments in the "success" and "failure" blocks above, where you will most likely want to notify the user of the purchase attempt's outcome.
 
