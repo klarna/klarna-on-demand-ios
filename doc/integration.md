@@ -45,7 +45,7 @@ We recommend setting your API key in your AppDelegate in the manner shown below:
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   // Set Klarna's API key. This is an actual test key that you can use to try things out,
   // though it would be best to use your personalized test key.
-  [KODContext setApiKey:@"test_29f612e8-1576-423f-80a8-679f354e4c89"];
+  [KODContext setApiKey:@"test_d8324b98-97ce-4974-88de-eaab2fdf4f14"];
   return YES;
 }
 @end
