@@ -34,7 +34,7 @@ Then simply run `pod install` in your project directory and you will be good to 
 ##Supplying your API key
 In order to use the SDK, you will need an API key to identify yourself. You can get one from our [developer site (coming soon)](http://developers.klarna.com/).
 
-We recommend setting your API key in your AppDelegate in the manner shown below:
+We recommend setting your API key in your AppDelegate in the manner shown below. If you don't have a key of your own yet the one listed below will work as well but will not properly represent your application:
 
 ```objective-c
 #import "AppDelegate.h"
