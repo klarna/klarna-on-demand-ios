@@ -110,7 +110,7 @@ The registration view expects its delegate to conform to this protocol, which ex
 Building upon the code sample from the previous section, consider the following methods which make a view controller conform to the KODRegistrationViewControllerDelegate protocol. The methods correspond to the types of callbacks we have just listed:
 
 ```objective-c
-- (void)klarnaRegistrationController:(KODRegistrationViewController *)controller finishedWithUserResult:(KODRegistrationResult *)registrationResult {
+- (void)klarnaRegistrationController:(KODRegistrationViewController *)controller finishedWithResult:(KODRegistrationResult *)registrationResult {
   // Dismiss the registration view and store the user's token
   [self dismissViewControllerAnimated:YES completion:nil];
   [self saveUserToken: registrationResult.token]; // this is for illustrative purposes, we do not supply this method
