@@ -43,7 +43,7 @@ We recommend setting your API key in your AppDelegate in the manner shown below.
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   // Set Klarna's API key. This is an actual test key that you can use to try things out,
   // though it would be best to use your personalized test key.
-  [KODContext setApiKey:@"test_29f612e8-1576-423f-80a8-679f354e4c89"];
+  [KODContext setApiKey:@"test_d8324b98-97ce-4974-88de-eaab2fdf4f14"];
   return YES;
 }
 @end
@@ -192,7 +192,7 @@ All the code above does is send the following JSON to `http://localhost:9292/pay
 }
 ```
 
-This JSON contains the data required for the sample backend to know which purchase request to issue. The `reference` identifies the item to purchase, the `user_token` identifies the user for which to perform the purchase and the `origin_proof` proves that the request originated from the user's device. Note how we sent a string representation of `originProof` by calling its `description` method.
+This JSON contains the data required for the sample backend to know which purchase request to issue. The `reference` identifies the item to purchase, the `user_token` identifies the user for whom to perform the purchase and the `origin_proof` proves that the request originated from the user's device. Note how we sent a string representation of `originProof` by calling its `description` method.
 
 Remember that if you try this out for yourself, your origin proof and user token will obviously be different. Also note the placeholder comments in the "success" and "failure" blocks above, where you will most likely want to notify the user of the purchase attempt's outcome.
 
