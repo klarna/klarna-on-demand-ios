@@ -133,7 +133,7 @@ As you can see, your first order of business will usually be to dismiss the regi
 
 <a name="when_to_show_registration"></a>
 ###When should you show the registration view?
-While we've seen how to utilize the registration view, we never talked about **when** you should display it. While it is ultimately up to you to decide, we have a fairly straightforward recommendation - you should only display the registration view when you do not have a user token stored. Assuming your user has gone through the registration process successfully and received a token there is no need to have the user register again, as tokens do not expire (though they can be revoked).
+While we've seen how to utilize the registration view, we never talked about **when** you should display it. Our recommendation is to display the registration view when you do not have a user token stored. Assuming your user has gone through the registration process successfully and received a token there is no need to have the user register again, as tokens do not expire (though they can be revoked).
 
 ##Performing purchases
 The aim of this SDK is to allow users to make purchases using your application, backed by Klarna as a payment method. However, the SDK does not offer any direct methods for performing purchases as this will expose your application's private Klarna credentials. Instead, applications using the SDK are expected to work in concert with an application backend, which will perform the actual purchase requests.
