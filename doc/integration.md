@@ -64,6 +64,14 @@ First off, import the registration view's header file into your view controller:
 #import "KODRegistrationViewController.h"
 ```
 
+Secondly, change the view controller which hosts the registration view to conform to the KODRegistrationViewControllerDelegate protocol, which we will talk about [shortly](#kod_registration_view_controller_delegate):
+
+```objective-c
+@interface MainViewController : UIViewController<KODRegistrationViewControllerDelegate>
+// Various interface definitions
+@end
+```
+
 Then, assuming the button's touch handler is called `onRegisterPressed`, set it up like this:
 
 ```objective-c
@@ -83,7 +91,7 @@ Then, assuming the button's touch handler is called `onRegisterPressed`, set it 
 
 There are a couple of things that are worth pointing out in the code above:
 
-- To properly initialize the registration view, you need to supply it with a delegate that it will use to notify you of various important events. We will go over these events later when we examine the [KODRegistrationViewControllerDelegate](#kod_registration_view_controller_delegate) protocol. We recommend having the view controller that hosts the registration view conform to said protocol.
+- To properly initialize the registration view, you need to supply it with a delegate that it will use to notify you of various important events. Having changed the hosting view controller to conform to said protocol we can supply it as the delegate, which is the approach we recommend.
 - We display the registration view by making it part of a navigation view controller. This is the recommended way to display the registration view, and will give users the option to back out of the registration process.
 
 This is really all there is to displaying the registration view.
@@ -122,14 +130,6 @@ Building upon the code sample from the previous section, consider the following 
 ```
 
 As you can see, your first order of business will usually be to dismiss the registration view upon any of the events occurring. Then, depending on the event, you will want to take further action such as storing the user token or displaying an error message.
-
-You should also declare that your view controller implements the protocol by declaring it in the following fashion:
-
-```objective-c
-@interface MainViewController : UIViewController<KODRegistrationViewControllerDelegate>
-// Various interface definitions
-@end
-```
 
 <a name="when_to_show_registration"></a>
 ###When should you show the registration view?
@@ -222,7 +222,15 @@ First, import the preferences view's header file into your view controller:
 #import "KODPreferencesViewController.h"
 ```
 
-Then, assuming the button's touch handler is called `onPreferencesPressed`, set it up in the following manner:
+Then, declare that your view controller conforms to the KODPreferencesViewControllerDelegate protocol which we will talk about [soon](#kod_preferences_view_controller_delegate). If we were to use the same view controller from when we set up the [registration view](#registration_view), we would go about this by declaring it like so:
+
+```objective-c
+@interface MainViewController : UIViewController<KODRegistrationViewControllerDelegate, KODPreferencesViewControllerDelegate>
+// Various interface definitions
+@end
+```
+
+Finally, assuming the button's touch handler is called `onPreferencesPressed`, set it up in the following manner:
 
 ```objective-c
 - (IBAction)onPreferencesPressed:(id)sender {
@@ -242,7 +250,7 @@ Then, assuming the button's touch handler is called `onPreferencesPressed`, set 
 There are a few things that are worth pointing out in the code above:
 
 - To properly initialize the preferences view, you need to supply it with the following:
- - A delegate that it will use to notify you of various important events. We will go over these events later when we examine the [KODPreferencesViewControllerDelegate](#kod_preferences_view_controller_delegate) protocol. The code describes the recommended approach, where we supply the hosting view controller that should conform to said protocol.
+ - A delegate that it will use to notify you of various important events, similar to what we had in the registration view. The code follows the recommended approach, where we supply the hosting view controller that should conform to said protocol.
  - The user token obtained during the user's registration. Assume this token was stored in `userToken` used above.
 - We display the preferences view by making it part of a navigation view controller. This is the recommended way to display the preferences view, as it allows users to close the preferences view and return to your application.
 
@@ -275,11 +283,3 @@ Building upon the code sample from the previous section, consider the following 
 ```
 
 As you can see, your first order of business will usually be to dismiss the preferences view upon any of the events occurring. In case of an error, you are strongly encouraged to notify the user as most errors are unrecoverable and require the preferences view to be reopened.
-
-Remember that you should also declare that your view controller conforms to the protocol. Assuming the view controller in question is the same one from when we set up the [registration view](#registration_view), you would go about this by declaring it like so:
-
-```objective-c
-@interface MainViewController : UIViewController<KODRegistrationViewControllerDelegate, KODPreferencesViewControllerDelegate>
-// Various interface definitions
-@end
-```
