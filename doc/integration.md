@@ -25,11 +25,9 @@ This guide includes all information necessary to receive payments from a user of
 ##Including the SDK in your project
 This guide assumes you use [CocoaPods](http://cocoapods.org) to manage your project dependencies. If you do not, refer to our [official documentation (coming soon)](http://developers.klarna.com) for an alternative setup approach.
 
-Open up your Podfile and add the following line:
+Simply open up your Podfile and add the following line:
 
     pod "Klarna-on-Demand"
-
-Then simply run `pod install` in your project directory and you will be good to go.
 
 ##Supplying your API key
 In order to use the SDK, you will need an API key to identify yourself. You can get one from our [developer site (coming soon)](http://developers.klarna.com/).
