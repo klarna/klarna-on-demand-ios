@@ -32,7 +32,7 @@ Simply open up your Podfile and add the following line:
 ##Supplying your API key
 In order to use the SDK, you will need an API key to identify yourself. You can get one from our [developer site (coming soon)](http://developers.klarna.com/).
 
-We recommend setting your API key in your AppDelegate in the manner shown below. If you don't have a key of your own yet the one listed below will work as well but will not properly represent your application:
+We recommend setting your API key in your AppDelegate in the manner shown below. If you don't have a key of your own yet the one listed below will work as well, but will not properly represent your application:
 
 ```objective-c
 #import "AppDelegate.h"
@@ -138,7 +138,7 @@ As you can see, your first order of business will usually be to dismiss the regi
 While we've seen how to utilize the registration view, we never talked about **when** you should display it. Our recommendation is to display the registration view when you do not have a user token stored. Assuming your user has gone through the registration process successfully and received a token there is no need to have the user register again, as tokens do not expire (though they can be revoked).
 
 ##Performing purchases
-The aim of this SDK is to allow users to make purchases using your application, backed by Klarna as a payment method. However, the SDK does not offer any direct methods for performing purchases as this will expose your application's private Klarna credentials. Instead, applications using the SDK are expected to work in concert with an application backend, which will perform the actual purchase requests.
+The aim of this SDK is to allow users to make purchases using your application, backed by Klarna as a payment method. However, the SDK does not offer any direct methods for performing purchases as this will expose your application's private Klarna credentials. Instead, applications using the SDK are expected to work with an application backend, which will perform the actual purchase requests.
 
 In this section, we will see how to communicate with such a backend and for that purpose we supply a sample backend that you can find [here](https://github.com/klarna/sample-ondemand-backend). Reading the sample backend's documentation will allow you to fully grasp how an application using this SDK is expected to perform purchases, and you are encouraged to take a look if things become too unclear.
 
