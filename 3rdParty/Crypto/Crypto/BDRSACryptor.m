@@ -313,9 +313,9 @@ static unsigned char oidSequence [] = { 0x30, 0x0d, 0x06, 0x09, 0x2a, 0x86, 0x48
     }
     else
     {
-        bitstringEncLength = (([publicKeyData length ] + 1)/256) + 2;
+        bitstringEncLength = (int)(([publicKeyData length ] + 1)/256) + 2;
     }
-    
+  
     builder[0] = 0x30;
     
     size_t i = sizeof(oidSequence) + 2 + bitstringEncLength + [publicKeyData length];
