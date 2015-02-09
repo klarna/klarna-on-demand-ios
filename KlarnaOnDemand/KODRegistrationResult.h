@@ -10,6 +10,16 @@
  */
 @property (strong, nonatomic) NSString *token;
 
-- (id)initWithToken:(NSString *)token;
+/**
+ *  The user's validated phone number.
+ */
+@property (strong, nonatomic) NSString *phoneNumber;
+
+/**
+ *  The user's registration details.
+ */
+@property (strong, nonatomic) NSDictionary *userDetails;
+
+- (id)initWithToken:(NSString *)token andPhoneNumber:(NSString *)phoneNumber andUserDetails:(NSDictionary *)userDetails;
 
 @end
