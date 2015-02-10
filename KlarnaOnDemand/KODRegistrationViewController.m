@@ -52,24 +52,16 @@
 }
 
 - (void)handleUserReadyEventWithPayload:(NSDictionary *)payload {
-  NSMutableDictionary *mutablePayload = [payload mutableCopy];
-  NSString *token = [self popFromDictionary:mutablePayload withKey:@"userToken"];
-  NSAssert(token, @"KODToken failed to create.");
+  NSString *token = payload[@"userToken"];
   if ([self.delegate respondsToSelector:@selector(klarnaRegistrationController:finishedWithResult:)]) {
-    NSString *phoneNumber = [self popFromDictionary:mutablePayload withKey:@"phoneNumber"];
+    NSString *phoneNumber = payload[@"phoneNumber"];
     KODRegistrationResult *kodRegistrationResult = [[KODRegistrationResult alloc]
                                                     initWithToken:token
                                                     andPhoneNumber:phoneNumber
-                                                    andUserDetails:mutablePayload];
+                                                    andUserDetails:payload[@"userDetails"]];
     
     [self.delegate klarnaRegistrationController:self finishedWithResult:kodRegistrationResult];
   }
-}
-
-- (id)popFromDictionary:(NSMutableDictionary *)dictionary withKey:(NSString *)key {
-  NSString *value = dictionary[key];
-  [dictionary removeObjectForKey:key];
-  return value;
 }
 
 - (void)handleUserErrorEvent {
