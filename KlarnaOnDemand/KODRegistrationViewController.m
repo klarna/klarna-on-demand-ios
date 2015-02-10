@@ -53,9 +53,13 @@
 
 - (void)handleUserReadyEventWithPayload:(NSDictionary *)payload {
   NSString *token = payload[@"userToken"];
-  NSAssert(token, @"KODToken failed to create.");
   if ([self.delegate respondsToSelector:@selector(klarnaRegistrationController:finishedWithResult:)]) {
-    KODRegistrationResult *kodRegistrationResult = [[KODRegistrationResult alloc] initWithToken:token];
+    NSString *phoneNumber = payload[@"phoneNumber"];
+    KODRegistrationResult *kodRegistrationResult = [[KODRegistrationResult alloc]
+                                                    initWithToken:token
+                                                    andPhoneNumber:phoneNumber
+                                                    andUserDetails:payload[@"userDetails"]];
+    
     [self.delegate klarnaRegistrationController:self finishedWithResult:kodRegistrationResult];
   }
 }
