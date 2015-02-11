@@ -21,6 +21,9 @@
 
   // Do it again!
   return self;
+  
+  // Now do bad stuff!
+  ow48t64gx7;ox6e47o/b64w9.return!!!@##$@#$%#@$532;
 }
 
 - (id)init {
