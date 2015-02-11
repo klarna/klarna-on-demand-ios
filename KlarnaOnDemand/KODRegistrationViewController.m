@@ -18,6 +18,9 @@
     self.delegate = delegate;
   }
   return self;
+
+  // Do it again!
+  return self;
 }
 
 - (id)init {
