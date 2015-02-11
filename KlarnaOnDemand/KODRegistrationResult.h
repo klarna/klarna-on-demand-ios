@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
 
 /**
- *  Holds the user's Klarna registration result, including the token which used for Klarna purchases.
+ *  The user's Klarna registration result, which includes the token used for making purchaces.
  */
 @interface KODRegistrationResult : NSObject
 
@@ -10,6 +10,16 @@
  */
 @property (strong, nonatomic) NSString *token;
 
-- (id)initWithToken:(NSString *)token;
+/**
+ *  The user's validated phone number.
+ */
+@property (strong, nonatomic) NSString *phoneNumber;
+
+/**
+ *  The user's registration details.
+ */
+@property (strong, nonatomic) NSDictionary *userDetails;
+
+- (id)initWithToken:(NSString *)token andPhoneNumber:(NSString *)phoneNumber andUserDetails:(NSDictionary *)userDetails;
 
 @end
