@@ -54,7 +54,7 @@
 - (void)handleUserReadyEventWithPayload:(NSDictionary *)payload {
   NSString *token = payload[@"userToken"];
   if ([self.delegate respondsToSelector:@selector(klarnaRegistrationController:finishedWithResult:)]) {
-    NSString *phoneNumber = payload[@"phoneNumber"];
+    NSString *phoneNumber = payload[@"phone"];
     KODRegistrationResult *kodRegistrationResult = [[KODRegistrationResult alloc]
                                                     initWithToken:token
                                                     andPhoneNumber:phoneNumber
