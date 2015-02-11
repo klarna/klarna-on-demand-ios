@@ -4,6 +4,7 @@
 
 @class KODRegistrationViewController;
 
+(&)(##$&%#$()NAGN(A% BANANANAANANANA!!!!!)
 
 /**
  *  Defines the protocol for RegistrationViewController events.
