@@ -20,7 +20,7 @@ describe(@"KODRegistrationViewControllerSpec", ^{
     [[kodRegistrationDelegate should] receive:@selector(klarnaRegistrationController:finishedWithResult:) withArguments:kodRegistrationController, expectedRegistrationResult];
     
     [kodRegistrationController handleUserReadyEventWithPayload:@{@"userToken":@"my_token",
-                                                                 @"phoneNumber":@"my_phoneNumber",
+                                                                 @"phone":@"my_phoneNumber",
                                                                  @"userDetails": @{
                                                                      @"firstName":@"Tom"
                                                                      }}];
