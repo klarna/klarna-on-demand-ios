@@ -3,8 +3,9 @@
 language: objective-c
 
 script:
-- xcodebuild test -workspace KlarnaOnDemand.xcworkspace -scheme KlarnaOnDemand -destination 'platform=iOS Simulator,name=iPhone 5s,OS=7.1' -destination 'platform=iOS Simulator,name=iPhone 5s,OS=8.1' | xcpretty -c
-- xcodebuild -workspace KlarnaOnDemand.xcworkspace -scheme KlarnaOnDemandExample -destination 'platform=iOS Simulator,name=iPhone 5s,OS=7.1' -destination 'platform=iOS Simulator,name=iPhone 5s,OS=8.1' | xcpretty -c
+- set -o pipefail && xcodebuild test -workspace KlarnaOnDemand.xcworkspace -scheme KlarnaOnDemand -destination 'platform=iOS Simulator,name=iPhone 5s,OS=7.1' -destination 'platform=iOS Simulator,name=iPhone 5s,OS=8.1' | xcpretty -c
+- set -o pipefail && xcodebuild -workspace KlarnaOnDemand.xcworkspace -scheme KlarnaOnDemandExample -destination 'platform=iOS Simulator,name=iPhone 5s,OS=7.1' -destination 'platform=iOS Simulator,name=iPhone 5s,OS=8.1' | xcpretty -c
+
 notifications:
   email:
     - index.e@klarna.com
