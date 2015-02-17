@@ -53,7 +53,7 @@ We recommend setting your API key in your AppDelegate in the manner shown below.
 
 <a name="registration_view"></a>
 ##The registration view
-Users must go through a quick registration process in order to pay using Klarna. To make this process as simple as possible, the SDK provides a registration view that you should present to your users. Once the registration process is complete, you will receive a token that will allow you to charge the user for purchases.
+Users must go through a quick one time registration process in order to pay using Klarna. To make this process as simple as possible, the SDK provides a registration view that you should present to your users. Once the registration process is complete, you will receive a token that will allow you to charge the user for purchases.
 
 **Note:** It is important to point out that the registration view will not function properly without network access, and that it does not currently support a landscape orientation.
 
