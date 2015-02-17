@@ -54,12 +54,7 @@
 - (void)handleUserReadyEventWithPayload:(NSDictionary *)payload {
   NSString *token = payload[@"userToken"];
   if ([self.delegate respondsToSelector:@selector(klarnaRegistrationController:finishedWithResult:)]) {
-    NSString *phoneNumber = payload[@"phone"];
-    KODRegistrationResult *kodRegistrationResult = [[KODRegistrationResult alloc]
-                                                    initWithToken:token
-                                                    andPhoneNumber:phoneNumber
-                                                    andUserDetails:payload[@"userDetails"]];
-    
+        KODRegistrationResult *kodRegistrationResult = [[KODRegistrationResult alloc] initWithToken:token];
     [self.delegate klarnaRegistrationController:self finishedWithResult:kodRegistrationResult];
   }
 }
