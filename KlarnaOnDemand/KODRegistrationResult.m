@@ -2,11 +2,9 @@
 
 @implementation KODRegistrationResult
 
-- (id)initWithToken:(NSString *)token andPhoneNumber:(NSString *)phoneNumber andUserDetails:(NSDictionary *)userDetails {
+- (id)initWithToken:(NSString *)token {
   if (self = [super init]) {
     self.token = token;
-    self.phoneNumber = phoneNumber;
-    self.userDetails = userDetails;
   }
   return self;
 }
@@ -19,9 +17,7 @@
 - (BOOL)isEqual:(id)object {
   if([object isKindOfClass:[KODRegistrationResult class]]) {
     KODRegistrationResult *objectAsKODRegistrationResult = (KODRegistrationResult *) object;
-    return [objectAsKODRegistrationResult.token isEqualToString:self.token] &&
-    [objectAsKODRegistrationResult.phoneNumber isEqualToString:self.phoneNumber] &&
-    [ objectAsKODRegistrationResult.userDetails isEqualToDictionary:self.userDetails];
+    return [objectAsKODRegistrationResult.token isEqualToString:self.token];
   }
   return NO;
 }
