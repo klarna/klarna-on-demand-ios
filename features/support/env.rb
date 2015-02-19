@@ -9,11 +9,24 @@ class AppiumWorld
 end
 
 capabilities = {
-  platformName:    :ios,
-  deviceName:      ENV['DEVICE_NAME'] || 'iPhone 6',
-  platformVersion: ENV['PLATFORM_VERSION'] || '8.1',
+  platformName:    ENV['PLATFORM'] || (raise 'Please supply the desired platform'),
   app:             ENV['APP_LOCATION'] || (raise 'Please specify the app\'s location')
 }
+
+capabilities[:platformName] = capabilities[:platformName].downcase.to_sym
+
+case capabilities[:platformName]
+when :ios
+  capabilities.merge!({
+    deviceName:      ENV['DEVICE_NAME'] || 'iPhone 6',
+    platformVersion: ENV['PLATFORM_VERSION'] || '8.1'
+  })
+when :android
+  capabilities.merge!({
+    deviceName:      ENV['DEVICE_NAME'] || 'Android Emulator',
+    platformVersion: ENV['PLATFORM_VERSION'] || '4.4'
+  })
+end
 
 Appium::Driver.new(caps: capabilities)
 Appium.promote_appium_methods AppiumWorld
