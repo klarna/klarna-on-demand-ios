@@ -19,7 +19,7 @@ script:
 
 # Zip the app and send it to SauceLabs
 - zip -r KODSampleApp.zip build/Build/Products/Debug-iphonesimulator/KlarnaOnDemandExample.app
-- curl -u $SAUCE_USERNAME:$SAUCE_ACCESS_KEY -X POST "http://saucelabs.com/rest/v1/storage/$SAUCE_USERNAME/KODSampleApp.zip?overwrite=true" -H "Content-Type: application/octet-stream" --data-binary @KODSampleApp.zip
+- "curl -u $SAUCE_USERNAME:$SAUCE_ACCESS_KEY -X POST \"http://saucelabs.com/rest/v1/storage/$SAUCE_USERNAME/KODSampleApp.zip?overwrite=true\" -H \"Content-Type: application/octet-stream\" --data-binary @KODSampleApp.zip"
 
 # Run integration tests
 - (cd integration-tests && APP_LOCATION=sauce-storage:KODSampleApp.zip PLATFORM=ios bundle exec cucumber)
