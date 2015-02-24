@@ -1,10 +1,11 @@
-# reference: http://www.objc.io/issue-6/travis-ci.html
-
 language: objective-c
+
+addons:
+  sauce_connect: true
 
 install:
 - pod install
-- cd integration-tests && bundle install
+- (cd integration-tests && bundle install)
 
 script:
 # Change the example app's API key to circumvent Ringcaptcha
@@ -17,4 +18,9 @@ script:
 
 notifications:
   email:
-    - index.e@klarna.com
+  - index.e@klarna.com
+
+env:
+  global:
+  - secure: fqi0W7DMUXDRJNI7zc9kao2fxTGzNPVGWcnBJkTMfabb05iT7eDOooZHoUas/Ctogklt+lkEpr2V0GcgliJ4sVPWJ9L8wPy3BcrVHZq7Of3bAoB9d30ISH4qhMVITdIFHnXS8V4AHOvig9g83PcN4Kor+KQKHYyjiIu8KYrxvLU=
+  - secure: EimNhOU3jiHJtpSLfEPb/Ga7L0qw/3Eobnx6n+2pIB1oEj17bxH65MNwg2A1+lCUuLEUXUzGiFLwTFMU870AGXpeWs+APPaEtKQY6IJgiKh3S+xk0rbHUh3i3xXULq15ClTEIQVb6UVkdPHy05Nnb/1IZwpJung0eFDQmhOJOJ8=
