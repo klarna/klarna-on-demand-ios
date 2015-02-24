@@ -13,8 +13,10 @@ script:
 # Direct the app to the sample backend on Heroku
 - sed -i "" 's#http://localhost:9292/pay#https://sample-ondemand-backend.herokuapp.com/pay#g' **/*.m
 
-- set -o pipefail && xcodebuild test -workspace KlarnaOnDemand.xcworkspace -scheme KlarnaOnDemand -destination 'platform=iOS Simulator,name=iPhone 5s,OS=7.1' -destination 'platform=iOS Simulator,name=iPhone 5s,OS=8.1' | xcpretty -c
-- set -o pipefail && xcodebuild -workspace KlarnaOnDemand.xcworkspace -scheme KlarnaOnDemandExample -destination 'platform=iOS Simulator,name=iPhone 5s,OS=7.1' -destination 'platform=iOS Simulator,name=iPhone 5s,OS=8.1' | xcpretty -c
+- set -o pipefail && xcodebuild test -derivedDataPath build -workspace KlarnaOnDemand.xcworkspace -scheme KlarnaOnDemand -destination 'platform=iOS Simulator,name=iPhone 5s,OS=7.1' -destination 'platform=iOS Simulator,name=iPhone 5s,OS=8.1' | xcpretty -c
+- set -o pipefail && xcodebuild -derivedDataPath build -workspace KlarnaOnDemand.xcworkspace -scheme KlarnaOnDemandExample -destination 'platform=iOS Simulator,name=iPhone 5s,OS=7.1' -destination 'platform=iOS Simulator,name=iPhone 5s,OS=8.1' | xcpretty -c
+
+- (cd integration-tests && APP_LOCATION=../build/Build/Products/Debug-iphonesimulator/KlarnaOnDemandExample.app PLATFORM=ios bundle exec cucumber)
 
 notifications:
   email:
