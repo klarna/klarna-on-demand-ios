@@ -15,15 +15,11 @@ describe(@"KODRegistrationViewControllerSpec", ^{
   });
   
   it(@"should call delegate's .klarnaRegistrationController:finishedWithResult on .handleUserReadyEvent when a token was received", ^{
-    KODRegistrationResult *expectedRegistrationResult = [[KODRegistrationResult alloc] initWithToken:@"my_token" andPhoneNumber:@"my_phoneNumber" andUserDetails:@{@"firstName":@"Tom"}];
+    KODRegistrationResult *expectedRegistrationResult = [[KODRegistrationResult alloc] initWithToken:@"my_token"];
     
     [[kodRegistrationDelegate should] receive:@selector(klarnaRegistrationController:finishedWithResult:) withArguments:kodRegistrationController, expectedRegistrationResult];
     
-    [kodRegistrationController handleUserReadyEventWithPayload:@{@"userToken":@"my_token",
-                                                                 @"phoneNumber":@"my_phoneNumber",
-                                                                 @"userDetails": @{
-                                                                     @"firstName":@"Tom"
-                                                                     }}];
+    [kodRegistrationController handleUserReadyEventWithPayload:@{@"userToken":@"my_token"}];
   });
   
   it(@"should call the delegate's .klarnaRegistrationFailed method when the web view fails to load", ^{
