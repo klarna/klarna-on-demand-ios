@@ -1,0 +1,3 @@
+[submodule "integration-tests"]
+	path = integration-tests
+	url = https://github.com/klarna/klarna-on-demand-integration-tests.git
