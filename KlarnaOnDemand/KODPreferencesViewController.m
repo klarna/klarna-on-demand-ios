@@ -4,7 +4,7 @@
 
 @interface KODPreferencesViewController ()
 
-@property(strong, nonatomic) NSString *token;
+@property (strong, nonatomic) NSString *token;
 @property (weak, nonatomic) id<KODPreferencesViewControllerDelegate> delegate;
 
 @end
