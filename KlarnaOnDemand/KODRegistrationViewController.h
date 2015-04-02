@@ -1,6 +1,7 @@
 #import <UIKit/UIKit.h>
 #import "KODRegistrationResult.h"
 #import "KODWebViewController+Protected.h"
+#import "KODRegistrationSettings.h"
 
 @class KODRegistrationViewController;
 
@@ -46,6 +47,8 @@
  */
 @interface KODRegistrationViewController : KODWebViewController
 
+@property (strong, nonatomic) KODRegistrationSettings *registrationSettings;
+
 /**
  *  Initialize the Klarna registration view-controller.
  *
@@ -54,5 +57,7 @@
  *  @return An initialized registration view-controller, ready to be displayed.
  */
 - (id)initWithDelegate:(id<KODRegistrationViewControllerDelegate>)delegate;
+
+- (id)initWithDelegate:(id<KODRegistrationViewControllerDelegate>)delegate andRegistrationSettings: (KODRegistrationSettings *) registrationSettings;
 
 @end
