@@ -7,6 +7,7 @@
 @implementation KODWebViewController
 
 NSString *const JockeyUserReady = @"userReady";
+NSString *const JockeyUserReadyResponse = @"userReadyResponse";
 NSString *const JockeyUserError =  @"userError";
 
 - (void)viewDidLoad {
@@ -100,6 +101,7 @@ NSString *const JockeyUserError =  @"userError";
 - (void)registerJockeyEvents {
   [Jockey on:JockeyUserReady perform:^(NSDictionary *payload) {
     [self handleUserReadyEventWithPayload: payload];
+    [Jockey send:JockeyUserReadyResponse withPayload:@{@"event": payload[@"event"], @"status": @"success"} toWebView:self.webView];
   }];
   
   [Jockey on:JockeyUserError perform:^(NSDictionary *payload) {
