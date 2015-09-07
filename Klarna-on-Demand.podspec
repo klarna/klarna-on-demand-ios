@@ -31,3 +31,4 @@ Pod::Spec.new do |s|
     jockey.private_header_files = '3rdParty/JockeyJS/*.h'
   end
 end
+
