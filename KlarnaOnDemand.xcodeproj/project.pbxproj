@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		080D29591B95763400E1D142 /* KODHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 080D29581B95763400E1D142 /* KODHelpers.m */; };
+		080D295C1B957A4D00E1D142 /* KODHelpersSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 080D295B1B957A4D00E1D142 /* KODHelpersSpec.m */; };
 		4651C4541A3DDE9200800F1A /* KODWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4651C4521A3DDE9200800F1A /* KODWebViewController.m */; };
 		467F0EC21A2B6DE900A76845 /* Jockey.m in Sources */ = {isa = PBXBuildFile; fileRef = 467F0EC11A2B6DE900A76845 /* Jockey.m */; };
 		467F0EDB1A2C6AC900A76845 /* KODRegistrationResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 467F0ED91A2C696100A76845 /* KODRegistrationResult.m */; };
@@ -71,6 +73,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		080D29571B95763400E1D142 /* KODHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KODHelpers.h; sourceTree = "<group>"; };
+		080D29581B95763400E1D142 /* KODHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KODHelpers.m; sourceTree = "<group>"; };
+		080D295B1B957A4D00E1D142 /* KODHelpersSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KODHelpersSpec.m; sourceTree = "<group>"; };
 		443BC01E8B6591BA34CE5172 /* libPods-KlarnaOnDemandTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KlarnaOnDemandTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		460FDB621A4974A200CF327B /* libPods-KlarnaOnDemandTests-Kiwi.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-KlarnaOnDemandTests-Kiwi.a"; path = "Pods/build/Debug-iphoneos/libPods-KlarnaOnDemandTests-Kiwi.a"; sourceTree = "<group>"; };
 		4651C40E1A38A4BC00800F1A /* KODWebViewController+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "KODWebViewController+Protected.h"; path = "KlarnaOnDemand/KODWebViewController+Protected.h"; sourceTree = SOURCE_ROOT; };
@@ -238,6 +243,8 @@
 				C90D1C841A24CD2800016FE4 /* KODContext.m */,
 				C9E7F2401A3F45170005205B /* KODCrypto.h */,
 				C9E7F2411A3F45170005205B /* KODCrypto.m */,
+				080D29571B95763400E1D142 /* KODHelpers.h */,
+				080D29581B95763400E1D142 /* KODHelpers.m */,
 				C954ABA51A345B5E00574C11 /* KODLocalization.h */,
 				C954ABA61A345B5E00574C11 /* KODLocalization.m */,
 				C9E7F2431A3F4A410005205B /* KODOriginProof.h */,
@@ -264,11 +271,12 @@
 				466387011A480DD20013429D /* KODSpecHelper.m */,
 				C9FC95401A278AAD00485500 /* KODContextSpec.m */,
 				465CF58F1A42DB9E00EC092D /* KODCryptoSpec.m */,
+				080D295B1B957A4D00E1D142 /* KODHelpersSpec.m */,
 				C9E7F25A1A405D0E0005205B /* KODOriginProofSpec.m */,
 				4651C4441A3D93E300800F1A /* KODPreferencesViewControllerSpec.m */,
+				C92CF94F1A51999C00430691 /* KODRegistrationResultSpec.m */,
 				46872D181A2B240000707282 /* KODRegistrationViewControllerSpec.m */,
 				C903A2E01A2523B6009AE44D /* KODUrlSpec.m */,
-				C92CF94F1A51999C00430691 /* KODRegistrationResultSpec.m */,
 				C90D1C701A24CBD100016FE4 /* Supporting Files */,
 			);
 			path = KlarnaOnDemandTests;
@@ -583,6 +591,7 @@
 				C954ABA71A345B5E00574C11 /* KODLocalization.m in Sources */,
 				C9E7F22F1A3F3FEA0005205B /* BDAESCryptor.m in Sources */,
 				C9E7F2391A3F3FEA0005205B /* NSData+BDJSONSerialization.m in Sources */,
+				080D29591B95763400E1D142 /* KODHelpers.m in Sources */,
 				467F0EDB1A2C6AC900A76845 /* KODRegistrationResult.m in Sources */,
 				C9E7F2341A3F3FEA0005205B /* BDSHA512Cryptor.m in Sources */,
 				C9E7F23E1A3F3FEA0005205B /* NSString+BDUtilities.m in Sources */,
@@ -609,6 +618,7 @@
 				468323DD1A4ACCB60030B3F1 /* KODPreferencesViewControllerSpec.m in Sources */,
 				468323DE1A4ACCB60030B3F1 /* KODRegistrationViewControllerSpec.m in Sources */,
 				468323DF1A4ACCB60030B3F1 /* KODUrlSpec.m in Sources */,
+				080D295C1B957A4D00E1D142 /* KODHelpersSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,14 +13,14 @@ describe(@".registrationUrl", ^{
   it(@"should return a playground registration url when token is for playground", ^{
     
     NSString *registrationUrl = [KODUrl registrationUrl].absoluteString;
-    [[theValue([registrationUrl hasPrefix:@"https://inapp.playground.klarna.com/registration/new"]) should] equal:theValue(YES)];
+    [[theValue([registrationUrl hasPrefix:@"https://ondemand-dg.playground.klarna.com/web/registration"]) should] equal:theValue(YES)];
   });
   
   it(@"should return a production registration url when token is for production", ^{
     [[KODContext class] stub:@selector(getApiKey) andReturn:@"skadoo"];
     
     NSString *registrationUrl = [KODUrl registrationUrl].absoluteString;
-    [[theValue([registrationUrl hasPrefix:@"https://inapp.klarna.com/registration/new"]) should] equal: theValue(YES)];
+    [[theValue([registrationUrl hasPrefix:@"https://ondemand.klarna.com/web/registration"]) should] equal: theValue(YES)];
   });
   
   it(@"should return a url with Swedish locale when locale is Swedish", ^{
@@ -64,7 +64,7 @@ describe(@".preferencesUrlWithToken:", ^{
   
   it(@"should return a playground preferences url when token is for playground", ^{
     NSString *preferencesUrl = [KODUrl preferencesUrlWithToken:token].absoluteString;
-    NSString *expectedPrefix = [NSString stringWithFormat:@"%@%@%@",@"https://inapp.playground.klarna.com/users/", token, @"/preferences"];
+    NSString *expectedPrefix = @"https://ondemand-dg.playground.klarna.com/web/preferences";
     [[theValue([preferencesUrl hasPrefix:expectedPrefix]) should] equal:theValue(YES)];
   });
   
@@ -72,7 +72,7 @@ describe(@".preferencesUrlWithToken:", ^{
     [[KODContext class] stub:@selector(getApiKey) andReturn:@"skadoo"];
     
     NSString *preferencesUrl = [KODUrl preferencesUrlWithToken:token].absoluteString;
-    NSString *expectedPrefix = [NSString stringWithFormat:@"%@%@%@",@"https://inapp.klarna.com/users/", token, @"/preferences"];
+    NSString *expectedPrefix = @"https://ondemand.klarna.com/web/preferences";
     [[theValue([preferencesUrl hasPrefix:expectedPrefix]) should] equal:theValue(YES)];
   });
   
