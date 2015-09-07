@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
   s.homepage         = "https://github.com/klarna/klarna-on-demand-ios"
   s.screenshots      = "https://raw.githubusercontent.com/klarna/klarna-on-demand-ios/master/screenshot.png"
   s.license          = 'Apache 2.0'
-  s.author           = { "Klarna InDeX Team" => "index.e@klarna.com" }
+  s.author           = { "Klarna On-Demand Team" => "on.demand.dev@klarna.com" }
   s.source           = { :git => "https://github.com/klarna/klarna-on-demand-ios.git", :tag => s.version.to_s }
   s.platform         = :ios, '7.0'
   s.requires_arc     = true
