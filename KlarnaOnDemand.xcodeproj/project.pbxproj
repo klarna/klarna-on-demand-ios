@@ -294,8 +294,8 @@
 		C9E7F1F81A3F3FEA0005205B /* Crypto */ = {
 			isa = PBXGroup;
 			children = (
-				C9E7F1F91A3F3FEA0005205B /* Crypto */,
 				C9E7F2081A3F3FEA0005205B /* Crypto-Prefix.pch */,
+				C9E7F1F91A3F3FEA0005205B /* Crypto */,
 				C9E7F2091A3F3FEA0005205B /* External */,
 				C9E7F20F1A3F3FEA0005205B /* Utilities */,
 			);

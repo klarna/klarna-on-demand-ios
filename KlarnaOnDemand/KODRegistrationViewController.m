@@ -63,7 +63,9 @@
 
 - (void)handleUserErrorEvent {
   if ([self.delegate respondsToSelector:@selector(klarnaRegistrationFailed:)]) {
-    [self.delegate klarnaRegistrationFailed:self];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+      [self.delegate klarnaRegistrationFailed:self];
+    });
   }
 }
 
