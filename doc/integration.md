@@ -210,7 +210,7 @@ KODOriginProof *originProof = [[KODOriginProof alloc] initWithAmount:4050
                                                            userToken:storedToken];
 ```
 
-Assume `storedToken` contains the user's token as received during registration. Note that the method expects the purchase amount to be supplied in cents. You can find the method's full documentation [here](http://cocoadocs.org/docsets/Klarna-on-Demand/0.1.5/Classes/KODOriginProof.html#//api/name/initWithAmount:currency:userToken:).
+Assume `storedToken` contains the user's token as received during registration. Note that the method expects the purchase amount to be supplied in cents. You can find the method's full documentation [here](http://cocoadocs.org/docsets/Klarna-on-Demand/1.0.5/Classes/KODOriginProof.html#//api/name/initWithAmount:currency:userToken:).
 
 ##The preferences view
 After having registered to pay using Klarna, users may wish to view or even alter their payment settings (for example, users may wish to switch from using a credit card to monthly invoice payments). As was the case with registration, the SDK provides a view for this purpose. Using the user token acquired during the registration process, you will be able to present your users with a preferences view.
