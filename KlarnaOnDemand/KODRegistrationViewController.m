@@ -54,18 +54,14 @@
 - (void)handleUserReadyEventWithPayload:(NSDictionary *)payload {
   NSString *token = payload[@"userToken"];
   if ([self.delegate respondsToSelector:@selector(klarnaRegistrationController:finishedWithResult:)]) {
-    KODRegistrationResult *kodRegistrationResult = [[KODRegistrationResult alloc] initWithToken:token];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-      [self.delegate klarnaRegistrationController:self finishedWithResult:kodRegistrationResult];      
-    });
+        KODRegistrationResult *kodRegistrationResult = [[KODRegistrationResult alloc] initWithToken:token];
+    [self.delegate klarnaRegistrationController:self finishedWithResult:kodRegistrationResult];
   }
 }
 
 - (void)handleUserErrorEvent {
   if ([self.delegate respondsToSelector:@selector(klarnaRegistrationFailed:)]) {
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-      [self.delegate klarnaRegistrationFailed:self];
-    });
+    [self.delegate klarnaRegistrationFailed:self];
   }
 }
 
