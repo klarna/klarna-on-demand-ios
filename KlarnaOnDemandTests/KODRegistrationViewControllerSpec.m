@@ -17,7 +17,7 @@ describe(@"KODRegistrationViewControllerSpec", ^{
   it(@"should call delegate's .klarnaRegistrationController:finishedWithResult on .handleUserReadyEvent when a token was received", ^{
     KODRegistrationResult *expectedRegistrationResult = [[KODRegistrationResult alloc] initWithToken:@"my_token"];
     
-    [[kodRegistrationDelegate shouldEventually] receive:@selector(klarnaRegistrationController:finishedWithResult:) withArguments:kodRegistrationController, expectedRegistrationResult];
+    [[kodRegistrationDelegate should] receive:@selector(klarnaRegistrationController:finishedWithResult:) withArguments:kodRegistrationController, expectedRegistrationResult];
     
     [kodRegistrationController handleUserReadyEventWithPayload:@{@"userToken":@"my_token"}];
   });
