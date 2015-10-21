@@ -33,6 +33,10 @@
 		460FDB861A49A3C500CF327B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = KlarnaOnDemandExample/Images.xcassets; sourceTree = SOURCE_ROOT; };
 		460FDB8E1A49A3F100CF327B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = KlarnaOnDemandExample/Info.plist; sourceTree = SOURCE_ROOT; };
 		460FDB8F1A49A3F100CF327B /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = KlarnaOnDemandExample/main.m; sourceTree = SOURCE_ROOT; };
+		4651D17F1BD7A75E00283F98 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		4651D1801BD7A75E00283F98 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/Main.strings; sourceTree = "<group>"; };
+		4651D1811BD7A76400283F98 /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = nb.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		4651D1821BD7A76400283F98 /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = nb.lproj/Main.strings; sourceTree = "<group>"; };
 		469203A81A4AC52900A628D6 /* CloseButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CloseButton@2x.png"; sourceTree = "<group>"; };
 		469203A91A4AC52900A628D6 /* QRCode@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "QRCode@2x.png"; sourceTree = "<group>"; };
 		469203AA1A4AC52900A628D6 /* TheGirlWithTheDragonTatoo@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "TheGirlWithTheDragonTatoo@2x.jpg"; sourceTree = "<group>"; };
@@ -249,6 +253,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				460FDB811A49A3B500CF327B /* Base */,
+				4651D17F1BD7A75E00283F98 /* sv */,
+				4651D1811BD7A76400283F98 /* nb */,
 			);
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";
@@ -257,6 +263,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				460FDB831A49A3B500CF327B /* Base */,
+				4651D1801BD7A75E00283F98 /* sv */,
+				4651D1821BD7A76400283F98 /* nb */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
