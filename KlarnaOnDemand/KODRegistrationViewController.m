@@ -7,6 +7,7 @@
 @interface KODRegistrationViewController ()
 
 @property (weak, nonatomic) id<KODRegistrationViewControllerDelegate> delegate;
+@property (strong, nonatomic) KODRegistrationSettings *registrationSettings;
 
 @end
 

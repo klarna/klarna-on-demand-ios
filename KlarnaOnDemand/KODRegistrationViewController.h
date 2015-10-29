@@ -46,8 +46,6 @@
  */
 @interface KODRegistrationViewController : KODWebViewController
 
-@property (strong, nonatomic) KODRegistrationSettings *registrationSettings;
-
 /**
  *  Initialize the Klarna registration view-controller.
  *
@@ -57,6 +55,14 @@
  */
 - (id)initWithDelegate:(id<KODRegistrationViewControllerDelegate>)delegate;
 
+/**
+ *  Initialize the Klarna registration view-controller.
+ *
+ *  @param delegate Delegate which implements the KODRegistrationViewControllerDelegate protocol for handling registration events.
+ *  @param registrationSettings customized settings for the registration view.
+ *
+ *  @return An initialized registration view-controller, ready to be displayed.
+ */
 - (id)initWithDelegate:(id<KODRegistrationViewControllerDelegate>)delegate andRegistrationSettings: (KODRegistrationSettings *) registrationSettings;
 
 @end
