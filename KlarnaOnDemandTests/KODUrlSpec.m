@@ -53,15 +53,24 @@ describe(@".registrationUrlWithSettings:", ^{
 
   it(@"should include confirmed user data id in the registration url when supplied", ^{
     KODRegistrationSettings *registrationSettings = [[KODRegistrationSettings alloc] initWithPrefillPhoneNumber:nil andConfirmedUserDataId:@"abcd"];
+
     NSString *registrationUrl = [KODUrl registrationUrlWithSettings:registrationSettings].absoluteString;
     [[registrationUrl should] containString: [NSString stringWithFormat:@"confirmed_user_data_id=abcd"]];
   });
 
   it(@"should include phone number in the registration url when supplied", ^{
-      KODRegistrationSettings *registrationSettings = [[KODRegistrationSettings alloc] initWithPrefillPhoneNumber:@"12345678" andConfirmedUserDataId:nil];
+    KODRegistrationSettings *registrationSettings = [[KODRegistrationSettings alloc] initWithPrefillPhoneNumber:@"12345678" andConfirmedUserDataId:nil];
 
     NSString *registrationUrl = [KODUrl registrationUrlWithSettings:registrationSettings].absoluteString;
     [[registrationUrl should] containString: [NSString stringWithFormat:@"prefill_phone_number=12345678"]];
+  });
+
+  it(@"should include phone number and confirmed user data id in the registration url when supplied", ^{
+    KODRegistrationSettings *registrationSettings = [[KODRegistrationSettings alloc] initWithPrefillPhoneNumber:@"12345678" andConfirmedUserDataId:@"abcd"];
+
+    NSString *registrationUrl = [KODUrl registrationUrlWithSettings:registrationSettings].absoluteString;
+    [[registrationUrl should] containString: [NSString stringWithFormat:@"prefill_phone_number=12345678"]];
+    [[registrationUrl should] containString: [NSString stringWithFormat:@"confirmed_user_data_id=abcd"]];
   });
 });
 
