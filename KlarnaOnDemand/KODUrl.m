@@ -11,7 +11,7 @@ NSString *const KlarnaProductionUrl = @"https://inapp.klarna.com";
 + (NSURL *)registrationUrlWithSettings: (KODRegistrationSettings *) registrationSettings {
   NSString *publicKeyBase64Str = [[KODCrypto sharedKODCrypto] publicKeyBase64Str];
 
-  NSString *url = [NSString stringWithFormat:@"%@/registration/new?api_key=%@&locale=%@&public_key=%@",
+  NSMutableString *url = [NSMutableString stringWithFormat:@"%@/registration/new?api_key=%@&locale=%@&public_key=%@",
                    [self baseUrl],
                    [KODContext getApiKey],
                    [self locale],
@@ -19,10 +19,10 @@ NSString *const KlarnaProductionUrl = @"https://inapp.klarna.com";
 
   if(registrationSettings != nil) {
     if(registrationSettings.confirmedUserDataId != nil) {
-      url = [NSString stringWithFormat:@"%@&confirmed_user_data_id=%@", url, registrationSettings.confirmedUserDataId];
+      [url appendString:[NSString stringWithFormat:@"&confirmed_user_data_id=%@", registrationSettings.confirmedUserDataId]];
     }
     if(registrationSettings.prefillPhoneNumber != nil) {
-      url = [NSString stringWithFormat:@"%@&prefill_phone_number=%@", url, registrationSettings.prefillPhoneNumber];
+      [url appendString:[NSString stringWithFormat:@"&prefill_phone_number=%@", registrationSettings.prefillPhoneNumber]];
     }
   }
 
