@@ -2,10 +2,10 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:KlarnaOnDemand.xcodeproj">
+      location = "group:Example/KlarnaOnDemandExample.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Example/KlarnaOnDemandExample.xcodeproj">
+      location = "group:KlarnaOnDemand.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
