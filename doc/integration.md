@@ -85,6 +85,9 @@ Then, assuming the button's touch handler is called `onRegisterPressed`, set it 
 
 There are a couple of things that are worth pointing out in the code above:
 
+- You can use `KODRegistrationSettings` object in order to customize the desired behaviour of the registration:
+  - `PrefillPhoneNumber`: device's phone number to be pre-filled in registration.
+  - `ConfirmedUserDataId`: id that identifies a session of pre-confirmed user data.
 - To properly initialize the registration view, you need to supply it with a delegate that it will use to notify you of various important events. We will go over these events later when we examine the [KODRegistrationViewControllerDelegate](#kod_registration_view_controller_delegate) protocol. We recommend having the view controller that hosts the registration view conform to said protocol.
 - We display the registration view by making it part of a navigation view controller. This is the recommended way to display the registration view, and will give users the option to back out of the registration process.
 
