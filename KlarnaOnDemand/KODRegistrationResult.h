@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
 
 /**
- *  Holds the user's Klarna registration result, including the token which used for Klarna purchases.
+ *  The user's Klarna registration result, which includes the token used for making purchaces.
  */
 @interface KODRegistrationResult : NSObject
 

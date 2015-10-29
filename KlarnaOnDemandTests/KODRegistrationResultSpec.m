@@ -4,7 +4,7 @@ SPEC_BEGIN(KODRegistrationResultSpec)
 
 describe(@"KODRegistrationResultSpec", ^{
  describe(@"isEqual", ^{
-   it(@"should return true when tokens are equal", ^{
+   it(@"should return true when the tokens, phone numbers and user details are equal", ^{
      KODRegistrationResult *resultA =[[KODRegistrationResult alloc] initWithToken:@"same_token"];
      KODRegistrationResult *resultB =[[KODRegistrationResult alloc] initWithToken:@"same_token"];
      [[theValue([resultA isEqual:resultB]) should] beTrue];

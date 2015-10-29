@@ -5,7 +5,6 @@
 
 @class KODRegistrationViewController;
 
-
 /**
  *  Defines the protocol for RegistrationViewController events.
  */
