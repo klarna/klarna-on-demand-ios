@@ -1,20 +1,31 @@
 #import "KODUrl.h"
 #import "KODContext.h"
 #import "KODCrypto.h"
+#import "KODRegistrationSettings.h"
 
 @implementation KODUrl
 
 NSString *const KlarnaPlaygroundUrl = @"https://inapp.playground.klarna.com";
 NSString *const KlarnaProductionUrl = @"https://inapp.klarna.com";
 
-+ (NSURL *)registrationUrl {
++ (NSURL *)registrationUrlWithSettings: (KODRegistrationSettings *) registrationSettings {
   NSString *publicKeyBase64Str = [[KODCrypto sharedKODCrypto] publicKeyBase64Str];
 
-  NSString *url = [NSString stringWithFormat:@"%@/registration/new?api_key=%@&locale=%@&public_key=%@",
+  NSMutableString *url = [NSMutableString stringWithFormat:@"%@/registration/new?api_key=%@&locale=%@&public_key=%@",
                    [self baseUrl],
                    [KODContext getApiKey],
                    [self locale],
                    [self urlEncodeWithParam:publicKeyBase64Str]];
+
+  if(registrationSettings != nil) {
+    if(registrationSettings.confirmedUserDataId != nil) {
+      [url appendString:[NSString stringWithFormat:@"&confirmed_user_data_id=%@", registrationSettings.confirmedUserDataId]];
+    }
+    if(registrationSettings.prefillPhoneNumber != nil) {
+      [url appendString:[NSString stringWithFormat:@"&prefill_phone_number=%@", registrationSettings.prefillPhoneNumber]];
+    }
+  }
+
   return [NSURL URLWithString:url];
 }
 

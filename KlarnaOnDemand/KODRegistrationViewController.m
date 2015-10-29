@@ -7,17 +7,23 @@
 @interface KODRegistrationViewController ()
 
 @property (weak, nonatomic) id<KODRegistrationViewControllerDelegate> delegate;
+@property (strong, nonatomic) KODRegistrationSettings *registrationSettings;
 
 @end
 
 @implementation KODRegistrationViewController
 
-- (id)initWithDelegate:(id<KODRegistrationViewControllerDelegate>)delegate {
+- (id)initWithDelegate:(id<KODRegistrationViewControllerDelegate>)delegate andRegistrationSettings: (KODRegistrationSettings *) registrationSettings {
   self = [super init];
   if (self) {
     self.delegate = delegate;
+    self.registrationSettings = registrationSettings;
   }
   return self;
+}
+
+- (id)initWithDelegate:(id<KODRegistrationViewControllerDelegate>)delegate {
+  return [self initWithDelegate:delegate andRegistrationSettings:nil];
 }
 
 - (id)init {
@@ -34,7 +40,7 @@
 }
 
 - (NSURL *)url {
-  return [KODUrl registrationUrl];
+  return [KODUrl registrationUrlWithSettings: _registrationSettings];
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {

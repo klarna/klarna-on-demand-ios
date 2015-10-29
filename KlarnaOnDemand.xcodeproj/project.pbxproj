@@ -17,6 +17,7 @@
 		468323DD1A4ACCB60030B3F1 /* KODPreferencesViewControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 4651C4441A3D93E300800F1A /* KODPreferencesViewControllerSpec.m */; };
 		468323DE1A4ACCB60030B3F1 /* KODRegistrationViewControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 46872D181A2B240000707282 /* KODRegistrationViewControllerSpec.m */; };
 		468323DF1A4ACCB60030B3F1 /* KODUrlSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C903A2E01A2523B6009AE44D /* KODUrlSpec.m */; };
+		46BC0B9E1AA886BA0036FF72 /* KODRegistrationSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 46BC0B9D1AA886BA0036FF72 /* KODRegistrationSettings.m */; };
 		46D37ABD1A374A6500E6AC7A /* KODPreferencesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46D37ABC1A374A6500E6AC7A /* KODPreferencesViewController.m */; };
 		C90D1C6C1A24CBD100016FE4 /* libKlarnaOnDemand.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C90D1C601A24CBD100016FE4 /* libKlarnaOnDemand.a */; };
 		C90D1C891A24CD2800016FE4 /* KODContext.m in Sources */ = {isa = PBXBuildFile; fileRef = C90D1C841A24CD2800016FE4 /* KODContext.m */; };
@@ -85,6 +86,8 @@
 		467F0ED81A2C696100A76845 /* KODRegistrationResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KODRegistrationResult.h; path = KlarnaOnDemand/KODRegistrationResult.h; sourceTree = SOURCE_ROOT; };
 		467F0ED91A2C696100A76845 /* KODRegistrationResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KODRegistrationResult.m; path = KlarnaOnDemand/KODRegistrationResult.m; sourceTree = SOURCE_ROOT; };
 		46872D181A2B240000707282 /* KODRegistrationViewControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KODRegistrationViewControllerSpec.m; sourceTree = "<group>"; };
+		46BC0B9C1AA886BA0036FF72 /* KODRegistrationSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KODRegistrationSettings.h; sourceTree = "<group>"; };
+		46BC0B9D1AA886BA0036FF72 /* KODRegistrationSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KODRegistrationSettings.m; sourceTree = "<group>"; };
 		46D37ABB1A374A6500E6AC7A /* KODPreferencesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KODPreferencesViewController.h; path = ../KlarnaOnDemand/KODPreferencesViewController.h; sourceTree = "<group>"; };
 		46D37ABC1A374A6500E6AC7A /* KODPreferencesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KODPreferencesViewController.m; path = ../KlarnaOnDemand/KODPreferencesViewController.m; sourceTree = "<group>"; };
 		787D5A12488247D4C7B5FC9E /* Pods-KlarnaOnDemandTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KlarnaOnDemandTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KlarnaOnDemandTests/Pods-KlarnaOnDemandTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -253,6 +256,8 @@
 				4651C4511A3DDE9200800F1A /* KODWebViewController.h */,
 				4651C4521A3DDE9200800F1A /* KODWebViewController.m */,
 				4651C40E1A38A4BC00800F1A /* KODWebViewController+Protected.h */,
+				46BC0B9C1AA886BA0036FF72 /* KODRegistrationSettings.h */,
+				46BC0B9D1AA886BA0036FF72 /* KODRegistrationSettings.m */,
 			);
 			path = KlarnaOnDemand;
 			sourceTree = "<group>";
@@ -574,6 +579,7 @@
 				C9E7F23D1A3F3FEA0005205B /* NSString+BDJSONSerialization.m in Sources */,
 				C9E7F22E1A3F3FEA0005205B /* BDAESCBC256Cryptor.m in Sources */,
 				C9E7F2451A3F4A410005205B /* KODOriginProof.m in Sources */,
+				46BC0B9E1AA886BA0036FF72 /* KODRegistrationSettings.m in Sources */,
 				C9E7F2311A3F3FEA0005205B /* BDCryptorError.m in Sources */,
 				C9E7F23A1A3F3FEA0005205B /* NSDictionary+BDJSONSerialization.m in Sources */,
 				4651C4541A3DDE9200800F1A /* KODWebViewController.m in Sources */,
