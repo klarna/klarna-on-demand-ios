@@ -1,11 +1,11 @@
 /* Klarna registration UINavigationController title */
-"REGISTRATION_TITLE" = "Betalinformasjon";
+"REGISTRATION_TITLE" = "Betalingsinformasjon";
 
 /* Klarna registration UINavigationController button */
 "REGISTRATION_DISMISS_BUTTON_TEXT" = "Avbryt";
 
 /* Klarna preferences UINavigationController title */
-"PREFERENCES_TITLE" = "Velg Betalmåte";
+"PREFERENCES_TITLE" = "Betalingsinformasjon";
 
 /* Klarna preferences UINavigationController button */
 "PREFERENCES_DISMISS_BUTTON_TEXT" = "Lukk";
@@ -14,4 +14,4 @@
 "PREFERENCES_DEFAULT_DISMISS_BUTTON_TEXT" = "Lukk";
 
 /* Loading spinner text */
-"LOADING_SPINNER" = "Laster ...";
+"LOADING_SPINNER" = "Laster inn ...";
