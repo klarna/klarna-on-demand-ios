@@ -73,7 +73,7 @@ NSString *const JockeyUserError =  @"userError";
 }
 
 - (void)addHUD {
-  self.HUDView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 80, 80)];
+  self.HUDView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 100, 80)];
   self.HUDView.center = self.view.center;
   self.HUDView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.6];
   self.HUDView.layer.cornerRadius = 5;
@@ -83,7 +83,7 @@ NSString *const JockeyUserError =  @"userError";
   [activityView startAnimating];
   [self.HUDView addSubview:activityView];
   
-  UILabel* lblLoading = [[UILabel alloc]initWithFrame:CGRectMake(0, 48, 80, 30)];
+  UILabel* lblLoading = [[UILabel alloc]initWithFrame:CGRectMake(0, 48, 100, 30)];
   lblLoading.text = [KODLocalization localizedStringForKey:@"LOADING_SPINNER"];
   lblLoading.textColor = [UIColor whiteColor];
   lblLoading.font = [UIFont fontWithName:lblLoading.font.fontName size:15];
