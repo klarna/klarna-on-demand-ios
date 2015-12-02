@@ -19,4 +19,18 @@
  */
 + (NSString *)getApiKey;
 
+/**
+ *  Sets the preferred locale to use in the application.
+ *
+ *  @param preferredLocale Merchant's preferred locale for this application.
+ */
++ (void)setPreferredLocale:(NSString *)preferredLocale;
+
+/**
+ *  Returns the preferred locale set using setPreferredLocale:.
+ *
+ *  @return Merchant's preferred locale for this application.
+ */
++ (NSString *)getPreferredLocale;
+
 @end

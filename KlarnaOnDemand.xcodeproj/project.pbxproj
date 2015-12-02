@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0850E7B11C0ED16900829CF2 /* KODLocalizationSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 0850E7B01C0ED16900829CF2 /* KODLocalizationSpec.m */; };
 		4651C4541A3DDE9200800F1A /* KODWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4651C4521A3DDE9200800F1A /* KODWebViewController.m */; };
 		467F0EC21A2B6DE900A76845 /* Jockey.m in Sources */ = {isa = PBXBuildFile; fileRef = 467F0EC11A2B6DE900A76845 /* Jockey.m */; };
 		467F0EDB1A2C6AC900A76845 /* KODRegistrationResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 467F0ED91A2C696100A76845 /* KODRegistrationResult.m */; };
@@ -72,6 +73,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0850E7B01C0ED16900829CF2 /* KODLocalizationSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KODLocalizationSpec.m; sourceTree = "<group>"; };
 		443BC01E8B6591BA34CE5172 /* libPods-KlarnaOnDemandTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KlarnaOnDemandTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		460FDB621A4974A200CF327B /* libPods-KlarnaOnDemandTests-Kiwi.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-KlarnaOnDemandTests-Kiwi.a"; path = "Pods/build/Debug-iphoneos/libPods-KlarnaOnDemandTests-Kiwi.a"; sourceTree = "<group>"; };
 		4651C40E1A38A4BC00800F1A /* KODWebViewController+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "KODWebViewController+Protected.h"; path = "KlarnaOnDemand/KODWebViewController+Protected.h"; sourceTree = SOURCE_ROOT; };
@@ -269,6 +271,7 @@
 				466387011A480DD20013429D /* KODSpecHelper.m */,
 				C9FC95401A278AAD00485500 /* KODContextSpec.m */,
 				465CF58F1A42DB9E00EC092D /* KODCryptoSpec.m */,
+				0850E7B01C0ED16900829CF2 /* KODLocalizationSpec.m */,
 				C9E7F25A1A405D0E0005205B /* KODOriginProofSpec.m */,
 				4651C4441A3D93E300800F1A /* KODPreferencesViewControllerSpec.m */,
 				46872D181A2B240000707282 /* KODRegistrationViewControllerSpec.m */,
@@ -608,6 +611,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				468323D91A4ACCB60030B3F1 /* KODSpecHelper.m in Sources */,
+				0850E7B11C0ED16900829CF2 /* KODLocalizationSpec.m in Sources */,
 				C92CF9501A51999C00430691 /* KODRegistrationResultSpec.m in Sources */,
 				468323DA1A4ACCB60030B3F1 /* KODContextSpec.m in Sources */,
 				468323DB1A4ACCB60030B3F1 /* KODCryptoSpec.m in Sources */,
