@@ -23,19 +23,19 @@ describe(@"KODRegistrationViewControllerSpec", ^{
   });
   
   it(@"should call the delegate's .klarnaRegistrationFailed method when the web view fails to load", ^{
-    [[[kodRegistrationDelegate should] receive] klarnaRegistrationFailed:kodRegistrationController];
+    [[kodRegistrationDelegate should] receive:@selector(klarnaRegistrationFailed:) withArguments:kodRegistrationController];
 
     [kodRegistrationController webView:nil didFailLoadWithError:[NSError errorWithDomain:@"Domain" code:1234 userInfo:nil]];
   });
     
   it(@"does not call the delegate's .klarnaRegistrationFailed when the web view fails with NSURLErrorCancelled", ^{
-    [[[kodRegistrationDelegate shouldNot] receive] klarnaRegistrationFailed:kodRegistrationController];
+    [[kodRegistrationDelegate shouldNot] receive:@selector(klarnaRegistrationFailed:) withArguments:kodRegistrationController];
 
     [kodRegistrationController webView:nil didFailLoadWithError:[NSError errorWithDomain:@"Domain" code:NSURLErrorCancelled userInfo:nil]];
   });
 
   it(@"should call the delegate's .klarnaRegistrationCancelled when the dismiss button is pressed", ^{
-    [[[kodRegistrationDelegate should] receive] klarnaRegistrationCancelled:kodRegistrationController];
+    [[kodRegistrationDelegate should] receive:@selector(klarnaRegistrationCancelled:) withArguments:kodRegistrationController];
 
     [kodRegistrationController dismissButtonPressed];
   });

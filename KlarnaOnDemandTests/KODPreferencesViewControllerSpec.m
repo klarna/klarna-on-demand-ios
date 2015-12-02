@@ -16,19 +16,19 @@ describe(@"KODPreferencesViewControllerSpec", ^{
   });
   
   it(@"should call the delegate's .klarnaPreferencesFailed method when the web view fails to load", ^{
-    [[[kodPreferencesDelegate should] receive] klarnaPreferencesFailed:kodPreferencesController];
+    [[kodPreferencesDelegate should] receive:@selector(klarnaPreferencesFailed:) withArguments:kodPreferencesController];
     
     [kodPreferencesController webView:nil didFailLoadWithError:[NSError errorWithDomain:@"Domain" code:1234 userInfo:nil]];
   });
     
   it(@"does not call the delegate's .klarnaPreferencesFailed when the web view fails with NSURLErrorCancelled", ^{
-    [[[kodPreferencesDelegate shouldNot] receive] klarnaPreferencesFailed:kodPreferencesController];
+    [[kodPreferencesDelegate shouldNot] receive:@selector(klarnaPreferencesFailed:) withArguments:kodPreferencesController];
     
     [kodPreferencesController webView:nil didFailLoadWithError:[NSError errorWithDomain:@"Domain" code:NSURLErrorCancelled userInfo:nil]];
   });
   
   it(@"should call the delegate's .klarnaPreferencesClosed when the dismiss button is pressed", ^{
-    [[[kodPreferencesDelegate should] receive] klarnaPreferencesClosed:kodPreferencesController];
+    [[kodPreferencesDelegate should] receive:@selector(klarnaPreferencesClosed:) withArguments:kodPreferencesController];
     
     [kodPreferencesController dismissButtonPressed];
   });
