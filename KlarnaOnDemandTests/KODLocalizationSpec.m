@@ -11,21 +11,21 @@ SPEC_BEGIN(KODLocalizationSpec)
 
 describe(@".KODBundle", ^{
   
-  it(@"should return the dfault bundle when preferred locale is same as locale from main bundle", ^{
+  it(@"should return the default KODbundle when preferred locale is same as device's locale", ^{
     [[NSBundle mainBundle] stub:@selector(preferredLocalizations) andReturn:@[@"en"]];
     [[KODContext class] stub:@selector(getPreferredLocale) andReturn:@"en"];
     
     [[[[[KODLocalization KODBundle] bundlePath] lastPathComponent] should] equal:@"KOD.bundle"];
   });
   
-  it(@"should return the dfault bundle when preferred locale does not exist in bundle", ^{
+  it(@"should return the default KODbundle when preferred locale does not exist in KODbundle", ^{
     [[NSBundle mainBundle] stub:@selector(preferredLocalizations) andReturn:@[@"en"]];
     [[KODContext class] stub:@selector(getPreferredLocale) andReturn:@"he"];
     
     [[[[[KODLocalization KODBundle] bundlePath] lastPathComponent] should] equal:@"KOD.bundle"];
   });
   
-  it(@"should return the dfault bundle when preferred locale is different than locale from main bundle", ^{
+  it(@"should return the language specific KODbundle when preferred locale is different than device's locale", ^{
     [[NSBundle mainBundle] stub:@selector(preferredLocalizations) andReturn:@[@"en"]];
     [[KODContext class] stub:@selector(getPreferredLocale) andReturn:@"sv"];
     
