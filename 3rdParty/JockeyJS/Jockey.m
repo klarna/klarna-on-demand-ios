@@ -113,7 +113,7 @@
         NSString *eventType = [url host];
         NSString *messageId = [[url path] substringFromIndex:1];
         NSString *query = [url query];
-        NSString *jsonString = [query stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        NSString *jsonString = [query stringByRemovingPercentEncoding];
         
         NSError *error;
         NSDictionary *JSON = [NSJSONSerialization JSONObjectWithData: [jsonString dataUsingEncoding:NSUTF8StringEncoding]
