@@ -24,7 +24,7 @@ static NSString *preferredLocale;
 
 + (NSString *)getPreferredLocale {
     if (!preferredLocale) {
-        preferredLocale = [[NSBundle mainBundle] preferredLocalizations].firstObject;
+      preferredLocale = KODDeviceLocale;
     }
     return preferredLocale;
 }

@@ -15,7 +15,7 @@
     }
     bundle = [NSBundle bundleWithPath:bundlePath];
     
-    if (locale != [[NSBundle mainBundle] preferredLocalizations].firstObject) {
+    if (locale != KODDeviceLocale) {
       bundlePath = [bundle pathForResource:@"localization" ofType:@"strings" inDirectory:nil forLocalization:locale];
       if (bundlePath) {
         bundle = [NSBundle bundleWithPath:[bundlePath stringByDeletingLastPathComponent]];

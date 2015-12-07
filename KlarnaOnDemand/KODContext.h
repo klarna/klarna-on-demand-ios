@@ -1,5 +1,8 @@
 #import <Foundation/Foundation.h>
 
+#define KODDeviceLocale \
+  [[NSBundle mainBundle] preferredLocalizations].firstObject
+
 /**
  * Manages the application-wide context for Klarna on Demand payments.
  */
