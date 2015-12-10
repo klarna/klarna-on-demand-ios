@@ -3,6 +3,7 @@
 @implementation KODContext
 
 static NSString *apiKey;
+static NSString *preferredLocale;
 
 + (void)setApiKey:(NSString *)aApiKey {
     apiKey = aApiKey;
@@ -15,6 +16,17 @@ static NSString *apiKey;
 
 + (void)validateApiKey {
     NSCAssert(apiKey.length > 0, @"You must set the API key first.");
+}
+
++ (void)setPreferredLocale:(NSString *)aPreferredLocale {
+    preferredLocale = aPreferredLocale;
+}
+
++ (NSString *)getPreferredLocale {
+    if (!preferredLocale) {
+      preferredLocale = KODDeviceLocale;
+    }
+    return preferredLocale;
 }
 
 @end

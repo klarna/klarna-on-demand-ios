@@ -17,4 +17,21 @@ describe(@".getApiKey", ^{
   });
 });
 
+describe(@".getPreferredLocale", ^{
+  
+  it(@"should return the default locale if preferred locale was not set", ^{
+    [[NSBundle mainBundle] stub:@selector(preferredLocalizations) andReturn:@[@"en"]];
+    
+    [[[KODContext getPreferredLocale] should] equal:@"en"];
+  });
+  
+  it(@"should return the preferred locale previously set", ^{
+    [KODContext setPreferredLocale:@"sv"];
+    
+    [[[KODContext getPreferredLocale] should] equal:@"sv"];
+    
+    [KODContext setPreferredLocale:nil];
+  });
+});
+
 SPEC_END

@@ -22,9 +22,9 @@ describe(@".registrationUrlWithSettings:", ^{
     NSString *registrationUrl = [KODUrl registrationUrlWithSettings:nil].absoluteString;
     [[theValue([registrationUrl hasPrefix:@"https://inapp.klarna.com/registration/new"]) should] equal: theValue(YES)];
   });
-
-  it(@"should return a url with Swedish locale when locale is Swedish", ^{
-    [[NSBundle mainBundle] stub:@selector(preferredLocalizations) andReturn:@[@"sv"]];
+  
+  it(@"should return a url with Swedish locale when the preferred locale is Swedish", ^{
+    [[KODContext class] stub:@selector(getPreferredLocale) andReturn:@"sv"];
     
     NSString *registrationUrl = [KODUrl registrationUrlWithSettings:nil].absoluteString;
     [[registrationUrl should] containString:@"locale=sv"];
@@ -98,8 +98,8 @@ describe(@".preferencesUrlWithToken:", ^{
     [[theValue([preferencesUrl hasPrefix:expectedPrefix]) should] equal:theValue(YES)];
   });
 
-  it(@"should return a url with Swedish locale when locale is Swedish", ^{
-    [[NSBundle mainBundle] stub:@selector(preferredLocalizations) andReturn:@[@"sv"]];
+  it(@"should return a url with Swedish locale when the preferred locale is Swedish", ^{
+    [[KODContext class] stub:@selector(getPreferredLocale) andReturn:@"sv"];
     
     NSString *preferencesUrl = [KODUrl preferencesUrlWithToken:token].absoluteString;
     [[preferencesUrl should] containString:@"locale=sv"];
