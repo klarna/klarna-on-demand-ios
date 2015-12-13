@@ -16,6 +16,7 @@ While not necessary, the simplest way to get going with both the sample applicat
 ## Using the SDK
 Have a look at the [integration guide](doc/integration.md) for full details on how to use our SDK in your application.
 
+For a short overview of the recent changes, please check out the project's [changelog](https://github.com/klarna/klarna-on-demand-ios/blob/master/CHANGELOG.md).
 ## Running the sample application
 Assuming you've cloned the repository, simply cd into the repo, open *KlarnaOnDemand.xcworkspace* and run the *KlarnaOnDemandExample* project.
 
