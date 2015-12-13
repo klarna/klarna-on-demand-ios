@@ -4,13 +4,13 @@
 * Adds the option to set programatically the locale of the SDK.
 
 ## 1.0.10
-* fixes deployment issues.
+* Fixes deployment issues.
 
 ## 1.0.9
-* fixes deployment issues.
+* Fixes deployment issues.
 
 ## 1.0.8
-* adds customization for Registration view controller: phone-number prefill and confirmed-user-data-id parameter.
+* Adds customization for Registration view controller: phone-number prefill and confirmed-user-data-id parameter.
 
 ## 1.0.7
-* adds a norwegian translation.
+* Adds a norwegian translation.
