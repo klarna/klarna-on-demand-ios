@@ -13,4 +13,4 @@
 * Adds customization for Registration view controller: phone-number prefill and confirmed-user-data-id parameter.
 
 ## 1.0.7
-* Adds a norwegian translation.
+* Adds Norwegian translations.
