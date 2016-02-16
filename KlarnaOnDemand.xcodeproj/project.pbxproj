@@ -479,6 +479,7 @@
 				C90D1C681A24CBD100016FE4 /* Frameworks */,
 				C90D1C691A24CBD100016FE4 /* Resources */,
 				735E4D1DED27D86DFA194620 /* Copy Pods Resources */,
+				789267AD7321B0480D53523C /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -565,6 +566,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KlarnaOnDemandTests/Pods-KlarnaOnDemandTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		789267AD7321B0480D53523C /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KlarnaOnDemandTests/Pods-KlarnaOnDemandTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
