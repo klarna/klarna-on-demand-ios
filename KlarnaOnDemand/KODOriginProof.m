@@ -9,6 +9,7 @@
 @property(strong, nonatomic) NSString *currency;
 @property(strong, nonatomic) NSString *userToken;
 @property(strong, nonatomic) NSString *uuid;
+@property(nonatomic, assign) SecKeyRef externalPrivateKey;
 @property(strong, nonatomic) NSString *originProofBase64Str;
 
 @end
@@ -16,16 +17,22 @@
 @implementation KODOriginProof
 
 - (id)initWithAmount:(int)amount currency:(NSString *)currency userToken:(NSString *)userToken {
-  self = [super init];
-  if (self) {
-    self.amount = amount;
-    self.currency = currency;
-    self.userToken = userToken;
-    self.uuid = [[NSUUID UUID] UUIDString];
-    self.originProofBase64Str = [self generateBase64Str];
-  }
-  return self;
+    return [self initWithAmount:amount currency:currency userToken:userToken externalPrivateKey:NULL];
 }
+
+- (id)initWithAmount:(int)amount currency:(NSString *)currency userToken:(NSString *)userToken externalPrivateKey:(SecKeyRef)externalPrivateKey {
+    self = [super init];
+    if (self) {
+        self.amount = amount;
+        self.currency = currency;
+        self.userToken = userToken;
+        self.uuid = [[NSUUID UUID] UUIDString];
+        self.externalPrivateKey = externalPrivateKey;
+        self.originProofBase64Str = [self generateBase64Str];
+    }
+    return self;
+}
+
 
 - (id)init {
   NSAssert(NO, @"Initialize with -initWithAmount:currency:userToken");
