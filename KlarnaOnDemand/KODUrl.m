@@ -46,7 +46,11 @@ NSString *const KlarnaProductionUrl = @"https://inapp.klarna.com";
 }
 
 + (NSString *) urlEncodeWithParam:(NSString *)param {
-  return [param stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet characterSetWithCharactersInString:@"!*'();:@&=+$,/?%#[]"]];
+    return (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(NULL,
+                                                                                 (CFStringRef)param,
+                                                                                 NULL,
+                                                                                 (CFStringRef)@"!*'();:@&=+$,/?%#[]",
+                                                                                 kCFStringEncodingUTF8 ));
 }
   
 @end
