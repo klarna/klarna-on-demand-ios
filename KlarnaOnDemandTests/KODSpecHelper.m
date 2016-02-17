@@ -50,11 +50,25 @@
                                            error: nil];
 }
 
-
 + (NSDictionary *)dataDictionaryFromOriginProof:(NSString *)originProof {
   NSDictionary *originProofDic = [self originProofDictionaryFromOriginProof:originProof];
   
   NSData *data = [originProofDic[@"data"] dataUsingEncoding:NSUTF8StringEncoding];
   return [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+}
+
++ (SecKeyRef)generatePrivateKeyForString:(NSString *)key {
+  BDRSACryptor *RSACryptor = [[BDRSACryptor alloc] init];
+  BDError *error = [[BDError alloc] init];
+  [RSACryptor setPrivateKey: key tag:[RSACryptor privateKeyIdentifierWithTag:@"test"] error:error];
+  return [RSACryptor keyRefWithTag:[RSACryptor privateKeyIdentifierWithTag:@"test"] error:error];
+}
+
++ (SecKeyRef)generatePrivateKey {
+  BDRSACryptor *RSACryptor = [[BDRSACryptor alloc] init];
+  BDError *error = [[BDError alloc] init];
+  BDRSACryptorKeyPair *RSAKeyPair = [RSACryptor generateKeyPairWithKeyIdentifier:@"test" error:error];
+  NSAssert(RSAKeyPair, @"Failed to create rsa key-pair");
+  return [RSACryptor keyRefWithTag:[RSACryptor privateKeyIdentifierWithTag:@"test"] error:error];
 }
 @end
