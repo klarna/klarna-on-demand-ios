@@ -1,6 +1,5 @@
 #import "KODCrypto.h"
 #import "BDRSACryptor.h"
-#import "BDRSACryptorKeyPair.h"
 #import "BDError.h"
 #import "BDLog.h"
 #import <Security/SecBase.h>
@@ -37,11 +36,8 @@ NSString *const KodTag = @"kod";
     }
     else
     {
-      BDError *error = [[BDError alloc] init];
-      BDRSACryptorKeyPair *RSAKeyPair = [RSACryptor generateKeyPairWithKeyIdentifier:KodTag error:error];
-      NSAssert(RSAKeyPair, @"Failed to create rsa key-pair");
-      
-      _publicKeyBase64Str = [RSAKeyPair.publicKey base64EncodedString];
+      BDRSACryptorKeyPair *keyPair = [KODCrypto generateKeyPair];
+      _publicKeyBase64Str = [keyPair.publicKey base64EncodedString];
     }
   }
   return self;
@@ -82,6 +78,14 @@ NSString *const KodTag = @"kod";
 
 - (NSString *)signWithData:(NSData *)plainData {
   return [KODCrypto signWithData:plainData andPrivateKey:[self getPrivateKey]];
+}
+
++ (BDRSACryptorKeyPair *)generateKeyPair {
+  BDRSACryptor *RSACryptor = [[BDRSACryptor alloc] init];
+  BDError *error = [[BDError alloc] init];
+  BDRSACryptorKeyPair *RSAKeyPair = [RSACryptor generateKeyPairWithKeyIdentifier:KodTag error:error];
+  NSAssert(RSAKeyPair, @"Failed to create rsa key-pair");
+  return RSAKeyPair;
 }
 
 - (SecKeyRef)getPrivateKey {
