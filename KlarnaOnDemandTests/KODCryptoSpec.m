@@ -7,12 +7,6 @@
 #import "NSString+Base64.h"
 #import "KODSpecHelper.h"
 
-@interface KODCrypto (Private)
-
-- (SecKeyRef)getPrivateKey;
-
-@end
-
 SPEC_BEGIN(KODCryptoSpec)
 
 beforeEach(^{
@@ -64,7 +58,7 @@ describe(@".init", ^{
 describe(@".signWithData:andPrivateKey", ^{
   
   it(@"should calculate a valid signature", ^{
-    SecKeyRef privateKey = [self generatePrivateKeyForString:@"-----BEGIN RSA PRIVATE KEY-----\nMIIBOgIBAAJBAK3h0RtywI11idN0CfZlyo1LhA/7ssmGN5Wl+qNdk+/d0xVpb50U\nWr1gdmaBkbYEsDj1EbaVtChA9tKtFMNw9PkCAwEAAQJANSQHYSkf2durJJmZFdmk\nHqyOjsfwqxA+2phgUh8eQDb8z5Bv5DYmgpDMI7wBzfYtJtS2j40/2Ium8VQgJp7P\nAQIhAN6X1HQCJhfVh5lAEjcsIlOiu+UrAB6P2zYouk24iUghAiEAx/p6ssSi12rK\nERMOcAzbLVIjYGi4CcGCU2HvyxW0sdkCICVuqPadSeSmLvhxkt6eWGNyMWDXe1yo\nWnfgH3xkdQmhAiEAlMRf1vG1eq+01vLoQK8vtg1ux9/fWVKdk04+R0REgjECIACX\njuUhQyJKyGGEF+2NOnEix/6Eo+gM6rkyaIfDC3Nb\n-----END RSA PRIVATE KEY-----\n"];
+    SecKeyRef privateKey = [KODSpecHelper generatePrivateKeyForString:@"-----BEGIN RSA PRIVATE KEY-----\nMIIBOgIBAAJBAK3h0RtywI11idN0CfZlyo1LhA/7ssmGN5Wl+qNdk+/d0xVpb50U\nWr1gdmaBkbYEsDj1EbaVtChA9tKtFMNw9PkCAwEAAQJANSQHYSkf2durJJmZFdmk\nHqyOjsfwqxA+2phgUh8eQDb8z5Bv5DYmgpDMI7wBzfYtJtS2j40/2Ium8VQgJp7P\nAQIhAN6X1HQCJhfVh5lAEjcsIlOiu+UrAB6P2zYouk24iUghAiEAx/p6ssSi12rK\nERMOcAzbLVIjYGi4CcGCU2HvyxW0sdkCICVuqPadSeSmLvhxkt6eWGNyMWDXe1yo\nWnfgH3xkdQmhAiEAlMRf1vG1eq+01vLoQK8vtg1ux9/fWVKdk04+R0REgjECIACX\njuUhQyJKyGGEF+2NOnEix/6Eo+gM6rkyaIfDC3Nb\n-----END RSA PRIVATE KEY-----\n"];
     
     NSString *signature = [KODCrypto signWithData:[@"my_data" dataUsingEncoding:NSUTF8StringEncoding] andPrivateKey:privateKey];
     
@@ -74,11 +68,9 @@ describe(@".signWithData:andPrivateKey", ^{
 
 describe(@".signWithData", ^{
   it(@"should sign data with internal private key", ^{
-    SecKeyRef privateKey = [KODSpecHelper generatePrivateKey];
-    [[KODCrypto sharedKODCrypto] stub:@selector(getPrivateKey) andReturn:(__bridge id)(privateKey)];
     NSData *data = [@"my_data" dataUsingEncoding:NSUTF8StringEncoding];
-    [KODCrypto stubMessagePattern: init andReturn:<#(id)#>:@selector(signWithData:andPrivateKey:) andReturn:@"my_signature" withArguments:<#(id), ...#>];
-    
+    [KODCrypto stub:@selector(signWithData:andPrivateKey:) andReturn:@"my_signature" withArguments:data, any()];
+
     NSString *signature = [[KODCrypto sharedKODCrypto] signWithData:data];
     
     [[signature should] equal:@"my_signature"];
