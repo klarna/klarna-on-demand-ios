@@ -6,7 +6,7 @@
 + (BOOL)tagExistsInKeychain:(NSString *)tag;
 + (NSString *)privateKeyForTag:(NSString *)tag;
 + (NSString *)publicKeyForTag:(NSString *)tag;
-+ (SecKeyRef)generatePrivateKeyForString:(NSString *)key;
++ (SecKeyRef)generatePrivateKeyFromString:(NSString *)key;
 + (SecKeyRef)generatePrivateKey;
 
 + (NSDictionary *)originProofDictionaryFromOriginProof:(NSString *)originProof;

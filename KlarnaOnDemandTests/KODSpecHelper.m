@@ -57,7 +57,7 @@
   return [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
 }
 
-+ (SecKeyRef)generatePrivateKeyForString:(NSString *)key {
++ (SecKeyRef)generatePrivateKeyFromString:(NSString *)key {
   BDRSACryptor *RSACryptor = [[BDRSACryptor alloc] init];
   BDError *error = [[BDError alloc] init];
   [RSACryptor setPrivateKey: key tag:[RSACryptor privateKeyIdentifierWithTag:@"test"] error:error];

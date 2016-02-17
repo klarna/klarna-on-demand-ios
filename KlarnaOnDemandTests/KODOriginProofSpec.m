@@ -8,8 +8,21 @@
 
 SPEC_BEGIN(KODOriginProofSpec)
 
+NSString *const UUID_PATTERN = @"[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}";
+
+void (^assertOriginProofData) (KODOriginProof *, int, NSString *, NSString *, NSString *) = ^void (KODOriginProof *originProof, int amount, NSString *currency, NSString *token, NSString *signature) {
+  NSString *originProofStr = [originProof description];
+  NSDictionary *originProofDictionary = [KODSpecHelper originProofDictionaryFromOriginProof:originProofStr];
+  [[originProofDictionary[@"signature"] should] equal:signature];
+
+  NSDictionary *originProofDataDictionary = [KODSpecHelper dataDictionaryFromOriginProof:originProofStr];
+  [[originProofDataDictionary[@"amount"] should] equal:[NSNumber numberWithInt:amount]];
+  [[originProofDataDictionary[@"currency"] should] equal:currency];
+  [[originProofDataDictionary[@"user_token"] should] equal:token];
+  [[originProofDataDictionary[@"id"] should] matchPattern:UUID_PATTERN];
+};
+
 describe(@"#description", ^{
-  NSString *const UUID_PATTERN = @"[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}";
   
   beforeEach(^{
     [[NSBundle mainBundle] stub:@selector(bundleIdentifier) andReturn:@"bundle_identifier"];
@@ -21,26 +34,19 @@ describe(@"#description", ^{
     });
     
     it(@"should return a base64 encoded json in the correct format", ^{
-      NSString *originProof = [[[KODOriginProof alloc] initWithAmount:3600 currency:@"SEK" userToken:@"my_token"] description];
-      NSDictionary *dataDic  = [KODSpecHelper dataDictionaryFromOriginProof:originProof];
+      KODOriginProof *originProof = [[KODOriginProof alloc] initWithAmount:3600 currency:@"SEK" userToken:@"my_token"];
 
-      [[dataDic[@"amount"] should] equal:[NSNumber numberWithInt:3600]];
-      [[dataDic[@"currency"] should] equal:@"SEK"];
-      [[dataDic[@"user_token"] should] equal:@"my_token"];
-      [[dataDic[@"id"] should] matchPattern:UUID_PATTERN];
-
-      NSDictionary *originProofDic  = [KODSpecHelper originProofDictionaryFromOriginProof:originProof];
-      [[originProofDic[@"signature"] should] equal:@"my_signature"];
+      assertOriginProofData(originProof, 3600, @"SEK", @"my_token", @"my_signature");
     });
     
     it(@"should generate a different id for each order", ^{
-      NSString *originProofA = [[[KODOriginProof alloc] initWithAmount:3600 currency:@"SEK" userToken:@"my_token"] description];
-      NSDictionary *dataDicA  = [KODSpecHelper dataDictionaryFromOriginProof:originProofA];
+      KODOriginProof *originProofA = [[KODOriginProof alloc] initWithAmount:3600 currency:@"SEK" userToken:@"my_token"];
+      NSDictionary *originProofDictionaryA = [KODSpecHelper dataDictionaryFromOriginProof:[originProofA description]];
 
-      NSString *originProofB = [[[KODOriginProof alloc] initWithAmount:3600 currency:@"SEK" userToken:@"my_token"] description];
-      NSDictionary *dataDicB  = [KODSpecHelper dataDictionaryFromOriginProof:originProofB];
+      KODOriginProof *originProofB = [[KODOriginProof alloc] initWithAmount:3600 currency:@"SEK" userToken:@"my_token"];
+      NSDictionary *originProofDictionaryB = [KODSpecHelper dataDictionaryFromOriginProof:[originProofB description]];
 
-      [[dataDicA[@"id"] shouldNot] equal:dataDicB[@"id"]];
+      [[originProofDictionaryA[@"id"] shouldNot] equal:originProofDictionaryB[@"id"]];
     });
   });
   
@@ -51,27 +57,21 @@ describe(@"#description", ^{
     
     it(@"should return a base64 encoded json in the correct format", ^{
       SecKeyRef privateKey = [KODSpecHelper generatePrivateKey];
-      NSString *originProof = [[[KODOriginProof alloc] initWithAmount:3600 currency:@"SEK" userToken:@"my_token" externalPrivateKey:privateKey] description];
-      NSDictionary *dataDic  = [KODSpecHelper dataDictionaryFromOriginProof:originProof];
-
-      [[dataDic[@"amount"] should] equal:[NSNumber numberWithInt:3600]];
-      [[dataDic[@"currency"] should] equal:@"SEK"];
-      [[dataDic[@"user_token"] should] equal:@"my_token"];
-      [[dataDic[@"id"] should] matchPattern:UUID_PATTERN];
-
-      NSDictionary *originProofDic  = [KODSpecHelper originProofDictionaryFromOriginProof:originProof];
-      [[originProofDic[@"signature"] should] equal:@"my_signature"];
+      
+      KODOriginProof *originProof = [[KODOriginProof alloc] initWithAmount:3600 currency:@"SEK" userToken:@"my_token" externalPrivateKey:privateKey];
+      
+      assertOriginProofData(originProof, 3600, @"SEK", @"my_token", @"my_signature");
     });
       
     it(@"should generate a different id for each order", ^{
       SecKeyRef privateKey = [KODSpecHelper generatePrivateKey];
-      NSString *originProofA = [[[KODOriginProof alloc] initWithAmount:3600 currency:@"SEK" userToken:@"my_token" externalPrivateKey:privateKey] description];
-      NSDictionary *dataDicA  = [KODSpecHelper dataDictionaryFromOriginProof:originProofA];
+      KODOriginProof *originProofA = [[KODOriginProof alloc] initWithAmount:3600 currency:@"SEK" userToken:@"my_token" externalPrivateKey:privateKey];
+      NSDictionary *originProofDictionaryA = [KODSpecHelper dataDictionaryFromOriginProof:[originProofA description]];
       
-      NSString *originProofB = [[[KODOriginProof alloc] initWithAmount:3600 currency:@"SEK" userToken:@"my_token" externalPrivateKey:privateKey] description];
-      NSDictionary *dataDicB  = [KODSpecHelper dataDictionaryFromOriginProof:originProofB];
+      KODOriginProof *originProofB = [[KODOriginProof alloc] initWithAmount:3600 currency:@"SEK" userToken:@"my_token" externalPrivateKey:privateKey];
+      NSDictionary *originProofDictionaryB = [KODSpecHelper dataDictionaryFromOriginProof:[originProofB description]];
       
-      [[dataDicA[@"id"] shouldNot] equal:dataDicB[@"id"]];
+      [[originProofDictionaryA[@"id"] shouldNot] equal:originProofDictionaryB[@"id"]];
     });
   });
 });
