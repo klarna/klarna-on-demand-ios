@@ -50,7 +50,7 @@ describe(@"#description", ^{
     });
   });
   
-  describe(@"without external private key", ^{
+  describe(@"with external private key", ^{
     beforeEach(^{
       [KODCrypto stub:@selector(signWithData:andPrivateKey:) andReturn:@"my_signature"];
     });
