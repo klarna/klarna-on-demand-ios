@@ -1,4 +1,5 @@
 #import <Foundation/Foundation.h>
+#import "BDRSACryptorKeyPair.h"
 
 @interface KODCrypto : NSObject
 
@@ -7,5 +8,7 @@
 + (id)sharedKODCrypto;
 
 - (NSString *)signWithData:(NSData *)plainData;
+
++ (NSString *)signWithData:(NSData *)plainData andPrivateKey:(SecKeyRef)privateKey;
 
 @end

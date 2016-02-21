@@ -1,5 +1,8 @@
 # CHANGELOG for Klanra-on-Demand-iOS
 
+## 1.2.0
+* Adds the option to create origin proof with a provided private key.
+
 ## 1.1.0
 * Adds the option to set programatically the locale of the SDK.
 

@@ -1,6 +1,5 @@
 #import "KODCrypto.h"
 #import "BDRSACryptor.h"
-#import "BDRSACryptorKeyPair.h"
 #import "BDError.h"
 #import "BDLog.h"
 #import <Security/SecBase.h>
@@ -37,54 +36,64 @@ NSString *const KodTag = @"kod";
     }
     else
     {
-      BDError *error = [[BDError alloc] init];
-      BDRSACryptorKeyPair *RSAKeyPair = [RSACryptor generateKeyPairWithKeyIdentifier:KodTag error:error];
-      NSAssert(RSAKeyPair, @"Failed to create rsa key-pair");
-      
-      _publicKeyBase64Str = [RSAKeyPair.publicKey base64EncodedString];
+      BDRSACryptorKeyPair *keyPair = [KODCrypto generateKeyPair];
+      _publicKeyBase64Str = [keyPair.publicKey base64EncodedString];
     }
   }
   return self;
 }
 
-
-- (NSString *)signWithData:(NSData *)plainData {
-  
-  BDRSACryptor *RSACryptor = [[BDRSACryptor alloc] init];
-  BDError *error = [[BDError alloc] init];
-  
-  NSString *privateKeyTag = [RSACryptor privateKeyIdentifierWithTag:KodTag];
-  SecKeyRef privateKey = [RSACryptor keyRefWithTag:privateKeyTag error:error];
-  
++ (NSString *)signWithData:(NSData *)plainData andPrivateKey:(SecKeyRef)privateKey {
   size_t signedHashBytesSize = SecKeyGetBlockSize(privateKey);
   uint8_t* signedHashBytes = malloc(signedHashBytesSize);
   memset(signedHashBytes, 0x0, signedHashBytesSize);
-  
+
   size_t hashBytesSize = CC_SHA256_DIGEST_LENGTH;
   uint8_t* hashBytes = malloc(hashBytesSize);
   if (!CC_SHA256([plainData bytes], (CC_LONG)[plainData length], hashBytes)) {
     return nil;
   }
-  
+
   SecKeyRawSign(privateKey,
                 kSecPaddingPKCS1SHA256,
                 hashBytes,
                 hashBytesSize,
                 signedHashBytes,
                 &signedHashBytesSize);
-  
+
   NSData* signedHash = [NSData dataWithBytes:signedHashBytes
-                                      length:(NSUInteger)signedHashBytesSize];
-  
+                               length:(NSUInteger)signedHashBytesSize];
+
   if (hashBytes) {
     free(hashBytes);
   }
-    
+
   if (signedHashBytes) {
     free(signedHashBytes);
   }
-  
+
   return [signedHash base64EncodedString];
+}
+
+
+- (NSString *)signWithData:(NSData *)plainData {
+  return [KODCrypto signWithData:plainData andPrivateKey:[self getPrivateKey]];
+}
+
++ (BDRSACryptorKeyPair *)generateKeyPair {
+  BDRSACryptor *RSACryptor = [[BDRSACryptor alloc] init];
+  BDError *error = [[BDError alloc] init];
+  BDRSACryptorKeyPair *RSAKeyPair = [RSACryptor generateKeyPairWithKeyIdentifier:KodTag error:error];
+  NSAssert(RSAKeyPair, @"Failed to create rsa key-pair");
+  return RSAKeyPair;
+}
+
+- (SecKeyRef)getPrivateKey {
+  BDRSACryptor *RSACryptor = [[BDRSACryptor alloc] init];
+  BDError *error = [[BDError alloc] init];
+
+  NSString *privateKeyTag = [RSACryptor privateKeyIdentifierWithTag:KodTag];
+  return [RSACryptor keyRefWithTag:privateKeyTag error:error];
 }
 
 @end
