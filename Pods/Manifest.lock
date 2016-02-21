@@ -20,7 +20,7 @@ PODS:
   - AFNetworking/UIKit (2.5.0):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
-  - Kiwi (2.3.1)
+  - Kiwi (2.4.0)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
@@ -28,6 +28,6 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AFNetworking: 96ac9bf3eda33582701cb1fcc5b896aa1e20311e
-  Kiwi: f038a6c61f7a9e4d7766bff5717aa3b3fdb75f55
+  Kiwi: f49c9d54b28917df5928fe44968a39ed198cb8a8
 
-COCOAPODS: 0.35.0
+COCOAPODS: 0.39.0
