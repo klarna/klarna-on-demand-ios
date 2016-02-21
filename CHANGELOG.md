@@ -1,5 +1,8 @@
 # CHANGELOG for Klanra-on-Demand-iOS
 
+## 1.3.0
+* Allows opening links outside the app.
+
 ## 1.2.0
 * Adds the option to create origin proof with a provided private key.
 

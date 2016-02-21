@@ -39,6 +39,15 @@ NSString *const JockeyUserError =  @"userError";
 }
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
+  if (navigationType == UIWebViewNavigationTypeLinkClicked) {
+    NSURL *url = [request URL];
+    NSString *param = [url query];
+
+    if ([param rangeOfString: @"openInBrowser=true"].location != NSNotFound){
+      [[UIApplication sharedApplication] openURL: url];
+      return NO;
+    }
+  }
   return [Jockey webView:webView withUrl:[request URL]];
 }
 
