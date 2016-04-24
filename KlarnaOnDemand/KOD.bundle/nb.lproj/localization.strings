@@ -5,7 +5,7 @@
 "REGISTRATION_DISMISS_BUTTON_TEXT" = "Avbryt";
 
 /* Klarna preferences UINavigationController title */
-"PREFERENCES_TITLE" = "Velg betalingsmåte";
+"PREFERENCES_TITLE" = "Betalingsinformasjon";
 
 /* Klarna preferences UINavigationController button */
 "PREFERENCES_DISMISS_BUTTON_TEXT" = "Lukk";
