@@ -1,5 +1,8 @@
 # CHANGELOG for Klanra-on-Demand-iOS
 
+## 1.3.2
+* Improve Norwegian translations.
+
 ## 1.3.1
 * Improve Norwegian translations.
 
