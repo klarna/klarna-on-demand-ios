@@ -18,7 +18,7 @@ NSString *const JockeyUserError =  @"userError";
   
   [self registerJockeyEvents];
   
-  [self addHUD];
+  //[self addHUD];
   
   [self addDismissButton];
 }
@@ -76,8 +76,8 @@ NSString *const JockeyUserError =  @"userError";
 }
 
 - (void)addWebView {
-  self.webView = [[UIWebView alloc] initWithFrame:self.view.bounds];
-  self.webView.delegate = self;
+  self.webView = [[WKWebView alloc] initWithFrame:self.view.bounds];
+  //self.webView.delegate = self;
   [self.view addSubview:_webView];
 }
 
