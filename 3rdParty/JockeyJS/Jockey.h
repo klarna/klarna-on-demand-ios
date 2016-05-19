@@ -24,20 +24,20 @@
 //  WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
+#import <WebKit/WebKit.h>
 
 typedef void (^ JockeyHandler)(NSDictionary *payload);
-typedef void (^ JockeyAsyncHandler)(UIWebView *webView, NSDictionary *payload, void (^complete)());
+typedef void (^ JockeyAsyncHandler)(WKWebView *webView, NSDictionary *payload, void (^complete)());
 
 @interface Jockey : NSObject
 
 + (void)on:(NSString*)type perform:(JockeyHandler)handler;
 + (void)on:(NSString*)type performAsync:(JockeyAsyncHandler)handler;
 + (void)off:(NSString *)type;
-+ (void)send:(NSString*)type withPayload:(id)payload toWebView:(UIWebView*)webView;
-+ (void)send:(NSString *)type withPayload:(id)payload toWebView:(UIWebView *)webView perform:(void(^)())complete;
++ (void)send:(NSString*)type withPayload:(id)payload toWebView:(WKWebView*)webView;
++ (void)send:(NSString *)type withPayload:(id)payload toWebView:(WKWebView *)webView perform:(void(^)())complete;
 
-+ (BOOL)webView:(UIWebView*)webView withUrl:(NSURL*)url;
++ (BOOL)webView:(WKWebView*)webView withUrl:(NSURL*)url;
 
 @property (strong, atomic) NSNumber *messageCount;
 @property (strong, nonatomic) NSMutableDictionary *listeners;
