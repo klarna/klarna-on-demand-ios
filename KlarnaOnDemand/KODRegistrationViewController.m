@@ -43,9 +43,10 @@
   return [KODUrl registrationUrlWithSettings: _registrationSettings];
 }
 
-- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
-  [super webView:webView didFailLoadWithError:error];
-  
+
+-(void)webView:(WKWebView *)webView didFailNavigation:(WKNavigation *)navigation withError:(NSError *)error {
+  [super webView:webView didFailNavigation:navigation withError:error];
+
   if (error.code != NSURLErrorCancelled && [self.delegate respondsToSelector:@selector(klarnaRegistrationFailed:)]) {
     [self.delegate klarnaRegistrationFailed:self];
   }

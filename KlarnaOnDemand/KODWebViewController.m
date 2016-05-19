@@ -18,7 +18,7 @@ NSString *const JockeyUserError =  @"userError";
   
   [self registerJockeyEvents];
   
-  //[self addHUD];
+  [self addHUD];
   
   [self addDismissButton];
 }
@@ -38,24 +38,7 @@ NSString *const JockeyUserError =  @"userError";
   [self unregisterJockeyCallbacks];
 }
 
-- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
-  if (navigationType == UIWebViewNavigationTypeLinkClicked) {
-    NSURL *url = [request URL];
-    NSString *param = [url query];
-
-    if ([param rangeOfString: @"openInBrowser=true"].location != NSNotFound){
-      [[UIApplication sharedApplication] openURL: url];
-      return NO;
-    }
-  }
-  return [Jockey webView:webView withUrl:[request URL]];
-}
-
-- (void)webViewDidFinishLoad:(UIWebView *)webView {
-  [self removeHUDIfExists];
-}
-
-- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
+-(void)webView:(WKWebView *)webView didFailNavigation:(WKNavigation *)navigation withError:(NSError *)error {
   [self removeHUDIfExists];
   
   NSLog(@"Klarna web view failed with the following error: %@", [error description]);
@@ -77,9 +60,10 @@ NSString *const JockeyUserError =  @"userError";
 
 - (void)addWebView {
   self.webView = [[WKWebView alloc] initWithFrame:self.view.bounds];
-  //self.webView.delegate = self;
+  self.webView.navigationDelegate = self;
   [self.view addSubview:_webView];
 }
+
 
 - (void)addHUD {
   self.HUDView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 80, 80)];
@@ -121,5 +105,30 @@ NSString *const JockeyUserError =  @"userError";
   [Jockey off:JockeyUserError];
 }
 
+- (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
+  [self removeHUDIfExists];
+}
+
+- (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
+  NSURL *url = navigationAction.request.URL;
+  if (navigationAction.navigationType == WKNavigationTypeLinkActivated) {
+    NSString *param = [url query];
+    if ([param rangeOfString: @"openInBrowser=true"].location != NSNotFound){
+      [[UIApplication sharedApplication] openURL: url];
+      decisionHandler(WKNavigationActionPolicyCancel);
+    }
+    else {
+      decisionHandler(WKNavigationActionPolicyAllow);
+    }
+  }
+  else {
+    if([Jockey webView:webView withUrl:url]) {
+      decisionHandler(WKNavigationActionPolicyAllow);
+    }
+    else {
+      decisionHandler(WKNavigationActionPolicyCancel);
+    }
+  }
+}
 
 @end
