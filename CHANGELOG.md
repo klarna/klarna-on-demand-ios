@@ -1,5 +1,8 @@
 # CHANGELOG for Klanra-on-Demand-iOS
 
+## 1.4.0
+* Replace UIWebview with WKWebview.
+
 ## 1.3.2
 * Improve Norwegian translations.
 

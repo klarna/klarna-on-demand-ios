@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "Klarna-on-Demand"
-  s.version          = "1.3.2"
+  s.version          = "1.4.0"
   s.summary          = "SDK for Klarna's on-demand purchase service."
   s.description      = <<-DESC
                           Klarna on-demand allows you to integrate Klarna's payment solution in mobile apps that offer on demand services.
@@ -9,9 +9,9 @@ Pod::Spec.new do |s|
   s.homepage         = "https://github.com/klarna/klarna-on-demand-ios"
   s.screenshots      = "https://raw.githubusercontent.com/klarna/klarna-on-demand-ios/master/screenshot.png"
   s.license          = 'Apache 2.0'
-  s.author           = { "Klarna InDeX Team" => "index.e@klarna.com" }
+  s.author           = { "Klarna On-Demand Team" => "on.demand.e@klarna.com" }
   s.source           = { :git => "https://github.com/klarna/klarna-on-demand-ios.git", :tag => s.version.to_s }
-  s.platform         = :ios, '7.0'
+  s.platform         = :ios, '8.0'
   s.requires_arc     = true
   s.xcconfig         = { 'ALWAYS_SEARCH_USER_PATHS' => 'YES' }
   s.source_files     = 'KlarnaOnDemand/**/*.{h,m}'
