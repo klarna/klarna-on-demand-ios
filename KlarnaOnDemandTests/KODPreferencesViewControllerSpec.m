@@ -18,21 +18,27 @@ describe(@"KODPreferencesViewControllerSpec", ^{
   it(@"should call the delegate's .klarnaPreferencesFailed method when the web view fails to load", ^{
     [[kodPreferencesDelegate should] receive:@selector(klarnaPreferencesFailed:) withArguments:kodPreferencesController];
     
-    [kodPreferencesController webView:nil didFailLoadWithError:[NSError errorWithDomain:@"Domain" code:1234 userInfo:nil]];
+    [kodPreferencesController webView:[[WKWebView alloc] init] didFailNavigation:nil withError:[NSError errorWithDomain:@"Domain" code:1234 userInfo:nil]];
   });
-    
+
   it(@"does not call the delegate's .klarnaPreferencesFailed when the web view fails with NSURLErrorCancelled", ^{
     [[kodPreferencesDelegate shouldNot] receive:@selector(klarnaPreferencesFailed:) withArguments:kodPreferencesController];
     
-    [kodPreferencesController webView:nil didFailLoadWithError:[NSError errorWithDomain:@"Domain" code:NSURLErrorCancelled userInfo:nil]];
+    [kodPreferencesController webView:[[WKWebView alloc] init] didFailNavigation:nil withError:[NSError errorWithDomain:@"Domain" code:NSURLErrorCancelled userInfo:nil]];
   });
-  
+
+  it(@"should call the delegate's didFailNavigation method when the web view fails to provisionally navigate", ^{
+    [[kodPreferencesController should] receive:@selector(webView:didFailNavigation:withError:)];
+
+    [kodPreferencesController webView:[[WKWebView alloc] init] didFailProvisionalNavigation:nil withError:[NSError errorWithDomain:@"Domain" code:1234 userInfo:nil]];
+  });
+
   it(@"should call the delegate's .klarnaPreferencesClosed when the dismiss button is pressed", ^{
     [[kodPreferencesDelegate should] receive:@selector(klarnaPreferencesClosed:) withArguments:kodPreferencesController];
     
     [kodPreferencesController dismissButtonPressed];
   });
-  
+
 });
 
 SPEC_END
