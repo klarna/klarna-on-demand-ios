@@ -50,6 +50,10 @@ NSString *const JockeyUserError =  @"userError";
   NSLog(@"Klarna web view failed with the following error: %@", [error description]);
 }
 
+-(void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation withError:(NSError *)error {
+  [self webView:webView didFailNavigation:navigation withError:error];
+}
+
 - (void)addDismissButton {
   self.navigationItem.hidesBackButton = YES;
   

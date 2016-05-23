@@ -52,14 +52,6 @@
   }
 }
 
--(void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation withError:(NSError *)error {
-  [super webView:webView didFailNavigation:navigation withError:error];
-
-  if (error.code != NSURLErrorCancelled && [self.delegate respondsToSelector:@selector(klarnaRegistrationFailed:)]) {
-    [self.delegate klarnaRegistrationFailed:self];
-  }
-}
-
 - (void)dismissButtonPressed {
   if ([self.delegate respondsToSelector:@selector(klarnaRegistrationCancelled:)]) {
     [self.delegate klarnaRegistrationCancelled:self];
