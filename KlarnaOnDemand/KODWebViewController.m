@@ -12,8 +12,14 @@ NSString *const JockeyUserError =  @"userError";
 - (void)viewDidLoad {
   [super viewDidLoad];
   
-  self.view.backgroundColor = [UIColor whiteColor];
-  
+  [self registerJockeyEvents];
+
+  [self addHUD];
+
+  [self addDismissButton];
+}
+
+-(void)viewWillAppear:(BOOL)animated {
   [self addWebView];
   
   [self registerJockeyEvents];
