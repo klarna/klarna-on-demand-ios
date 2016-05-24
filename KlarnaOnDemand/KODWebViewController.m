@@ -9,16 +9,6 @@
 NSString *const JockeyUserReady = @"userReady";
 NSString *const JockeyUserError =  @"userError";
 
-- (void)viewDidLoad {
-  [super viewDidLoad];
-  
-  [self registerJockeyEvents];
-
-  [self addHUD];
-
-  [self addDismissButton];
-}
-
 -(void)viewWillAppear:(BOOL)animated {
   [self addWebView];
   
