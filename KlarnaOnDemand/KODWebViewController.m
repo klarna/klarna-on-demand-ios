@@ -12,6 +12,8 @@ NSString *const JockeyUserError =  @"userError";
 -(void)viewWillAppear:(BOOL)animated {
   [super viewWillAppear:animated];
 
+  self.view.backgroundColor = [UIColor whiteColor];
+
   [self addWebView];
   
   [self registerJockeyEvents];
