@@ -43,15 +43,6 @@
   return [KODUrl registrationUrlWithSettings: _registrationSettings];
 }
 
-
--(void)webView:(WKWebView *)webView didFailNavigation:(WKNavigation *)navigation withError:(NSError *)error {
-  [super webView:webView didFailNavigation:navigation withError:error];
-
-  if (error.code != NSURLErrorCancelled && [self.delegate respondsToSelector:@selector(klarnaRegistrationFailed:)]) {
-    [self.delegate klarnaRegistrationFailed:self];
-  }
-}
-
 - (void)dismissButtonPressed {
   if ([self.delegate respondsToSelector:@selector(klarnaRegistrationCancelled:)]) {
     [self.delegate klarnaRegistrationCancelled:self];
@@ -68,6 +59,16 @@
 
 - (void)handleUserErrorEvent {
   if ([self.delegate respondsToSelector:@selector(klarnaRegistrationFailed:)]) {
+    [self.delegate klarnaRegistrationFailed:self];
+  }
+}
+
+#pragma mark WKNavigationDelegate methods
+
+-(void)webView:(WKWebView *)webView didFailNavigation:(WKNavigation *)navigation withError:(NSError *)error {
+  [super webView:webView didFailNavigation:navigation withError:error];
+
+  if (error.code != NSURLErrorCancelled && [self.delegate respondsToSelector:@selector(klarnaRegistrationFailed:)]) {
     [self.delegate klarnaRegistrationFailed:self];
   }
 }

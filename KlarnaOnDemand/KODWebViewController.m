@@ -44,16 +44,6 @@ NSString *const JockeyUserError =  @"userError";
   [self unregisterJockeyCallbacks];
 }
 
--(void)webView:(WKWebView *)webView didFailNavigation:(WKNavigation *)navigation withError:(NSError *)error {
-  [self removeHUDIfExists];
-  
-  NSLog(@"Klarna web view failed with the following error: %@", [error description]);
-}
-
--(void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation withError:(NSError *)error {
-  [self webView:webView didFailNavigation:navigation withError:error];
-}
-
 - (void)addDismissButton {
   self.navigationItem.hidesBackButton = YES;
   
@@ -115,6 +105,8 @@ NSString *const JockeyUserError =  @"userError";
   [Jockey off:JockeyUserError];
 }
 
+#pragma mark WKNavigationDelegate methods
+
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
   [self removeHUDIfExists];
 }
@@ -139,6 +131,16 @@ NSString *const JockeyUserError =  @"userError";
       decisionHandler(WKNavigationActionPolicyCancel);
     }
   }
+}
+
+- (void)webView:(WKWebView *)webView didFailNavigation:(WKNavigation *)navigation withError:(NSError *)error {
+  [self removeHUDIfExists];
+
+  NSLog(@"Klarna web view failed with the following error: %@", [error description]);
+}
+
+- (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation withError:(NSError *)error {
+  [self webView:webView didFailNavigation:navigation withError:error];
 }
 
 @end
