@@ -58,7 +58,7 @@
 
 #pragma mark WKNavigationDelegate methods
 
--(void)webView:(WKWebView *)webView didFailNavigation:(WKNavigation *)navigation withError:(NSError *)error {
+- (void)webView:(WKWebView *)webView didFailNavigation:(WKNavigation *)navigation withError:(NSError *)error {
   [super webView:webView didFailNavigation:navigation withError:error];
 
   if (error.code != NSURLErrorCancelled && [self.delegate respondsToSelector:@selector(klarnaPreferencesFailed:)])  {
