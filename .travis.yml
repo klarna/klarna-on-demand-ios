@@ -11,7 +11,7 @@ install:
 script:
 # Build & run tests
 - set -o pipefail && xcodebuild test -derivedDataPath build -workspace KlarnaOnDemand.xcworkspace -scheme KlarnaOnDemand -destination 'platform=iOS Simulator,name=iPhone 5s,OS=8.1' -destination 'platform=iOS Simulator,name=iPhone 5s,OS=8.1' | xcpretty -c
-- set -o pipefail && xcodebuild test -derivedDataPath build -workspace KlarnaOnDemand.xcworkspace -scheme KlarnaOnDemandExample -destination 'platform=iOS Simulator,name=iPhone 6s,OS=9.2' -destination 'platform=iOS Simulator,name=iPhone 6s,OS=9.2' | xcpretty -c
+- set -o pipefail && xcodebuild -derivedDataPath build -workspace KlarnaOnDemand.xcworkspace -scheme KlarnaOnDemandExample -destination 'platform=iOS Simulator,name=iPhone 6s,OS=9.2' -destination 'platform=iOS Simulator,name=iPhone 6s,OS=9.2' | xcpretty -c
 
 # Change the example app's API key to circumvent Ringcaptcha
 - find Example -name "*.m" -print0 | xargs -0 sed -i "" 's#test_d8324b98-97ce-4974-88de-eaab2fdf4f14#test_6666666-6666-6666-6666-666666666666#g'
