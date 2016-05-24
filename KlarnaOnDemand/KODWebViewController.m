@@ -10,6 +10,8 @@ NSString *const JockeyUserReady = @"userReady";
 NSString *const JockeyUserError =  @"userError";
 
 -(void)viewWillAppear:(BOOL)animated {
+  [super viewWillAppear:animated];
+
   [self addWebView];
   
   [self registerJockeyEvents];
