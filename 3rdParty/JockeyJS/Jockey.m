@@ -28,8 +28,8 @@
 @interface Jockey ()
 + (id)sharedInstance;
 
-- (void)triggerEventFromWebView:(UIWebView*)webView withData:(NSDictionary*)envelope;
-- (void)triggerCallbackOnWebView:(UIWebView*)webView forMessage:(NSString*)messageId;
+- (void)triggerEventFromWebView:(WKWebView*)webView withData:(NSDictionary*)envelope;
+- (void)triggerCallbackOnWebView:(WKWebView*)webView forMessage:(NSString*)messageId;
 - (void)triggerCallbackForMessage:(NSNumber*)messageId;
 @end
 
@@ -50,7 +50,7 @@
 
 + (void)on:(NSString*)type perform:(JockeyHandler)handler
 {
-    void (^ extended)(UIWebView *webView, NSDictionary *payload, void (^ complete)()) = ^(UIWebView *webView, NSDictionary *payload, void(^ complete)()) {
+    void (^ extended)(WKWebView *webView, NSDictionary *payload, void (^ complete)()) = ^(WKWebView *webView, NSDictionary *payload, void(^ complete)()) {
         handler(payload);
         complete();
     };
@@ -82,12 +82,12 @@
     [listeners removeObjectForKey:type];
 }
 
-+ (void)send:(NSString *)type withPayload:(id)payload toWebView:(UIWebView *)webView
++ (void)send:(NSString *)type withPayload:(id)payload toWebView:(WKWebView *)webView
 {
     [self send:type withPayload:payload toWebView:webView perform:nil];
 }
 
-+ (void)send:(NSString *)type withPayload:(id)payload toWebView:(UIWebView *)webView perform:(void (^)())complete {
++ (void)send:(NSString *)type withPayload:(id)payload toWebView:(WKWebView *)webView perform:(void (^)())complete {
     Jockey *jockey = [Jockey sharedInstance];
     
     NSNumber *messageId = jockey.messageCount;
@@ -101,12 +101,12 @@
     NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
     NSString *javascript = [NSString stringWithFormat:@"Jockey.trigger(\"%@\", %ld, %@);", type, [messageId integerValue], jsonString];
     
-    [webView stringByEvaluatingJavaScriptFromString:javascript];
+    [webView evaluateJavaScript:javascript completionHandler:nil];
     
     jockey.messageCount = @([jockey.messageCount integerValue] + 1);
 }
 
-+ (BOOL)webView:(UIWebView*)webView withUrl:(NSURL*)url
++ (BOOL)webView:(WKWebView*)webView withUrl:(NSURL*)url
 {
     if ( [[url scheme] isEqualToString:@"jockey"] )
     {
@@ -131,7 +131,7 @@
     return YES;
 }
 
-- (void)triggerEventFromWebView:(UIWebView*)webView withData:(NSDictionary*)envelope
+- (void)triggerEventFromWebView:(WKWebView*)webView withData:(NSDictionary*)envelope
 {
     NSDictionary *listeners = [[Jockey sharedInstance] listeners];
     
@@ -157,11 +157,11 @@
     }
 }
 
-- (void)triggerCallbackOnWebView:(UIWebView*)webView forMessage:(NSString*)messageId
+- (void)triggerCallbackOnWebView:(WKWebView*)webView forMessage:(NSString*)messageId
 {
     NSString *javascript = [NSString stringWithFormat:@"Jockey.triggerCallback(\"%@\");", messageId];
     
-    [webView stringByEvaluatingJavaScriptFromString:javascript];
+    [webView evaluateJavaScript:javascript completionHandler:nil];
 }
 
 - (void)triggerCallbackForMessage:(NSNumber *)messageId {

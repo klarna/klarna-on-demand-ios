@@ -37,15 +37,6 @@
   return @"PREFERENCES_DISMISS_BUTTON_TEXT";
 }
 
-- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
-  [super webView:webView didFailLoadWithError:error];
-  
-  if (error.code != NSURLErrorCancelled && [self.delegate respondsToSelector:@selector(klarnaPreferencesFailed:)])
-  {
-    [self.delegate klarnaPreferencesFailed:self];
-  }
-}
-
 - (void)dismissButtonPressed {
   if ([self.delegate respondsToSelector:@selector(klarnaPreferencesClosed:)]) {
     [self.delegate klarnaPreferencesClosed:self];
@@ -65,5 +56,14 @@
   }
 }
 
+#pragma mark WKNavigationDelegate methods
+
+- (void)webView:(WKWebView *)webView didFailNavigation:(WKNavigation *)navigation withError:(NSError *)error {
+  [super webView:webView didFailNavigation:navigation withError:error];
+
+  if (error.code != NSURLErrorCancelled && [self.delegate respondsToSelector:@selector(klarnaPreferencesFailed:)])  {
+    [self.delegate klarnaPreferencesFailed:self];
+  }
+}
 
 @end

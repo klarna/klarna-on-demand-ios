@@ -11,16 +11,21 @@ NSString *const JockeyUserError =  @"userError";
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  
-  self.view.backgroundColor = [UIColor whiteColor];
-  
+
   [self addWebView];
-  
+
   [self registerJockeyEvents];
-  
+
   [self addHUD];
-  
+
   [self addDismissButton];
+
+  self.edgesForExtendedLayout = UIRectEdgeLeft | UIRectEdgeRight | UIRectEdgeBottom;
+}
+
+- (void)viewDidLayoutSubviews {
+  [self.webView setFrame:self.view.bounds];
+  [self.HUDView setCenter:self.webView.center];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -38,29 +43,6 @@ NSString *const JockeyUserError =  @"userError";
   [self unregisterJockeyCallbacks];
 }
 
-- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
-  if (navigationType == UIWebViewNavigationTypeLinkClicked) {
-    NSURL *url = [request URL];
-    NSString *param = [url query];
-
-    if ([param rangeOfString: @"openInBrowser=true"].location != NSNotFound){
-      [[UIApplication sharedApplication] openURL: url];
-      return NO;
-    }
-  }
-  return [Jockey webView:webView withUrl:[request URL]];
-}
-
-- (void)webViewDidFinishLoad:(UIWebView *)webView {
-  [self removeHUDIfExists];
-}
-
-- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
-  [self removeHUDIfExists];
-  
-  NSLog(@"Klarna web view failed with the following error: %@", [error description]);
-}
-
 - (void)addDismissButton {
   self.navigationItem.hidesBackButton = YES;
   
@@ -76,14 +58,13 @@ NSString *const JockeyUserError =  @"userError";
 }
 
 - (void)addWebView {
-  self.webView = [[UIWebView alloc] initWithFrame:self.view.bounds];
-  self.webView.delegate = self;
+  self.webView = [[WKWebView alloc] init];
+  self.webView.navigationDelegate = self;
   [self.view addSubview:_webView];
 }
 
 - (void)addHUD {
   self.HUDView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 80, 80)];
-  self.HUDView.center = self.view.center;
   self.HUDView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.6];
   self.HUDView.layer.cornerRadius = 5;
   
@@ -121,5 +102,42 @@ NSString *const JockeyUserError =  @"userError";
   [Jockey off:JockeyUserError];
 }
 
+#pragma mark WKNavigationDelegate methods
+
+- (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
+  [self removeHUDIfExists];
+}
+
+- (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
+  NSURL *url = navigationAction.request.URL;
+  if (navigationAction.navigationType == WKNavigationTypeLinkActivated) {
+    NSString *param = [url query];
+    if ([param rangeOfString: @"openInBrowser=true"].location != NSNotFound){
+      [[UIApplication sharedApplication] openURL: url];
+      decisionHandler(WKNavigationActionPolicyCancel);
+    }
+    else {
+      decisionHandler(WKNavigationActionPolicyAllow);
+    }
+  }
+  else {
+    if([Jockey webView:webView withUrl:url]) {
+      decisionHandler(WKNavigationActionPolicyAllow);
+    }
+    else {
+      decisionHandler(WKNavigationActionPolicyCancel);
+    }
+  }
+}
+
+- (void)webView:(WKWebView *)webView didFailNavigation:(WKNavigation *)navigation withError:(NSError *)error {
+  [self removeHUDIfExists];
+
+  NSLog(@"Klarna web view failed with the following error: %@", [error description]);
+}
+
+- (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation withError:(NSError *)error {
+  [self webView:webView didFailNavigation:navigation withError:error];
+}
 
 @end
