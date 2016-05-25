@@ -84,7 +84,7 @@ NSString *const JockeyUserError =  @"userError";
 }
 
 - (void)removeHUDIfExists {
-  //[self.HUDView removeFromSuperview];
+  [self.HUDView removeFromSuperview];
 }
 
 - (void)registerJockeyEvents {
