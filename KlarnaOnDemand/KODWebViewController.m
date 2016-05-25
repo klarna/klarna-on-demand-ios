@@ -9,18 +9,23 @@
 NSString *const JockeyUserReady = @"userReady";
 NSString *const JockeyUserError =  @"userError";
 
--(void)viewWillAppear:(BOOL)animated {
-  [super viewWillAppear:animated];
-
-  self.view.backgroundColor = [UIColor whiteColor];
+- (void)viewDidLoad {
+  [super viewDidLoad];
 
   [self addWebView];
-  
+
   [self registerJockeyEvents];
-  
+
   [self addHUD];
-  
+
   [self addDismissButton];
+
+  self.edgesForExtendedLayout = UIRectEdgeLeft | UIRectEdgeRight | UIRectEdgeBottom;
+}
+
+- (void)viewDidLayoutSubviews {
+  [self.webView setFrame:self.view.bounds];
+  [self.HUDView setCenter:self.webView.center];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -53,15 +58,13 @@ NSString *const JockeyUserError =  @"userError";
 }
 
 - (void)addWebView {
-  self.webView = [[WKWebView alloc] initWithFrame:self.view.bounds];
+  self.webView = [[WKWebView alloc] init];
   self.webView.navigationDelegate = self;
   [self.view addSubview:_webView];
 }
 
-
 - (void)addHUD {
   self.HUDView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 80, 80)];
-  self.HUDView.center = self.view.center;
   self.HUDView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.6];
   self.HUDView.layer.cornerRadius = 5;
   
@@ -81,7 +84,7 @@ NSString *const JockeyUserError =  @"userError";
 }
 
 - (void)removeHUDIfExists {
-  [self.HUDView removeFromSuperview];
+  //[self.HUDView removeFromSuperview];
 }
 
 - (void)registerJockeyEvents {
