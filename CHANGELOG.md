@@ -1,5 +1,8 @@
 # CHANGELOG for Klanra-on-Demand-iOS
 
+## 1.4.1
+* Add German translations.
+
 ## 1.4.0
 * Replace UIWebview with WKWebview.
 * Support translucent navigation bars.
