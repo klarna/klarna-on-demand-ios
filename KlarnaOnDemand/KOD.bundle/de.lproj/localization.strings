@@ -1,0 +1,17 @@
+/* Klarna registration UINavigationController title */
+"REGISTRATION_TITLE" = "Zahlungsinformation";
+
+/* Klarna registration UINavigationController button */
+"REGISTRATION_DISMISS_BUTTON_TEXT" = "Abbrechen";
+
+/* Klarna preferences UINavigationController title */
+"PREFERENCES_TITLE" = "Wählen Sie Ihre Zahlungsmethode";
+
+/* Klarna preferences UINavigationController button */
+"PREFERENCES_DISMISS_BUTTON_TEXT" = "Schliessen";
+
+/* Klarna default UINavigationController button */
+"PREFERENCES_DEFAULT_DISMISS_BUTTON_TEXT" = "Schliessen";
+
+/* Loading spinner text */
+"LOADING_SPINNER" = "Lädt ...";
