@@ -21,6 +21,19 @@
 		A988AC89498A774D942CE371 /* libPods-KlarnaOnDemandExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7754B5FAB47273B4794D5357 /* libPods-KlarnaOnDemandExample.a */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		B8FA05851DF0F7D70097DC29 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		460FDB6D1A499F2500CF327B /* KOD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = KOD.bundle; path = ../KlarnaOnDemand/KOD.bundle; sourceTree = "<group>"; };
 		460FDB711A49A21200CF327B /* libKlarnaOnDemand.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libKlarnaOnDemand.a; path = "../build/Debug-iphoneos/libKlarnaOnDemand.a"; sourceTree = "<group>"; };
@@ -144,6 +157,7 @@
 				C946A3C41A24C21D00A12CC6 /* Resources */,
 				D2910A18D190F601C3BB49B4 /* Copy Pods Resources */,
 				0BFFCEF8C1FC8C78113370EA /* Embed Pods Frameworks */,
+				B8FA05851DF0F7D70097DC29 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

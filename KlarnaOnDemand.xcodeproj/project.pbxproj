@@ -21,6 +21,48 @@
 		468323DF1A4ACCB60030B3F1 /* KODUrlSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C903A2E01A2523B6009AE44D /* KODUrlSpec.m */; };
 		46BC0B9E1AA886BA0036FF72 /* KODRegistrationSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 46BC0B9D1AA886BA0036FF72 /* KODRegistrationSettings.m */; };
 		46D37ABD1A374A6500E6AC7A /* KODPreferencesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46D37ABC1A374A6500E6AC7A /* KODPreferencesViewController.m */; };
+		B8FA058F1DF0F8020097DC29 /* KlarnaOnDemandFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = B8FA058D1DF0F8020097DC29 /* KlarnaOnDemandFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B8FA05B91DF0F8B50097DC29 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46480F371CEB732000A2FBB5 /* WebKit.framework */; };
+		B8FA05BA1DF0F8ED0097DC29 /* BDAESCBC256Cryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F1FB1A3F3FEA0005205B /* BDAESCBC256Cryptor.m */; };
+		B8FA05BB1DF0F8ED0097DC29 /* BDAESCryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F1FD1A3F3FEA0005205B /* BDAESCryptor.m */; };
+		B8FA05BC1DF0F8ED0097DC29 /* BDCryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F1FF1A3F3FEA0005205B /* BDCryptor.m */; };
+		B8FA05BD1DF0F8ED0097DC29 /* BDCryptorError.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2011A3F3FEA0005205B /* BDCryptorError.m */; };
+		B8FA05BE1DF0F8ED0097DC29 /* BDRSACryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2031A3F3FEA0005205B /* BDRSACryptor.m */; };
+		B8FA05BF1DF0F8ED0097DC29 /* BDRSACryptorKeyPair.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2051A3F3FEA0005205B /* BDRSACryptorKeyPair.m */; };
+		B8FA05C01DF0F8ED0097DC29 /* BDSHA512Cryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2071A3F3FEA0005205B /* BDSHA512Cryptor.m */; };
+		B8FA05C11DF0F8ED0097DC29 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F20C1A3F3FEA0005205B /* NSData+Base64.m */; };
+		B8FA05C21DF0F8ED0097DC29 /* NSString+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F20E1A3F3FEA0005205B /* NSString+Base64.m */; };
+		B8FA05C31DF0F8ED0097DC29 /* BDJSONError.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2151A3F3FEA0005205B /* BDJSONError.m */; };
+		B8FA05C41DF0F8ED0097DC29 /* NSArray+BDJSONSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2171A3F3FEA0005205B /* NSArray+BDJSONSerialization.m */; };
+		B8FA05C51DF0F8ED0097DC29 /* NSData+BDJSONSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2191A3F3FEA0005205B /* NSData+BDJSONSerialization.m */; };
+		B8FA05C61DF0F8ED0097DC29 /* NSDictionary+BDJSONSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F21B1A3F3FEA0005205B /* NSDictionary+BDJSONSerialization.m */; };
+		B8FA05C71DF0F8ED0097DC29 /* NSDictionary+BDParseJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F21D1A3F3FEA0005205B /* NSDictionary+BDParseJSON.m */; };
+		B8FA05C81DF0F8ED0097DC29 /* NSObject+BDJSONSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F21F1A3F3FEA0005205B /* NSObject+BDJSONSerialization.m */; };
+		B8FA05C91DF0F8ED0097DC29 /* NSString+BDJSONSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2211A3F3FEA0005205B /* NSString+BDJSONSerialization.m */; };
+		B8FA05CA1DF0F8ED0097DC29 /* NSString+BDUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2241A3F3FEA0005205B /* NSString+BDUtilities.m */; };
+		B8FA05CB1DF0F8ED0097DC29 /* BDError.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2271A3F3FEA0005205B /* BDError.m */; };
+		B8FA05CC1DF0F8ED0097DC29 /* Jockey.m in Sources */ = {isa = PBXBuildFile; fileRef = 467F0EC11A2B6DE900A76845 /* Jockey.m */; };
+		B8FA05CD1DF0F8ED0097DC29 /* KODContext.m in Sources */ = {isa = PBXBuildFile; fileRef = C90D1C841A24CD2800016FE4 /* KODContext.m */; };
+		B8FA05CE1DF0F8ED0097DC29 /* KODCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2411A3F45170005205B /* KODCrypto.m */; };
+		B8FA05CF1DF0F8ED0097DC29 /* KODLocalization.m in Sources */ = {isa = PBXBuildFile; fileRef = C954ABA61A345B5E00574C11 /* KODLocalization.m */; };
+		B8FA05D01DF0F8ED0097DC29 /* KODOriginProof.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2441A3F4A410005205B /* KODOriginProof.m */; };
+		B8FA05D11DF0F8ED0097DC29 /* KODPreferencesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46D37ABC1A374A6500E6AC7A /* KODPreferencesViewController.m */; };
+		B8FA05D21DF0F8ED0097DC29 /* KODRegistrationResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 467F0ED91A2C696100A76845 /* KODRegistrationResult.m */; };
+		B8FA05D31DF0F8ED0097DC29 /* KODRegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C90D1C861A24CD2800016FE4 /* KODRegistrationViewController.m */; };
+		B8FA05D41DF0F8ED0097DC29 /* KODWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4651C4521A3DDE9200800F1A /* KODWebViewController.m */; };
+		B8FA05D51DF0F8ED0097DC29 /* KODRegistrationSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 46BC0B9D1AA886BA0036FF72 /* KODRegistrationSettings.m */; };
+		B8FA05D61DF0F93A0097DC29 /* KODContext.h in Headers */ = {isa = PBXBuildFile; fileRef = C90D1C831A24CD2800016FE4 /* KODContext.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B8FA05D71DF0F93A0097DC29 /* KODCrypto.h in Headers */ = {isa = PBXBuildFile; fileRef = C9E7F2401A3F45170005205B /* KODCrypto.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B8FA05D81DF0F93A0097DC29 /* KODLocalization.h in Headers */ = {isa = PBXBuildFile; fileRef = C954ABA51A345B5E00574C11 /* KODLocalization.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B8FA05D91DF0F93A0097DC29 /* KODOriginProof.h in Headers */ = {isa = PBXBuildFile; fileRef = C9E7F2431A3F4A410005205B /* KODOriginProof.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B8FA05DA1DF0F93A0097DC29 /* KODPreferencesViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 46D37ABB1A374A6500E6AC7A /* KODPreferencesViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B8FA05DB1DF0F93A0097DC29 /* KODRegistrationResult.h in Headers */ = {isa = PBXBuildFile; fileRef = 467F0ED81A2C696100A76845 /* KODRegistrationResult.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B8FA05DC1DF0F93A0097DC29 /* KODRegistrationViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = C90D1C851A24CD2800016FE4 /* KODRegistrationViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B8FA05DD1DF0F93A0097DC29 /* KODUrl.h in Headers */ = {isa = PBXBuildFile; fileRef = C90D1C871A24CD2800016FE4 /* KODUrl.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B8FA05DE1DF0F93A0097DC29 /* KODWebViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4651C4511A3DDE9200800F1A /* KODWebViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B8FA05DF1DF0F93A0097DC29 /* KODWebViewController+Protected.h in Headers */ = {isa = PBXBuildFile; fileRef = 4651C40E1A38A4BC00800F1A /* KODWebViewController+Protected.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B8FA05E01DF0F93A0097DC29 /* KODRegistrationSettings.h in Headers */ = {isa = PBXBuildFile; fileRef = 46BC0B9C1AA886BA0036FF72 /* KODRegistrationSettings.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B8FA05E11DF0F9630097DC29 /* KODUrl.m in Sources */ = {isa = PBXBuildFile; fileRef = C90D1C881A24CD2800016FE4 /* KODUrl.m */; };
 		C90D1C6C1A24CBD100016FE4 /* libKlarnaOnDemand.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C90D1C601A24CBD100016FE4 /* libKlarnaOnDemand.a */; };
 		C90D1C891A24CD2800016FE4 /* KODContext.m in Sources */ = {isa = PBXBuildFile; fileRef = C90D1C841A24CD2800016FE4 /* KODContext.m */; };
 		C90D1C8A1A24CD2800016FE4 /* KODRegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C90D1C861A24CD2800016FE4 /* KODRegistrationViewController.m */; };
@@ -96,6 +138,9 @@
 		46D37ABC1A374A6500E6AC7A /* KODPreferencesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KODPreferencesViewController.m; path = ../KlarnaOnDemand/KODPreferencesViewController.m; sourceTree = "<group>"; };
 		787D5A12488247D4C7B5FC9E /* Pods-KlarnaOnDemandTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KlarnaOnDemandTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KlarnaOnDemandTests/Pods-KlarnaOnDemandTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8A6713AF3B794D95017D61E6 /* Pods-KlarnaOnDemandTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KlarnaOnDemandTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KlarnaOnDemandTests/Pods-KlarnaOnDemandTests.release.xcconfig"; sourceTree = "<group>"; };
+		B8FA058B1DF0F8020097DC29 /* KlarnaOnDemandFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KlarnaOnDemandFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B8FA058D1DF0F8020097DC29 /* KlarnaOnDemandFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KlarnaOnDemandFramework.h; sourceTree = "<group>"; };
+		B8FA058E1DF0F8020097DC29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C903A2DD1A2523A8009AE44D /* KlarnaOnDemandTests.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KlarnaOnDemandTests.pch; sourceTree = "<group>"; };
 		C903A2DE1A2523A8009AE44D /* KlarnaOnDemandTests.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = KlarnaOnDemandTests.plist; sourceTree = "<group>"; };
 		C903A2E01A2523B6009AE44D /* KODUrlSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KODUrlSpec.m; sourceTree = "<group>"; };
@@ -160,6 +205,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		B8FA05871DF0F8020097DC29 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B8FA05B91DF0F8B50097DC29 /* WebKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C90D1C5D1A24CBD100016FE4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -207,6 +260,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		B8FA058C1DF0F8020097DC29 /* KlarnaOnDemandFramework */ = {
+			isa = PBXGroup;
+			children = (
+				B8FA058D1DF0F8020097DC29 /* KlarnaOnDemandFramework.h */,
+				B8FA058E1DF0F8020097DC29 /* Info.plist */,
+			);
+			path = KlarnaOnDemandFramework;
+			sourceTree = "<group>";
+		};
 		C1E35C557067C2EA633DBCBD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -224,6 +286,7 @@
 				46872DF11A2B6C0900707282 /* 3rdParty */,
 				C90D1C621A24CBD100016FE4 /* KlarnaOnDemand */,
 				C90D1C6F1A24CBD100016FE4 /* KlarnaOnDemandTests */,
+				B8FA058C1DF0F8020097DC29 /* KlarnaOnDemandFramework */,
 				C90D1C611A24CBD100016FE4 /* Products */,
 				6F923A30568F1C8DCBD1121A /* Pods */,
 				C1E35C557067C2EA633DBCBD /* Frameworks */,
@@ -235,6 +298,7 @@
 			children = (
 				C90D1C601A24CBD100016FE4 /* libKlarnaOnDemand.a */,
 				C90D1C6B1A24CBD100016FE4 /* KlarnaOnDemandTests.xctest */,
+				B8FA058B1DF0F8020097DC29 /* KlarnaOnDemandFramework.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -456,7 +520,47 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		B8FA05881DF0F8020097DC29 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B8FA058F1DF0F8020097DC29 /* KlarnaOnDemandFramework.h in Headers */,
+				B8FA05D61DF0F93A0097DC29 /* KODContext.h in Headers */,
+				B8FA05D71DF0F93A0097DC29 /* KODCrypto.h in Headers */,
+				B8FA05D81DF0F93A0097DC29 /* KODLocalization.h in Headers */,
+				B8FA05D91DF0F93A0097DC29 /* KODOriginProof.h in Headers */,
+				B8FA05DA1DF0F93A0097DC29 /* KODPreferencesViewController.h in Headers */,
+				B8FA05DB1DF0F93A0097DC29 /* KODRegistrationResult.h in Headers */,
+				B8FA05DC1DF0F93A0097DC29 /* KODRegistrationViewController.h in Headers */,
+				B8FA05DD1DF0F93A0097DC29 /* KODUrl.h in Headers */,
+				B8FA05DE1DF0F93A0097DC29 /* KODWebViewController.h in Headers */,
+				B8FA05DF1DF0F93A0097DC29 /* KODWebViewController+Protected.h in Headers */,
+				B8FA05E01DF0F93A0097DC29 /* KODRegistrationSettings.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		B8FA058A1DF0F8020097DC29 /* KlarnaOnDemandFramework */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B8FA05921DF0F8020097DC29 /* Build configuration list for PBXNativeTarget "KlarnaOnDemandFramework" */;
+			buildPhases = (
+				B8FA05861DF0F8020097DC29 /* Sources */,
+				B8FA05871DF0F8020097DC29 /* Frameworks */,
+				B8FA05881DF0F8020097DC29 /* Headers */,
+				B8FA05891DF0F8020097DC29 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KlarnaOnDemandFramework;
+			productName = KlarnaOnDemandFramework;
+			productReference = B8FA058B1DF0F8020097DC29 /* KlarnaOnDemandFramework.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		C90D1C5F1A24CBD100016FE4 /* KlarnaOnDemand */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C90D1C741A24CBD100016FE4 /* Build configuration list for PBXNativeTarget "KlarnaOnDemand" */;
@@ -504,6 +608,10 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = Klarna;
 				TargetAttributes = {
+					B8FA058A1DF0F8020097DC29 = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Manual;
+					};
 					C90D1C5F1A24CBD100016FE4 = {
 						CreatedOnToolsVersion = 6.1;
 					};
@@ -526,11 +634,19 @@
 			targets = (
 				C90D1C5F1A24CBD100016FE4 /* KlarnaOnDemand */,
 				C90D1C6A1A24CBD100016FE4 /* KlarnaOnDemandTests */,
+				B8FA058A1DF0F8020097DC29 /* KlarnaOnDemandFramework */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		B8FA05891DF0F8020097DC29 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C90D1C691A24CBD100016FE4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -590,6 +706,42 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		B8FA05861DF0F8020097DC29 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B8FA05E11DF0F9630097DC29 /* KODUrl.m in Sources */,
+				B8FA05BA1DF0F8ED0097DC29 /* BDAESCBC256Cryptor.m in Sources */,
+				B8FA05BB1DF0F8ED0097DC29 /* BDAESCryptor.m in Sources */,
+				B8FA05BC1DF0F8ED0097DC29 /* BDCryptor.m in Sources */,
+				B8FA05BD1DF0F8ED0097DC29 /* BDCryptorError.m in Sources */,
+				B8FA05BE1DF0F8ED0097DC29 /* BDRSACryptor.m in Sources */,
+				B8FA05BF1DF0F8ED0097DC29 /* BDRSACryptorKeyPair.m in Sources */,
+				B8FA05C01DF0F8ED0097DC29 /* BDSHA512Cryptor.m in Sources */,
+				B8FA05C11DF0F8ED0097DC29 /* NSData+Base64.m in Sources */,
+				B8FA05C21DF0F8ED0097DC29 /* NSString+Base64.m in Sources */,
+				B8FA05C31DF0F8ED0097DC29 /* BDJSONError.m in Sources */,
+				B8FA05C41DF0F8ED0097DC29 /* NSArray+BDJSONSerialization.m in Sources */,
+				B8FA05C51DF0F8ED0097DC29 /* NSData+BDJSONSerialization.m in Sources */,
+				B8FA05C61DF0F8ED0097DC29 /* NSDictionary+BDJSONSerialization.m in Sources */,
+				B8FA05C71DF0F8ED0097DC29 /* NSDictionary+BDParseJSON.m in Sources */,
+				B8FA05C81DF0F8ED0097DC29 /* NSObject+BDJSONSerialization.m in Sources */,
+				B8FA05C91DF0F8ED0097DC29 /* NSString+BDJSONSerialization.m in Sources */,
+				B8FA05CA1DF0F8ED0097DC29 /* NSString+BDUtilities.m in Sources */,
+				B8FA05CB1DF0F8ED0097DC29 /* BDError.m in Sources */,
+				B8FA05CC1DF0F8ED0097DC29 /* Jockey.m in Sources */,
+				B8FA05CD1DF0F8ED0097DC29 /* KODContext.m in Sources */,
+				B8FA05CE1DF0F8ED0097DC29 /* KODCrypto.m in Sources */,
+				B8FA05CF1DF0F8ED0097DC29 /* KODLocalization.m in Sources */,
+				B8FA05D01DF0F8ED0097DC29 /* KODOriginProof.m in Sources */,
+				B8FA05D11DF0F8ED0097DC29 /* KODPreferencesViewController.m in Sources */,
+				B8FA05D21DF0F8ED0097DC29 /* KODRegistrationResult.m in Sources */,
+				B8FA05D31DF0F8ED0097DC29 /* KODRegistrationViewController.m in Sources */,
+				B8FA05D41DF0F8ED0097DC29 /* KODWebViewController.m in Sources */,
+				B8FA05D51DF0F8ED0097DC29 /* KODRegistrationSettings.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C90D1C5C1A24CBD100016FE4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -653,6 +805,67 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		B8FA05901DF0F8020097DC29 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = KlarnaOnDemandFramework/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jasonlagaac.KlarnaOnDemandFramework;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B8FA05911DF0F8020097DC29 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = KlarnaOnDemandFramework/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jasonlagaac.KlarnaOnDemandFramework;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		C90D1C721A24CBD100016FE4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -795,6 +1008,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		B8FA05921DF0F8020097DC29 /* Build configuration list for PBXNativeTarget "KlarnaOnDemandFramework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B8FA05901DF0F8020097DC29 /* Debug */,
+				B8FA05911DF0F8020097DC29 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		C90D1C5B1A24CBD100016FE4 /* Build configuration list for PBXProject "KlarnaOnDemand" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
