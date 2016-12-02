@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0610"
+   LastUpgradeVersion = "0810"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C90D1C5F1A24CBD100016FE4"
-               BuildableName = "libKlarnaOnDemand.a"
-               BlueprintName = "KlarnaOnDemand"
+               BlueprintIdentifier = "B8FA058A1DF0F8020097DC29"
+               BuildableName = "KlarnaOnDemandFramework.framework"
+               BlueprintName = "KlarnaOnDemandFramework"
                ReferencedContainer = "container:KlarnaOnDemand.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -28,26 +28,7 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C90D1C6A1A24CBD100016FE4"
-               BuildableName = "KlarnaOnDemandTests.xctest"
-               BlueprintName = "KlarnaOnDemandTests"
-               ReferencedContainer = "container:KlarnaOnDemand.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C90D1C5F1A24CBD100016FE4"
-            BuildableName = "libKlarnaOnDemand.a"
-            BlueprintName = "KlarnaOnDemand"
-            ReferencedContainer = "container:KlarnaOnDemand.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -64,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C90D1C5F1A24CBD100016FE4"
-            BuildableName = "libKlarnaOnDemand.a"
-            BlueprintName = "KlarnaOnDemand"
+            BlueprintIdentifier = "B8FA058A1DF0F8020097DC29"
+            BuildableName = "KlarnaOnDemandFramework.framework"
+            BlueprintName = "KlarnaOnDemandFramework"
             ReferencedContainer = "container:KlarnaOnDemand.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -82,9 +63,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C90D1C5F1A24CBD100016FE4"
-            BuildableName = "libKlarnaOnDemand.a"
-            BlueprintName = "KlarnaOnDemand"
+            BlueprintIdentifier = "B8FA058A1DF0F8020097DC29"
+            BuildableName = "KlarnaOnDemandFramework.framework"
+            BlueprintName = "KlarnaOnDemandFramework"
             ReferencedContainer = "container:KlarnaOnDemand.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
