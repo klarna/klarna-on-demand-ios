@@ -21,6 +21,7 @@
 		468323DF1A4ACCB60030B3F1 /* KODUrlSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C903A2E01A2523B6009AE44D /* KODUrlSpec.m */; };
 		46BC0B9E1AA886BA0036FF72 /* KODRegistrationSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 46BC0B9D1AA886BA0036FF72 /* KODRegistrationSettings.m */; };
 		46D37ABD1A374A6500E6AC7A /* KODPreferencesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46D37ABC1A374A6500E6AC7A /* KODPreferencesViewController.m */; };
+		73CD12607DD7D0CC727BC94C /* libPods-KlarnaOnDemandTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F1C19DE204A578CB1EF928EA /* libPods-KlarnaOnDemandTests.a */; };
 		C90D1C6C1A24CBD100016FE4 /* libKlarnaOnDemand.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C90D1C601A24CBD100016FE4 /* libKlarnaOnDemand.a */; };
 		C90D1C891A24CD2800016FE4 /* KODContext.m in Sources */ = {isa = PBXBuildFile; fileRef = C90D1C841A24CD2800016FE4 /* KODContext.m */; };
 		C90D1C8A1A24CD2800016FE4 /* KODRegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C90D1C861A24CD2800016FE4 /* KODRegistrationViewController.m */; };
@@ -48,7 +49,6 @@
 		C9E7F23F1A3F3FEA0005205B /* BDError.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2271A3F3FEA0005205B /* BDError.m */; };
 		C9E7F2421A3F45170005205B /* KODCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2411A3F45170005205B /* KODCrypto.m */; };
 		C9E7F2451A3F4A410005205B /* KODOriginProof.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2441A3F4A410005205B /* KODOriginProof.m */; };
-		E4FC8287776950D3A8F3BE8B /* libPods-KlarnaOnDemandTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 443BC01E8B6591BA34CE5172 /* libPods-KlarnaOnDemandTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,8 +74,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		00D36FCDF89E631DEE662786 /* Pods-KlarnaOnDemandTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KlarnaOnDemandTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KlarnaOnDemandTests/Pods-KlarnaOnDemandTests.debug.xcconfig"; sourceTree = "<group>"; };
 		0850E7B01C0ED16900829CF2 /* KODLocalizationSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KODLocalizationSpec.m; sourceTree = "<group>"; };
-		443BC01E8B6591BA34CE5172 /* libPods-KlarnaOnDemandTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KlarnaOnDemandTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		460FDB621A4974A200CF327B /* libPods-KlarnaOnDemandTests-Kiwi.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-KlarnaOnDemandTests-Kiwi.a"; path = "Pods/build/Debug-iphoneos/libPods-KlarnaOnDemandTests-Kiwi.a"; sourceTree = "<group>"; };
 		46480F371CEB732000A2FBB5 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		4651C40E1A38A4BC00800F1A /* KODWebViewController+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "KODWebViewController+Protected.h"; path = "KlarnaOnDemand/KODWebViewController+Protected.h"; sourceTree = SOURCE_ROOT; };
@@ -94,8 +94,6 @@
 		46BC0B9D1AA886BA0036FF72 /* KODRegistrationSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KODRegistrationSettings.m; sourceTree = "<group>"; };
 		46D37ABB1A374A6500E6AC7A /* KODPreferencesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KODPreferencesViewController.h; path = ../KlarnaOnDemand/KODPreferencesViewController.h; sourceTree = "<group>"; };
 		46D37ABC1A374A6500E6AC7A /* KODPreferencesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KODPreferencesViewController.m; path = ../KlarnaOnDemand/KODPreferencesViewController.m; sourceTree = "<group>"; };
-		787D5A12488247D4C7B5FC9E /* Pods-KlarnaOnDemandTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KlarnaOnDemandTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KlarnaOnDemandTests/Pods-KlarnaOnDemandTests.debug.xcconfig"; sourceTree = "<group>"; };
-		8A6713AF3B794D95017D61E6 /* Pods-KlarnaOnDemandTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KlarnaOnDemandTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KlarnaOnDemandTests/Pods-KlarnaOnDemandTests.release.xcconfig"; sourceTree = "<group>"; };
 		C903A2DD1A2523A8009AE44D /* KlarnaOnDemandTests.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KlarnaOnDemandTests.pch; sourceTree = "<group>"; };
 		C903A2DE1A2523A8009AE44D /* KlarnaOnDemandTests.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = KlarnaOnDemandTests.plist; sourceTree = "<group>"; };
 		C903A2E01A2523B6009AE44D /* KODUrlSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KODUrlSpec.m; sourceTree = "<group>"; };
@@ -156,7 +154,8 @@
 		C9E7F25A1A405D0E0005205B /* KODOriginProofSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KODOriginProofSpec.m; sourceTree = "<group>"; };
 		C9E7F2621A4086980005205B /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
 		C9FC95401A278AAD00485500 /* KODContextSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KODContextSpec.m; sourceTree = "<group>"; };
-		D1FE0E1CBCA1595B5EFACB69 /* libPods-KlarnaOnDemandTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KlarnaOnDemandTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D640D4F5C54859FCD097F2BB /* Pods-KlarnaOnDemandTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KlarnaOnDemandTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KlarnaOnDemandTests/Pods-KlarnaOnDemandTests.release.xcconfig"; sourceTree = "<group>"; };
+		F1C19DE204A578CB1EF928EA /* libPods-KlarnaOnDemandTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KlarnaOnDemandTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,7 +172,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C90D1C6C1A24CBD100016FE4 /* libKlarnaOnDemand.a in Frameworks */,
-				E4FC8287776950D3A8F3BE8B /* libPods-KlarnaOnDemandTests.a in Frameworks */,
+				73CD12607DD7D0CC727BC94C /* libPods-KlarnaOnDemandTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,11 +197,11 @@
 			name = JockeyJS;
 			sourceTree = "<group>";
 		};
-		6F923A30568F1C8DCBD1121A /* Pods */ = {
+		BB3B293CC8F4CEC02C30B983 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				787D5A12488247D4C7B5FC9E /* Pods-KlarnaOnDemandTests.debug.xcconfig */,
-				8A6713AF3B794D95017D61E6 /* Pods-KlarnaOnDemandTests.release.xcconfig */,
+				00D36FCDF89E631DEE662786 /* Pods-KlarnaOnDemandTests.debug.xcconfig */,
+				D640D4F5C54859FCD097F2BB /* Pods-KlarnaOnDemandTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -212,8 +211,7 @@
 			children = (
 				46480F371CEB732000A2FBB5 /* WebKit.framework */,
 				460FDB621A4974A200CF327B /* libPods-KlarnaOnDemandTests-Kiwi.a */,
-				D1FE0E1CBCA1595B5EFACB69 /* libPods-KlarnaOnDemandTests.a */,
-				443BC01E8B6591BA34CE5172 /* libPods-KlarnaOnDemandTests.a */,
+				F1C19DE204A578CB1EF928EA /* libPods-KlarnaOnDemandTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -225,8 +223,8 @@
 				C90D1C621A24CBD100016FE4 /* KlarnaOnDemand */,
 				C90D1C6F1A24CBD100016FE4 /* KlarnaOnDemandTests */,
 				C90D1C611A24CBD100016FE4 /* Products */,
-				6F923A30568F1C8DCBD1121A /* Pods */,
 				C1E35C557067C2EA633DBCBD /* Frameworks */,
+				BB3B293CC8F4CEC02C30B983 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -478,12 +476,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C90D1C771A24CBD100016FE4 /* Build configuration list for PBXNativeTarget "KlarnaOnDemandTests" */;
 			buildPhases = (
-				57538A2E547B109B5B321A46 /* Check Pods Manifest.lock */,
+				45FCA7867FD72913D01D43EC /* [CP] Check Pods Manifest.lock */,
 				C90D1C671A24CBD100016FE4 /* Sources */,
 				C90D1C681A24CBD100016FE4 /* Frameworks */,
 				C90D1C691A24CBD100016FE4 /* Resources */,
-				735E4D1DED27D86DFA194620 /* Copy Pods Resources */,
-				789267AD7321B0480D53523C /* Embed Pods Frameworks */,
+				89856741861563E03E17D51E /* [CP] Embed Pods Frameworks */,
+				E2961271A6892ED332D05309 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -542,49 +540,49 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		57538A2E547B109B5B321A46 /* Check Pods Manifest.lock */ = {
+		45FCA7867FD72913D01D43EC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		735E4D1DED27D86DFA194620 /* Copy Pods Resources */ = {
+		89856741861563E03E17D51E /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KlarnaOnDemandTests/Pods-KlarnaOnDemandTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		789267AD7321B0480D53523C /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KlarnaOnDemandTests/Pods-KlarnaOnDemandTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E2961271A6892ED332D05309 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KlarnaOnDemandTests/Pods-KlarnaOnDemandTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -750,7 +748,7 @@
 		};
 		C90D1C781A24CBD100016FE4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 787D5A12488247D4C7B5FC9E /* Pods-KlarnaOnDemandTests.debug.xcconfig */;
+			baseConfigurationReference = 00D36FCDF89E631DEE662786 /* Pods-KlarnaOnDemandTests.debug.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -774,7 +772,7 @@
 		};
 		C90D1C791A24CBD100016FE4 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8A6713AF3B794D95017D61E6 /* Pods-KlarnaOnDemandTests.release.xcconfig */;
+			baseConfigurationReference = D640D4F5C54859FCD097F2BB /* Pods-KlarnaOnDemandTests.release.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
