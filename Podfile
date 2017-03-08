@@ -5,7 +5,7 @@ target 'KlarnaOnDemandTests' do
 end
 
 target 'KlarnaOnDemandExample' do
-  xcodeproj 'Example/KlarnaOnDemandExample.xcodeproj'
+  project 'Example/KlarnaOnDemandExample.xcodeproj'
 
   platform :ios, '7.0'
   pod "AFNetworking", "~> 2.0"
