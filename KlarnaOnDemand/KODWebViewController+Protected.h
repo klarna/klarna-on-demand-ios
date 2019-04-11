@@ -4,7 +4,7 @@
 
 - (NSURL *)url;
 - (void)handleUserReadyEventWithPayload:(NSDictionary *)payload;
-- (void)handleUserErrorEvent;
+- (void)handleUserErrorEventWithPayload:(NSDictionary *)payload;
 - (void)dismissButtonPressed;
 - (NSString *)dismissButtonLabelKey;
 

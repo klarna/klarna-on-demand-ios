@@ -94,10 +94,16 @@ NSString *const UserTokenKey = @"user_token";
 
 #pragma mark Klarna registration delegate
 
-- (void)klarnaRegistrationFailed:(KODRegistrationViewController *)controller {
+- (void)klarnaRegistrationFailed:(KODRegistrationViewController *)controller withPayload:(NSDictionary *)payload{
   // You may also want to convey this failure to your user.
   // Dismiss Klarna registration view-controller.
   [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)klarnaRegistrationFailed:(KODRegistrationViewController *)controller withError:(NSError *)error {
+    // You may also want to convey this failure to your user.
+    // Dismiss Klarna registration view-controller.
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)klarnaRegistrationCancelled:(KODRegistrationViewController *)controller {
@@ -119,9 +125,14 @@ NSString *const UserTokenKey = @"user_token";
 
 #pragma mark Klarna preferences delegate
 
-- (void)klarnaPreferencesFailed:(KODPreferencesViewController *)controller {
+- (void)klarnaPreferencesFailed:(KODPreferencesViewController *)controller withPayload:(NSDictionary *)dictionary {
   // Dismiss Klarna preferences view-controller.
   [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)klarnaPreferencesFailed:(KODPreferencesViewController *)controller withError:(NSError *)error {
+    // Dismiss Klarna preferences view-controller.
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)klarnaPreferencesClosed:(KODPreferencesViewController *)controller {
