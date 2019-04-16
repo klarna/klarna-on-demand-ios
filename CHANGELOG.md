@@ -1,5 +1,11 @@
 # CHANGELOG for Klanra-on-Demand-iOS
 
+## 1.4.3
+* Fix xcconfig: set ALWAYS_SEARCH_USER_PATHS = NO.
+
+## 1.4.2
+* Fix lint error.
+
 ## 1.4.1
 * Add German translations.
 

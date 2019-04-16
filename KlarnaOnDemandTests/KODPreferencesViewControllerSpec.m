@@ -17,7 +17,9 @@ describe(@"KODPreferencesViewControllerSpec", ^{
   });
 
   it(@"does not call the delegate's .klarnaPreferencesFailed when the web view fails with NSURLErrorCancelled", ^{
-    [[kodPreferencesDelegate shouldNot] receive:@selector(klarnaPreferencesFailed:) withArguments:kodPreferencesController];
+      NSError *error = [[NSError alloc] initWithDomain:@"Domain" code:1234 userInfo:nil];
+      
+      [[kodPreferencesDelegate shouldNot] receive:@selector(klarnaPreferencesFailed:withError:) withArguments:kodPreferencesController, error];
     
     [kodPreferencesController webView:webView didFailNavigation:nil withError:[NSError errorWithDomain:@"Domain" code:NSURLErrorCancelled userInfo:nil]];
   });
@@ -35,7 +37,9 @@ describe(@"KODPreferencesViewControllerSpec", ^{
   });
 
   it(@"does not call the delegate's .klarnaPrefencesFailed when the web view fails with NSURLErrorCancelled", ^{
-    [[kodPreferencesDelegate shouldNot] receive:@selector(klarnaPreferencesFailed:) withArguments:kodPreferencesController];
+      NSError *error = [[NSError alloc] initWithDomain:@"Domain" code:1234 userInfo:nil];
+      
+      [[kodPreferencesDelegate shouldNot] receive:@selector(klarnaPreferencesFailed:withError:) withArguments:kodPreferencesController, error];
 
     [kodPreferencesController webView:webView didFailNavigation:nil withError:[NSError errorWithDomain:@"Domain" code:NSURLErrorCancelled userInfo:nil]];
   });

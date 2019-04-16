@@ -1,5 +1,4 @@
 #import <Foundation/Foundation.h>
-#import "BDRSACryptorKeyPair.h"
 
 @interface KODCrypto : NSObject
 

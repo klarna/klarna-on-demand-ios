@@ -5,7 +5,8 @@ addons:
   sauce_connect: true
 
 install:
-- pod install
+- gem install cocoapods
+- pod install --repo-update
 - (cd integration-tests && bundle install)
 
 script:

@@ -24,7 +24,9 @@ describe(@"KODRegistrationViewControllerSpec", ^{
   });
 
   it(@"should call the delegate's .klarnaRegistrationFailed method when the web view fails to navigate", ^{
-    [[kodRegistrationDelegate should] receive:@selector(klarnaRegistrationFailed:) withArguments:kodRegistrationController];
+      NSError *error = [[NSError alloc] initWithDomain:@"Domain" code:1234 userInfo:nil];
+      
+      [[kodRegistrationDelegate should] receive:@selector(klarnaRegistrationFailed:withError:) withArguments:kodRegistrationController, error];
 
     [kodRegistrationController webView:webView didFailNavigation:nil withError:[NSError errorWithDomain:@"Domain" code:1234 userInfo:nil]];
   });

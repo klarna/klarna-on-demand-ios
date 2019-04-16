@@ -57,9 +57,9 @@
   }
 }
 
-- (void)handleUserErrorEvent {
-  if ([self.delegate respondsToSelector:@selector(klarnaRegistrationFailed:)]) {
-    [self.delegate klarnaRegistrationFailed:self];
+- (void)handleUserErrorEventWithPayload:(NSDictionary *)payload {
+  if ([self.delegate respondsToSelector:@selector(klarnaRegistrationFailed:withPayload:)]) {
+    [self.delegate klarnaRegistrationFailed:self withPayload:payload];
   }
 }
 
@@ -68,8 +68,8 @@
 - (void)webView:(WKWebView *)webView didFailNavigation:(WKNavigation *)navigation withError:(NSError *)error {
   [super webView:webView didFailNavigation:navigation withError:error];
 
-  if (error.code != NSURLErrorCancelled && [self.delegate respondsToSelector:@selector(klarnaRegistrationFailed:)]) {
-    [self.delegate klarnaRegistrationFailed:self];
+  if (error.code != NSURLErrorCancelled && [self.delegate respondsToSelector:@selector(klarnaRegistrationFailed:withError:)]) {
+    [self.delegate klarnaRegistrationFailed:self withError:error];
   }
 }
 

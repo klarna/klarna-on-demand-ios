@@ -1,5 +1,6 @@
 #import "KODCrypto.h"
 #import "BDRSACryptor.h"
+#import "BDRSACryptorKeyPair.h"
 #import "BDError.h"
 #import "BDLog.h"
 #import <Security/SecBase.h>

@@ -69,7 +69,7 @@ NSString *const UserTokenKey = @"user_token";
 }
 
 - (void)performPurchaseOfItemWithReference:(NSString *)reference originProof:(KODOriginProof *)originProof {
-  AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+  AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
   manager.requestSerializer = [AFJSONRequestSerializer serializer];
   NSString *userToken = [self getUserToken];
 
@@ -78,26 +78,33 @@ NSString *const UserTokenKey = @"user_token";
                            @"reference" :    reference,
                            @"user_token" :   userToken
                            };
-
-  [manager POST:@"http://localhost:9292/pay" parameters:params
-        success:^(AFHTTPRequestOperation *operation, id responseObject) {
-          // show QR Code for the movie.
-          [self showQRView];
-        }
-        failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-          // Display an error.
-          NSString *errorMessage = [NSString stringWithFormat:@"%@%@", @"Failed to purchase ticket - ", error.localizedDescription];
-          ALERT(errorMessage);
-        }
-   ];
+  
+    [manager POST:@"http://localhost:9292/pay"
+             parameters:params
+             progress:^(NSProgress * _Nonnull uploadProgress) {
+                 // Show upload progress
+           } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                 // Show QR Code for the movie.
+        [self showQRView];
+           } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                 // Display an error.
+                 NSString *errorMessage = [NSString stringWithFormat:@"%@%@", @"Failed to purchase ticket - ", error.localizedDescription];
+                 ALERT(errorMessage);
+     }];
 }
 
 #pragma mark Klarna registration delegate
 
-- (void)klarnaRegistrationFailed:(KODRegistrationViewController *)controller {
+- (void)klarnaRegistrationFailed:(KODRegistrationViewController *)controller withPayload:(NSDictionary *)payload{
   // You may also want to convey this failure to your user.
   // Dismiss Klarna registration view-controller.
   [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)klarnaRegistrationFailed:(KODRegistrationViewController *)controller withError:(NSError *)error {
+    // You may also want to convey this failure to your user.
+    // Dismiss Klarna registration view-controller.
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)klarnaRegistrationCancelled:(KODRegistrationViewController *)controller {
@@ -119,9 +126,14 @@ NSString *const UserTokenKey = @"user_token";
 
 #pragma mark Klarna preferences delegate
 
-- (void)klarnaPreferencesFailed:(KODPreferencesViewController *)controller {
+- (void)klarnaPreferencesFailed:(KODPreferencesViewController *)controller withPayload:(NSDictionary *)dictionary {
   // Dismiss Klarna preferences view-controller.
   [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)klarnaPreferencesFailed:(KODPreferencesViewController *)controller withError:(NSError *)error {
+    // Dismiss Klarna preferences view-controller.
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)klarnaPreferencesClosed:(KODPreferencesViewController *)controller {

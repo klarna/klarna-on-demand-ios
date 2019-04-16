@@ -93,7 +93,7 @@ NSString *const JockeyUserError =  @"userError";
   }];
   
   [Jockey on:JockeyUserError perform:^(NSDictionary *payload) {
-    [self handleUserErrorEvent];
+      [self handleUserErrorEventWithPayload: payload];
   }];
 }
 
