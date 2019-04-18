@@ -128,10 +128,18 @@ Building upon the code sample from the previous section, consider the following 
   [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)klarnaRegistrationFailed:(KODRegistrationViewController *)controller {
-  // Dismiss Klarna registration view and notify the user of the error
+// This will reflect failure coming from the server
+- (void)klarnaRegistrationFailed:(KODRegistrationViewController *)controller withPayload:(NSDictionary *)payload {
+  // Dismiss Klarna registration view and notify the user that registration failed 
   [self dismissViewControllerAnimated:YES completion:nil];
   [self notifyRegistrationFailed]; // Again, this is just an illustration
+}
+
+// This will reflect failure coming from the WebView
+- (void)klarnaRegistrationFailed:(KODRegistrationViewController *)controller withError:(NSError *)error {
+// Dismiss Klarna registration view and notify the user of the error
+[self dismissViewControllerAnimated:YES completion:nil];
+[self notifyRegistrationFailed]; // Again, this is just an illustration
 }
 
 ```
@@ -283,10 +291,18 @@ Building upon the code sample from the previous section, consider the following 
   [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)klarnaPreferencesFailed:(KODPreferencesViewController *)controller {
-  // Dismiss the preferences view and notify the user that an error occurred
+// This will reflect failure coming from the server
+- (void)klarnaPreferencesFailed:(KODPreferencesViewController *)controller withPayload:(NSDictionary *)dictionary {
+  // Dismiss the preferences view and notify the user that preferences failed 
   [self dismissViewControllerAnimated:YES completion:nil];
   [self notifyOfPreferencesError]; // This method is an illustration and is not part of the SDK
+}
+
+// This will reflect failure coming from the WebView
+- (void)klarnaPreferencesFailed:(KODPreferencesViewController *)controller withError:(NSError *)error {
+// Dismiss the preferences view and notify the user that an error occurred
+[self dismissViewControllerAnimated:YES completion:nil];
+[self notifyOfPreferencesError]; // This method is an illustration and is not part of the SDK
 }
 
 ```
